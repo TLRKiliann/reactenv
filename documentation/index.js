@@ -244,11 +244,45 @@ ReactDOM.render(<MyPage />, document.getElementById('root'))
 
 //--------------------------------------------------------------------
 
+//New file Header.js with MyHeader function() created.
+//Header.js look like:
+
+import React from "react"
+
 //to export : export default function Header() {...
 //or after function (with export default)
 //export defaut Header
 
+export default function MyHeaderorWhatever() { //default!
+    return (
+        <header>
+            <img src="./img-logo.png" width="40px" />
+            <h1>My documentation(H1)</h1>
+            <ol>
+                <li>first</li>
+                <li>second</li>
+                <li>third</li>
+            </ol>
+        </header>
+    )
+}
 
+//In file index.js:
+
+//add
+import Header from "./Header"
+//and
+//delete <MyHeader />,
+function MyPage() {
+    return (
+        <div>
+            <MyHeader />,
+            <MyFooter />
+        </div>
+    )
+}
+
+//--------------------------------------------------------------------
 
 
 

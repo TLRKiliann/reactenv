@@ -22,17 +22,6 @@ function MyFirstCall() {
 
 ReactDOM.render(<MyFirstCall />, document.getElementById('root'))
 
-const navbar = (
-        <nav>
-            <li>first</li>
-            <li>second</li>
-        </nav>
-)
-
-ReactDOM.render(navbar, document.getElementById('root'));
-
-console.log(navbar);
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
