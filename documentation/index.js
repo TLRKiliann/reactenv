@@ -32,7 +32,8 @@ document.getElementById('root').append(h1)
 
 const element = <h1 className="header">This is JSX</h1>;
 console.log(element)
-//return all object in console (props:{className: header, children: "This is JSX").
+//return all object in console (props:{className: header,
+//children: "This is JSX").
 
 ReactDOM.render(element, document.getElementById('root'))
 
@@ -49,8 +50,9 @@ ReactDOM.render(
 )
 
 //--------------------------------------------------------------------
+//--------------------------------------------------------------------
 
-//That's in JSX, but that's not the right way.
+//That's in JSX, but it isn't the right way.
 
 import React from "react"
 import ReactDOM from "react-dom"
@@ -74,17 +76,17 @@ ReactDOM.render(navbar, document.getElementById('root'))
 import React from "react"
 import ReactDOM from "react-dom"
 
-const secnavbar = (
+const secelem = (
     <div>
         <h1 className="header">Hello World</h1>
         <p>This is a pragraphe</p>
     </div>
 )
 
-console.log(secnavbar)
+console.log(secelem)
 //return all objects in console.
 
-ReactDOM.render(secnavbar, document.getElementById('root'))
+ReactDOM.render(secelem, document.getElementById('root'))
 
 //--------------------------------------------------------------------
 
@@ -92,7 +94,7 @@ ReactDOM.render(secnavbar, document.getElementById('root'))
 
 import React from "react"
 
-const thirdnavbar = (
+const thirelem = (
     <div>
         <h1 className="header">Hello World</h1>
         <p>This is a pragraphe</p>
@@ -100,10 +102,10 @@ const thirdnavbar = (
 )
 
 //return all objects in console:
-console.log(thirdnavbar)
+console.log(thirelem)
 
 //To obtain javascript object:
-document.getElementById('root').append(JSON.stringify(thirdnavbar))
+document.getElementById('root').append(JSON.stringify(thirelem))
 
 //--------------------------------------------------------------------
 
@@ -129,24 +131,125 @@ ReactDOM.render(
 
 //--------------------------------------------------------------------
 
+//Fifth Example !!!
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+const fifth = (
+    <div>
+        <img src="./img-logo.png" width="40px" />
+        <h1>...</h1>
+    </div>
+)
+
+//return all objects in console:
+console.log(fifth)
+
+//To obtain javascript object:
+ReactDOM.render(
+    fifth, document.getElementById('root')
+)
+
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+
+//JSX almost in right way.
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+//PascalCase with function
+function MyFirstCall() {
+    return (
+        <div>
+            <img src="./img-logo.png" width="40px" />
+            <h1>My documentation(H1)</h1>
+            <ul>
+                <li>first line</li>
+                <li>second line</li>
+                <li>third line</li>
+                <li>fourth line</li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDOM.render(MyFirstCall(), document.getElementById('root'))
+
+//--------------------------------------------------------------------
+
 //JSX in right way.
 
 import React from "react"
 import ReactDOM from "react-dom"
 
-
+//PascalCase with function
 function MyFirstCall() {
     return (
         <div>
+            <img src="./img-logo.png" width="40px" />
             <h1>My documentation(H1)</h1>
-            <p>Hope to helpfull.</p>
+            <ul>
+                <li>first line</li>
+                <li>second line</li>
+                <li>third line</li>
+                <li>fourth line</li>
+            </ul>
         </div>
     )
 }
 
-ReactDOM.render(<MyFirstCall />, document.getElementById('root'))
+ReactDOM.render(MyFirstCall(), document.getElementById('root'))
 
 //--------------------------------------------------------------------
 
-//to export : export default functon...
-//export defaut MyFirstCall() (to verify)
+import React from "react"
+import ReactDOM from "react-dom"
+
+
+function MyHeader() {
+    return (
+        <header>
+            <img src="./img-logo.png" width="40px" />
+            <h1>My documentation(H1)</h1>
+            <ol>
+                <li>first</li>
+                <li>second</li>
+                <li>third</li>
+            </ol>
+        </header>
+    )
+}
+
+function MyFooter() {
+    return (
+        <footer>
+            <small>@ 2022 My favorite documentation for JSX.</small>
+        </footer>
+    )
+}
+
+//To call functions above:
+function MyPage() {
+    return (
+        <div>
+            <MyHeader />,
+            <MyFooter />
+        </div>
+    )
+}
+
+ReactDOM.render(<MyPage />, document.getElementById('root'))
+
+//--------------------------------------------------------------------
+
+//to export : export default function Header() {...
+//or after function (with export default)
+//export defaut Header
+
+
+
+
+
+
