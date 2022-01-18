@@ -37,6 +37,33 @@ console.log(element);
 ReactDOM.render(element, document.getElementById('root'));
 
 //---
+//IMPORTANT --> div
+
+ReactDOM.render(
+    <div>
+        <h1 className="header">Hello World</h1>
+        <p>This is a pragraphe</p>
+    </div>,
+    document.getElementById('root')
+);
+
+//---
+//That's in JSX, but that's not the right way.
+
+const navbar = (
+        <nav>
+            <li>first</li>
+            <li>second</li>
+        </nav>
+)
+
+console.log(navbar);
+//return all objects in console.
+
+ReactDOM.render(navbar, document.getElementById('root'));
+
+//---
+//JSX in right way.
 
 import React from "react"
 import ReactDOM from "react-dom"
@@ -53,17 +80,8 @@ function MyFirstCall() {
 
 ReactDOM.render(<MyFirstCall />, document.getElementById('root'))
 
+//---
+
 //to export : export default functon...
 //export defaut MyFirstCall(); (to verify)
 
-
-const navbar = (
-        <nav>
-            <li>first</li>
-            <li>second</li>
-        </nav>
-)
-
-ReactDOM.render(navbar, document.getElementById('root'));
-
-console.log(navbar);
