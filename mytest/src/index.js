@@ -1,26 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from "./App"
+import MyCallTest from "./MyCallTest";
 import reportWebVitals from './reportWebVitals';
 
+//Add <App /> if you need
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MyCallTest />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-function MyFirstCall() {
+/*
+function MyCallTest() {
     return (
         <div>
-            <h1>My documentation(H1)</h1>
-            <p>Hope to helpfull.</p>
+            <h1>My test with REACT</h1>
+            <nav className="nav">
+                <ul className="nav-items">
+                    <li>first item</li>
+                    <li>second item</li>
+                    <li>third item</li>
+                    <li>fourth item</li>
+                    <li>fifth item</li>
+                </ul>
+            </nav>
         </div>
     )
-}
+};
 
-ReactDOM.render(<MyFirstCall />, document.getElementById('root'))
+ReactDOM.render(<MyCallTest />, document.getElementById('root'));
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
