@@ -4,6 +4,9 @@ import './App.css'
 function MyMain() {
     return (
         <div className="nav">
+            <h1>
+                My first test with react !
+            </h1>
             <nav>
                 <ul className="nav-items">
                     <li>first item</li>

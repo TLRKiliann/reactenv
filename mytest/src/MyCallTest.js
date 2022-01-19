@@ -6,7 +6,13 @@ function MyCallTest() {
     return (
         <div className="flex-1">
             <img src={logo} className="img-up" alt="logo" />
-            <h1 className="h1-title">My test with REACT</h1>
+            <nav className="nav-title">
+                <ul>
+                    <li>Service</li>
+                    <li>Information</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
         </div>
 
     );

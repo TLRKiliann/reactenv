@@ -11,8 +11,8 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <MyCallTest />
-    <Myfooter />
     <MyMain />
+    <Myfooter />
   </React.StrictMode>,
   document.getElementById('root')
 );
