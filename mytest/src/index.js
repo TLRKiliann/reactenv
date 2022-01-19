@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import App from "./App"
 import MyCallTest from "./MyCallTest";
+import Myfooter from './Footer'
+import MyMain from './Main'
 import reportWebVitals from './reportWebVitals';
 
 //Add <App /> if you need
 ReactDOM.render(
   <React.StrictMode>
     <MyCallTest />
+    <Myfooter />
+    <MyMain />
   </React.StrictMode>,
   document.getElementById('root')
 );

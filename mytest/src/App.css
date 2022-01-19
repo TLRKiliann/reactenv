@@ -37,13 +37,11 @@
   }
 }
 */
-.flex-1
-{
+.flex-1 {
   display: flex;
 }
 
-.img-up
-{
+.img-up {
   margin-top: 0px;
   margin-left: 0px;
   width: 80px;
@@ -65,7 +63,7 @@
   padding: 10px;
 }
 
-.small-text {
+.myfooter {
   margin-bottom: 0px;
   text-align: right;
 }
