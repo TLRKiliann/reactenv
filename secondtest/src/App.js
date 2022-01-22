@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import Navbar from "./components/navbar";
+import Main from "./components/main";
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <Main />
+      <Navbar />
     </div>
   );
 }
