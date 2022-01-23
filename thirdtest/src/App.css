@@ -11,12 +11,19 @@ body {
   background: dodgerblue;
 }
 
+.flex-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 /* Need to know how to handle actions
 in JSX with HTML/CSS !!!
 */
 .card-name {
-  margin: 2% 10%;
-  border: 2px solid black;
+
+  border: 2px solid yellow;
+  margin: 2% 5%;
 }
 
 /*
@@ -28,19 +35,23 @@ in JSX with HTML/CSS !!!
 */
 
 .contact--card {
+  width: 25%;
   display: flex;
   flex-direction: column;
-  margin-left: 2%;
+  align-items: left;
+  justify-content: space-around;
+  border-radius: 15px;
+  border: 2px solid yellow;
 }
 
 .main--div {
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
+  flex-direction: row;
+  margin: 10px 10px;
 }
 
 .img--size {
+  margin: 0 auto;
   width: 100px;
   height: 100px;
 }
@@ -55,6 +66,7 @@ in JSX with HTML/CSS !!!
   display: flex;
   align-items: center;
   justify-content: left;
+  margin-left: 4%;
 }
 
 .imgmail--size {
@@ -67,6 +79,7 @@ in JSX with HTML/CSS !!!
   display: flex;
   align-items: center;
   justify-content: left;
+  margin-left: 4%;
 }
 
 

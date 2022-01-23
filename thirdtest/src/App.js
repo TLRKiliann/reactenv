@@ -19,30 +19,32 @@ function App() {
       </header>
       <Main />
       <Navbar />
-      <Contact
-        img={Images}
-        name="Mr Wiskerson"
-        imgphone={Imgphone}
-        phone="(345) 888-1234"
-        imgmail={Imgmail}
-        email="mr.wisker@gmail.com"
-      />
-      <Contact
-        img={Images}
-        name="Miss Wandetta"
-        imgphone={Imgphone}
-        phone="(333) 777-5678"
-        imgmail={Imgmail}
-        email="miss.wandetta@gmail.com"
-      />
-      <Contact
-        img={Images}
-        name="Mr Hellmann"
-        imgphone={Imgphone}
-        phone="(222) 333-9119"
-        imgmail={Imgmail}
-        email="mr.hellmann@gmail.com"
-      />
+      <div className="flex-contact">
+        <Contact
+          img={Images}
+          name="Mr Wiskerson"
+          imgphone={Imgphone}
+          phone="(345) 888-1234"
+          imgmail={Imgmail}
+          email="mr.wisker@gmail.com"
+        />
+        <Contact
+          img={Images}
+          name="Miss Wandetta"
+          imgphone={Imgphone}
+          phone="(333) 777-5678"
+          imgmail={Imgmail}
+          email="miss.wandetta@gmail.com"
+        />
+        <Contact
+          img={Images}
+          name="Mr Hellmann"
+          imgphone={Imgphone}
+          phone="(222) 333-9119"
+          imgmail={Imgmail}
+          email="mr.hellmann@gmail.com"
+        />
+      </div>
     </div>
   );
 }
