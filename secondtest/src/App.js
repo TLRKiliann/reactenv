@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Contact from "./components/Contact";
+import Images from "./images/portrait.png";
+import Imgphone from "./images/phone.png";
+import Imgmail from "./images/email.png";
 import './App.css';
 
 
@@ -17,21 +20,27 @@ function App() {
       <Main />
       <Navbar />
       <Contact
-        img="./images/name-img.png"
+        img={Images}
         name="Mr Wiskerson"
+        imgphone={Imgphone}
         phone="(345) 888-1234"
+        imgmail={Imgmail}
         email="mr.wisker@gmail.com"
       />
       <Contact
-        img="./images/name-img.png"
+        img={Images}
         name="Miss Wandetta"
+        imgphone={Imgphone}
         phone="(333) 777-5678"
+        imgmail={Imgmail}
         email="miss.wandetta@gmail.com"
       />
       <Contact
-        img="./images/name-img.png"
+        img={Images}
         name="Mr Hellmann"
+        imgphone={Imgphone}
         phone="(222) 333-9119"
+        imgmail={Imgmail}
         email="mr.hellmann@gmail.com"
       />
     </div>
