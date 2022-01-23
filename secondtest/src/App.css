@@ -13,12 +13,13 @@ body {
 
 /* Need to know how to handle actions
 in JSX with HTML/CSS !!!
-
+*/
 .card-name {
   margin: 2% 10%;
   border: 2px solid black;
 }
 
+/*
 .card-namejs {
   margin: 2% 10%;
   border-radius: 15px;
