@@ -67,6 +67,8 @@ in JSX with HTML/CSS !!!
   align-items: center;
   justify-content: left;
   margin-left: 4%;
+  padding: 0px;
+  border: 2px solid black;
 }
 
 .imgmail--size {

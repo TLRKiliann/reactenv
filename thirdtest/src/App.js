@@ -4,6 +4,7 @@ import Contact from "./components/Contact";
 import Images from "./images/portrait.png";
 import Imgphone from "./images/phone.png";
 import Imgmail from "./images/email.png";
+import Joke from "./components/Joke";
 import './App.css';
 
 
@@ -43,6 +44,24 @@ function App() {
           phone="(222) 333-9119"
           imgmail={Imgmail}
           email="mr.hellmann@gmail.com"
+        />
+      </div>
+      <div className="div-joke">
+        <Joke
+          setup="Ok I'm joke 1"
+          punchline="Is that funny ? 1"
+        />
+        <Joke
+          setup="Ok I'm joke 2"
+          punchline="Is that funny ? 2"
+        />
+        <Joke
+          setup="Ok I'm joke 3"
+          punchline="Is that funny ? 3"
+        />
+        <Joke
+          setup="Ok I'm joke 4"
+          punchline="Is that funny ? 4"
         />
       </div>
     </div>
