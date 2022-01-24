@@ -11,6 +11,10 @@ body {
   background: dodgerblue;
 }
 
+.flex--all {
+  display: flex;
+}
+
 .flex-contact {
   display: flex;
   flex-direction: row;
@@ -84,8 +88,15 @@ in JSX with HTML/CSS !!!
   margin-left: 4%;
 }
 
+.joke--elements {
+  display: flex;
+}
 
 
+.img--joke {
+  width: 100px;
+  height: 100px;
+}
 /*
 .App-logo {
   height: 20vmin;
