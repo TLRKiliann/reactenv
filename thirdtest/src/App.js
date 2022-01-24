@@ -15,19 +15,27 @@ function App() {
     dispName.classList.toggle("card-namejs");
   });*/
   const jokeElement = jokeData.map(joke => {
-    return <Joke setup={joke.setup} punchline={joke.punchline}
-      upvotes={joke.upvotes} downvotes={joke.downvotes}
-      img2={Images} comments={joke.comments.Author} />
+    return <Joke 
+              img2={Images} 
+              setup={joke.setup}
+              punchline={joke.punchline}
+              upvotes={joke.upvotes}
+              downvotes={joke.downvotes}
+              comments={joke.comments.Author}
+              age={joke.comments.age}
+              openSpots={joke.openSpots}
+              location={joke.location}
+            />
   })
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App--header">
 
       </header>
       <Main />
       <Navbar />
       <div className="flex--all">
-        <div className="flex-contact">
+        <div className="flex--contact">
           <Contact
             img={Images}
             name="Mr Wiskerson"
@@ -52,9 +60,9 @@ function App() {
             imgmail={Imgmail}
             email="mr.hellmann@gmail.com"
           />
-          <div className="joke--elements">
-            {jokeElement}
-          </div>
+        </div>
+        <div className="joke--elements">
+          {jokeElement}
         </div>
       </div>
     </div>

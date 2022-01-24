@@ -11,23 +11,34 @@ body {
   background: dodgerblue;
 }
 
-.flex--all {
-  display: flex;
+
+.card--name {
+  border: 2px solid yellow;
+  margin: 2% 5%;
 }
 
-.flex-contact {
+.flex--all {
+  margin: 10px 10px;
+  box-sizing: border-box;
+}
+
+.flex--contact {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  /*border: 2px solid orange;*/
 }
+
 /* Need to know how to handle actions
 in JSX with HTML/CSS !!!
 */
-.card-name {
 
-  border: 2px solid yellow;
-  margin: 2% 5%;
+.card--badge {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 10%;
 }
 
 /*
@@ -72,7 +83,6 @@ in JSX with HTML/CSS !!!
   justify-content: left;
   margin-left: 4%;
   padding: 0px;
-  border: 2px solid black;
 }
 
 .imgmail--size {
@@ -90,8 +100,17 @@ in JSX with HTML/CSS !!!
 
 .joke--elements {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*border: 2px solid orange;*/
 }
 
+.div--joke {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  border: 2px solid yellow;
+}
 
 .img--joke {
   width: 100px;
