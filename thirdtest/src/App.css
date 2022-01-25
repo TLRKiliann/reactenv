@@ -71,11 +71,12 @@ in JSX with HTML/CSS !!!
 .main--div {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: 10px 10px;
 }
 
 .img--size {
-  margin: 0 auto;
+  margin: 0px 20px;
   width: 100px;
   height: 100px;
 }

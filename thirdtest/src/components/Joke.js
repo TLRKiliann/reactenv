@@ -3,7 +3,7 @@ import React from "react"
 export default function Joke(props) {
   let badgeText;
   if (props.openSpots === 0) {
-    badgeText = "OFFLine"
+    badgeText = "OFFline"
   } else if (props.location === "Online") {
     badgeText = "ONLINE"
   }
