@@ -49,3 +49,22 @@ body {
   margin: 0px 100px;
   border: 2px solid whitesmoke;
 }
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+.div--img {
+  padding-top: 30px;
+}
+
+.img-custom:hover {
+  opacity: 0.6;
+  transition: ease-in-out 0.2s;
+}

@@ -2,14 +2,22 @@
 import Main from './component/Main'
 import mainData from './component/mainData'
 import Contact from './component/Contact'
+import Image from "./images/react_logo.png"
 import './App.css';
 
 function App() {
   function handlerButton(e) {
     e.preventDefault();
-    console.log("Hello !")
+    console.log("Hello CLICK!")
     alert('Hey ! Hello !')
     }
+
+  function handlerImg(e) {
+    e.preventDefault();
+    console.log("Img CLICK!")
+    alert("You've clicked on Img !")
+    }
+
   const mainSegData = mainData.map(main => {
     console.log(main.name, main.age);
     return  <Main
@@ -31,6 +39,10 @@ function App() {
         <input type='text' placeholder='first' />
         <input type='text' placeholder='second' />
         <button type='submit' onClick={handlerButton} className='btn-custom'>Click me !</button>
+      </div>
+      <div className="div--img">
+        <img src={Image} onClick={handlerImg} className="img-custom" alt="logo-react" />
+        <p>Click on me !</p>
       </div>
     </div>
   );
