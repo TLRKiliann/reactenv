@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function Joke(props) {
-  let badgeText
+  let badgeText;
   if (props.openSpots === 0) {
     badgeText = "OFFLine"
   } else if (props.location === "Online") {
@@ -15,8 +15,8 @@ export default function Joke(props) {
       <p>Punchline: {props.punchline}</p>
       <p>Up vote: {props.upvotes}</p>
       <p>Down vote: {props.downvotes}</p>
-      <p>Author: {props.comments}</p>
+      <p>Author: {props.author}</p>
       <p>Age: {props.age}</p>
     </div>
   )
-}
+};

@@ -17,7 +17,7 @@ export default function Main() {
       <h2>
         Time is {hours}h: {min}min
       </h2>
-      <img src="../images/somepic.png" className="card--img" alt="img" />
+      <img src="../images/email.png" className="card--img" alt="img-main" />
     </div>
   )
 };

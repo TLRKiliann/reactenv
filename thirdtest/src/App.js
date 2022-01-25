@@ -21,7 +21,7 @@ function App() {
               punchline={joke.punchline}
               upvotes={joke.upvotes}
               downvotes={joke.downvotes}
-              comments={joke.comments.Author}
+              author={joke.comments.Author}
               age={joke.comments.age}
               openSpots={joke.openSpots}
               location={joke.location}
