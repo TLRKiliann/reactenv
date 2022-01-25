@@ -36,6 +36,5 @@ export default [
     comments: {Author: "Kierkegaard", age: 22},
     openSpots: 0,
     location: ""
-
   }
 ];
