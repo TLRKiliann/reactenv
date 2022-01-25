@@ -1,3 +1,51 @@
+body {
+  background: navy;
+}
+
 .App {
+  padding: 10px 10px;
   text-align: center;
+  background: lightskyblue;
+  color: white;
+}
+
+.header--div {
+  color: white;
+  text-shadow: 1px 1px 1px blue,
+  4px 5px 5px lightblue,
+  8px 5px 4px white,
+  9px 6px 3px blue;
+}
+
+.main--div {
+  display: flex;
+  flex-direction: row;
+  background: lightblue;
+}
+
+.main--secdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid whitesmoke;
+  color: navy;
+}
+
+.main--secdiv p {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.main--secdiv h3 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.item--div {
+  margin: 0px 100px;
+  border: 2px solid whitesmoke;
 }
