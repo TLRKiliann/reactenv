@@ -5,7 +5,13 @@ import Contact from './component/Contact'
 import './App.css';
 
 function App() {
+  function handlerButton(e) {
+    e.preventDefault();
+    console.log("Hello !")
+    alert('Hey ! Hello !')
+    }
   const mainSegData = mainData.map(main => {
+    console.log(main.name, main.age);
     return  <Main
               name={main.name}
               lastname={main.lastname}
@@ -24,8 +30,8 @@ function App() {
       <div className='form'>
         <input type='text' placeholder='first' />
         <input type='text' placeholder='second' />
-        <button className='btn-custom'>submit</button>
-        </div>
+        <button type='submit' onClick={handlerButton} className='btn-custom'>Click me !</button>
+      </div>
     </div>
   );
 }
@@ -36,4 +42,4 @@ export default App;
 //  handlerButton.onMouseMove('click', () => {
 //    console.log("yeah")
 //  })
-//<button on-click={handlerButton} className='btn-custom'>submit</button>
+//<button onClick={handlerButton} className='btn-custom'>submit</button>
