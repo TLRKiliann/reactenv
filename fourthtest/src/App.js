@@ -1,9 +1,13 @@
 //import logo from './logo.svg';
-import React from "react"
+import React from 'react'
 import Main from './component/Main'
 import mainData from './component/mainData'
 import Contact from './component/Contact'
-import Image from "./images/react_logo.png"
+
+import Meme from './component/Meme'
+import memeData from './component/memeData'
+
+import Image from './images/react_logo.png'
 import './App.css';
 
 function App() {
@@ -75,9 +79,3 @@ function App() {
 }
 
 export default App;
-
-//  const handlerButton = document.getElementById('');
-//  handlerButton.onMouseMove('click', () => {
-//    console.log("yeah")
-//  })
-//<button onClick={handlerButton} className='btn-custom'>submit</button>
