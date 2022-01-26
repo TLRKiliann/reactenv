@@ -1,4 +1,5 @@
 //import logo from './logo.svg';
+import React from "react"
 import Main from './component/Main'
 import mainData from './component/mainData'
 import Contact from './component/Contact'
@@ -10,13 +11,31 @@ function App() {
     e.preventDefault();
     console.log("Hello CLICK!")
     alert('Hey ! Hello !')
-    }
+  }
 
   function handlerImg(e) {
     e.preventDefault();
     console.log("Img CLICK!")
     alert("You've clicked on Img !")
-    }
+  }
+
+  const [count, setCount] = React.useState(0);
+
+  function addCount() {
+    setCount(prevCount => prevCount + 1)
+    //Best practice is above !
+    /*setCount(function(oldValue) {
+      return oldValue + 1;
+    })*/
+  }
+
+  function subCount() {
+    setCount(prevCount => prevCount - 1)
+    //Best practice is above !
+    /*setCount(function(oldValue) {
+      return oldValue - 1;
+    })*/
+  }
 
   const mainSegData = mainData.map(main => {
     console.log(main.name, main.age);
@@ -43,6 +62,13 @@ function App() {
       <div className="div--img">
         <img src={Image} onClick={handlerImg} className="img-custom" alt="logo-react" />
         <p>Click on me !</p>
+      </div>
+      <div>
+        <button onClick={subCount} className='btn-sub'>-</button>
+        <h3>
+          {count}
+        </h3>
+        <button onClick={addCount} className='btn-plus'>+</button>
       </div>
     </div>
   );
