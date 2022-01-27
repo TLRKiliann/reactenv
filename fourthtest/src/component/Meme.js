@@ -1,14 +1,15 @@
 import React from "react"
+import memeData from './memeData'
 
 export default function Meme() {
   //Set empty string by default
-  const [memeImg, setMemeImg] = React.useState({
-    topText: '',
-    bottomText: '',
-    randomImage: 'https://logodix.com/logo/323319.jpg'
-  })
+  const [memeImg, setMemeImg] = React.useState("")
+    //topText: '',
+    //bottomText: '',
+    //randomImage: 'https://logodix.com/logo/323319.jpg'
+  //})
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memeData)
+  //const [allMemeImages, setAllMemeImages] = React.useState(memeImg)
 
   function getMemeImg(e) {
     const memesArray = memeData.data.memes
@@ -16,15 +17,16 @@ export default function Meme() {
     const url = memesArray[randomNumber].url
     setMemeImg(prevMeme => ({
       ...prevMeme,
-      randomImage: url
+      "url": url
+      //"randomImage": url
     }))
     e.preventDefault()
   }
 
   return (
     <div>
-      <button onClick={getMemeImg} className="btn-meme"></button>
-      <img src={memeImg.randomImage} className="img--conf" alt="img-meme" />
+      <button onClick={getMemeImg} className="btn-meme">New IMG</button>
+      <img src={memeImg.url} className="img--conf" alt="img-meme" />
     </div>
   )
 }

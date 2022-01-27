@@ -1,5 +1,5 @@
 export default {
-  "succes": true,
+  "success": true,
   "data": {
     "memes": [
       {

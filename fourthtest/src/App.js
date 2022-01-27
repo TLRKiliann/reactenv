@@ -2,14 +2,10 @@
 import React from 'react'
 import Main from './component/Main'
 import mainData from './component/mainData'
-
 import Contact from './component/Contact'
-
 import Count from './component/Count'
-
 import Meme from './component/Meme'
-import memeData from './component/memeData'
-
+//import memeData from './component/memeData'
 import Image from './images/react_logo.png'
 import './App.css';
 
