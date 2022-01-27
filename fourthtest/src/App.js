@@ -74,6 +74,7 @@ function App() {
         </h3>
         <button onClick={addCount} className='btn-plus'>+</button>
       </div>
+      <Meme />
     </div>
   );
 }
