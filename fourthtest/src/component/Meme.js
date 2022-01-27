@@ -8,10 +8,10 @@ export default function Meme() {
     randomImage: 'https://logodix.com/logo/323319.jpg'
   })
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+  const [allMemeImages, setAllMemeImages] = React.useState(memeData)
 
-  function getMemeImg() {
-    const memesArray = memesData.data.memes
+  function getMemeImg(e) {
+    const memesArray = memeData.data.memes
     const randomNumber = Math.floor(Math.random() * memesArray.length)
     const url = memesArray[randomNumber].url
     setMemeImg(prevMeme => ({
