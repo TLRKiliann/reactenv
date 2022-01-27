@@ -3,7 +3,7 @@ import memeData from './memeData'
 
 export default function Meme() {
   //Set empty string by default
-  const [memeImg, setMemeImg] = React.useState("")
+  const [memeImg, setMemeImg] = React.useState("") //({
     //topText: '',
     //bottomText: '',
     //randomImage: 'https://logodix.com/logo/323319.jpg'
@@ -24,8 +24,8 @@ export default function Meme() {
   }
 
   return (
-    <div>
-      <button onClick={getMemeImg} className="btn-meme">New IMG</button>
+    <div className="mem--data">
+      <button onClick={getMemeImg} className="btn--meme">New IMG</button>
       <img src={memeImg.url} className="img--conf" alt="img-meme" />
     </div>
   )

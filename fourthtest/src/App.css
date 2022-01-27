@@ -69,7 +69,28 @@ body {
   transition: ease-in-out 0.2s;
 }
 
-.btn-meme {
-  background: blue;
+.mem--data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+}
+
+.btn--meme {
+  width: 20%;
+  margin: 20px 20px;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  background: dodgerblue;
+  border-color: lightblue;
+  box-shadow: 5px 5px 5px black;
   color: white;
+}
+
+.img--conf {
+  width: 50%;
+  display: flex;
 }
