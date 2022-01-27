@@ -2,7 +2,10 @@
 import React from 'react'
 import Main from './component/Main'
 import mainData from './component/mainData'
+
 import Contact from './component/Contact'
+
+import Count from './component/Count'
 
 import Meme from './component/Meme'
 import memeData from './component/memeData'
@@ -63,17 +66,18 @@ function App() {
         <input type='text' placeholder='second' />
         <button type='submit' onClick={handlerButton} className='btn-custom'>Click me !</button>
       </div>
+
       <div className="div--img">
         <img src={Image} onClick={handlerImg} className="img-custom" alt="logo-react" />
         <p>Click on me !</p>
       </div>
+
       <div>
         <button onClick={subCount} className='btn-sub'>-</button>
-        <h3>
-          {count}
-        </h3>
+        <Count number={count} />
         <button onClick={addCount} className='btn-plus'>+</button>
       </div>
+
       <Meme />
     </div>
   );
