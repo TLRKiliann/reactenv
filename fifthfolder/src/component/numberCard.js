@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default [
   {
     id: 1,
@@ -14,4 +16,4 @@ export default [
     name: "Olivia",
     age: 44
   }
-]
+];

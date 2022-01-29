@@ -5,8 +5,8 @@ import './App.css';
 
 function App() {
   const dataCard = numberCard.map(item => {
-    return 
-      <Card
+    console.log(item)
+    return <Card
         id={item.id}
         name={item.name}
         age={item.age}
@@ -22,7 +22,7 @@ function App() {
       <main>
         <Memes />
       </main>
-      <div>
+      <div className="card--div">
         {dataCard}
       </div>
     </div>
