@@ -1,3 +1,5 @@
+import Memes from './component/Memes'
+import Card from './component/Card'
 import './App.css';
 
 function App() {
@@ -8,6 +10,10 @@ function App() {
           Hello my React !
         </p>
       </header>
+      <main>
+        <Memes />
+      </main>
+      <Card id={num}/>
     </div>
   );
 }

@@ -1,5 +1,21 @@
+body {
+  background: cyan;
+}
+
 .App {
   text-align: center;
+}
+
+.div--item {
+  margin: 2% 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+  color: white;
+  border-radius: 100px;
+  border: 2px solid black;
 }
 
 /*
