@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   const dataCard = numberCard.map(item => {
-    return (
+    return 
       <Card
         id={item.id}
         name={item.name}
@@ -27,7 +27,6 @@ function App() {
       </div>
     </div>
   )
-};
-
+}
 
 export default App;

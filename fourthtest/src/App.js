@@ -42,7 +42,7 @@ function App() {
 
   const mainSegData = mainData.map(main => {
     console.log(main.name, main.age);
-    return  <Main
+    return <Main
               name={main.name}
               lastname={main.lastname}
               age={main.age}
