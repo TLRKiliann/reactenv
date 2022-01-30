@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Card(props) {
   return (
-    <div className="div--myCard">
+    <div key={props.id} className="div--myCard">
       <h3>
         id: {props.id}
       </h3>

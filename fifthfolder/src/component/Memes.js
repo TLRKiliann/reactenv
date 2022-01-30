@@ -4,7 +4,7 @@ import memesData from "./memesData"
 export default function Memes() {
   const allData = memesData.map(item => {
     return (
-      <div className="div--item">
+      <div key={item.id} className="div--item">
         <p>
           id: {item.id}
         </p>
