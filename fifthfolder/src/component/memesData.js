@@ -1,4 +1,4 @@
-export default [
+const mData = [
   {
     id: 1,
     name: "Alphonso",
@@ -15,3 +15,5 @@ export default [
     age: 22,
   }
 ];
+
+export default mData;

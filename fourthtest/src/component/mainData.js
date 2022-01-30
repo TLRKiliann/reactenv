@@ -8,7 +8,7 @@ export default [
   },
   {
     name: "Jess",
-    lastname: "Savestino",
+    lastname: "Savastano",
     age: 44
   },
   {
