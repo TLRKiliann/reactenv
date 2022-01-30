@@ -18,6 +18,11 @@ body {
   border: 2px solid black;
 }
 
+.card--img {
+  width: 200px;
+  height: 150px;
+}
+
 /*
 .App-logo {
   height: 40vmin;
