@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from './images/rockon.jpg'
 import Memes from './component/Memes'
 import Card from './component/Card'
 import numberCard from "./component/numberCard"
@@ -15,7 +14,7 @@ function App() {
               id={item.id}
               name={item.name}
               age={item.age}
-              img={Image}
+              img={item.img}
             />
   })
   return (

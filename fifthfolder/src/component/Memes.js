@@ -8,6 +8,7 @@ export default function Memes() {
         <p>
           id: {item.id}
         </p>
+        <img src={item.img} className="item--img" alt='' />
         <p>
           name: {item.name}
         </p> 
