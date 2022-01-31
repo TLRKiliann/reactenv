@@ -6,8 +6,8 @@ import './App.css';
 
 function App() {
   const dataCard = numberCard
-                    .filter(item => item.age > 29) //more than 29 years
-                    .sort((a,b) => b.age - a.age) //from largest to smallest
+                    .filter(item => item.age > 27) //more than 29 years
+                    .sort((a, b) => b.age - a.age) //from largest to smallest
                     .map(item => {
     console.log(item)
     return  <Card
@@ -20,9 +20,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h1>
           Hello my React !
-        </p>
+        </h1>
       </header>
       <main>
         <Memes />

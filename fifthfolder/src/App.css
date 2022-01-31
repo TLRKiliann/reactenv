@@ -1,9 +1,20 @@
 body {
-  background: cyan;
+  background: steelblue;
 }
 
 .App {
   text-align: center;
+}
+
+h1 {
+  font-family: Times, serif;
+  font-size: 3rem;
+  color: white;
+  text-shadow:
+  1px 1px 1px navy,
+  3px 3px 3px white,
+  5px 5px 5px black,
+  10px 10px 10px blue;
 }
 
 .div--item {
@@ -18,9 +29,31 @@ body {
   border: 2px solid black;
 }
 
+.card--div {
+  display: grid;
+  grid-template-rows: 1Fr 1Fr;
+  grid-template-columns: 1Fr 1Fr ;
+  grid-gap: 50px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+
+.div--myCard {
+  padding: 20px 10px;
+  background: lightcyan;
+  border: 2px solid black;
+  border-radius: 14px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px black;
+}
+
 .card--img {
   width: 300px;
   height: 200px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .item--img {
