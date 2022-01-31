@@ -14,6 +14,7 @@ function App() {
               id={item.id}
               name={item.name}
               age={item.age}
+              status={item.status}
               img={item.img}
             />
   })

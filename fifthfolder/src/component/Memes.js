@@ -5,9 +5,7 @@ export default function Memes() {
   const allData = memesData.map(item => {
     return (
       <div key={item.id} className="div--item">
-        <p>
-          id: {item.id}
-        </p>
+        {item.id && <p>id: {item.id}</p>}
         <img src={item.img} className="item--img" alt='' />
         <p>
           name: {item.name}
