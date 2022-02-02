@@ -56,3 +56,24 @@ body {
   border-radius: 5px;
   border-color: lightblue;
 }
+
+.form--div {
+  margin: 40px 0px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.first--input {
+  margin-bottom: 10px;
+}
+
+.last--input {
+  margin: 10px 0px;
+}

@@ -1,5 +1,6 @@
 import Card from './component/Card'
 import dataCard from './component/dataCard'
+import Form from './component/Form'
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </header>
         <div className="main--div">
           {questAns}
+        </div>
+        <div className="form--div">
+          <Form />
         </div>
       </div>
   )
