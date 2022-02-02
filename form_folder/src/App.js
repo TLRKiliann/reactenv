@@ -18,7 +18,9 @@ function App() {
         <header className="App-header">
           <h1>My REACT</h1>
         </header>
+        <div className="main--div">
           {questAns}
+        </div>
       </div>
   )
 }

@@ -1,8 +1,7 @@
 import React from "react"
-//import dataCard from './dataCard'
 
 export default function Card(props) {
-  const [isShowPunch, setShowPunch] = React.useState(false)
+  const [isShowPunch, setShowPunch] = React.useState("")
 
   function toggleFunc() {
     setShowPunch(prevshow => !prevshow)
@@ -17,7 +16,12 @@ export default function Card(props) {
 
   return (
     <div className="punch--div">
-      {props.question && <p key={props.id}>Question: {props.question}</p>}
+      {props.id && <p key={props.id}>id: {props.id}</p>}
+      {props.name && <p>{props.name}</p>}
+      {props.age && <p>{props.age}</p>}
+      {props.status && <p>{props.status}</p>}
+      {props.question && <p>Question: {props.question}</p>}
+      {!isShowPunch && <p>Answer is masked press button</p>}
       {isShowPunch && <p>{props.punch}</p>}
       {butt(toggleFunc, isShowPunch)}
     </div>

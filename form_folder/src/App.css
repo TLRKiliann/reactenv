@@ -1,5 +1,5 @@
 body {
-  background: lightcoral;
+  background: lightskyblue;
 }
 
 .App {
@@ -14,12 +14,33 @@ body {
   6px 6px 6px navy; 
 }
 
+.main--div {
+  width: 80%;
+  margin: 20px 10%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1Fr 1Fr;
+  grid-template-rows: 1Fr 1Fr;
+}
+
 .punch--div {
   color: white;
+  margin: 10px 20px;
+  background: steelblue;
+  border: 2px solid navy;
+  border-radius: 15px;
+  box-shadow: 7px 7px 7px grey;
+}
+
+.punch--div > p {
+  margin: 20px 50px;
+  display: flex;
 }
 
 .btn--punch {
+  display: flex;
   padding: 10px 10px;
+  margin: 20px 50px;
   border-radius: 5px;
   border-color: lightblue;
 }
