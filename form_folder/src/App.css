@@ -8,10 +8,10 @@ body {
 
 .App-header {
   color: white;
-  text-shadow: 2px 2px 2px navy,
+  text-shadow: 2px 2px 2px blue,
   3px 3px 3px white,
-  5px 5px 5px purple,
-  6px 6px 6px navy; 
+  5px 5px 5px blue,
+  6px 6px 6px steelblue;
 }
 
 .main--div {
@@ -27,7 +27,7 @@ body {
   color: white;
   margin: 10px 20px;
   background: steelblue;
-  border: 2px solid navy;
+  border: 2px solid dodgerblue;
   border-radius: 15px;
   box-shadow: 7px 7px 7px grey;
 }
@@ -35,6 +35,18 @@ body {
 .punch--div > p {
   margin: 20px 50px;
   display: flex;
+}
+
+.answer--p {
+  justify-content: center;
+  border: 2px solid cyan;
+  border-radius: 5px;
+}
+
+.pstyle {
+  justify-content: center;
+  border: 2px solid yellow;
+  border-radius: 5px;
 }
 
 .btn--punch {
