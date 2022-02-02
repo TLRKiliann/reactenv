@@ -15,15 +15,15 @@ export default function Card(props) {
   }
 
   const styles = {
-    color: "yellow"
+    color: props.otherColor ? "cyan" : "yellow"
   }
   
   return (
     <div className="punch--div">
       {props.id && <p key={props.id}>id: {props.id}</p>}
-      {props.name && <p>{props.name}</p>}
-      {props.age && <p>{props.age}</p>}
-      {props.status && <p>{props.status}</p>}
+      {props.name && <p>Name: {props.name}</p>}
+      {props.age && <p>Age: {props.age}</p>}
+      {props.status && <p>Status: {props.status}</p>}
       {props.question && <p>Question: {props.question}</p>}
       {!isShowPunch && <p className="answer--p">Answer is masked press button</p>}
       {isShowPunch && <p className="pstyle" style={styles}>{props.punch}</p>}
