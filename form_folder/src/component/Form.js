@@ -7,7 +7,7 @@ export default function Form() {
       lastName: "",
       email: "",
       comments: "",
-      isFriendly: true,
+      isFriendly: false,
       employment: "",
       favColor: ""
     })

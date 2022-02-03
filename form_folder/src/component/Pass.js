@@ -20,15 +20,15 @@ export default function Pass() {
 
   function acceptData(event) {
     event.preventDefault()
-    console.log(passForm)
+    //console.log(passForm)
     if (passForm.passwd === passForm.passConfirm) {
       console.log("Password is ok !")
     } else {
-      console.log("Password is no good...")
-      return
+      console.log("No good password...")
+      return //avoid newsletter if passwd is false...
     }
     if (passForm.newsLetter === true) {
-      console.log("Thanks, you will receive a newsletter")
+      console.log("Thanks, you will recieve a newsletter")
     }
   }
 
@@ -68,10 +68,7 @@ export default function Pass() {
             name="newsLetter"
             checked={passForm.newsLetter}
           />
-          <label
-            htmlFor="newsLetter"
-            className="pass--div"
-          >
+          <label htmlFor="newsLetter" className="pass--div">
             I want to recieve newsletter ?
           </label>
         </div>
