@@ -24,9 +24,13 @@ export default function Form() {
       }
     })
   }
-
+  function handleSubmit() {
+    alert("Everythings have been saved")
+    //submitToApi(formData)
+  }
   return (
-    <form>
+    //<form method="POST" action="phpfile.php">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         onChange={handleChange}
@@ -57,16 +61,18 @@ export default function Form() {
         placeholder="Comments"
         name="comments"
       />
-      <input
-        type="checkbox"
-        id="isFriendly"
-        checked={formData.isFriendly}
-        onChange={handleChange}
-        name="isFriendly"
-      />
-      <label
-        htmlFor="isFriendly">Are you ok?
-      </label>
+      <div className="input--lab">
+        <input
+          type="checkbox"
+          id="isFriendly"
+          checked={formData.isFriendly}
+          onChange={handleChange}
+          name="isFriendly"
+        />
+        <label
+          htmlFor="isFriendly">Are you ok?
+        </label>
+      </div>
       <br />
 
       <fieldset>
@@ -102,17 +108,23 @@ export default function Form() {
         <label htmlFor="full-time">Full-time</label>
       </fieldset>
       <br />
-      <select
-        id="favColor"
-        value={formData.favColor}
-        onChange={handleChange}
-        name="favColor"
-      >
-        <option value="">--Choose--</option>
-        <option value="red">red</option>
-        <option value="blue">blue</option>
-        <option value="green">green</option>
-      </select>
+      <br />
+      <div className="form--select">
+        <select
+          id="favColor"
+          value={formData.favColor}
+          onChange={handleChange}
+          name="favColor"
+        >
+          <option value="">--Choose--</option>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+        </select>
+      </div>
+      <br />
+      <br />
+      <button type="submit">Submit</button>
 
     </form>
   )

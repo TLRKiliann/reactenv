@@ -44,7 +44,7 @@ body {
 }
 
 .pstyle {
-  justify-content: center;
+  text-align: left;
   border: 2px solid yellow;
   border-radius: 5px;
 }
@@ -58,10 +58,13 @@ body {
 }
 
 .form--div {
-  margin: 40px 0px;
+  margin: 40px 400px;
   display: flex;
   justify-content: center;
-  border: 2px solid black;
+  background: steelblue;
+  border: 2px solid dodgerblue;
+  border-radius: 15px;
+  box-shadow: 7px 7px 7px grey;
 }
 
 form {
@@ -76,4 +79,46 @@ form {
 
 .last--input {
   margin: 10px 0px;
+}
+
+.input--lab {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input--lab label {
+  padding: 0px 10px;
+}
+
+textarea {
+  margin: 10px 0px;
+}
+
+fieldset {
+  margin: 10px 0px;
+  text-align: left;
+}
+
+.form--select {
+  border: 1px solid white;
+}
+
+select {
+  width: 120px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+button {
+  margin: 10px 0px;
+  padding: 10px 0px;
+  border-radius: 15px;
+  border-color: cadetblue;
+  background: lightskyblue;
+  box-shadow: 3px 3px 2px black;
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 1px 1px 1px black,
+  2px 2px 2px white,
+  3px 3px 3px blue;
 }
