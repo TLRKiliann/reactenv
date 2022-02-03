@@ -2,10 +2,12 @@ import React from "react"
 
 export default function Pass() {
   const [passForm, setPassForm] = React.useState(
+    {
       email: "",
       passwd: "",
       passConfirm: "",
-      newsLetter: ""
+      newsLetter: false
+    }
   )
 
   function handleChange(event) {
@@ -19,6 +21,15 @@ export default function Pass() {
   function acceptData(event) {
     event.preventDefault()
     console.log(passForm)
+    if (passForm.passwd === passForm.passConfirm) {
+      console.log("Password is ok !")
+    } else {
+      console.log("Password is no good...")
+      return
+    }
+    if (passForm.newsLetter === true) {
+      console.log("Thanks, you will receive a newsletter")
+    }
   }
 
   return (
@@ -26,28 +37,44 @@ export default function Pass() {
       <form onSubmit={acceptData}>
         <input
           type="email"
+          onChange={handleChange}
           placeholder="Email"
+          className="pass--div"
           name="email"
           value={passForm.email}
         />
         <input
           type="password"
+          onChange={handleChange}
           placeholder="Password"
+          className="pass--div"
           name="passwd"
           value={passForm.passwd}
         />
         <input
           type="password"
+          onChange={handleChange}
           placeholder="Confirm password"
+          className="pass--div"
           name="passConfirm"
           value={passForm.passConfirm}
         />
-        <input
-          id="newsLetter"
-          type="checkbox"
-          name="newsLetter"
-          value={passForm.newsLetter}
-        />
+        <div className="div--news">
+          <input
+            id="newsLetter"
+            type="checkbox"
+            onChange={handleChange}
+            className="pass--div"
+            name="newsLetter"
+            checked={passForm.newsLetter}
+          />
+          <label
+            htmlFor="newsLetter"
+            className="pass--div"
+          >
+            I want to recieve newsletter ?
+          </label>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

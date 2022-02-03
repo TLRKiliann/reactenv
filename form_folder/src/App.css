@@ -122,3 +122,26 @@ button {
   2px 2px 2px white,
   3px 3px 3px blue;
 }
+
+.mainpass--div {
+  display: flex;
+  margin: 40px 400px;
+  justify-content: center;
+  background: steelblue;
+  border: 2px solid dodgerblue;
+  border-radius: 15px;
+  box-shadow: 7px 7px 7px grey;
+}
+
+.pass--div {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.div--news {
+  display: flex;
+}
+
+.div--news label {
+  padding-left: 10px;
+}
