@@ -1,6 +1,7 @@
 import Card from './component/Card'
 import dataCard from './component/dataCard'
 import Form from './component/Form'
+import Pass from './component/Pass'
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <div className="form--div">
           <Form />
         </div>
+        <Pass />
       </div>
   )
 }
