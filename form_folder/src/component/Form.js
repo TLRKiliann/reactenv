@@ -24,8 +24,10 @@ export default function Form() {
       }
     })
   }
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault()
     alert("Everythings have been saved")
+    console.log(formData)
     //submitToApi(formData)
   }
   return (
