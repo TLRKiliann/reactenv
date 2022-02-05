@@ -19,7 +19,6 @@ export default function Pass() {
   }
 
   function acceptData(event) {
-    event.preventDefault()
     //console.log(passForm)
     if (passForm.passwd === passForm.passConfirm) {
       console.log("Password is ok !")
@@ -30,9 +29,29 @@ export default function Pass() {
     //That's fun, but it's like that...
     if (passForm.newsLetter === true) {
       console.log("Thanks, you will recieve a newsletter")
-      //submitToApi(passForm)
+      //submitToApi(passForm) --> Look at below
     }
+    event.preventDefault()
   }
+
+  //----------------------
+  // With api & json file
+  //----------------------
+
+  /*handleSubmit = (event) => {
+    alert('A form was submitted: ' + passForm);
+
+    fetch('https://your-node-server-here.com/api/endpoint', {
+        method: 'POST',
+        // We convert the React state to JSON and send it as the POST body
+        body: JSON.stringify(passForm)
+      }).then(function(response) {
+        console.log(response)
+        return response.json();
+      });
+
+    event.preventDefault();
+  }*/
 
   return (
     <div className="mainpass--div">
