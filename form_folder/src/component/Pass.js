@@ -27,8 +27,10 @@ export default function Pass() {
       console.log("No good password...")
       return //avoid newsletter if passwd is false...
     }
+    //That's fun, but it's like that...
     if (passForm.newsLetter === true) {
       console.log("Thanks, you will recieve a newsletter")
+      //submitToApi(passForm)
     }
   }
 
