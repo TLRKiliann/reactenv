@@ -15,7 +15,7 @@ export default function Pass() {
     setPassForm(prevPassForm => ({
       ...prevPassForm,
       [name]: type === "checkbox" ? checked : value
-    })
+    }))
   }
 
   function acceptData(event) {
