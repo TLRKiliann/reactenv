@@ -18,3 +18,13 @@ body {
   margin: 10px 0px;
 }
 
+.div--app {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card--div {
+  width: 20%;
+  border: 2px solid black;
+}
