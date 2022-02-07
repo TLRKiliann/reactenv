@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.main--pass {
+  width: 50%;
+  display: flex;
+  border: 2px solid black;
+}
+
+.div--pass {
+  display: flex;
+}

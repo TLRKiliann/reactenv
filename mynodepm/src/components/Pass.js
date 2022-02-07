@@ -3,7 +3,7 @@ import React from 'react'
 export default function Pass() {
   const [usePass, setUsePass] = React.useState(
     {
-      Email: '',
+      email: '',
       passwd: '',
       passwdConfirm: '',
       simpleQuiz: false
@@ -12,6 +12,7 @@ export default function Pass() {
 
   function handleChange(event) {
     const {name, value, type, checked} = event.target
+    console.log(event.target)
     setUsePass(prevPass => ({
       ...prevPass,
       [name]: type === "checkbox" ? checked : value
@@ -19,15 +20,15 @@ export default function Pass() {
   }
 
   function accessFunc(event) {
-    if (usePass.passwd === usePass.passwdConfirm) {
+    if (usePass.mypasswd === usePass.mypasswdConfirm) {
       console.log("passwd is ok !")
     } else {
       console.log("passwd is no good !!!")
       return
     }
 
-    if (usePass.simpleQuiz === true) {
-      console.log("Hurry go your simple quiz")
+    if (usePass.mysimpleQuiz === true) {
+      console.log("Hurry go your simple quiz !")
     }
     event.preventDefault()
   }
@@ -38,13 +39,15 @@ export default function Pass() {
           type='email'
           placeholder="Email"
           onchange={handleChange}
-          name='Email'
+          className="div--pass"
+          name='email'
           value={usePass.email}
         />
         <input
           type='password'
           onchange={handleChange}
           placeholder="Password"
+          className="div--pass"
           name='passwd'
           value={usePass.passwd}
         />
@@ -52,17 +55,19 @@ export default function Pass() {
           type='password'
           onchange={handleChange}
           placeholder='Confirm password'
+          className="div--pass"
           name='passwdConfirm'
           value={usePass.passwdConfirm}
         />
         <input
           type='checkbox'
-          id="simple"
+          id="simpleQuiz"
           onchange={handleChange}
+          className="div--pass"
           name='simpleQuiz'
           checked={usePass.simpleQuiz}
         />
-        <label htmlFor="simple">
+        <label htmlFor="simpleQuiz">
           I want to recieve newsletter ?
         </label>
         <button type="submit">Submit</button>
