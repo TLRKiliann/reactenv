@@ -40,7 +40,7 @@ export default function Pass() {
           type='email'
           placeholder="Email"
           onChange={handleChange}
-          className="div--pass"
+          className="div--input"
           name='email'
           value={usePass.email}
         />
@@ -48,7 +48,7 @@ export default function Pass() {
           type='password'
           onChange={handleChange}
           placeholder="Password"
-          className="div--pass"
+          className="div--input"
           name='passwd'
           value={usePass.passwd}
         />
@@ -56,7 +56,7 @@ export default function Pass() {
           type='password'
           onChange={handleChange}
           placeholder='Confirm password'
-          className="div--pass"
+          className="div--input"
           name='passwdConfirm'
           value={usePass.passwdConfirm}
         />
@@ -64,7 +64,7 @@ export default function Pass() {
           type='checkbox'
           id="simpleQuiz"
           onChange={handleChange}
-          className="div--pass"
+          className="div--input"
           name='simpleQuiz'
           checked={usePass.simpleQuiz}
         />

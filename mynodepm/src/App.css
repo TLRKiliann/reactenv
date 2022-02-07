@@ -1,13 +1,20 @@
+body {
+  background: lightcoral;
+}
+
 .App {
   text-align: center;
 }
 
-.main--pass {
-  width: 50%;
+.div--pass {
+  width: 100%;
   display: flex;
+  justify-content: center;
   border: 2px solid black;
 }
 
-.div--pass {
+.div--input {
   display: flex;
+  margin: 10px 0px;
 }
+

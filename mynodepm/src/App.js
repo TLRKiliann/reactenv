@@ -15,7 +15,9 @@ function App() {
       <header className="App-header">
         <h1>Hey does it works ?!!</h1>
       </header>
-      <Pass />
+      <div className="div--pass">
+        <Pass />
+      </div>
       <div className="div--app">
         {retCard}
       </div>
