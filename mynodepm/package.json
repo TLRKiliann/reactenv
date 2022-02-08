@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-plugin-react": "^7.28.0",
     "react-mde": "^11.5.0"
   }
 }

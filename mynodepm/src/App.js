@@ -5,10 +5,12 @@ import './App.css';
 
 function App() {
   const retCard = dataCard.map(item => {
-    return  <Card
-              name={item.name}
-              age={item.age}
-            />
+    return  
+      <Card
+        id={item.id}
+        name={item.name}
+        age={item.age}
+      />
   })
   return (
     <div className="App">
