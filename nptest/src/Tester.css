@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div--nav {
+  display: flex;
+  margin: 10px 0px;
+  border-bottom: 1px solid black;
+}
+
+.div--nav li {
+  margin: 10px 30px;
+  color: purple;
+}
+
+.div--nav a {
+  text-decoration: none;
+}
+
+.class--h4 {
+  margin-top: 20px;
+}
