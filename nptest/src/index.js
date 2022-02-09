@@ -33,6 +33,7 @@ function Tester() {
   );
 }
 
+//Style format
 const Secondtest = () => {
   return <h3 style={{color:'purple', marginTop:'20px'}}>Hey my h3</h3>
 }
@@ -45,14 +46,20 @@ const Thirdtest = () => {
   )
 }
 
+//React.createElement()
+//Return with parenthesis
 const Fourth = () => {
-  return React.createElement('div', {},
-    React.createElement('p', {}, "ok let's fuck"));
+  return (
+    React.createElement('div', {},
+    React.createElement('p', {}, "ok let's fuck"))
+  );
 }
 
+//Return without parenthesis
 const Element = () => {
   return React.createElement('h3', {}, 'I love you (from function arrow)!')
 }
 
+//<React.StrictMode />
 ReactDOM.render(<React.StrictMode><Tester /></React.StrictMode>,
   document.getElementById('root'));
