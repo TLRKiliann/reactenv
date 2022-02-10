@@ -57,10 +57,13 @@ function Tester() {
         <Thirdtest />
         <Fourth />
         <Fourth />
-        {createel}
         <Fourth />
         {createel}
         <Fourth />
+        {createel}
+        <Fourth />
+        {createel}
+        {createel}
         {createel}
         <div className='data--div'>
           { callData }
@@ -70,6 +73,7 @@ function Tester() {
     </div>
   );
 }
+
 
 //Style format
 const Secondtest = () => {
