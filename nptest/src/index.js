@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Card from './component/Card'
+import dataCard from './component/dataCard'
 import './index.css';
 import './Tester.css'
 
@@ -22,7 +24,6 @@ const allData = [
   }
 ];
 
-
 function Tester() {
   const createel = React.createElement('h3', {},
     "I'm const createel (first one in function)")
@@ -34,6 +35,13 @@ function Tester() {
         age = { item.age } 
       </h3>
     )
+  });
+  const cardElem = dataCard.map(tic => {
+    return <Card
+              id={tic.id}
+              name={tic.name}
+              age={tic.age}
+            />
   });
   return (
     <div className='main--div'>
@@ -69,6 +77,7 @@ function Tester() {
           { callData }
         </div>
         <Element />
+        {cardElem}
       </div>
     </div>
   );
