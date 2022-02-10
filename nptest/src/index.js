@@ -3,8 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './Tester.css'
 
+
+const allData = [
+  {
+    id: 1,
+    name: 'Jamic',
+    age: 29
+  },
+  {
+    id: 2,
+    name: 'Rosa',
+    age: 24
+  },
+  {
+    id: 3,
+    name: 'Simone',
+    age: 33
+  }
+];
+
+
 function Tester() {
   const Createel = React.createElement('h3', {}, 'I love you (from object)!')
+  const callData = allData.map(item => {
+    return (
+      <h3 className="div--item">
+        id = { item.id + ' ' } 
+        name = { item.name + ' '} 
+        age = { item.age } 
+      </h3>
+    )
+  });
   return (
     <div className='main--div'>
       <div className='div--nav'>
@@ -27,6 +56,9 @@ function Tester() {
         <Thirdtest />
         <Fourth />
         {Createel}
+        <div className='data--div'>
+          { callData }
+        </div>
         <Element />
       </div>
     </div>

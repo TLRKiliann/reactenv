@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  background: navajowhite;
   box-sizing: border-box;
 }
 
@@ -21,4 +22,13 @@
 
 .class--h4 {
   margin-top: 20px;
+}
+
+.data--div {
+  margin: 10px 20px;
+  color: dodgerblue;
+}
+
+.div--item {
+  margin: 10px 0px;
 }
