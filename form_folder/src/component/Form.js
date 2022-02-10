@@ -25,10 +25,10 @@ export default function Form() {
     })
   }
   function handleSubmit(event) {
-    event.preventDefault()
     alert("Everythings have been saved")
     console.log(formData)
     //submitToApi(formData)
+    event.preventDefault()
   }
   return (
     //<form method="POST" action="phpfile.php">

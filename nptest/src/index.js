@@ -75,6 +75,8 @@ function Tester() {
         {createel}
         {createel}
         {createel}
+        <Fifth />
+        <Six />
         <div className='data--div'>
           { callData }
         </div>
@@ -103,8 +105,19 @@ const Thirdtest = () => {
 const Fourth = () => {
   return (
     React.createElement('div', {},
-    React.createElement('p', {}, "I'm const Fourth (second one) !"))
+      React.createElement('p', {}, "I'm const Fourth (second one) !"))
   );
+}
+
+const Fifth = () => {
+  return (
+    React.createElement('div', {},
+      React.createElement('p', {}, "I'm ok with that !"))
+  );
+}
+
+function Six() {
+  return <h3>To call function ...</h3>
 }
 
 //Return without parenthesis

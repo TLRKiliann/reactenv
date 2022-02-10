@@ -15,17 +15,19 @@ function App() {
     dispName.classList.toggle("card-namejs");
   });*/
   const jokeElement = jokeData.map(joke => {
-    return <Joke 
-              img2={Images} 
-              setup={joke.setup}
-              punchline={joke.punchline}
-              upvotes={joke.upvotes}
-              downvotes={joke.downvotes}
-              author={joke.comments.Author}
-              age={joke.comments.age}
-              openSpots={joke.openSpots}
-              location={joke.location}
-            />
+    return (
+      <Joke 
+        img2={Images} 
+        setup={joke.setup}
+        punchline={joke.punchline}
+        upvotes={joke.upvotes}
+        downvotes={joke.downvotes}
+        author={joke.comments.Author}
+        age={joke.comments.age}
+        openSpots={joke.openSpots}
+        location={joke.location}
+      />
+    );
   })
   return (
     <div className="App">
