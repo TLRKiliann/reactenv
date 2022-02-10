@@ -36,12 +36,14 @@ function Tester() {
       </h3>
     )
   });
-  const cardElem = dataCard.map(tic => {
-    return <Card
-              id={tic.id}
-              name={tic.name}
-              age={tic.age}
-            />
+  const cardElem = dataCard.map(truck => {
+    return ( 
+      <Card
+        id={truck.id}
+        name={truck.name}
+        age={truck.age}
+      />
+    )
   });
   return (
     <div className='main--div'>
@@ -82,7 +84,6 @@ function Tester() {
     </div>
   );
 }
-
 
 //Style format
 const Secondtest = () => {
