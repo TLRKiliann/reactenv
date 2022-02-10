@@ -24,12 +24,13 @@ const allData = [
 
 
 function Tester() {
-  const Createel = React.createElement('h3', {}, 'I love you (from object)!')
+  const createel = React.createElement('h3', {},
+    "I'm const createel (first one in function)")
   const callData = allData.map(item => {
     return (
       <h3 className="div--item">
-        id = { item.id + ' ' } 
-        name = { item.name + ' '} 
+        id = { item.id + ' / ' } 
+        name = { item.name + ' / ' } 
         age = { item.age } 
       </h3>
     )
@@ -55,7 +56,12 @@ function Tester() {
         <Secondtest />
         <Thirdtest />
         <Fourth />
-        {Createel}
+        <Fourth />
+        {createel}
+        <Fourth />
+        {createel}
+        <Fourth />
+        {createel}
         <div className='data--div'>
           { callData }
         </div>
@@ -67,13 +73,13 @@ function Tester() {
 
 //Style format
 const Secondtest = () => {
-  return <h3 style={{color:'purple', marginTop:'20px'}}>Hey my h3</h3>
+  return <h3 style={{color:'purple', marginTop:'20px'}}>Hey my h3 with style color</h3>
 }
 
 const Thirdtest = () => {
   return (
     <h4 className='class--h4'>
-      Ho h4 !!
+      I'm the h4 Tag !!!
     </h4>
   )
 }
@@ -83,13 +89,13 @@ const Thirdtest = () => {
 const Fourth = () => {
   return (
     React.createElement('div', {},
-    React.createElement('p', {}, "ok let's fuck"))
+    React.createElement('p', {}, "I'm const Fourth (second one) !"))
   );
 }
 
 //Return without parenthesis
 const Element = () => {
-  return React.createElement('h3', {}, 'I love you (from function arrow)!')
+  return React.createElement('h3', {}, "I'm const Element (last one) !")
 }
 
 //<React.StrictMode />
