@@ -13,7 +13,16 @@
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  border: 1px solid blue;
+  background: white;
+}
+
+.div--props h3 {
+  padding: 10px 10px;
+  font-family: times, arial;
+  color: white;
+  text-shadow: 1px 1px 1px blue,
+  2px 2px 2px lightblue;
 }
 
 .div--myvar {

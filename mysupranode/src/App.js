@@ -2,8 +2,6 @@ import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import './App.css';
 
-
-
 function App() {
   const myVar = dataMyfirst.map(item => {
     return (
