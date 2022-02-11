@@ -13,6 +13,11 @@ const dataMyfirst = [
     id: 3,
     name: 'Annick',
     status: 'member'
+  },
+  {
+    id: 4,
+    name: 'Natura',
+    status: 'member'
   }
 ];
 

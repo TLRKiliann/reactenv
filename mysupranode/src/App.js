@@ -1,5 +1,7 @@
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
+import Specialcomponent from './components/Specialcomponent'
+import Mysecondspecial from './components/Mysecondspecial'
 import './App.css';
 
 function App() {
@@ -19,6 +21,12 @@ function App() {
       </header>
       <div className='div--myvar'>
         {myVar}
+      </div>
+      <div className='special--div'>
+        <Specialcomponent style={{color:'red'}} tweek={'tweeky'}/>
+      </div>
+      <div className='mysecspecial--div'>
+        <Mysecondspecial />
       </div>
     </div>
   );
