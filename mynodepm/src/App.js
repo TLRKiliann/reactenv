@@ -5,12 +5,13 @@ import './App.css';
 
 function App() {
   const retCard = dataCard.map(item => {
-    return  
+    return (
       <Card
         id={item.id}
         name={item.name}
         age={item.age}
       />
+    );
   })
   return (
     <div className="App">
@@ -20,7 +21,7 @@ function App() {
       <div className="div--pass">
         <Pass />
       </div>
-      <div className="div--app">
+      <div className="div--returncard">
         {retCard}
       </div>
     </div>

@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: lightslategray;
+  color: whitesmoke;
+}
+
 body {
   background: lightcoral;
 }
@@ -10,7 +17,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
 }
 
 .div--input {
@@ -18,7 +25,7 @@ body {
   margin: 10px 0px;
 }
 
-.div--app {
+.div--returncard {
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -26,5 +33,5 @@ body {
 
 .card--div {
   width: 20%;
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
 }
