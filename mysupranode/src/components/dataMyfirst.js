@@ -1,12 +1,12 @@
 const dataMyfirst = [
   {
     id: 1,
-    name: 'Ida',
+    name: 'Miryam',
     status: 'MEMBER'
   },
   {
     id: 2,
-    name: 'Sylvie',
+    name: 'Jaskier',
     status: 'CEO'
   },
   {
@@ -22,17 +22,17 @@ const dataMyfirst = [
   {
     id: 5,
     name: 'Clara',
-    status: 'VIP'
+    status: 'Member'
   },
   {
     id: 6,
     name: 'Celestine',
-    status: 'VIP'
+    status: 'Co-Admin'
   },
   {
     id: 7,
-    name: 'Ely',
-    status: 'Member'
+    name: 'Yves-Alex',
+    status: 'VIP'
   },
   {
     id: 8,
@@ -42,7 +42,7 @@ const dataMyfirst = [
   {
     id: 9,
     name: 'Severine',
-    status: 'VIP'
+    status: 'AID'
   },
   {
     id: 10,
@@ -51,8 +51,8 @@ const dataMyfirst = [
   },
   {
     id: 11,
-    name: 'Victor',
-    status: 'Co-Admin'
+    name: 'Oli',
+    status: 'VIP'
   },
   {
     id: 12,

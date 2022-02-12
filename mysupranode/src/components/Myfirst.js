@@ -3,7 +3,7 @@ import React from 'react'
 export default function Myfirst(props) {
   const [useButton, setUseButton] = React.useState('');
   const [value, setValue] = React.useState('steelblue');
-  const [usePos, setUsePos] = React.useState();
+  const [usePos, setUsePos] = React.useState('');
   
   function toggle() {
     setUseButton(prevent => !prevent)
@@ -17,7 +17,9 @@ export default function Myfirst(props) {
         <div onChange={toggle}
           className='div--subprops'
           style={{transform: usePos ? 'rotateX(360deg)' : '',
-          transition: 'transform 300ms ease'}}>
+          transition: 'transform 300ms ease',
+          backgroundColor: value ? 'lightblue' : 'dodgerblue',
+          color: value ? 'blue' : 'whitesmoke'}}>
           
           {props.id && <h4>{props.id}</h4>}
           {props.name && <h4>name = {props.name}</h4>}
