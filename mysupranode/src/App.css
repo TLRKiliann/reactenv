@@ -1,40 +1,97 @@
 * {
+  width: 0 auto;
+  height: 0 auto;
   margin: 0;
   padding: 0;
-  background: lightsteelblue;
+  box-sizing: border-box;
 }
 
 .App {
   text-align: center;
+  background: lightsteelblue;
 }
 
-.div--props {
-  margin: 5px 10px;
-  padding: 10px 10px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid blue;
-  background: white;
+header {
+  padding: 20px 0px;
 }
 
-.div--props h3 {
-  padding: 10px 10px;
-  font-family: times, arial;
-  color: white;
-  text-shadow: 1px 1px 1px blue,
-  2px 2px 2px lightblue;
+h1 {
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px lightblue,
+  3px 3px 3px black;
 }
 
 .div--myvar {
-  margin: 10px 10px;
+  width: 90%;
+  margin: 10px 60px;
   padding: 10px 10px;
+  display: grid;
+  grid-template-columns: 1Fr 1Fr 1Fr 1Fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  border-radius: 15px;
+  border: 1px solid dodgerblue;
+  background: dodgerblue;
+  box-shadow: 3px 3px 5px black;
+}
+
+.div--props {
+  margin: 5px 5px;
+  padding: 5px 0px;
   display: flex;
-  border: 2px solid blue;
+  flex-direction: column;
+  border: 1px solid dodgerblue;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px black;
+  background: white;
+}
+
+.div--subprops {
+  padding: 10px 10px;
+  margin: 5px 10px;
+  font-family: Times, Arial;
+  color: white;
+  text-shadow:
+  1px 1px 1px blue,
+  2px 2px 2px lightblue;
+  border: 1px solid blue;
+  border-radius: 15px 15px 0px 0px;
+  background: lightblue;
+}
+
+.p--one {
+  margin: 5px 10px;
+  padding: 10px 10px;
+  border: 1px solid blue;
+  border-radius: 0px 0px 15px 15px;
+  background: lightblue;
+  font-family: Times, Arial;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 2px 2px 1px navy;
+}
+
+.p--two {
+  margin: 5px 10px;
+  padding: 10px 10px;
+  border: 1px dashed blue;
+  border-radius: 0px 0px 15px 15px;
+  background: lightblue;
+  font-family: Times, Arial;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 2px 2px 1px blue;
 }
 
 .btn--me {
-  background: dodgerblue;
+  margin: 5px 20px;
+  padding: 10px 0px;
+  font-size: 1.2rem;
   color: white;
+  text-shadow: 1px 1px 1px navy;
+  border-radius: 15px;
+  border-color: lightblue;
+  background: dodgerblue;
 }
 
 .mysecspecial--div {
@@ -45,7 +102,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 10px 10px;
+  margin: 10px 40px;
   border: 1px solid blue;
 }
 
@@ -54,7 +111,7 @@ nav ul {
 }
 
 nav > ul > li {
-  margin: 10px 100px;
+  margin: 10px 140px;
   color: purple;
   list-style-type: circle;
 }

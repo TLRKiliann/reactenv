@@ -5,9 +5,10 @@ import Mysecondspecial from './components/Mysecondspecial'
 import './App.css';
 
 function App() {
+  const titleHigh = 'One of my Project'
   const myVar = dataMyfirst.map(item => {
     return (
-      <Myfirst 
+      <Myfirst
         id={item.id}
         name={item.name}
         status={item.status}
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Ok, does it work ?</h1>
+        <h1>{titleHigh}</h1>
       </header>
       <div className='div--myvar'>
         {myVar}
