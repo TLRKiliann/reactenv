@@ -14,13 +14,22 @@ export default function Myfirst(props) {
   return (
     <div className='div--overprops'>
       <div className='div--props'>
-        <div className='div--subprops'>
+        <div onChange={toggle}
+          className='div--subprops'
+          style={{transform: usePos ? 'rotateX(360deg)' : '',
+          transition: 'transform 300ms ease'}}>
+          
           {props.id && <h4>{props.id}</h4>}
           {props.name && <h4>name = {props.name}</h4>}
           {props.status && <h4>status = {props.status}</h4>}
         </div>
-        <div onChange={toggle} className='p--div' style={{transform: usePos ? 'rotateZ(360deg)' : '',
+
+        <div 
+          onChange={toggle}
+          className='p--div'
+          style={{transform: usePos ? 'rotateZ(360deg)' : '',
           transition: 'transform 300ms ease'}}>
+          
           {!useButton && <p className="p--one">{props.name}</p>}
           {useButton && <p className="p--two">{props.status}</p>}
         </div>
@@ -28,8 +37,9 @@ export default function Myfirst(props) {
         <button
           type='button'
           onClick={toggle}
-          style={{transform: usePos ? 'rotateY(360deg)' : '',transition: 'transform 300ms ease'}}
-          style2={{backgroundColor: value ? 'steelblue' : 'dodgerblue'}}
+          style={{transform: usePos ? 'rotateY(360deg)' : '',
+          transition: 'transform 300ms ease',
+          backgroundColor: value ? 'slateblue' : 'dodgerblue'}}
           className='btn--me'>
           {useButton ? "Name" : "Status"}
         </button>
