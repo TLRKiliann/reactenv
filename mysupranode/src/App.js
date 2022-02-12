@@ -1,4 +1,3 @@
-import React from 'react'
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import Specialcomponent from './components/Specialcomponent'
@@ -7,19 +6,12 @@ import './App.css';
 
 function App() {
   const titleHigh = 'One of my Project';
-  const [darkMode, setDarkMode] = React.useState(true);
-  
-  function toggle() {
-    setDarkMode(preventdark => !preventdark)
-  }
-
   const myVar = dataMyfirst.map(item => {
     return (
       <Myfirst
         id={item.id}
         name={item.name}
         status={item.status}
-        darkMode={item.darkMode}
       />
     )
   })

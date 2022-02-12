@@ -2,16 +2,13 @@ import React from 'react'
 
 export default function Myfirst(props) {
   const [useButton, setUseButton] = React.useState();
-  const [darkMode, setDarkMode] = React.useState(true);
-  
-  function onclick() {
-    setUseButton(prevent => !prevent)
-    toggle()
-  };
+  const [value, setValue] = React.useState(false);
   
   function toggle() {
-    setDarkMode(preventdark => !preventdark)
-  }
+    setUseButton(prevent => !prevent)
+    setValue(prevcolor => !prevcolor)
+  };
+
   return (
     <div className='div--overprops'>
       <div className='div--props'>
@@ -26,9 +23,10 @@ export default function Myfirst(props) {
 
         <button
           type='button'
-          onClick={onclick}>
+          onClick={toggle}
+          style={{backgroundColor: value ? 'steelblue' : 'dodgerblue'}}
+          className='btn--me'>
           {useButton ? "Name" : "Status"}
-          {darkMode ? 'black' : 'dodgerblue'}
         </button>
       </div>
     </div>
