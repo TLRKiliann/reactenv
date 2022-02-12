@@ -24,36 +24,34 @@ h1 {
 .div--myvar {
   width: 90%;
   margin: 10px 60px;
-  padding: 10px 10px;
+  padding: 20px 20px;
   display: grid;
-  grid-template-columns: 1Fr 1Fr 1Fr 1Fr;
+  grid-template-columns: 1Fr 1Fr 1Fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   border-radius: 15px;
-  border: 1px solid dodgerblue;
-  background: dodgerblue;
-  box-shadow: 3px 3px 5px black;
+  background: #dee7f4;
 }
 
 .div--props {
   margin: 5px 5px;
-  padding: 5px 0px;
+  padding: 15px 10px;
   display: flex;
   flex-direction: column;
-  border: 1px solid dodgerblue;
+  border: 1px solid #b0c4de;
   border-radius: 15px;
-  box-shadow: 4px 4px 10px black;
-  background: white;
+  box-shadow: 3px 3px 5px black;
+  background: #b0c4de;
 }
 
 .div--subprops {
   padding: 10px 10px;
   margin: 5px 10px;
   font-family: Times, Arial;
-  color: white;
+  font-size: 1.1rem;
+  color: blue;
   text-shadow:
-  1px 1px 1px blue,
-  2px 2px 2px lightblue;
+  2px 1px 1px white;
   border: 1px solid blue;
   border-radius: 15px 15px 0px 0px;
   background: lightblue;
@@ -64,7 +62,7 @@ h1 {
   padding: 10px 10px;
   border: 1px solid blue;
   border-radius: 0px 0px 15px 15px;
-  background: lightblue;
+  background: steelblue;
   font-family: Times, Arial;
   font-size: 1.4rem;
   color: white;
@@ -84,13 +82,13 @@ h1 {
 }
 
 .btn--me {
-  margin: 5px 20px;
+  margin: 5px 10px;
   padding: 10px 0px;
   font-size: 1.2rem;
   color: white;
   text-shadow: 1px 1px 1px navy;
   border-radius: 15px;
-  border-color: lightblue;
+  border: 1px solid blue;
   background: dodgerblue;
 }
 

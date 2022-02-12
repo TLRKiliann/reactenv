@@ -1,21 +1,23 @@
 import React from 'react'
 
 export default function Myfirst(props) {
-  const [useButton, setUseButton] = React.useState('');
+  const [useButton, setUseButton] = React.useState();
   console.log(useButton)
   
   function onToggle() {
     setUseButton(prevent => !prevent)
     console.log(setUseButton)
   }
-
+  /*const styles = {
+    backgroundColor: props.darkMode ? 'blue' : 'black'
+  }style={{styles}}--darkMode={false}/>*/
   return (
     <div className='div--overprops'>
       <div className='div--props'>
         <div className='div--subprops'>
-          {props.id && <h3>id = {props.id}</h3>}
-          {props.name && <h3>name = {props.name}</h3>}
-          {props.status && <h3>status = {props.status}</h3>}
+          {props.id && <h4>{props.id}</h4>}
+          {props.name && <h4>name = {props.name}</h4>}
+          {props.status && <h4>status = {props.status}</h4>}
         </div>
 
           {!useButton && <p className="p--one">{props.name}</p>}
