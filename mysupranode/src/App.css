@@ -67,6 +67,7 @@ h1 {
   font-size: 1.4rem;
   color: white;
   text-shadow: 2px 2px 1px navy;
+  transform: rotateZ(0deg);
 }
 
 .p--two {
@@ -74,11 +75,12 @@ h1 {
   padding: 10px 10px;
   border: 1px dashed blue;
   border-radius: 0px 0px 15px 15px;
-  background: dodgerblue;
+  background: lightblue;
   font-family: Times, Arial;
   font-size: 1.4rem;
   color: white;
   text-shadow: 2px 2px 1px blue;
+  transform: rotateZ(0deg);
 }
 
 .btn--me {
@@ -90,6 +92,7 @@ h1 {
   border-radius: 15px;
   border: 1px solid blue;
   background: dodgerblue;
+  transform: rotateY(0deg);
 }
 
 .mysecspecial--div {
