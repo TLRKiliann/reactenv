@@ -21,6 +21,12 @@ h1 {
   3px 3px 3px black;
 }
 
+h2 {
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px lightblue,
+  3px 3px 3px black;
+}
+
 .div--myvar {
   width: 90%;
   margin: 10px 60px;
@@ -98,56 +104,17 @@ h1 {
   padding: 20px 0px;
 }
 
-.mysecspecial--div {
-  display: flex;
-  border-top: 2px solid black;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  background: lightsteelblue;
-}
 
-nav {
-  width: 100%;
-  margin-bottom: 0px;
+.div--num {
+  margin: 30px 0px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 10px 40px;
-  /*border: 1px solid blue;*/
-}
-
-nav > ul {
-  display: flex;
-}
-
-nav > ul > li {
-  margin: 10px 140px;
-  color: purple;
-  list-style-type: none;
-}
-
-nav > ul > li > a {
-  margin: 10px 10px;
-  padding: 10px 20px;
-  display: flex;
-  text-decoration: none;
-  color: blue;
-  text-shadow: 1px 1px 1px white;
-  background: lightsteelblue;
-  border: 1px solid whitesmoke;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px black;
-}
-
-nav > ul > li > a:hover {
   color: black;
-  text-decoration: none;
-  background: lightblue;
 }
 
-
-.main--lastco {
-  border: 10px solid whitesmoke;
-  border-radius: 15px;
+.div--num button {
+  padding: 10px 20px;
 }
 
 .mythird--div {
@@ -158,6 +125,11 @@ nav > ul > li > a:hover {
   display: flex;
   justify-content: space-between;
   background: black;
+  border: 10px solid whitesmoke;
+  border-radius: 15px;
+}
+
+.main--lastco {
   border: 10px solid whitesmoke;
   border-radius: 15px;
 }
@@ -181,4 +153,52 @@ nav > ul > li > a:hover {
   color: white;
   border: 1px solid yellow;
   border-radius: 15px;
+}
+
+.footer--div {
+  display: flex;
+  border-top: 2px solid black;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background: lightsteelblue;
+}
+
+nav {
+  width: 100%;
+  margin-bottom: 0px;
+  display: flex;
+  margin: 10px 40px;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+}
+
+.div--formatnav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: safe center;
+  color: purple;
+  list-style-type: none;
+}
+
+.div--formatnav a {
+  margin: 10px 10px;
+  padding: 10px 20px;
+  display: flex;
+  text-decoration: none;
+  color: blue;
+  text-shadow: 1px 1px 1px white;
+  background: lightsteelblue;
+  border: 1px solid lightsteelblue;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.div--formatnav a:hover {
+  color: black;
+  text-decoration: none;
+  background: lightblue;
 }

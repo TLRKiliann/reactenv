@@ -9,7 +9,6 @@ export default function Mylast() {
     return item.id + ' ' + item.name + ' ' + item.status
   });
   const newVar = perVar.join(' - ')
-  console.log(perVar);
 
   return (
     <div className='main--lastco'>
