@@ -1,4 +1,5 @@
-import {React, useState} from 'react'
+import React from 'react'
+import Secomponent from './components/Secomponent'
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import Specialcomponent from './components/Specialcomponent'
@@ -7,8 +8,7 @@ import Mylast from './components/Mylast'
 import './App.css';
 
 function App() {
-  const [num, setNum] = useState(0);
-
+  const [num, setNum] = React.useState(0);
   function add() {
     setNum(prevNum => prevNum + 1);
   }
@@ -16,7 +16,6 @@ function App() {
   function minus() {
     setNum(prevNum => prevNum - 1);
   }
-
   const titleHigh = 'One of my Project';
   const myVar = dataMyfirst.map(item => {
     return (
@@ -40,7 +39,7 @@ function App() {
       </div>
       <div className='div--num'>
         <button onClick={add}> + </button>
-        <h2 style={{width:'300px'}}>Count : {num}</h2>
+        <Secomponent num={num} />
         <button onClick={minus}> - </button>
       </div>
       <div className='mythird--div'>
