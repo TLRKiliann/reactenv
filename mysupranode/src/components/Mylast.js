@@ -6,18 +6,20 @@ export default function Mylast() {
   const persNum = dataMyfirst.length;
 
   const perVar = dataMyfirst.map(item => {
-    return item.id + ' ' + item.name + ' ' + item.status + '/'
+    return item.id + ' ' + item.name + ' ' + item.status
   });
   const newVar = perVar.join(' - ')
   console.log(perVar);
 
   return (
-    <div className='div--lastco'>
-      <h3>{lastone} {persNum}</h3>
-      <div className='div--newvar'>
-        <p className='tag--p'>
-          All names : {newVar}
-        </p>
+    <div className='main--lastco'>
+      <div className='div--lastco'>
+        <h3>{lastone} {persNum}</h3>
+        <div className='div--newvar'>
+          <p className='tag--p'>
+            All names : {newVar}
+          </p>
+        </div>
       </div>
     </div>
   );

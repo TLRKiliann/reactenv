@@ -50,7 +50,6 @@ h1 {
   font-family: Times, Arial;
   font-size: 1.1rem;
   color: blue;
-
   border: 1px solid blue;
   border-radius: 15px 15px 0px 0px;
   background: lightblue;
@@ -59,7 +58,7 @@ h1 {
 .p--one {
   margin: 5px 10px;
   padding: 10px 10px;
-  border: 1px solid blue;
+  border: 1px solid lightblue;
   border-radius: 0px 0px 15px 15px;
   background: steelblue;
   font-family: Times, Arial;
@@ -89,7 +88,7 @@ h1 {
   color: white;
   text-shadow: 1px 1px 1px navy;
   border-radius: 15px;
-  border: 1px solid blue;
+  border: 1px solid lightblue;
   background: dodgerblue;
   transform: rotateY(0deg);
 }
@@ -101,6 +100,7 @@ h1 {
 
 .mysecspecial--div {
   display: flex;
+  border-top: 2px solid black;
   margin-bottom: 0px;
   padding-bottom: 0px;
   background: lightsteelblue;
@@ -130,41 +130,55 @@ nav > ul > li > a {
   padding: 10px 20px;
   display: flex;
   text-decoration: none;
-  color: white;
-  text-shadow: 1px 1px 1px blue;
-  background: steelblue;
+  color: blue;
+  text-shadow: 1px 1px 1px white;
+  background: lightsteelblue;
   border: 1px solid whitesmoke;
   border-radius: 15px;
-  box-shadow: 3px 3px 3px grey;
+  box-shadow: 2px 2px 5px black;
 }
 
 nav > ul > li > a:hover {
-  color: blue;
+  color: black;
+  text-decoration: none;
   background: lightblue;
 }
 
+
+.main--lastco {
+  border: 10px solid whitesmoke;
+  border-radius: 15px;
+}
+
 .mythird--div {
-  margin: 20px 60px;
+  margin-bottom: 30px;
+  margin-right: 60px;
+  margin-left: 60px;
   padding: 0px 0px;
   display: flex;
+  justify-content: space-between;
   background: black;
-  border: 2px solid black;
+  border: 10px solid whitesmoke;
+  border-radius: 15px;
 }
 
 .div--lastco {
   display: flex;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 10px;
   color: white;
 }
 
 .div--lastco h3 {
-  width: 100%;
+  width: 60%;
+  margin: 10px 10px;
+  padding: 10px 10px;
 }
 
 .tag--p {
-  display: flex;
-  padding: 20px 0px;
+  text-align: justify;
+  padding: 20px 20px;
   color: white;
   border: 1px solid yellow;
+  border-radius: 15px;
 }

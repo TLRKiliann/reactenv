@@ -30,7 +30,6 @@ function App() {
       <div className='mythird--div'>
         <Mylast />
       </div>
-      <hr />
       <div className='mysecspecial--div'>
         <Mysecondspecial />
       </div>

@@ -19,6 +19,7 @@ export default function Myfirst(props) {
           style={{transform: usePos ? 'rotateX(360deg)' : '',
           transition: 'transform 300ms ease',
           backgroundColor: value ? 'lightblue' : 'dodgerblue',
+          border: value ? '1px dashed blue' : '1px solid blue',
           color: value ? 'blue' : 'whitesmoke'}}>
           
           {props.id && <h4>{props.id}</h4>}
