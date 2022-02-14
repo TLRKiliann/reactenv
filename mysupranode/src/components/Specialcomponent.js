@@ -1,7 +1,7 @@
 export default function Specialcomponent(props) {
   const specialVar = 'specialcomponent !';
   return (
-    <div>
+    <div className='div--firstspecial'>
       <h3>Here is</h3>
       <hr />
       <h3 style={props.style}>my {props.tweek}</h3>

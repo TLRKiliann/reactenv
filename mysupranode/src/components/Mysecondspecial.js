@@ -3,13 +3,13 @@ export default function Mysecondspecial() {
     <nav>
       <ul>
         <li>
-          <a href='#'>num_1</a>
+          <a href='#'>Home</a>
         </li>
         <li>
-          <a href='#'>num_2</a>
+          <a href='#'>Service</a>
         </li>
         <li>
-          <a href='#'>num_3</a>
+          <a href='#'>Contact</a>
         </li>
       </ul>
     </nav>

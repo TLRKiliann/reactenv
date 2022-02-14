@@ -94,40 +94,58 @@ h1 {
   transform: rotateY(0deg);
 }
 
+.div--firstspecial {
+  margin: 0px 400px;
+  padding: 20px 0px;
+}
+
 .mysecspecial--div {
   display: flex;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background: lightsteelblue;
 }
 
 nav {
   width: 100%;
+  margin-bottom: 0px;
   display: flex;
   justify-content: center;
   margin: 10px 40px;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
 }
 
-nav ul {
+nav > ul {
   display: flex;
 }
 
 nav > ul > li {
   margin: 10px 140px;
   color: purple;
-  list-style-type: circle;
+  list-style-type: none;
 }
 
 nav > ul > li > a {
   margin: 10px 10px;
+  padding: 10px 20px;
   display: flex;
   text-decoration: none;
   color: white;
-  text-shadow: 1px 1px 1px blue,
-  2px 2px 2px white,
-  3px 2px 2px black;
+  text-shadow: 1px 1px 1px blue;
+  background: steelblue;
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px grey;
+}
 
+nav > ul > li > a:hover {
+  color: blue;
+  background: lightblue;
 }
 
 .mythird--div {
+  margin: 20px 60px;
+  padding: 0px 0px;
   display: flex;
   background: black;
   border: 2px solid black;

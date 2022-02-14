@@ -27,11 +27,12 @@ function App() {
       <div className='special--div'>
         <Specialcomponent style={{color:'red'}} tweek={'tweeky'}/>
       </div>
-      <div className='mysecspecial--div'>
-        <Mysecondspecial />
-      </div>
       <div className='mythird--div'>
         <Mylast />
+      </div>
+      <hr />
+      <div className='mysecspecial--div'>
+        <Mysecondspecial />
       </div>
     </div>
   );
