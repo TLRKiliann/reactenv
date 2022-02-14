@@ -117,6 +117,16 @@ h2 {
   padding: 10px 20px;
 }
 
+.div--click {
+  margin: 20px 20px;
+}
+
+.final--h {
+  color: white;
+  margin: 0px 60px;
+  border-radius: 15px;
+}
+
 .mythird--div {
   margin-bottom: 30px;
   margin-right: 60px;

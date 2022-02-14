@@ -2,6 +2,8 @@ import React from 'react'
 import Secomponent from './components/Secomponent'
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
+import Counter from './components/Counter'
+import Finalcount from './components/Finalcount'
 import Specialcomponent from './components/Specialcomponent'
 import Footer from './components/Footer'
 import Mylast from './components/Mylast'
@@ -9,6 +11,7 @@ import './App.css';
 
 function App() {
   const [num, setNum] = React.useState(0);
+  const [count, setCounter] = React.useState(true);
   function add() {
     setNum(prevNum => prevNum + 1);
   }
@@ -16,6 +19,11 @@ function App() {
   function minus() {
     setNum(prevNum => prevNum - 1);
   }
+
+  function sayOk() {
+    setCounter(prevCount => !prevCount)
+  }
+
   const titleHigh = 'One of my Project';
   const myVar = dataMyfirst.map(item => {
     return (
@@ -33,6 +41,12 @@ function App() {
       </header>
       <div id='div--myvar' className='div--myvar'>
         {myVar}
+      </div>
+      <div onClick={sayOk} className='div--click'>
+        <Counter count={count} />
+      </div>
+      <div className='final--div'>
+        <Finalcount />
       </div>
       <div id='special--div' className='special--div'>
         <Specialcomponent style={{color:'red'}} tweek={'tweeky'}/>
