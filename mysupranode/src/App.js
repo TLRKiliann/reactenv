@@ -2,6 +2,7 @@ import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import Specialcomponent from './components/Specialcomponent'
 import Mysecondspecial from './components/Mysecondspecial'
+import Mylast from './components/Mylast'
 import './App.css';
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
       </div>
       <div className='mysecspecial--div'>
         <Mysecondspecial />
+      </div>
+      <div className='mythird--div'>
+        <Mylast />
       </div>
     </div>
   );

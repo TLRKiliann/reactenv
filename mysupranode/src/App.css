@@ -126,3 +126,27 @@ nav > ul > li > a {
   3px 2px 2px black;
 
 }
+
+.mythird--div {
+  display: flex;
+  background: black;
+  border: 2px solid black;
+}
+
+.div--lastco {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  color: white;
+}
+
+.div--lastco h3 {
+  width: 100%;
+}
+
+.tag--p {
+  display: flex;
+  padding: 20px 0px;
+  color: white;
+  border: 1px solid yellow;
+}
