@@ -11,7 +11,7 @@ export default function Finalcount() {
       onClick={clackTo}
       style={{backgroundColor: myApp ? 'slateblue' : 'black'}}
       className='final--h'>
-      {myApp ? 'yes':'no'}
+      {myApp ? 'violet':'black'}
     </h3>
   );
 }

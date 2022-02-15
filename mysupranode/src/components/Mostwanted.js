@@ -1,29 +1,21 @@
 import React from 'react'
 
 export default function Mostwanted() {
-  const [mostUse, setMostUse] = React.useState(
-    {
-      truc: false
-    }
-  )
+  const [mostUse, setMostUse] = React.useState(['One more time... Thing 1'])
+  console.log(mostUse)
 
-  const toChange = mostUse.truc ? 'problem' : 'ok'
+  const varThing = mostUse.map(thing => <p key={thing}>{thing}</p>)
 
   function callMost() {
-    setMostUse(prevMost => {
-      return {
-        ...prevMost,
-        truc: !prevMost.truc
-      }
+    setMostUse(prevent => {
+      return [...prevent, `Thing ${prevent.length + 1}`]
     })
   }
 
-  //const searchThing = mostUse.map(thing => <p key={thing}>{thing}</p>)
-
   return (
     <div className='most--div'>
-      <button onClick={callMost}>Click it</button>
-      {toChange}
+      <button style={{margin: '10px 10px', padding: '10px 10px'}} onClick={callMost}>Click it</button>
+      {varThing}
     </div>
   );
 }

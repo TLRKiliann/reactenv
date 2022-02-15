@@ -4,6 +4,7 @@ import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import Counter from './components/Counter'
 import Mostwanted from './components/Mostwanted'
+import Lastwanted from './components/Lastwanted'
 import Finalcount from './components/Finalcount'
 import Specialcomponent from './components/Specialcomponent'
 import Footer from './components/Footer'
@@ -13,6 +14,7 @@ import './App.css';
 function App() {
   const [num, setNum] = React.useState(0);
   const [count, setCounter] = React.useState(true);
+
   function add() {
     setNum(prevNum => prevNum + 1);
   }
@@ -46,7 +48,12 @@ function App() {
       <div onClick={sayOk} className='div--click'>
         <Counter count={count} />
       </div>
-      <Mostwanted />
+      <div className='div--mostwanted'>
+        <Mostwanted />
+      </div>
+      <div className='div-lastwanted'>
+        <Lastwanted />
+      </div>
       <div className='final--div'>
         <Finalcount />
       </div>
