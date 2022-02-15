@@ -3,6 +3,7 @@ import Secomponent from './components/Secomponent'
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
 import Counter from './components/Counter'
+import Mostwanted from './components/Mostwanted'
 import Finalcount from './components/Finalcount'
 import Specialcomponent from './components/Specialcomponent'
 import Footer from './components/Footer'
@@ -45,6 +46,7 @@ function App() {
       <div onClick={sayOk} className='div--click'>
         <Counter count={count} />
       </div>
+      <Mostwanted />
       <div className='final--div'>
         <Finalcount />
       </div>
