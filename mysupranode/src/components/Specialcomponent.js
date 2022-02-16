@@ -4,7 +4,7 @@ export default function Specialcomponent(props) {
     <div className='div--firstspecial'>
       <h3>Here is</h3>
       <hr />
-      <h3 style={props.style}>my {props.tweek}</h3>
+      <h3 style={props.style}>my {props.mytweek}</h3>
       <hr />
       <h3>{specialVar}</h3>
     </div>

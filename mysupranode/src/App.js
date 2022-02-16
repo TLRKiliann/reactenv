@@ -46,7 +46,7 @@ function App() {
         {myVar}
       </div>
       <div onClick={sayOk} className='div--click'>
-        <Counter count={count} />
+        <Counter mycount={count} />
       </div>
       <div className='div--mostwanted'>
         <Mostwanted />
@@ -58,11 +58,11 @@ function App() {
         <Finalcount />
       </div>
       <div id='special--div' className='special--div'>
-        <Specialcomponent style={{color:'red'}} tweek={'tweeky'}/>
+        <Specialcomponent style={{color:'red'}} mytweek={'tweeky'}/>
       </div>
       <div className='div--num'>
         <button onClick={add}> + </button>
-        <Secomponent num={num} />
+        <Secomponent mynum={num} />
         <button onClick={minus}> - </button>
       </div>
       <div className='mythird--div'>
