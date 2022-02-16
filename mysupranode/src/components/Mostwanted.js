@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Mostwanted() {
   const [mostUse, setMostUse] = React.useState(['One more time... Thing 1'])
-  console.log(mostUse)
+  //console.log(mostUse)
 
   const varThing = mostUse.map(thing => <p key={thing}>{thing}</p>)
 
