@@ -10,6 +10,7 @@ import Specialcomponent from './components/Specialcomponent'
 import Footer from './components/Footer'
 import Mylast from './components/Mylast'
 import './App.css';
+import './styles/style.css';
 
 function App() {
   const [num, setNum] = React.useState(0);
@@ -42,6 +43,20 @@ function App() {
       <header className="App-header">
         <h1>{titleHigh}</h1>
       </header>
+      <div class="spinner-box">
+        <div class="blue-orbit leo">
+        </div>
+        <div class="green-orbit leo">
+        </div>
+        
+        <div class="red-orbit leo">
+        </div>
+        
+        <div class="white-orbit w1 leo">
+        </div><div class="white-orbit w2 leo">
+        </div><div class="white-orbit w3 leo">
+        </div>
+      </div>
       <div id='div--myvar' className='div--myvar'>
         {myVar}
       </div>
