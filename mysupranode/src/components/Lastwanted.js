@@ -5,16 +5,24 @@ export default function Lastwanted() {
   const [myLast, setMyLast] = React.useState(dataToFired)
   
   //To verify access on key into the data file. 
-  /*const truck = myLast.map(item => item.fidelity)
-  console.log(truck)*/
+  //const truck = myLast.map(item => item)
+  //console.log(truck)
 
   //Superficiel
   //const entry = "--> yes ok"
   //const noentry = "--> no good"
 
+  function callHost() {
+    setMyLast(prevLast => {
+      return [...prevLast, !prevLast.fidelity]
+    })
+  }
+
+
   const fidel = myLast.map(item => {
     return (
-      <p key={item}>{item.name} : {item.fidelity ? "yes ok" : "no good"}</p>
+      <p key={item.id}>{item.id} {item.name} : {item.fidelity ? "yes ok" : "no good"}</p>
+      //item.fidelity ? `${item.name} ${entry}` : `${item.name} ${noentry}`)
     )
   })
   
@@ -24,15 +32,8 @@ export default function Lastwanted() {
       item.fidelity ? `${item.name} ${entry}` : `${item.name} ${noentry}`)
   })*/
 
-  function callHost() {
-    setMyLast(prevLast => {
-    return (
-        [...prevLast, !prevLast.fidelity]
-      )
-    })
-  }
-
-  console.log('second', setMyLast)
+  //console.log('second', setMyLast)
+  
   return (
     <div onClick={callHost} className='subdiv--lastwanted'>
       {fidel}

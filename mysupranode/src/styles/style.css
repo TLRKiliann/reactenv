@@ -1,7 +1,4 @@
 /* KEYFRAMES */
-
-
-
 @keyframes spin3D {
   from {
     transform: rotate3d(.5,.5,.5, 360deg);
@@ -10,6 +7,7 @@
     transform: rotate3d(0deg);
   }
 }
+
 /* GRID STYLING */
 body {
   min-height: 100vh;
@@ -28,6 +26,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
+  box-shadow: 5px 5px 5px grey;
+  border-bottom: 5px solid grey;
 }
 
 /* SPINNING CIRCLE */
