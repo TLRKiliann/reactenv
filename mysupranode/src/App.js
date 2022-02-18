@@ -10,6 +10,7 @@ import Finalcount from './components/Finalcount'
 import Specialcomponent from './components/Specialcomponent'
 import Footer from './components/Footer'
 import Mylast from './components/Mylast'
+import Car from './components/Car'
 import './App.css';
 import './styles/style.css';
 
@@ -71,6 +72,7 @@ function App() {
       <div className='mythird--div'>
         <Mylast />
       </div>
+      <Car />
       <div className='footer--div'>
         <Footer />
       </div>
