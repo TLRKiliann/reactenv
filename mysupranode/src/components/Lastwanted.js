@@ -2,26 +2,28 @@ import React from 'react'
 import dataToFired from './dataToFired'
 
 export default function Lastwanted() {
-  const [myLast, setMyLast] = React.useState(dataToFired)
+  const [myFid, setmyFid] = React.useState(dataToFired)
   
   //To verify access on key into the data file. 
-  //const truck = dataToFired
-  //console.log(truck)
-
-
-  function toggle() {
-    setMyLast(dataToFired.map(prevLast => `${!prevLast.fidelity}`))
-  }
-
+  let fidel = myFid.map(item => {
+      return (
+        <p 
+          key={item.id}
+        >
+          {item.id} {item.name} {item.age} {item.fidelity
+            ? `ok ${item.fidelity}` : `no good ${item.fidelity}`}
+        </p>
+      )
+  })
   //Another manner to code :
   /*function callHost() {
-    setMyLast(prevLast => {
+    setmyFid(prevLast => {
       return [...prevLast, !prevLast.fidelity]
     })
   }*/
 
   /*
-  const fidel = myLast.map(item => {
+  const fidel = myFid.map(item => {
       return (
         <div>
           <p
@@ -33,18 +35,30 @@ export default function Lastwanted() {
       //item.fidelity ? `${item.name} ${entry}` : `${item.name} ${noentry}`)
   })*/
 
-  const fidel = myLast.map(item => {
-    return ( 
-      <p
-        key={item.id}
-        onClick={toggle}
-      >
-        {item.id} {item.name} {item.fidelity ? 'ok true' : 'no good'}
-      </p>
+
+  function toggle() {
+    setmyFid(prevFidel => !prevFidel.fidelity);
+  }
+
+  /*
+  function fidel() {
+
+    return (
+      <div>
+        <p 
+          key={myFid.id}
+          onClick={toggle}
+        >
+          {myFid.id} {myFid.name} {myFid.age} {myFid.fidelity
+            ? `ok ${myFid.fidelity}` : `no good ${myFid.fidelity}`}
+        </p>
+      </div>
+      //item.fidelity ? `ok ${item.fidelity}` : `no good ${item.fidelity}`
       //item.fidelity ? `${item.name} ${entry}` : `${item.name} ${noentry}`)
-      )
-  })
-  
+    )
+  }
+  */
+
   //Or another manner :
   /*const fidel = myLast.map(item => {
     return (
@@ -54,7 +68,7 @@ export default function Lastwanted() {
   //console.log('second', setMyLast)
   
   return (
-    <div className='subdiv--lastwanted'>
+    <div onClick={toggle} className='subdiv--lastwanted'>
       {fidel}
     </div>
   )

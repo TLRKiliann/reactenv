@@ -1,4 +1,4 @@
-const alien = [
+const dataToFired = [
   {
     id: 1,
     name: 'Léane',
@@ -13,10 +13,10 @@ const alien = [
   },
   {
     id: 3,
-    name: '',
+    name: 'Xavier',
     age: '23',
     fidelity: true
   }
 ]
 
-export default alien;
+export default dataToFired;
