@@ -36,6 +36,7 @@ function App() {
       <Myfirst
         id={item.id}
         name={item.name}
+        age={item.age}
         status={item.status}
       />
     );

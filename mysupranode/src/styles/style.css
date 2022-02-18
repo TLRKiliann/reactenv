@@ -19,15 +19,14 @@ body {
 }
 
 .spinner-box {
-  width: 100%;
   height: 300px;
+  margin: 0% 5%;
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
-  box-shadow: 5px 5px 5px grey;
-  border-bottom: 5px solid grey;
+  box-shadow: 10px 10px 5px grey;
 }
 
 /* SPINNING CIRCLE */
@@ -118,7 +117,7 @@ body {
 .white-orbit {
     width: 60px;
     height: 60px;
-    border: 2px solid yellow;
+    border: 2px solid white;
     -webkit-animation: spin3D 10s linear 0s infinite;
 }
 

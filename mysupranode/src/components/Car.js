@@ -1,44 +1,44 @@
 import React from "react";
 
 export default function Car() {
-  const [car, setCar] = React.useState([
-  {
+  const [car, setCar] = React.useState({
     id: 1,
     brand: "Ford",
     model: "Mustang",
     year: "1964",
-    color: ""
-  },
-  {
-    id: 2,
-    brand: "Mazeratti",
-    model: "406",
-    year: "1996",
-    color: ""
-  }]);
+    color: "red"
+  });
 
-  console.log('CARNAME', car)
-  console.log(car.map(item => item.brand))
 
-  const updateColor = () => {
-    setCar(prevState => !prevState.color)
+  const updateColor = (e) => {
+    const val = e.target.value;
+    setCar(previousState => {
+      return {
+        ...previousState, color: val
+      }
+    })
   }
 
-  const deal = car.map(item => {
-    return (
-      <div>
-        <p key={item.id}>{item.brand} {item.year} {item.color ? 'red' : 'blue'}</p>
-      </div>
-    )
-  })
-
   return (
-    <div>
-        {deal}
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color ? 'red' : 'blue'} {car.model} from {car.year}.
+      </p>
       <button
+        key={car.id}
         type="button"
-        onClick={updateColor}
-      >Blue</button>
-    </div>
+        onClick={(e) => updateColor(e)}
+        /*onChange={e => {
+          const val = e.target.value;
+          setCar(prevState => {
+            return { ...prevState, color: val }
+          });
+        }}*/
+      >
+      Blue
+      </button>
+      <strong>{car.id} {car.brand} {car.year} {car.color ? 'red' : 'blue'}</strong>
+    </>
   )
 }

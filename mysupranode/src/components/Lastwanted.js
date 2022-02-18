@@ -3,18 +3,10 @@ import dataToFired from './dataToFired'
 
 export default function Lastwanted() {
   const [myFid, setmyFid] = React.useState(dataToFired)
+  console.log(myFid);
   
   //To verify access on key into the data file. 
-  let fidel = myFid.map(item => {
-      return (
-        <p 
-          key={item.id}
-        >
-          {item.id} {item.name} {item.age} {item.fidelity
-            ? `ok ${item.fidelity}` : `no good ${item.fidelity}`}
-        </p>
-      )
-  })
+
   //Another manner to code :
   /*function callHost() {
     setmyFid(prevLast => {
@@ -37,7 +29,11 @@ export default function Lastwanted() {
 
 
   function toggle() {
-    setmyFid(prevFidel => !prevFidel.fidelity);
+    setmyFid(prevFidel => {
+      return {
+        ...prevFidel, fidelity: 'true'
+      };
+    })
   }
 
   /*
@@ -60,15 +56,28 @@ export default function Lastwanted() {
   */
 
   //Or another manner :
-  /*const fidel = myLast.map(item => {
+  /*const fidel = myFid.map(item => {
     return (
-      item.fidelity ? `${item.name} ${entry}` : `${item.name} ${noentry}`)
+      item.fidelity ? `ok ${item.fidelity}` : `no good ${item.fidelity}`
+    )
   })*/
 
   //console.log('second', setMyLast)
-  
+
+  let fidel = myFid.map(item => {
+    return (
+      <p 
+        key={item.id}
+        onClick={toggle}
+      >
+        {item.id} {item.name} {item.age} {item.fidelity
+          ? `ok ${item.fidelity}` : `no good ${item.fidelity}`}
+      </p>
+    )
+  })
+
   return (
-    <div onClick={toggle} className='subdiv--lastwanted'>
+    <div className='subdiv--lastwanted'>
       {fidel}
     </div>
   )
