@@ -13,7 +13,7 @@ const alien = [
   },
   {
     id: 3,
-    name: 'Xavier',
+    name: '',
     age: '23',
     fidelity: true
   }

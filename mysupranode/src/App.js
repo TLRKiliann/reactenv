@@ -1,4 +1,5 @@
 import React from 'react'
+import Orbit from './components/Orbit'
 import Secomponent from './components/Secomponent'
 import Myfirst from './components/Myfirst'
 import dataMyfirst from './components/dataMyfirst'
@@ -43,20 +44,7 @@ function App() {
       <header className="App-header">
         <h1>{titleHigh}</h1>
       </header>
-      <div class="spinner-box">
-        <div class="blue-orbit leo">
-        </div>
-        <div class="green-orbit leo">
-        </div>
-        
-        <div class="red-orbit leo">
-        </div>
-        
-        <div class="white-orbit w1 leo">
-        </div><div class="white-orbit w2 leo">
-        </div><div class="white-orbit w3 leo">
-        </div>
-      </div>
+      <Orbit />
       <div id='div--myvar' className='div--myvar'>
         {myVar}
       </div>
