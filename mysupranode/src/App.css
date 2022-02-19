@@ -165,6 +165,25 @@ h2 {
   border-radius: 15px;
 }
 
+.div--car {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div--car h3 {
+  font-size: 2rem;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px lightblue,
+  3px 3px 3px black;
+}
+
+.div--car button {
+  width: 100px;
+  padding: 5px 0px;
+  margin: 10px 0px;
+}
+
 .footer--div {
   display: flex;
   border-top: 2px solid black;
