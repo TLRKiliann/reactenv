@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Car() {
+  const [mod, setModel] = React.useState({brand: 'Ford'})
   const [car, setCar] = React.useState({
     id: 1,
     brand: "Ford",
@@ -13,15 +14,18 @@ export default function Car() {
   const updateColor = (e) => {
     const val = e.target.value;
     setCar(previousState => {
-      return {
-        ...previousState, color: val
-      }
+      return { 
+        ...previousState, color: val }
     })
+  }
+
+  function changeModel() {
+    setModel(prevMod => !prevMod)
   }
 
   return (
     <>
-      <h1>My {car.brand}</h1>
+      <h1 onClick={changeModel}>My {mod.brand ? 'Ford' : 'Ferrari'}</h1>
       <p>
         It is a {car.color ? 'red' : 'blue'} {car.model} from {car.year}.
       </p>
@@ -29,6 +33,7 @@ export default function Car() {
         key={car.id}
         type="button"
         onClick={(e) => updateColor(e)}
+        //onChange={changeModel} doesn't work...
         /*onChange={e => {
           const val = e.target.value;
           setCar(prevState => {
@@ -38,7 +43,9 @@ export default function Car() {
       >
       Blue
       </button>
-      <strong>{car.id} {car.brand} {car.year} {car.color ? 'red' : 'blue'}</strong>
+      <strong>
+        {car.id} {mod.brand ? 'Ford' : 'Ferrari'} {car.year} {car.color ? 'red' : 'blue'}
+      </strong>
     </>
   )
 }
