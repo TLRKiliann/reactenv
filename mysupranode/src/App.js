@@ -18,7 +18,7 @@ import Items from './components/Items'
 import './App.css';
 import './styles/style.css';
 
-export default function App() {
+function App() {
   const [num, setNum] = React.useState(0);
   const [count, setCounter] = React.useState(true);
 
@@ -87,7 +87,7 @@ export default function App() {
   );
 }
 
-//export default App;
+export default App;
 
 class Class extends React.Component {
   //constructor(props) {
