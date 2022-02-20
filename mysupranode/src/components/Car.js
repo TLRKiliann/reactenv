@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Car() {
-  const [switcher, setSwitcher] = React.useState()
+  const [switchBut, setSwitchBut] = React.useState()
   const [mod, setModel] = React.useState('Ford')
   const [car, setCar] = React.useState({
     id: 1,
@@ -26,7 +26,7 @@ export default function Car() {
   */
 
   function toggle() {
-    setSwitcher(prevSwitch => !prevSwitch)
+    setSwitchBut(prevSwitch => !prevSwitch)
   }
 
   function changeModel() {
@@ -37,18 +37,20 @@ export default function Car() {
     <div className='div--car'>
       <h3 onClick={changeModel}>My Model Car is {mod ? 'Ford' : 'Ferrari'}</h3>
 
-      {switcher && <p>
-        It is a {car.model} <mark>{car.color='Red'}</mark> from {car.year}.
+      {switchBut && <p>
+        It is a {car.model} <mark>{car.color ? 'Red' : 'Blue'}</mark> from {car.year}.
       </p>}
-      {!switcher && <p>
+      {!switchBut && <p>
         It is a {car.model} <mark>{setCar.color ? 'Red' : 'blue'}</mark> from {car.year}.
       </p>}
 
-      {switcher && <strong>
-        {car.id} {mod ? 'Ford' : 'Ferrari'} {car.year} <mark>{car.color='Red'}</mark>
+      {switchBut && <strong>
+        {mod ? 'Ford' : 'Ferrari'} {car.year} <mark>
+        {car.color ? 'Red' : 'blue'}</mark>
       </strong>}
-      {!switcher && <strong>
-        {car.id} {mod ? 'Ford' : 'Ferrari'} {car.year} <mark>{setCar.color ? 'Red' : 'blue'}</mark>
+      {!switchBut && <strong>
+        {mod ? 'Ford' : 'Ferrari'} {car.year} <mark>
+        {setCar.color ? 'Red' : 'blue'}</mark>
       </strong>}
 
       <button
@@ -63,7 +65,7 @@ export default function Car() {
           });
         }}*/
       >
-      {switcher ? "Blue" : "Red"}
+      {switchBut ? "Blue" : "Red"}
       </button>
 
     </div>
