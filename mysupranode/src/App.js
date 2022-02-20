@@ -1,20 +1,24 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+
 import Orbit from './components/Orbit'
-import Secomponent from './components/Secomponent'
 import Myfirst from './components/Myfirst'
+import Secomponent from './components/Secomponent'
 import dataMyfirst from './components/dataMyfirst'
 import Counter from './components/Counter'
 import Mostwanted from './components/Mostwanted'
 import Lastwanted from './components/Lastwanted'
-import Finalcount from './components/Finalcount'
 import Specialcomponent from './components/Specialcomponent'
-import Footer from './components/Footer'
+import Finalcount from './components/Finalcount'
 import Mylast from './components/Mylast'
 import Car from './components/Car'
+import Footer from './components/Footer'
+import Items from './components/Items'
 import './App.css';
 import './styles/style.css';
 
-function App() {
+export default function App() {
   const [num, setNum] = React.useState(0);
   const [count, setCounter] = React.useState(true);
 
@@ -41,6 +45,7 @@ function App() {
       />
     );
   })
+
   return (
     <div className="App">
       <header className="App-header">
@@ -50,6 +55,7 @@ function App() {
       <div id='div--myvar' className='div--myvar'>
         {myVar}
       </div>
+    
       <div onClick={sayOk} className='div--click'>
         <Counter mycount={count} />
       </div>
@@ -81,4 +87,17 @@ function App() {
   );
 }
 
-export default App;
+//export default App;
+
+class Class extends React.Component {
+  //constructor(props) {
+    //super(props);
+  //}
+  render() {
+    Items.PropTypes = { quantity: PropTypes.number.isRequired }
+    Items.defaultProps = { quantity: 1010011101 }
+    return <Items />
+  }
+};
+
+ReactDOM.render(<Class />, document.getElementById('root'));
