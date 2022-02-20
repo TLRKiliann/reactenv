@@ -22,6 +22,8 @@ function App() {
         </header>
         <div className="main--div">
           {questAns}
+          {questAns}
+          {questAns}
         </div>
         <div className="form--div">
           <Form />

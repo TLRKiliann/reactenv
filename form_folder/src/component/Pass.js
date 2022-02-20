@@ -98,3 +98,32 @@ export default function Pass() {
     </div>
   )
 }
+
+/*
+submit loop
+e
+vent.preventDefault()
+
+How to use value and state for passwd 
+if (passForm.passwd === passForm.passConfirm) {
+
+... => ({
+  without return
+})
+return <></>
+return (
+  <></>
+  )
+return {
+  ...object (no array) otherwise [...]
+}
+
+function handleChange(event) {
+  const {name, type, value, checked} = event.target
+  setPassform(prevent => ({
+    ...prevPassForm,
+    [name]: type === 'checkbox' ? checked : value
+  }))
+}
+
+*/
