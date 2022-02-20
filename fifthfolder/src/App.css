@@ -18,7 +18,7 @@ h1 {
 }
 
 .div--item {
-  margin: 2% 30%;
+  margin: 3% 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,8 @@ h1 {
   background: blue;
   color: white;
   border-radius: 100px;
-  border: 2px solid black;
+  border: 1px solid lightblue;
+  box-shadow: 6px 6px 6px navy;
 }
 
 .card--div {
@@ -34,6 +35,7 @@ h1 {
   grid-template-rows: 1Fr 1Fr;
   grid-template-columns: 1Fr 1Fr ;
   grid-gap: 50px;
+  margin-top: 10%;
   margin-right: 10%;
   margin-left: 10%;
   margin-bottom: 10%;
@@ -42,10 +44,9 @@ h1 {
 .div--myCard {
   padding: 20px 10px;
   background: lightcyan;
-  border: 2px solid black;
   border-radius: 14px;
   box-sizing: border-box;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 5px 5px 5px black;
 }
 
 .card--img {
@@ -54,6 +55,7 @@ h1 {
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: 5px 5px 5px grey;
+  transform: rotateY(30deg) rotateZ(15deg);
 }
 
 .item--img {
