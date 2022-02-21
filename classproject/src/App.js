@@ -1,5 +1,5 @@
 import React from 'react'
-import Tocallprops from './component/Tocallprops'
+import Tocallprops from './components/Tocallprops'
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,22 +8,17 @@ class App extends React.Component {
     super(props);
   }
   render () {
-    const truck = {id: 'oui'}
+    const truck = 'Ici le message de ma props !'
     return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Presentation was made with class
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a>
           Learn React
         </a>
-        <Tocallprops item={truck.id} />
+        <Tocallprops item={truck} />
       </header>
     )
   }
