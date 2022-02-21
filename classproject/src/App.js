@@ -1,6 +1,7 @@
 import React from 'react'
 import Tocallprops from './components/Tocallprops'
 import Main from './components/Main'
+import Effects from './components/Effects'
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,6 +24,9 @@ class App extends React.Component {
           <Tocallprops item={truck} />
         </header>
         <Main />
+        <div className='div--effects'>
+          <Effects />
+        </div>
       </div>
     )
   }
