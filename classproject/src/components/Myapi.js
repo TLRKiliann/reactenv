@@ -2,7 +2,6 @@ import React from 'react'
 //import axios from "axios"
   
 class Myapi extends React.Component {
-  // Constructor 
   constructor(props) {
       super(props);
       this.state = {
@@ -10,7 +9,6 @@ class Myapi extends React.Component {
           DataisLoaded: false
       };
   }
-  // ComponentDidMount is used to execute the code 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
@@ -24,16 +22,22 @@ class Myapi extends React.Component {
   render() {
     const { DataisLoaded, items } = this.state;
     if (!DataisLoaded) return <div>
-      <h1> Pleses wait some time.... </h1></div> ;
- 
+      <h1> Pleses wait some time.... </h1></div>;
+    else if (DataisLoaded) {
+      console.log(this.state)
+    }
     return (
       <div className="div--api">
         <h3> Fetch data from an api in react </h3> {
-          items.map((item) => ( 
-            <nav key={ item.id } >
-              <ol>User_Name: { item.username }</ol>
-              <ol>Full_Name: { item.name }</ol>
-              <ol>User_Email: { item.email }</ol> 
+          items.map((item) => (
+            <nav key={ item.id } className='div--apinav'>
+              <ol>UserName: { item.username }</ol>
+              <ol>FullName: { item.name }</ol>
+              <ol>Email: { item.email }</ol>
+              <ol>Street: { item.address.street }</ol>
+              <ol>City: { item.address.city }</ol>
+              <ol>Latitude: { item.address.geo.lat }</ol>
+              <ol>Longitude: { item.address.geo.lng }</ol>
             </nav>
           ))
         }
