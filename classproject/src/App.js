@@ -2,6 +2,7 @@ import React from 'react'
 import Tocallprops from './components/Tocallprops'
 import Main from './components/Main'
 import Effects from './components/Effects'
+import Practiceclass from './components/Practiceclass'
 import logo from './logo.svg';
 import './App.css';
 
@@ -26,6 +27,7 @@ class App extends React.Component {
         <Main />
         <div className='div--effects'>
           <Effects />
+          <Practiceclass />
         </div>
       </div>
     )
