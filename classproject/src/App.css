@@ -37,18 +37,29 @@
   }
 }
 
-.div--effects {
+.main--effect {
   margin: 10px 0px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid orange;
+}
+
+.main--effect p {
+  text-align: center;
+  border: 2px solid orange;
+}
+
+.btn--effect {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
   justify-content: center;
   border: 2px solid orange;
 }
 
-.div--effects button {
-  margin: 10px 0px;
-  display: flex;
-  align-items: center;
-  border: 2px solid orange;
+.btn--effect button {
+  margin: 0px 10px;
 }
 
 .div--practice {
@@ -56,6 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border: 2px solid red;
 }
 
@@ -63,4 +75,21 @@
   margin: 10px 0px;
   display: flex;
   justify-content: space-between;
+}
+
+.div--stateclass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid cyan;
+}
+
+.third--divclass {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid orange;
 }

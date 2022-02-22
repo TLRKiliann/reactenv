@@ -1,4 +1,5 @@
 import React from 'react'
+import Practical from './Practical'
 
 class Practiceclass extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Practiceclass extends React.Component {
   render() {
     return (
       <div className='div--stateclass'>
+        <h3>Practiceclass.js</h3>
         <button onClick={this.increment}>
           Increment !
         </button>
@@ -36,6 +38,7 @@ class Practiceclass extends React.Component {
           Reset !
         </button>
         {this.state.count}
+        <Practical />
       </div>
     );
   }

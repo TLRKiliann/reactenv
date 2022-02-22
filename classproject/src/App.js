@@ -29,6 +29,7 @@ class App extends React.Component {
           <Effects />
         </div>
         <div className='div--practice'>
+          <h3>My call of Practiceclass from App.js</h3>
           <Practiceclass />
         </div>
       </div>
