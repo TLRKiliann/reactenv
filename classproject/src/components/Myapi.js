@@ -8,6 +8,7 @@ class Myapi extends React.Component {
           items: [],
           DataisLoaded: false
       };
+  //this.componentDidMount = this.componentDidMount.bind(this)
   }
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -16,7 +17,10 @@ class Myapi extends React.Component {
         this.setState({
           items: json,
           DataisLoaded: true
-      });
+        })
+      /*.catch(() => {
+        alert('Failed to fetch !');
+      });*/
     })
   }
   render() {
@@ -24,7 +28,7 @@ class Myapi extends React.Component {
     if (!DataisLoaded) return <div>
       <h1> Pleses wait some time.... </h1></div>;
     else if (DataisLoaded) {
-      console.log(this.state)
+      //console.log(this.state)
     }
     return (
       <div className="div--api">
