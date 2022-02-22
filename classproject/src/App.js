@@ -27,6 +27,8 @@ class App extends React.Component {
         <Main />
         <div className='div--effects'>
           <Effects />
+        </div>
+        <div className='div--practice'>
           <Practiceclass />
         </div>
       </div>

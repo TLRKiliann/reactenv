@@ -32,9 +32,10 @@ class Practiceclass extends React.Component {
         <button onClick={this.decrement}>
           Decrement !
         </button>
-        <button>
-          {this.state.count}
+        <button onClick={this.reset}>
+          Reset !
         </button>
+        {this.state.count}
       </div>
     );
   }

@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.div--effects {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid orange;
+}
+
+.div--effects button {
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  border: 2px solid orange;
+}
+
+.div--practice {
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.div--practice button {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
