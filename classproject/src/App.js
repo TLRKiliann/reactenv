@@ -3,6 +3,7 @@ import Tocallprops from './components/Tocallprops'
 import Main from './components/Main'
 import Effects from './components/Effects'
 import Practiceclass from './components/Practiceclass'
+import Testerinput from './components/Testerinput'
 import Myapi from './components/Myapi'
 import logo from './logo.svg';
 import './App.css';
@@ -33,6 +34,7 @@ class App extends React.Component {
           <h3>My call of Practiceclass from App.js</h3>
           <Practiceclass />
         </div>
+        <Testerinput />
         <Myapi />
       </div>
     )

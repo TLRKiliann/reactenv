@@ -21,6 +21,7 @@ class Myapi extends React.Component {
       /*.catch(() => {
         alert('Failed to fetch !');
       });*/
+      .catch((error) => console.log(error));
     })
   }
   render() {
