@@ -34,7 +34,9 @@ class App extends React.Component {
           <h3>My call of Practiceclass from App.js</h3>
           <Practiceclass />
         </div>
-        <Testerinput />
+        <div className='div--maintester'>
+          <Testerinput />
+        </div>
         <Myapi />
       </div>
     )

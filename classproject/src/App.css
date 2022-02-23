@@ -105,6 +105,14 @@ body {
   justify-content: left;
 }
 
+.div--api h3 {
+  width: 70%;
+  padding: 20px 20px;
+  border-top: 2px solid cyan;
+  border-bottom: 2px solid cyan;
+  color: orange;
+}
+
 .div--apinav {
   width: 70%;
   display: flex;
@@ -112,4 +120,19 @@ body {
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid orange;
+}
+
+.div--maintester {
+  display: flex;
+  justify-content: center;
+}
+
+.div--testerinput {
+  width: 20%;
+  margin: 20px 0px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
 }

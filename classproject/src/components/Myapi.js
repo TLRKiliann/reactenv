@@ -21,7 +21,7 @@ class Myapi extends React.Component {
       /*.catch(() => {
         alert('Failed to fetch !');
       });*/
-      .catch((error) => console.log(error));
+      //.catch((error) => console.log(error));
     })
   }
   render() {
@@ -29,7 +29,7 @@ class Myapi extends React.Component {
     if (!DataisLoaded) return <div>
       <h1> Pleses wait some time.... </h1></div>;
     else if (DataisLoaded) {
-      //console.log(this.state)
+      console.log(this.state)
     }
     return (
       <div className="div--api">

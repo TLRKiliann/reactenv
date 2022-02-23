@@ -12,7 +12,7 @@ class Testerinput extends React.Component {
   }
   handleChange(e) {
     this.setState({
-      input: e.target.value
+      input: e.target.value,
       userAge: ''
     });
   }
@@ -26,7 +26,7 @@ class Testerinput extends React.Component {
     const btnTwo = <button>You may pass.</button> 
     const btnThree = <button>You are younger than 18 !</button> 
     return (
-      <div>
+      <div className='div--testerinput'>
         <h3>Enter Your Age to Continue</h3>
         <input
           type='number'
