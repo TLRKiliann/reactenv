@@ -1,7 +1,7 @@
 import React from 'react'
 //import axios from "axios"
   
-class Myapi extends React.Component {
+export default class Myapi extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -51,4 +51,4 @@ class Myapi extends React.Component {
   }
 }
   
-export default Myapi;
+//export default Myapi;

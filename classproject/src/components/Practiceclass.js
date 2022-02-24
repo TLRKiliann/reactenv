@@ -1,7 +1,7 @@
 import React from 'react'
 import Practical from './Practical'
 
-class Practiceclass extends React.Component {
+export default class Practiceclass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,4 +44,4 @@ class Practiceclass extends React.Component {
   }
 };
 
-export default Practiceclass;
+//export default Practiceclass;
