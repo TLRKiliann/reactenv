@@ -39,6 +39,7 @@ function App() {
       </div>
       <p>Something should be follow by text...</p>
       {!isShowPunch && <p>Very well !</p>}
+      {isShowPunch && <p>Text is hidden...</p>}
       <button onClick={toggleCall} className="btn--show">{isShowPunch ? "Show" : "Hide"} me Punch</button>
     </div>
   )
