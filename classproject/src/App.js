@@ -5,6 +5,9 @@ import Effects from './components/Effects'
 import Practiceclass from './components/Practiceclass'
 import Testerinput from './components/Testerinput'
 import Myapi from './components/Myapi'
+import Myquery from './components/Myquery'
+import 'jquery'
+import './components/Loader.js'
 import logo from './logo.svg';
 import './App.css';
 
@@ -38,6 +41,7 @@ class App extends React.Component {
           <Testerinput />
         </div>
         <Myapi />
+        <Myquery />
       </div>
     )
   }
