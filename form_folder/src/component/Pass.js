@@ -24,7 +24,7 @@ export default function Pass() {
       console.log("Password is ok !")
     } else {
       console.log("No good password...")
-      return //no newsletter if passwd is false...
+      return //if passwd is false no newsletter...
     }
 
     if (passForm.newsLetter === true) {
