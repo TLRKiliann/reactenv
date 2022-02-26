@@ -1,48 +1,57 @@
 import React from 'react'
-import $ from 'jquery'
+
+//import 'jquery'
+//import $ from 'jquery'
 
 
-export default class Myquery extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      county: 0
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.queryCode = this.queryCode.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-  }
-  queryCode() {
-    $('#content').textWave({
-      text: 'ok my jQuery work !',
-      ratio: 2,
-      repeat: 2,
-      framerate: 60
-    });   
-  }
-  componentDidMount() {
-    this.queryCode()
-  }
-
-  handleChange() {
-    this.setState(state => ({
-      county: state.county += 1
-    }));
-  }
-  render() {
-    return (
-      <div>
-        <form>
-          <span id="content"></span>
-          <input
-            type="text"
-            value={this.state.county}
-            onChange={this.handleChange}
-            placeholder="Your Name"
-          />
-          <p>{this.state.county}</p>
-        </form>
+export default function Myquery(){
+  //$(document).ready(function(){
+    //$('.letters').textWave()
+  //})
+  // Wrap every letter in a span
+  return (
+    <React.Fragment>
+      <div className='loader'>
+        <h1 className="loader--title">Some style</h1>
+          <span className="back">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+          </span>
       </div>
-    );
-  }
-};
+      <div className="sign">
+        <span className="fast-flicker">React like</span>
+        <span className="flicker">&nbsp;a game</span>
+      </div>
+      <div className="stage">
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+        <div className="layer"></div>
+      </div>
+      <div className='scss--styles'>
+        LUMINESCENCE
+      </div>
+    </React.Fragment>
+  );
+}

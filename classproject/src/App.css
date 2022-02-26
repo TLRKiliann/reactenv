@@ -120,6 +120,12 @@ body {
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid orange;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.div--titapi {
+  font-size: 2rem;
 }
 
 .div--maintester {
@@ -135,4 +141,410 @@ body {
   flex-direction: column;
   align-items: center;
   border: 2px solid white;
+}
+
+/*styles for Myquery*/
+.loader {
+  margin-bottom: 200px;
+}
+.loader--title {
+  font-size: 2rem;
+}
+.back {
+  margin: 1000px 10px;
+  font-family:"Roboto";
+}
+.back span {
+  font-size: 3rem;
+  color: #F2C640;
+  background: #262B37;
+  display: table-cell;
+  padding: 0px 15px;
+  line-height: 100px;
+  text-decoration: none;
+  animation: jumb 2s infinite;
+}
+@keyframes jumb {
+  0% {
+    transform:translateY(0px)
+  }
+  50% {
+    transform: translateY(-30px);
+    box-shadow: 10px 15px 10px white;
+  }
+  100% {
+    transform: translateY(0px) 
+  }
+}
+.back span:nth-child(1) {
+  animation-delay:0s;
+}
+.back span:nth-child(2) {
+  animation-delay:.1s;  
+}
+.back span:nth-child(3) {
+  animation-delay:.2s;
+}
+.back span:nth-child(4) {
+  animation-delay:.3s;  
+}
+.back span:nth-child(5) {
+  animation-delay:.4s;
+}
+.back span:nth-child(6) {
+  animation-delay:.5s;  
+}
+.back span:nth-child(7) {
+  animation-delay:.6s;
+}
+
+/*second*/
+.fast-flicker {
+  font-size: 4rem;
+}
+.flicker {
+  font-size: 4rem;
+}
+.sign {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 60%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    blue,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+  font-size: 6em;
+  color: turquoise;
+  text-shadow: 0 0 0.6rem turquoise, 0 0 1.5rem green,
+    -0.2rem 0.1rem 1rem green, 0.2rem 0.1rem 1rem green,
+    0 -0.5rem 2rem darkgreen, 0 0.5rem 3rem darkgreen;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: turquoise;
+    text-shadow: 0 0 0.6rem turquoise, 0 0 1.5rem green,
+      -0.2rem 0.1rem 1rem green, 0.2rem 0.1rem 1rem green,
+      0 -0.5rem 2rem darkgreen, 0 0.5rem 3rem darkgreen;
+  }
+  28%,
+  33% {
+    color: green;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: darkgreen;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: blue;
+    text-shadow: none;
+  }
+  100% {
+    color: turquoise;
+    text-shadow: 0 0 0.6rem turquoise, 0 0 1.5rem green,
+      -0.2rem 0.1rem 1rem green, 0.2rem 0.1rem 1rem green,
+      0 -0.5rem 2rem darkgreen, 0 0.5rem 3rem darkgreen;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*Third ANIMATION*/
+.stage {
+  position: absolute;
+  font-size: 18px;
+  height: 300px;
+  width: 500px;
+  margin: 1200px 120px;
+  margin-top: 3200px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 9999px;
+  transform-style: preserve-3d;
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+}
+
+.layer:after {
+  font: 150px/0.65 "Pacifico", "Kaushan Script",
+  Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+  content: "Pure CSS3 &\a SASS (scss)!";
+  white-space: pre;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  color: whitesmoke;
+  letter-spacing: -2px;
+  text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+}
+
+.layer:nth-child(1):after {
+  transform: translateZ(0px);
+}
+
+.layer:nth-child(2):after {
+  transform: translateZ(-1.5px);
+}
+
+.layer:nth-child(3):after {
+  transform: translateZ(-3px);
+}
+
+.layer:nth-child(4):after {
+  transform: translateZ(-4.5px);
+}
+
+.layer:nth-child(5):after {
+  transform: translateZ(-6px);
+}
+
+.layer:nth-child(6):after {
+  transform: translateZ(-7.5px);
+}
+
+.layer:nth-child(7):after {
+  transform: translateZ(-9px);
+}
+
+.layer:nth-child(8):after {
+  transform: translateZ(-10.5px);
+}
+
+.layer:nth-child(9):after {
+  transform: translateZ(-12px);
+}
+
+.layer:nth-child(10):after {
+  transform: translateZ(-13.5px);
+}
+
+.layer:nth-child(11):after {
+  transform: translateZ(-15px);
+}
+
+.layer:nth-child(12):after {
+  transform: translateZ(-16.5px);
+}
+
+.layer:nth-child(13):after {
+  transform: translateZ(-18px);
+}
+
+.layer:nth-child(14):after {
+  transform: translateZ(-19.5px);
+}
+
+.layer:nth-child(15):after {
+  transform: translateZ(-21px);
+}
+
+.layer:nth-child(16):after {
+  transform: translateZ(-22.5px);
+}
+
+.layer:nth-child(17):after {
+  transform: translateZ(-24px);
+}
+
+.layer:nth-child(18):after {
+  transform: translateZ(-25.5px);
+}
+
+.layer:nth-child(19):after {
+  transform: translateZ(-27px);
+}
+
+.layer:nth-child(20):after {
+  transform: translateZ(-28.5px);
+}
+
+.layer:nth-child(n+10):after {
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.25);
+}
+
+.layer:nth-child(n+11):after {
+  -webkit-text-stroke: 15px dodgerblue;
+  text-shadow: 6px 0 6px #00366b, 5px 5px 5px #002951, 0 6px 6px #00366b;
+}
+
+.layer:nth-child(n+12):after {
+  -webkit-text-stroke: 15px #0077ea;
+}
+
+.layer:last-child:after {
+  -webkit-text-stroke: 17px rgba(0, 0, 0, 0.1);
+}
+
+.layer:first-child:after {
+  color: #fff;
+  text-shadow: none;
+}
+
+@keyframes ಠ_ಠ {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
+  }
 }

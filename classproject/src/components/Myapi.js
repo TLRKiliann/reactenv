@@ -33,7 +33,7 @@ export default class Myapi extends React.Component {
     }
     return (
       <div className="div--api">
-        <h3> Fetch data from an api in react </h3> {
+        <h3 className='div--titapi'> Fetch data from an api in react </h3> {
           items.map((item) => (
             <nav key={ item.id } className='div--apinav'>
               <ol>UserName: { item.username }</ol>
