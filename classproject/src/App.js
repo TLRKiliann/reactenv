@@ -6,17 +6,19 @@ import Practiceclass from './components/Practiceclass'
 import Testerinput from './components/Testerinput'
 import Myapi from './components/Myapi'
 import Myquery from './components/Myquery'
-import 'jquery'
-import './components/Loader.js'
+//import 'jquery'
+//import './components/Loader.js'
 import logo from './logo.svg';
+import './App.scss';
 import './App.css';
+
 
 class App extends React.Component {
   //constructor(props) {
     //super(props);
   //}
   render () {
-    const truck = 'Ici le message de ma props !'
+    const truck = 'Here is a msg from props !'
     return (
       <div className='main--div'>
         <header className="App-header">
