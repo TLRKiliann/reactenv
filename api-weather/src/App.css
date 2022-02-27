@@ -14,7 +14,7 @@
 
 .style--title {
   color: white;
-  text-shadow: 1px 1px 1px navy,
+  text-shadow: 2px 1px 1px navy,
   2px 3px 3px white,
   3px 4px 4px cyan;
   font-size: 5rem;
