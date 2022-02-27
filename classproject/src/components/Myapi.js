@@ -45,7 +45,7 @@ export default class Myapi extends React.Component {
               <ol>Latitude: { item.address.geo.lat }</ol>
               <ol>Longitude: { item.address.geo.lng }</ol>
             </nav>
-          )
+          ))
         }
       </div>
     );

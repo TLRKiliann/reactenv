@@ -42,6 +42,16 @@ body {
   }
 }
 
+.div--text3d {
+  color: white;
+  text-shadow: 
+  1px 1px 1px purple,
+  2px 2px 2px white,
+  4px 4px 4px blue,
+  5px 5px 5px white;
+
+}
+
 .main--effect {
   margin: 10px 0px;
   display: flex;
@@ -402,16 +412,16 @@ body {
 
 /*Third ANIMATION*/
 .stage {
-  display: flex;
   position: absolute;
   height: 300px;
-  width: 500px;
-  margin: 1200px 390px;
-  margin-top: 2300px;
+  width: 700px;
+  margin-top: 3200px;
+  margin-left: 230px;
+
   top: 0;
   right: 0;
   bottom: 0;
-  left: 100;
+  left: 0;
   perspective: 9999px;
   transform-style: preserve-3d;
 }

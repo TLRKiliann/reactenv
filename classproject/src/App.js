@@ -26,8 +26,8 @@ class App extends React.Component {
           <p>
             Presentation was made with class
           </p>
-          <h4>
-            Learn React
+          <h4 className='div--text3d'>
+            Effect 3D with SCSS(SASS) & CSS
           </h4>
           <Tocallprops item={truck} />
         </header>
