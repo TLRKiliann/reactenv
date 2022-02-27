@@ -2,9 +2,10 @@ import React from 'react'
 
 
 export default function Myweather() {
-  let [responseObj, setResponseObj] = useState({});
+  let [responseObj, setResponseObj] = React.useState({});
 
-  function getForecast() {
+  function getForecast(e) {
+    e.preventDefault();
     fetch("https://community-open-weather-map.p.rapidapi.com/climate/month?q=San%20Francisco", {
       "method": "GET",
       "headers": {
