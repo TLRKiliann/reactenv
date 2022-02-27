@@ -1,4 +1,5 @@
 import './App.css';
+import Myweather from './components/Myweather'
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Weather API</h1>
       </header>
+      <Myweather />
     </div>
   );
 }
