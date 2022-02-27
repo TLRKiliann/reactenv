@@ -6,7 +6,7 @@ export default class Myapi extends React.Component {
       super(props);
       this.state = {
           items: [],
-          DataisLoaded: false
+          DataisLoaded: false,
       };
   //this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -16,8 +16,9 @@ export default class Myapi extends React.Component {
       .then((json) => {
         this.setState({
           items: json,
-          DataisLoaded: true
+          DataisLoaded: true,
         })
+  console.log(this.state)
       /*.catch(() => {
         alert('Failed to fetch !');
       });*/
@@ -44,7 +45,7 @@ export default class Myapi extends React.Component {
               <ol>Latitude: { item.address.geo.lat }</ol>
               <ol>Longitude: { item.address.geo.lng }</ol>
             </nav>
-          ))
+          )
         }
       </div>
     );

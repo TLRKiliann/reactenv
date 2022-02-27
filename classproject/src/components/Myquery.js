@@ -28,26 +28,26 @@ export default function Myquery(){
         <span className="flicker">&nbsp;a game</span>
       </div>
       <div className="stage">
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
-        <div className="layer"></div>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
+        <p className="layer"></p>
       </div>
       <div className='scss--styles'>
         LUMINESCENCE
