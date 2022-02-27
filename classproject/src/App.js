@@ -9,7 +9,7 @@ import Myquery from './components/Myquery'
 //import 'jquery'
 //import './components/Loader.js'
 import logo from './logo.svg';
-import './App.scss';
+//import './App.scss';
 import './App.css';
 
 

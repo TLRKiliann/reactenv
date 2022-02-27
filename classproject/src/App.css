@@ -153,9 +153,14 @@ body {
   border: 2px solid white;
 }
 
-/*styles for Myquery*/
+/*
+
+styles for Myquery
+
 .loader {
+  margin-top: 50px;
   margin-bottom: 200px;
+  text-align: center;
 }
 .loader--title {
   font-size: 2rem;
@@ -163,6 +168,7 @@ body {
 .back {
   margin: 1000px 10px;
   font-family:"Roboto";
+  line-height: 200px;
 }
 .back span {
   font-size: 3rem;
@@ -173,10 +179,12 @@ body {
   line-height: 100px;
   text-decoration: none;
   animation: jumb 2s infinite;
+  border: 1px dotted grey;
+  border-radius: 10px;
 }
 @keyframes jumb {
   0% {
-    transform:translateY(0px)
+    transform: translateY(0px)
   }
   50% {
     transform: translateY(-30px);
@@ -208,13 +216,7 @@ body {
   animation-delay:.6s;
 }
 
-/*second*/
-.fast-flicker {
-  font-size: 4rem;
-}
-.flicker {
-  font-size: 4rem;
-}
+second
 .sign {
   position: absolute;
   margin: auto;
@@ -265,10 +267,12 @@ body {
 
 .flicker {
   animation: shine 2s forwards, blink 3s 2s infinite;
+  font-size: 4rem;
 }
 
 .fast-flicker {
   animation: shine 2s forwards, blink 10s 1s infinite;
+  font-size: 4rem;
 }
 
 @keyframes shine {
@@ -410,7 +414,8 @@ body {
   }
 }
 
-/*Third ANIMATION*/
+Third ANIMATION
+
 .stage {
   position: absolute;
   height: 300px;
@@ -558,3 +563,4 @@ body {
     transform: rotateY(-40deg) rotateX(-43deg);
   }
 }
+*/
