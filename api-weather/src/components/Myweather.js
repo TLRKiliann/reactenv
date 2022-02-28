@@ -7,10 +7,12 @@ export default class Myweather extends React.Component {
       this.state = {
           items: {},
           id: '',
+          name: '',
+          city: '',
           population: '',
           coord: '',
           DataisLoaded: false,
-          name: 'lausanne',
+          value: '',
       };
   this.componentDidMount = this.componentDidMount.bind(this)
   this.handleChange = this.handleChange.bind(this)
@@ -27,6 +29,7 @@ export default class Myweather extends React.Component {
       }
     })
   }
+
   componentDidMount() {
     fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${this.state.input}%2C%20ch&units=metric%2C%20imperial`, {
       "method": "GET",
@@ -49,7 +52,7 @@ export default class Myweather extends React.Component {
     })
   }
   render() {
-    const { DataisLoaded, items} = this.state;
+    const { DataisLoaded } = this.state;
     if (!DataisLoaded) return <div>
       <h1> Pleses wait some time.... </h1></div>;
     else if (DataisLoaded) {
@@ -60,9 +63,9 @@ export default class Myweather extends React.Component {
         <h3 className='div--titapi'> Fetch data from an api in react </h3>
         <nav key={ this.state.id } className='div--apinav'>
           <ol>City: { this.state.city }</ol>
-          <ol>Population: { items.city.population }</ol>
-          <ol>Latitude: { items.city.coord.lat }</ol>
-          <ol>Longitude: { items.city.coord.lon }</ol>
+          <ol>Population: { this.state.population }</ol>
+          <ol>Latitude: { this.state.coord.lat }</ol>
+          <ol>Longitude: { this.state.coord.lon }</ol>
         </nav>
         <input
           type="input"
