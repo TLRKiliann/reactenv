@@ -90,8 +90,17 @@ export default class Myweather extends React.Component {
       this.state = {
           items: {},
           DataisLoaded: false,
+          searCity: ''
       };
-  //this.componentDidMount = this.componentDidMount.bind(this)
+  this.componentDidMount = this.componentDidMount.bind(this)
+  this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(e){
+    e.preventDefault()
+    const { type, value, name } = this.state;
+    setState(state => ({
+      searCity: e.target.value
+    )})
   }
   componentDidMount() {
     fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=lausanne%2C%20ch&units=metric%2C%20imperial`, {
@@ -121,19 +130,38 @@ export default class Myweather extends React.Component {
     else if (DataisLoaded) {
       console.log(this.state)
     }
+    if ( searCity === input ) {
+      return (
+        items.map((item) => (
+          <div>
+            <h3>{item.id}</h3>
+            <h3>{item.id}</h3>
+          </div>
+        ))
+      );
+    }
     return (
       <div className="div--api">
         <h3 className='div--titapi'> Fetch data from an api in react </h3> {
-            <nav key={ items.id } className='div--apinav'>
-              <ol>City: { items.city.name }</ol>
-              <ol>Lat: { items.city.coord.lat }</ol>
-              <ol>Lon: { items.city.coord.lon }</ol>
-              <ol>Country: { items.city.country }</ol>
-              <ol>Population: { items.city.population }</ol>
-              <ol>Weather: { items.list[0].weather[0].description }</ol>
-              <ol>Wind: { items.list[0].wind.speed }</ol>
+          items.map((item) => (
+            <nav key={ item.id } className='div--apinav'>
+              <ol>City: { item.city.name }</ol>
+              <ol>Lat: { item.city.coord.lat }</ol>
+              <ol>Lon: { item.city.coord.lon }</ol>
+              <ol>Country: { item.city.country }</ol>
+              <ol>Population: { item.city.population }</ol>
+              <ol>Weather: { item.list[0].weather[0].description }</ol>
+              <ol>Wind: { item.list[0].wind.speed }</ol>
             </nav>
+        ))
         }
+        <input
+          type={ this.state.input }
+          onClick={ this.handleChange }
+          name={ this.state.searCity }
+          value={ this.state.searCity }
+          placeholder='Enter a city'
+        />
       </div>
     );
   }
