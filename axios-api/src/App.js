@@ -1,14 +1,17 @@
+import Fetcheffect from './components/Fetcheffect'
 //import logo from './logo.svg';
-import Apiaxios from './components/Apiaxios'
+//import Apiaxios from './components/Apiaxios'
+//import Apifetchclass from './components/Apifetchclass'
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>AXIOS API</h1>
+        <h1>API All Folk's</h1>
       </header>
-      <Apifetchclass />
+      <Fetcheffect />
     </div>
   );
 }
@@ -16,3 +19,4 @@ function App() {
 export default App;
 
 //      <Apiaxios />
+//      <Apifetchclass />
