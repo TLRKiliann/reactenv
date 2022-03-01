@@ -6,7 +6,7 @@ import React, { useState } from "react";
 export default function Fetcheffect() {
   let datetime = new Date()
   const [weather, setWeather] = useState({});
-  const [locations, setLocations] = useState('lausanne');
+  const [locations, setLocations] = useState('london');
 
   //Only usable with function
   //Don't need react-datetime with useEffect !
@@ -58,6 +58,7 @@ export default function Fetcheffect() {
         <h3>Clock: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}</h3>
         <div className="app__data">
           <p className="class--temp">City: {weather?.name}</p>
+          <p className="class--temp">Country: {weather?.sys?.country}</p>
           <p className="class--temp">Temparature: {weather?.main?.temp} C°</p>
           <p className="class--temp">Weather: {weather?.weather?.[0]?.description}</p>
           <p className="class--temp">Wind: {weather?.wind?.deg} deg</p>

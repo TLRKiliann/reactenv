@@ -5,7 +5,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2d60e1;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,14 @@
   justify-content: center;
   /*font-size: calc(10px + 2vmin);*/
   color: white;
+}
+
+#div--title {
+  color: white;
+  text-shadow: 1px 1px 1px blue,
+  3px 3px 3px white,
+  5px 5px 5px blue;
+  font-size: 2.8rem;
 }
 
 .div--fetcheffect {
@@ -43,6 +51,7 @@
   color: white;
   padding: 20px;
   border-radius: 12px;
+  box-shadow: 10px 10px 10px grey;
 }
 
 .class--temp {
