@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+//import { useEffect } from 'react'
 //import Weather from './Weather';
 
 
 export default function Fetcheffect() {
-  
+  let datetime = new Date()
   const [weather, setWeather] = useState({});
-  const [locations, setLocations] = useState("london");
+  const [locations, setLocations] = useState('lausanne');
 
-  useEffect(() => {
-    ifClicked();
-  });
+  //Only usable with function
+  //Don't need react-datetime with useEffect !
+  /*useEffect(() => {
+    handleChange();
+  });*/
   //And not => "}, []);" error if empty
 
-  function ifClicked() {
+  function handleChange() {
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
     )
@@ -30,31 +33,36 @@ export default function Fetcheffect() {
       })
       .then((object) => {
         setWeather(object);
-        console.log(weather);
+        console.log(object);
       })
       .catch((error) => console.log(error));
   }
   //await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
   //fetch(`${process.env.REACT_APP_API_URL}/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=${process.env.REACT_APP_API_KEY}`)
   return (
-    <div className="app">
+    <div className="api--fetch">
       <div className="wrapper">
-        <div className="search">
+        <div className="class--search">
+          <h3>Enter location</h3>
           <input
             type="text"
             value={locations}
             onChange={(e) => setLocations(e.target.value)}
             placeholder="Enter location"
-            className="location_input"
+            className="location--input"
           />
-          <button className="location_searcher" onClick={ifClicked}>
+          <button className="btn--location" onClick={handleChange}>
             Search Location
           </button>
         </div>
+        <h3>Clock: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}</h3>
         <div className="app__data">
-          <p className="temp">Current Temparature: {weather?.main?.temp}</p>
+          <p className="class--temp">City: {weather?.name}</p>
+          <p className="class--temp">Temparature: {weather?.main?.temp} C°</p>
+          <p className="class--temp">Weather: {weather?.weather?.[0]?.description}</p>
+          <p className="class--temp">Wind: {weather?.wind?.deg} deg</p>
+          <p className="class--temp">Wind Speed: {weather?.wind?.speed} mph</p>
         </div>
-
       </div>
     </div>
   );

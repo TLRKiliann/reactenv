@@ -11,7 +11,9 @@ function App() {
       <header className="App-header">
         <h1>API All Folk's</h1>
       </header>
-      <Fetcheffect />
+      <div className='div--fetcheffect'>
+        <Fetcheffect />
+      </div>
     </div>
   );
 }

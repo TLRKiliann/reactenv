@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #a4ffff;
+  height: 100vh;
 }
 
 .App-header {
@@ -11,4 +13,38 @@
   justify-content: center;
   /*font-size: calc(10px + 2vmin);*/
   color: white;
+}
+
+.div--fetcheffect {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.class--search {
+  padding: 0px 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.location--input {
+  margin-bottom: 20px;
+}
+
+.btn--location {
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.api--fetch {
+  background: #2d60e1;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.class--temp {
+  font-size: 1.2rem;
 }
