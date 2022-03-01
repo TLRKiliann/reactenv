@@ -1,5 +1,5 @@
 import Fetcheffect from './components/Fetcheffect'
-//import logo from './logo.svg';
+//import Secondfetch from './components/Secondfetch'
 //import Apiaxios from './components/Apiaxios'
 //import Apifetchclass from './components/Apifetchclass'
 import './App.css';
@@ -22,3 +22,5 @@ export default App;
 
 //      <Apiaxios />
 //      <Apifetchclass />
+//      <Fetcheffect />
+//      <Secondfetch />

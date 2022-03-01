@@ -56,10 +56,10 @@ export default function Fetcheffect() {
           </button>
         </div>
         <h3>Clock: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}</h3>
-        <div className="app__data">
+        <div className="app--data">
           <p className="class--temp">City: {weather?.name}</p>
           <p className="class--temp">Country: {weather?.sys?.country}</p>
-          <p className="class--temp">Temparature: {weather?.main?.temp} C°</p>
+          <p className="class--temp">Temperature: {weather?.main?.temp} C°</p>
           <p className="class--temp">Weather: {weather?.weather?.[0]?.description}</p>
           <p className="class--temp">Wind: {weather?.wind?.deg} deg</p>
           <p className="class--temp">Wind Speed: {weather?.wind?.speed} mph</p>

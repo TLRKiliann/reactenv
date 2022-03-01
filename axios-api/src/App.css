@@ -1,4 +1,6 @@
 .App {
+  margin: auto;
+  height: auto;
   text-align: center;
   background: #a4ffff;
   height: 100vh;
@@ -13,6 +15,7 @@
   justify-content: center;
   /*font-size: calc(10px + 2vmin);*/
   color: white;
+  box-shadow: 5px 5px 5px grey;
 }
 
 #div--title {
