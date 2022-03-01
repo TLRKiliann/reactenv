@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello AXIOS</h1>
+        <h1>AXIOS API</h1>
       </header>
       <Apiclass />
     </div>
