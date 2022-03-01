@@ -35,7 +35,7 @@ export default class Myweather extends React.Component {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-        "x-rapidapi-key": "3c7e590618mshb15d86c264d2ad3p190cc9jsnf9669107feca"
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY
       }
     })
       .then((res) => res.json())

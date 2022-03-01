@@ -8,10 +8,11 @@ function App() {
       <header className="App-header">
         <h1>AXIOS API</h1>
       </header>
-      <Apiaxios />
       <Apifetchclass />
     </div>
   );
 }
 
 export default App;
+
+//      <Apiaxios />
