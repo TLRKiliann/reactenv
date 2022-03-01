@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import Apiclass from './components/Apiclass'
+import Apiaxios from './components/Apiaxios'
 import './App.css';
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
       <header className="App-header">
         <h1>AXIOS API</h1>
       </header>
-      <Apiclass />
+      <Apiaxios />
+      <Apifetchclass />
     </div>
   );
 }

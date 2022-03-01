@@ -4,10 +4,12 @@ import React from "react";
 
 const baseURL = "https://jsonplaceholder.typicode.com/todos";
 
-export default function Apiclass() {
+export default function Apiaxios() {
   const [post, setPost] = React.useState(null);
   const [error, setError] = React.useState(null);
 
+  //React.useEffect is only working in a FUNCTION !!!
+  //NOT with class
   React.useEffect(() => {
     axios.get(`${baseURL}/1`).then((response) => {
       setPost(response.data);
@@ -15,6 +17,7 @@ export default function Apiclass() {
       setError(error);
     });
   }, []);
+
   function updatePost() {
     axios
       .put(`${baseURL}/1`, {
