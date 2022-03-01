@@ -10,6 +10,7 @@ export default function Fetcheffect() {
   useEffect(() => {
     ifClicked();
   });
+  //And not => "}, []);" error if empty
 
   function ifClicked() {
     fetch(
