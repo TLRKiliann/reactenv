@@ -1,3 +1,7 @@
+* {
+  font-family: Georgia, serif;
+}
+
 .App {
   margin: auto;
   height: auto;
@@ -27,29 +31,14 @@
 }
 
 .div--fetcheffect {
-  margin-top: 5%;
+  width: 100%;
+  margin-top: 8%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 
-.class--search {
-  padding: 0px 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.location--input {
-  margin-bottom: 20px;
-}
-
-.btn--location {
-  width: 100%;
-  padding: 10px 10px;
-}
-
 .api--fetch {
+  width: 70%;
   background: #2d60e1;
   color: white;
   padding: 20px;
@@ -57,6 +46,92 @@
   box-shadow: 10px 10px 10px grey;
 }
 
-.class--temp {
+.class--search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: flex-start;
+  justify-content: space-around;
+}
+
+.class--search h3 {
+  font-size: 1.6rem;
+  color: white;
+  text-shadow: 1px 1px 1px blue,
+  2px 2px 2px white,
+  4px 4px 4px blue;
+}
+
+.location--input {
+  padding: 3px 8px;
+  border: 1px solid blue;
+  border-radius: 10px;
   font-size: 1.2rem;
+}
+
+.btn--location {
+  padding: 8px 20px;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: yellow;
+  background: blue;
+}
+
+.btn--location:hover {
+  color: blue;
+  background: lightblue;
+}
+
+.div--hour {
+  width: 100%;
+  line-height: 2%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+.div--searchconvert {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.div--hour h3 {
+  margin-right: 5px;
+}
+
+.div--hour h2 {
+  margin-left: 5px;
+}
+
+.app--data {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+
+.data--city {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.data--weather {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.class--temp {
+  font-size: 1.4rem;
+  margin: 10px 20px;
+  padding: 0px 10px;
 }
