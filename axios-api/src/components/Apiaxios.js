@@ -11,14 +11,26 @@ export default function Apiaxios() {
   //React.useEffect is only working in a FUNCTION !!!
   //NOT with class
   React.useEffect(() => {
-    axios.get(`${baseURL}/1`).then((response) => {
-      setPost(response.data);
-    }).catch(error => {
-      setError(error);
-    });
+    axios
+      .get(`${baseURL}/1`)
+      .then((response) => {
+        setPost(response.data);
+      }).catch(error => {
+        setError(error);
+      });
   }, []);
 
   function updatePost() {
+    axios
+      .get(`${baseURL}/2`)
+      .then((response) => {
+        setPost(response.data);
+      }).catch(error => {
+        setError(error);
+      });
+  }
+
+  /*function updatePost() {
     axios
       .put(`${baseURL}/1`, {
         title: "Hello Axios!",
@@ -27,7 +39,8 @@ export default function Apiaxios() {
       .then((response) => {
         setPost(response.data);
       });
-  }
+  }*/
+  //console.log(updatePost(response.data))
 
   if (error) return `Error: ${error.message}`;
   if (!post) return "No post!"
