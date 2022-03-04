@@ -8,6 +8,8 @@ export default class Myapi extends React.Component {
           items: [],
           DataisLoaded: false,
       };
+  /* !!! We don't use this, because 'componentDidMount()'
+  run one time when the app start !!! */
   //this.componentDidMount = this.componentDidMount.bind(this)
   }
   componentDidMount() {

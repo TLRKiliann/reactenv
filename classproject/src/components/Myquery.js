@@ -3,7 +3,7 @@ import React from 'react'
 //import 'jquery'
 //import $ from 'jquery'
 
-
+//&nbsp; is equal to <pre> </pre> for blanc space.
 export default function Myquery(){
   //$(document).ready(function(){
     //$('.letters').textWave()
