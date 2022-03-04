@@ -5,7 +5,7 @@ export default class Apifetchclass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: 'lausanne',
+      locations: 'Lausanne',
       weather: {}
     };
     this.handleChange = this.handleChange.bind(this)
@@ -19,18 +19,18 @@ export default class Apifetchclass extends React.Component {
         this.setState({
           weather: object,
           locations: e.target.value
-          
         })
+        console.log(this.state)
       })
   }
-
   render() {
+    //! important !
     const { locations, weather } = this.state;
-    /*if (!locations) {
+    if (!weather) {
       return (
-        <h3>There is a pbm with locations !</h3>  
+        <h3>No weather found !</h3>  
       );
-    } else {*/
+    } else {
       return (
         <div>
           <input 
@@ -38,18 +38,21 @@ export default class Apifetchclass extends React.Component {
             value={locations} 
             onChange={(e) => this.setState({locations: e.target.value})}
           />
-          {locations}
           <button 
             onClick={this.handleChange}>Button
           </button>
-          <h2>
-            {weather?.name}
-          </h2>
-          <h2>
-            {weather?.main?.temp}
-          </h2>
+          <p>{locations}</p>
+          <h3>
+            City: {weather?.name}
+          </h3>
+          <h3>
+            Country: {weather?.sys?.country}
+          </h3>
+          <h3>
+            Temperature: {weather?.main?.temp} C°
+          </h3>
         </div>
       );
     }
-  
+  }
 }
