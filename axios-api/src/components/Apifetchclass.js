@@ -15,29 +15,41 @@ export default class Apifetchclass extends React.Component {
       `http://api.openweathermap.org/data/2.5/weather?q=${this.state.locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
     )
       .then((res) => res.json())
-      .then((res) => {
+      .then((object) => {
         this.setState({
-          weather: this.state.weather,
-          locations: this.state.locations
+          weather: object,
+          locations: e.target.value
+          
         })
       })
   }
 
   render() {
-    return (
-      <div>
-        <input 
-          type='text' 
-          value={this.state.locations} 
-          onChange={(e) => this.setState(locations: e.target.value)}
-        />
-        <button 
-          onClick={this.handleChange}>Button
-        </button>
-        <h2>
-          {this.state.weather?.main?.temp}
-        </h2>
-      </div>
-    );
-  }
+    const { locations, weather } = this.state;
+    /*if (!locations) {
+      return (
+        <h3>There is a pbm with locations !</h3>  
+      );
+    } else {*/
+      return (
+        <div>
+          <input 
+            type='text' 
+            value={locations} 
+            onChange={(e) => this.setState({locations: e.target.value})}
+          />
+          {locations}
+          <button 
+            onClick={this.handleChange}>Button
+          </button>
+          <h2>
+            {weather?.name}
+          </h2>
+          <h2>
+            {weather?.main?.temp}
+          </h2>
+        </div>
+      );
+    }
+  
 }
