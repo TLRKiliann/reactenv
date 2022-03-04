@@ -6,15 +6,17 @@ import React from "react";
 export default class Secondfetch extends React.Component {
   constructor() {
     super();
-    this.weather = {};
-    this.locations = 'london';
+    this.state = {
+      weather: {},
+      locations: 'london'
+    };
     //let datetime = new Date();
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
+  handleChange(e) {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
     )
       .then((res) => {
         if (res.ok) {
@@ -29,43 +31,49 @@ export default class Secondfetch extends React.Component {
         }
       })
       .then((object) => {
-        this.setWeather(object);
-        console.log(object);
-      })
-      .then((object) => {
-        this.setWeather(object);
-        console.log(object);
+        this.setState({
+          weather: object,
+          locations: e.target.value
+        });
+        console.log(this.state);
       })
       .catch((error) => console.log(error));
   }
   render() {
-    return (
-      <div className="api--fetch">
-        <div className="wrapper">
-          <div className="class--search">
-            <h3>Enter location</h3>
-            <input
-              type="text"
-              value={this.locations}
-              onChange={(e) => this.setLocations(e.target.value)}
-              placeholder="Enter location"
-              className="location--input"
-            />
-            <button className="btn--location" onClick={this.handleChange}>
-              Search Location
-            </button>
-          </div>
-          
-          <div className="app--data">
-            <p className="class--temp">City: {this.weather?.name}</p>
-            <p className="class--temp">Country: {this.weather?.sys?.country}</p>
-            <p className="class--temp">Temperature: {this.weather?.main?.temp} C°</p>
-            <p className="class--temp">Weather: {this.weather?.weather?.[0]?.description}</p>
-            <p className="class--temp">Wind: {this.weather?.wind?.deg} deg</p>
-            <p className="class--temp">Wind Speed: {this.weather?.wind?.speed} mph</p>
+    const { weather, locations } = this.state;
+    if (!weather) {
+      return (
+        <h2>No weather found !</h2>
+      );
+    } else {
+      return (
+        <div className="api--fetch">
+          <div className="wrapper">
+            <div className="class--search">
+              <h3>Enter location</h3>
+              <input
+                type="text"
+                value={locations}
+                onChange={(e) => this.setState({locations: e.target.value})}
+                placeholder="Enter location"
+                className="location--input"
+              />
+              <button className="btn--location" onClick={this.handleChange}>
+                Search Location
+              </button>
+            </div>
+            <h3>{locations}</h3>
+            <div className="app--data">
+              <p className="class--temp">City: { weather?.name }</p>
+              <p className="class--temp">Country: { weather?.sys?.country }</p>
+              <p className="class--temp">Temperature: { weather?.main?.temp} C°</p>
+              <p className="class--temp">Weather: { weather?.weather?.[0]?.description }</p>
+              <p className="class--temp">Wind: { weather?.wind?.deg } deg</p>
+              <p className="class--temp">Wind Speed: { weather?.wind?.speed } mph</p>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }

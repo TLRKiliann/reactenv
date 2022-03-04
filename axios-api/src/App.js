@@ -1,7 +1,8 @@
 //import Fetcheffect from './components/Fetcheffect'
 //import Secondfetch from './components/Secondfetch'
 //import Apiaxios from './components/Apiaxios'
-import Apifetchclass from './components/Apifetchclass'
+//import Apifetchclass from './components/Apifetchclass'
+import Classtestex from './components/Classtestex'
 import './App.css';
 
 
@@ -12,7 +13,7 @@ function App() {
         <h1 id='div--title'>Weather API</h1>
       </header>
       <div className='div--fetcheffect'>
-        <Apifetchclass />
+        <Classtestex />
       </div>
     </div>
   );
@@ -24,3 +25,4 @@ export default App;
 //      <Apifetchclass />
 //      <Fetcheffect />
 //      <Secondfetch />
+//      <Classtestex />
