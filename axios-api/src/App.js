@@ -2,7 +2,7 @@
 //import Secondfetch from './components/Secondfetch'
 //import Apiaxios from './components/Apiaxios'
 //import Apifetchclass from './components/Apifetchclass'
-import Classtestex from './components/Classtestex'
+import Toggleskills from './components/Toggleskills'
 import './App.css';
 
 
@@ -13,7 +13,7 @@ function App() {
         <h1 id='div--title'>Weather API</h1>
       </header>
       <div className='div--fetcheffect'>
-        <Classtestex />
+        <Toggleskills />
       </div>
     </div>
   );
@@ -25,4 +25,4 @@ export default App;
 //      <Apifetchclass />
 //      <Fetcheffect />
 //      <Secondfetch />
-//      <Classtestex />
+//      <Toggleskills />

@@ -12,7 +12,7 @@ export default function Car() {
   });
 
   //add color value at the end of array
-  /*
+  
   onClick={(e) => updateColor(e)}
 
   function updateColor(e) {
@@ -23,7 +23,7 @@ export default function Car() {
       }
     })
   }
-  */
+  
 
   function toggle() {
     setSwitchBut(prevSwitch => !prevSwitch)
@@ -55,14 +55,14 @@ export default function Car() {
       <button
         key={car.id}
         type="button"
-        //onClick={(e)=> updateColor(e)}
+        onClick={(e)=> updateColor(e)}
         onClick={toggle}
-        /*onChange={e => {
+        onChange={e => {
           const val = e.target.value;
           setCar(prevState => {
             return { ...prevState, color: val }
           });
-        }}*/
+        }}
       >
       {switchBut ? "Blue" : "Red"}
       </button>
