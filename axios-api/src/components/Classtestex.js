@@ -5,46 +5,52 @@ export default class Classtestext extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      weather: [],
-      location: ''
+      inputText: "",
+      style: {}
     };
     this.handleChange = this.handleChange.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
   handleChange(e) {
-    this.setState({
-      locations: e.target.value
-    });
+    this.setState({inputText: e.target.value});
+  }
+  toggle() {
+    this.setState(prevCo => !prevCo.inputText)
   }
   render() {
-    const { locations, weather } = this.state;
-    const data = dataFile.map(weather => <h2>City: {weather.name} Temps: {weather.temperature}</h2>)
-    if (!weather) {
-      return (
-        <h2>No weather registered !</h2>
-      );
-    } else {
-      return (
-        <div>
-          <h3>
-            Weather by City :
-          </h3>
-          <input
-            type='text'
-            value={locations}
-            onChange={(e) => this.setState({locations: e.target.value})}
-          />
-          {locations}
-          <button
-            type='button'
-            onClick={this.handleChange}
-          >
-            Click    
-          </button>
-          <div>
-            {data}
-          </div>
-        </div>
-      );
-    }
+
+    const {inputText} = this.state;
+
+    return (
+      <div style={{ fontSize: '1.6rem', textAlign: "center" }}>
+        <input
+          
+          value={inputText}
+          onChange={(e) => this.setState({ inputText: e.target.value })}
+          style={{ fontSize: '1.2rem' }}
+        />
+        <p style={{ fontSize: '1.4rem' }}>{inputText}</p>
+
+        { dataFile.map(item => {
+            if (item.name === inputText) {
+              return (
+                <div>
+                  <p key={item.id}>{item.name} {item.temperature}</p>
+                  <button
+                    style={inputText === item.name ? {color: 'blue'} : {color: 'red'}} 
+                    onClick={() => alert(item.name + ' ' + item.temperature)}
+                  >
+                    Click me
+                  </button>
+                </div>
+                );
+            } else {
+              return false;
+            }
+          })
+        }
+      </div>
+    );
   }
 }
+
