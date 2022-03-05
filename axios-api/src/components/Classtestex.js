@@ -14,34 +14,41 @@ export default class Classtestext extends React.Component {
   handleChange(e) {
     this.setState({inputText: e.target.value});
   }
+
   toggle() {
-    this.setState(prevCo => !prevCo.inputText)
+    this.setState(prevState => !prevState)
   }
+
   render() {
 
     const {inputText} = this.state;
 
     return (
       <div style={{ fontSize: '1.6rem', textAlign: "center" }}>
+        <h3>Enter a name of City :</h3>
         <input
           
           value={inputText}
           onChange={(e) => this.setState({ inputText: e.target.value })}
           style={{ fontSize: '1.2rem' }}
         />
+        { dataFile.map(item => {
+          return (
+            <button 
+              style={item.name===inputText ? {'color':"blue"} : {'color':"red"}}
+              onClick={this.toggle}
+            >
+            button
+            </button>)
+          })
+        }
         <p style={{ fontSize: '1.4rem' }}>{inputText}</p>
-
+        
         { dataFile.map(item => {
             if (item.name === inputText) {
               return (
                 <div>
                   <p key={item.id}>{item.name} {item.temperature}</p>
-                  <button
-                    style={inputText === item.name ? {color: 'blue'} : {color: 'red'}} 
-                    onClick={() => alert(item.name + ' ' + item.temperature)}
-                  >
-                    Click me
-                  </button>
                 </div>
                 );
             } else {
@@ -54,3 +61,4 @@ export default class Classtestext extends React.Component {
   }
 }
 
+//() => alert(item.name + ' ' + item.temperature)
