@@ -1,44 +1,40 @@
 import React from "react";
 
-export default function Toggleskills() {
-  const [switchButt, setSwitchButt] = React.useState()
-  const [model, setModel] = React.useState('Mustang')
-  const [car, setCar] = React.useState({
-    id: 1,
-    brand: "Ford",
-  });
-
-  function toggle() {
-    setSwitchButt(prevSwitch => !prevSwitch)
+export default class Toggleskills extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      city: 'Lsne',
+      butt: '',
+      color: 'Blue'
+    };
+    this.toggle = this.toggle.bind(this);
   }
-
-  function changeModel() {
-    setModel(prevMod => !prevMod)
+  toggle() {
+    this.setState(prevent => ({
+      ...prevent,
+      butt: !this.state.butt
+    }))
   }
+  changeFunc() {
+    this.setState(prevState => ({
+      ...prevState,
+      city: !this.state.city
+    }))
+  }
+  render() {
+    return (
+      <div>
+        <h3>My tester</h3>
+        {this.state.butt && <p onChange={this.changeFunc}>{this.state.city ? 'Lsne' : 'Fallcity'}</p>}
+        {!this.state.butt && <p onChange={this.changeFunc}>{this.setState.city ? 'Lsne' : 'Fallcity'}</p>}
 
-  return (
-    <div className='div--car'>
-      <h3 onClick={changeModel}>My Model Car is {model ? 'Ford' : 'Ferrari'}</h3>
+        {this.state.butt && <p onChange={this.toggle}>{this.state.color ? 'Blue' : 'Red'}</p>}
+        {!this.state.butt && <p onChange={this.toggle}>{this.setState.color ? 'Blue' : 'Red'}</p>}
 
-      {switchButt && <p>It is a {model ? 'Mustang':'405'}</p>}
-      {!switchButt && <p>It is a {model ? 'Mustang':'405'}</p>}
-
-      {switchButt && <strong>{model ? 'Ford' : 'Ferrari'}</strong>}
-      {!switchButt && <strong>{model ? 'Ford' : 'Ferrari'}</strong>}
-
-      <button
-        key={car.id}
-        type="button"
-        onClick={toggle}
-        /*onChange={e => {
-          const val = e.target.value;
-          setCar(prevState => {
-            return { ...prevState, color: val }
-          });
-        }}*/
-      >
-        {switchButt ? "Blue" : "Red"}
-      </button>
-    </div>
-  )
+        <button onClick={this.toggle}>{this.state.butt ? 'ok' : 'not ok'}</button>
+      </div>
+    );
+  }
 }
+//{!this.state.butt && <p onClick={this.changeFunc}>{this.setState.city ? 'Lsne' : 'Fallcity'}</p>}
