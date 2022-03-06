@@ -37,4 +37,3 @@ export default class Toggleskills extends React.Component {
     );
   }
 }
-//{!this.state.butt && <p onClick={this.changeFunc}>{this.setState.city ? 'Lsne' : 'Fallcity'}</p>}

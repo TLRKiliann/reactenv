@@ -43,6 +43,13 @@ export default function Fetcheffect() {
     if (weather?.timezone === 0) {
       let convDate = (datetime.getHours()) + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
       return convDate;
+
+    } else if (weather?.timezone === 3600) {
+      let convDate = (datetime.getHours() + 1) + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
+      return convDate;
+    } else if (weather?.timezone === -3600) {
+      let convDate = (datetime.getHours() - 1) + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
+      return convDate;
     } else if (weather?.timezone === 7200) {
       let convDate = (datetime.getHours() + 2) + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
       return convDate;

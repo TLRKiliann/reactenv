@@ -40,7 +40,7 @@ export default function Car() {
         It is a {car.model} <mark>{car.color ? 'Red' : 'Blue'}</mark> from {car.year}.
       </p>}
       {!switchBut && <p>
-        It is a {car.model} <mark>{setCar.color ? 'Red' : 'blue'}</mark> from {car.year}.
+        It is a {car.model} <mark>{setCar.color ? 'Red' : 'Blue'}</mark> from {car.year}.
       </p>}
 
       {switchBut && <strong>
