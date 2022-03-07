@@ -26,9 +26,7 @@ export default function Fetcheffect() {
     await fetch('')*/
 
   function handleChange() {
-    fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
-    )
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`)
       .then((res) => {
         if (res.ok) {
           console.log(res.status);
