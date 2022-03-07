@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import { useAsync } from 'react-async';
 //import TimezonePicker from 'react-timezone';
 //import { useEffect } from 'react'
 //import Weather from './Weather';
@@ -16,6 +17,13 @@ export default function Fetcheffect() {
     handleChange();
   });*/
   //And not => "}, []);" error if empty
+  
+  /*useEffect(() => {
+    handleChange();
+  }, []);*/
+
+  /*const handleChange = async () => {
+    await fetch('')*/
 
   function handleChange() {
     fetch(
@@ -27,7 +35,7 @@ export default function Fetcheffect() {
           return res.json();
         } else {
           if (res.status === 404) {
-            return alert("Oops, there seems to be an error!(wrong location)");
+            return alert("Oops, there seems to be an error! (wrong location)");
           }
           alert("Oops, there seems to be an error!");
           throw new Error("You have an error");
@@ -35,7 +43,7 @@ export default function Fetcheffect() {
       })
       .then((object) => {
         setWeather(object);
-        console.log(object);
+        //console.log(object);
       })
       .catch((error) => console.log(error));
   }
@@ -151,11 +159,11 @@ export default function Fetcheffect() {
         </div>
         <div className='div--hour'>
           <h3>
-            Location Clock: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}
+            Timezone of London: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}
           </h3>
           <div className='div--searchconvert'>
             <h3 style={{color: 'white'}}>
-              Timezone of search:
+              Timezone of {weather?.name} :
             </h3> 
             <h2 style={{color: 'turquoise'}}>
               { (weather?.timezone === 3600) ? convDate : searchConverter }

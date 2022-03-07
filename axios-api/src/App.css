@@ -39,6 +39,8 @@
 
 .api--fetch {
   width: 70%;
+  display: flex;
+  justify-content: center;
   background: #2d60e1;
   color: white;
   padding: 20px;
@@ -50,7 +52,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: flex-start;
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -64,6 +66,7 @@
 
 .location--input {
   padding: 3px 8px;
+  margin: 0px 10px;
   border: 1px solid blue;
   border-radius: 10px;
   font-size: 1.2rem;
