@@ -18,9 +18,6 @@ export default function Fetcheffect() {
   });*/
   //And not => "}, []);" error if empty
   
-  /*useEffect(() => {
-    handleChange();
-  }, []);*/
 
   /*const handleChange = async () => {
     await fetch('')*/
@@ -160,9 +157,9 @@ export default function Fetcheffect() {
             Timezone of London: {datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()}
           </h3>
           <div className='div--searchconvert'>
-            <h3 style={{color: 'white'}}>
-              Timezone of {weather?.name} :
-            </h3> 
+            <p className={'pa--tag'} style={{color: 'white'}}>
+              Timezone of <a style={{color: 'lightgreen'}}>{weather?.name} :</a>
+            </p> 
             <h2 style={{color: 'turquoise'}}>
               { (weather?.timezone === 3600) ? convDate : searchConverter }
             </h2>

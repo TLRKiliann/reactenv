@@ -6,7 +6,7 @@
   margin: auto;
   height: auto;
   text-align: center;
-  background: #a4ffff;
+  background: deepskyblue;
   height: 100vh;
 }
 
@@ -32,13 +32,13 @@
 
 .div--fetcheffect {
   width: 100%;
-  margin-top: 8%;
+  margin-top: 5%;
   display: flex;
   justify-content: space-around;
 }
 
 .api--fetch {
-  width: 70%;
+  width: 50%;
   display: flex;
   justify-content: center;
   background: #2d60e1;
@@ -99,6 +99,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.pa--tag {
+  font-size: 1.8rem;
 }
 
 .div--hour h3 {
