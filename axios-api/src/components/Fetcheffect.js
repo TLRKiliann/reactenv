@@ -28,9 +28,9 @@ export default function Effectfunction() {
       
       <p>JSON.stringify... : {JSON.stringify(fetcher)}</p>
 
-      <p>{fetcher.id}</p>
-      <p>{fetcher.title}</p>
-      <p>{fetcher.completed ? 'true' : 'false'}</p>
+      <p>id : {fetcher.id}</p>
+      <p>title (json-string) : {JSON.stringify(fetcher.title)}</p>
+      <p>completed : {fetcher.completed ? 'true' : 'false'}</p>
 
       <button onClick={handleChange}>{butt ? 'Green' : 'Orange'}</button>
       <button onClick={handleServer}>Start server</button>
