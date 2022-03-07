@@ -4,8 +4,9 @@ import {useState} from 'react'
 
 
 export default function Effectfunction() {
-  const [todo, setTodo] = useState('Blue');
+  const [todo, setTodo] = useState('');
   const [butt, setButt] = useState();
+  const [myApp, setMyApp] = useState(false);
   const [fetcher, setFetcher] = useState({});
 
   const handleServer = () => {
@@ -19,12 +20,22 @@ export default function Effectfunction() {
 
   const handleChange = () => {
     setButt(prevent => !prevent)
+    setMyApp(prevApp => !prevApp)
   };
 
   return (
     <div>
-      {butt && <p>Hello : {todo}</p>}
-      {!butt && <p>Hello : {setTodo ? 'Red' : 'Blue'}</p>}
+      {butt && <p
+        style={{color: myApp ? 'white' : 'yellow', backgroundColor: myApp ? 'red' : 'blue'}}
+      >
+        Hello : {todo ? 'Blue' : 'Red'}
+      </p>}
+      {!butt && <p
+        style={{color: myApp ? 'white' : 'yellow', backgroundColor: myApp ? 'red' : 'blue'}}
+      >
+        Hello : {setTodo ? 'Blue' : 'Red'}
+      </p>}
+
       
       <p>JSON.stringify... : {JSON.stringify(fetcher)}</p>
 
@@ -32,7 +43,13 @@ export default function Effectfunction() {
       <p>title (json-string) : {JSON.stringify(fetcher.title)}</p>
       <p>completed : {fetcher.completed ? 'true' : 'false'}</p>
 
-      <button onClick={handleChange}>{butt ? 'Green' : 'Orange'}</button>
+      <button
+        onClick={handleChange}
+        style={{backgroundColor: myApp ? 'lightgreen' : 'orange'}}
+      >
+        {butt ? 'lightgreen' : 'orange'}
+        </button>
+
       <button onClick={handleServer}>Start server</button>
     </div>
   );
