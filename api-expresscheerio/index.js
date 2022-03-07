@@ -5,9 +5,14 @@ const cheerio = require('cheerio')
 const axios = require('axios')
 
 
-console.log("hello me")
-/*
 const app = express()
+
+app.get('/', function (res, req) => ({
+  res.json('Hello')
+})
+
+
+/*
 
 const articles = [];
 
@@ -52,11 +57,5 @@ app.get('/news/:newspaperId', async (req, res) => {
     res.json(specificArticles)
   }).catch(err => console.log(err))
 })
-
-app.get('/news', (req, res) => {
-  res.json('Welcome to my climate change API')
-})
-
-
-app.listen(PORT, () => console.log(`sever running on port : ${PORT}`))
 */
+app.listen(PORT, () => console.log(`sever running on port : ${PORT}`))

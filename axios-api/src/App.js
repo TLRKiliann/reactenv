@@ -1,3 +1,4 @@
+//import Funceffect from './components/Funceffect'
 import Fetcheffect from './components/Fetcheffect'
 //import Secondfetch from './components/Secondfetch'
 //import Apiaxios from './components/Apiaxios'
@@ -23,6 +24,6 @@ export default App;
 
 //      <Apiaxios />
 //      <Apifetchclass />
-//      <Fetcheffect />
+//      <Funceffect />
 //      <Secondfetch />
 //      <Toggleskills />
