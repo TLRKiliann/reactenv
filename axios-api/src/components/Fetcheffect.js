@@ -8,6 +8,7 @@ export default function Effectfunction() {
   const [butt, setButt] = useState();
   const [myApp, setMyApp] = useState(false);
   const [fetcher, setFetcher] = useState({});
+  //const somethingfalse = 'false'
 
   const handleServer = () => {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -41,7 +42,7 @@ export default function Effectfunction() {
 
       <p>id : {fetcher.id}</p>
       <p>title (json-string) : {JSON.stringify(fetcher.title)}</p>
-      <p>completed : {fetcher.completed ? 'true' : 'false'}</p>
+      <p>completed : {JSON.stringify(fetcher.completed)}</p>
 
       <button
         onClick={handleChange}
