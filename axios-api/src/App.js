@@ -1,5 +1,6 @@
 //import Funceffect from './components/Funceffect'
-import Fetcheffect from './components/Fetcheffect'
+//import Fetcheffect from './components/Fetcheffect'
+import Searchscrap from './components/Searchscrap'
 //import Secondfetch from './components/Secondfetch'
 //import Apiaxios from './components/Apiaxios'
 //import Apifetchclass from './components/Apifetchclass'
@@ -14,7 +15,7 @@ function App() {
         <h1 id='div--title'>Weather API</h1>
       </header>
       <div className='div--fetcheffect'>
-        <Fetcheffect />
+        <Searchscrap />
       </div>
     </div>
   );
@@ -27,3 +28,4 @@ export default App;
 //      <Funceffect />
 //      <Secondfetch />
 //      <Toggleskills />
+//      <Fetcheffect />
