@@ -19,10 +19,10 @@ axios(myUrl).then(response => {
     const mostViewedList = [];
 
     // for each list get the title and link
-    $('.fc-item--has-floating-sublinks', html).each(function () {
+    $('.fc-container__inner', html).each(function () {
 
-        const title = $(this).find('a.u-faux-block-link__overlay.js-headline-text').text();
-        const url = $(this).find('a.u-faux-block-link__overlay.js-headline-text').attr('href');
+        const title = $(this).find('.u-faux-block-link__overlay.js-headline-text').text();
+        const url = $(this).find('.u-faux-block-link__overlay.js-headline-text').attr('href');
         console.log('url for me', url)
         mostViewedList.push({
             title,
