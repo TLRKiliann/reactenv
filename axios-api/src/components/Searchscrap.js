@@ -9,7 +9,7 @@ export default class Searchscrap extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange() {
-    fetch('...')
+    fetch('https://www.thetimes.co.uk/article/schoolboy-impostor-brian-mackinnon-disowns-his-biopic-tpsp67dw3')
       .then(res => res.json())
       .then(object => {
         this.setState({
@@ -22,13 +22,13 @@ export default class Searchscrap extends React.Component {
     return (
       <div className='supra--class'>
         <div className='child--class'>
-          <p>{item.name}</p>
+          <p>{JSON.stringify(item)}</p>
         </div>
         <div className='child--class'>
-          <p>{item.age}</p>
+          <p>{item.main}</p>
         </div>
         <div className='child--class'>
-          <p>{item.status}}/p>
+          <p>{item}</p>
         </div>
       </div>
     );
