@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 import Orbit from './components/Orbit'
 import Myfirst from './components/Myfirst'
-import Secomponent from './components/Secomponent'
 import dataMyfirst from './components/dataMyfirst'
+import Secomponent from './components/Secomponent'
 import Counter from './components/Counter'
 import Mostwanted from './components/Mostwanted'
 import Lastwanted from './components/Lastwanted'
@@ -55,7 +55,6 @@ function App() {
       <div id='div--myvar' className='div--myvar'>
         {myVar}
       </div>
-    
       <div onClick={sayOk} className='div--click'>
         <Counter mycount={count} />
       </div>
