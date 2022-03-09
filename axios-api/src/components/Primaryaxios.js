@@ -1,24 +1,21 @@
 import React from 'react';
-import * as axios from 'axios';
+//import * as axios from 'axios';
+import datares from './dataResponse';
 
-export default class PersonList extends React.Component {
-  state = {
-    persons: []
-  }
-
-  componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
-  }
-
-  render() {
+export default function Primaryaxios() {
+  const mapping = datares.map(item => {
     return (
-      <ul>
-        { this.state.persons.map(person => <li>{person.name}</li>)}
+      <ul  className='class--retrive'>
+        <li>title={item.title}</li>
+        <li className='url--class'>url={item.url}</li>
       </ul>
     )
-  }
+  })
+  return (
+    <div>
+      <h3 className='title--class'>The Last News !</h3>
+      {mapping}
+    </div>
+  )
 }
+

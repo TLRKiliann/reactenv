@@ -1,5 +1,6 @@
-* {
+body {
   font-family: Georgia, serif;
+  background: deepskyblue;
 }
 
 .App {
@@ -141,4 +142,33 @@
   font-size: 1.4rem;
   margin: 10px 20px;
   padding: 0px 10px;
+}
+
+/*  to read date from api */
+
+.title--class {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 2px purple,
+  3px 3px 3px white,
+  5px 5px 5px blue;
+}
+
+.class--retrive {
+  display: flex;
+  box-sizing: border-box;
+  color: navy;
+  border: 2px solid white;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  text-align: justify;
+}
+
+.url--class {
+  text-decoration: underline;
+}
+
+.class--retrive li {
+  list-style: none;
+  margin: 10px 10px;
 }

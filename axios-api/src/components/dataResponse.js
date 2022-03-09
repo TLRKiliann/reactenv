@@ -1,7 +1,4 @@
-[
-  {
-    "title": ""
-  },
+const dataRes = [
   {
     "title": "Russia-Ukraine war: Zelenskiy warns of mass ‘humanitarian catastrophe’ without no-fly zoneUkraine makes fresh move to help civilians leave ‘apocalyptic’ MariupolWhat we know on day 14 of the Russian invasionUS dismisses Polish plan to provide fighter jets to be sent to UkraineUkrainians in race to save cultural heritageUK politics: Shapps says ban on Russian oil imports will lead to ‘some higher energy prices’ Private jet with suspected links to Russia seized Red tape stopping small charities getting supplies to UkraineRussian bond default ‘imminent’, warns Fitch, as more companies suspend operations – business live",
     "url": "https://www.theguardian.com/world/live/2022/mar/09/ukraine-news-russia-war-ceasefire-broken-humanitarian-corridors-kyiv-russian-invasion-live-vladimir-putin-volodymyr-zelenskiy-latest-updates"
@@ -39,21 +36,12 @@
     "url": "https://www.theguardian.com/football/2022/mar/08/hansjorg-wyss-and-todd-boehly-submit-chelsea-bid-roman-abramovich-not-yet-convinced-to-sell"
   },
   {
-    "title": ""
-  },
-  {
-    "title": ""
-  },
-  {
     "title": "Tipping point is looming, data showsDon’t let high energy prices derail UK green agenda, say expertsSix promises you can make to help reduce carbon emissionsSix key lifestyle changes can help avert disaster, study finds",
     "url": "https://www.theguardian.com/environment/2022/mar/07/climate-crisis-amazon-rainforest-tipping-point"
   },
   {
     "title": "Health secretary calls on families to help NHS by pushing loved ones to improve healthTory MP’s son among UK ex-servicemen heading to front lineEx-Speaker branded ‘serial bully’ and liar by independent inquiryZelenskiy invokes Churchill as he calls on MPs to do more to help UkraineInternet scams now included in UK billSky Vegas fined £1.2m for sending free casino ‘spins’ to recovering addictsCarmakers face higher costs and supply issues as price of nickel soarsNicola Sturgeon issues apology for ‘historical injustice’ of witch huntsPM creates new minister to deal with Ukrainian refugee crisisCamilla meets actor who played her younger self in The Crown",
     "url": "https://www.theguardian.com/politics/2022/mar/08/sajid-javid-families-help-nhs-pushing-loved-ones-improve-health"
-  },
-  {
-    "title": ""
   },
   {
     "title": "Mandatory Covid vaccination law suspendedSunny Balwani trial to start two months after Elizabeth Holmes’s guilty verdictAbortion ban forcing thousands to cross state lines for procedure – studyPM to declare ‘national emergency’ during visit to devastated areasStranding of three whales in Corfu raises alarm over seismic testing for fossil fuelsChina builds new bridge to rush in workers as Covid cases surgeKFC and Pizza Hut owner and Heineken latest to pause business Police find more remains in Pike River mine from 2010 disasterThousands to protest against ‘death combo’ of anti-environment billsCourt rules far-right AfD party a suspected threat to democracy",
@@ -64,21 +52,12 @@
     "url": "https://www.theguardian.com/news/audio/2022/mar/09/from-north-to-south-how-putin-united-ukrainians-against-russia-podcast"
   },
   {
-    "title": ""
-  },
-  {
     "title": "Micro-operas transport commuters as station hosts pop-up performancesWe Uyghurs Have No Say by Ilham Tohti review – a people ignoredA captivatingly melodramatic memoirThe Scent of Roses review – a squirming study of truth and liesUnnerving body-image horror sparked by eating disorder crisisOur Wives Under the Sea by Julia Armfield ",
     "url": "https://www.theguardian.com/music/2022/mar/09/lost-and-found-review-royal-opera-house-st-pancras-station-micro-operas-transport-commuters"
   },
   {
-    "title": ""
-  },
-  {
     "title": "UK firm debuts bicycle for people with dwarfismI can’t manage my Virgin credit card account without a smartphoneParis-Marseille 50 years after Interrail beganNew low-cost iPhone SE and Mac Studio desktopChanel leaves crowd pleased with tweedsConfessions of a former pandemic shamer",
     "url": "https://www.theguardian.com/lifeandstyle/2022/mar/08/you-cant-just-lop-bits-off-uk-firm-debuts-bike-for-people-with-dwarfism"
-  },
-  {
-    "title": ""
   },
   {
     "title": "How have you been affected by the current situation?How have you been affected by soaring petrol and diesel prices?What do you want to know about Ukraine?Tell us about your communication with Russians about the invasion",
@@ -99,8 +78,7 @@
   {
     "title": "Russia-Ukraine war: Zelenskiy warns of mass ‘humanitarian catastrophe’ without no-fly zone – liveErnest Shackleton’s ship Endurance found off coast of AntarcticaRussian bond default ‘imminent’, warns Fitch, as more companies suspend operations – business liveUS dismisses Polish plan to provide fighter jets to be sent to UkrainePutin is betting that the west is too decadent to defend its values. He is wrongThe sanctions strategy is flawed. To defeat Putin, you have to know how the Kremlin worksIt’s not too late to free ourselves from this idiotic addiction to Russian gasUkrainians in race to save cultural heritageRussia-Ukraine war: what we know on day 14 of the Russian invasionRussia sanctions ‘to cut UK living standards by £2,500 per household’",
     "url": "https://www.theguardian.com/world/live/2022/mar/09/ukraine-news-russia-war-ceasefire-broken-humanitarian-corridors-kyiv-russian-invasion-live-vladimir-putin-volodymyr-zelenskiy-latest-updates"
-  },
-  {
-    "title": ""
   }
 ]
+
+export default dataRes;
