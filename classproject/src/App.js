@@ -1,4 +1,5 @@
 import React from 'react'
+//import Card from './components/Card'
 import Tocallprops from './components/Tocallprops'
 import Main from './components/Main'
 import Effects from './components/Effects'
@@ -19,6 +20,28 @@ class App extends React.Component {
   //}
   render () {
     const truck = 'Here is a msg from props !'
+    const machin = [
+      {
+        id: 1,
+        name: 'kiliann',
+        status: 'pro'
+      },
+      {
+        id: 2,
+        name: 'jenna',
+        status: 'intermediary'
+      },
+      {
+        id: 3,
+        name: 'alicia',
+        status: 'novice'
+      }
+    ]
+    const miracle = machin.map(item => {
+      return (
+        `id=${item.id} name=${item.name} status=${item.status}`
+      )
+    })
     return (
       <div className='main--div'>
         <header className="App-header">
@@ -26,6 +49,9 @@ class App extends React.Component {
           <p>
             Presentation was made with class
           </p>
+          <div>
+            {miracle[0]}
+          </div>
           <h4 className='div--text3d'>
             Effect 3D with SCSS(SASS) & CSS
           </h4>
