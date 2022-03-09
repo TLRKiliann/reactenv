@@ -1,7 +1,7 @@
 const dataCard = [
 	{
 		id: 1,
-		name: 'Martin',
+		name: 'Ari',
 		age: 33
 	},
 	{
@@ -11,7 +11,7 @@ const dataCard = [
 	},
 	{
 		id: 3,
-		name: 'Ari',
+		name: 'Roman',
 		age: 23
 	}
 ]

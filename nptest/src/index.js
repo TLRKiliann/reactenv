@@ -105,14 +105,14 @@ const Thirdtest = () => {
 const Fourth = () => {
   return (
     React.createElement('div', {},
-      React.createElement('p', {}, "I'm const Fourth (second one) !"))
+      React.createElement('p', {}, "I'm p element in a div (fourth) !"))
   );
 }
 
 const Fifth = () => {
   return (
     React.createElement('div', {},
-      React.createElement('p', {}, "I'm ok with that !"))
+      React.createElement('p', {}, "I'm p element in a div (fifth) !"))
   );
 }
 
@@ -122,7 +122,7 @@ function Six() {
 
 //Return without parenthesis
 const Element = () => {
-  return React.createElement('h3', {}, "I'm const Element (last one) !")
+  return React.createElement('h3', {}, "I'm h3 element (Element) !")
 }
 
 //<React.StrictMode />

@@ -38,4 +38,3 @@ axios.get(myUrl).then(response => {
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
-
