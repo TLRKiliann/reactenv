@@ -3,6 +3,7 @@ import dataFile from './components/dataFile'
 import Firstclass from './components/Firstclass'
 import Secondcomponent from './components/Secondcomponent'
 import Thirdcomponent from './components/Thirdcomponent'
+import Fourthcomponent from './components/Fourthcomponent'
 import './App.css';
 
 export default class App extends React.Component {
@@ -46,6 +47,10 @@ export default class App extends React.Component {
           <h3>Here is my Third component !</h3>
           <Thirdcomponent thirdobj={myThirdobj.ref}
           thirdobjTwo={myThirdobj.secref} />
+        </div>
+        <div>
+          <h3>Here is my Fourth component !</h3>
+          <Fourthcomponent />
         </div>
       </div>
     );
