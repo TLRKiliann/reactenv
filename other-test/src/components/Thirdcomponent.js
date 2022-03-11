@@ -8,11 +8,11 @@ export default class Thirdcomponent extends React.Component {
         thirdobjTwo: props.thirdobjTwo,
         dataInput: "",
         colstyle: "blue",
-        butt: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.toggle = this.toggle.bind(this);
   }
+
   toggle(e) {
     if (this.state.dataInput.length >= 10) {
       this.setState(oldState => ({
@@ -20,37 +20,50 @@ export default class Thirdcomponent extends React.Component {
         colstyle: !this.state.colstyle
       }))
     } else {
-      return alert("Not enough !!!")
+      return alert("Not enough (10 caracters)!!!")
     }
   }
 
   handleChange(e) {
-    this.setState({dataIput: e.target.value})
+    this.setState({ dataInput: e.target.value })
   }
 
   render() {
+    const { colstyle, dataInput } = this.state;
     return (
       <React.Fragment>
         <h3>Third component file !</h3>
         <p>{this.props.thirdobj}</p>
         <p>{this.props.thirdobjTwo}</p>
-        <input
-          value={this.state.dataInput}
-          onChange={(e) => this.setState({dataInput: e.target.value})}
-          placeholder='Enter minimum 10 caracters'>
-        </input>
-        
-        {this.state.colstyle &&  <button 
-          style={{color: 'white', background: this.state.colstyle ? 'red' : 'blue'}} 
+
+        {dataInput.length >= 10 && <input
+          value={ dataInput }
+          onChange={(e) => this.handleChange(e)}
+          placeholder='Enter minimum 10 caracters'
+          maxlength="20"
+          style={{color: colstyle ? 'blue' : 'red'}}>
+        </input>}
+
+        {dataInput.length < 10 && <input
+          value={ dataInput }
+          onChange={(e) => this.handleChange(e)}
+          placeholder='Enter minimum 10 caracters'
+          maxlength="20"
+          style={{color: this.setState.colstyle ? 'blue' : 'red'}}>
+        </input>}        
+
+        { colstyle &&  <button 
+          style={{color: 'white', background: colstyle ? 'red' : 'blue' }} 
           onClick={e => this.toggle(e)}>
             10 string
         </button>}
-        {!this.state.colstyle &&  <button 
-          style={{color: 'white', background: this.setState.colstyle ? 'red' : 'blue'}} 
+
+        { !colstyle &&  <button 
+          style={{color: 'white', background: this.setState.colstyle ? 'red' : 'blue' }} 
           onClick={e => this.toggle(e)}>
             Save Ok
         </button>}
-        <p>{this.state.dataInput}</p>
+        <p>{dataInput}</p>
       </React.Fragment>
     );
   }

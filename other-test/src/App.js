@@ -4,6 +4,7 @@ import Firstclass from './components/Firstclass'
 import Secondcomponent from './components/Secondcomponent'
 import Thirdcomponent from './components/Thirdcomponent'
 import Fourthcomponent from './components/Fourthcomponent'
+import Fifthcomp from './components/Fifthcomp'
 import './App.css';
 
 export default class App extends React.Component {
@@ -51,6 +52,7 @@ export default class App extends React.Component {
         <div>
           <h3>Here is my Fourth component !</h3>
           <Fourthcomponent />
+          <Fifthcomp />
         </div>
       </div>
     );

@@ -6,6 +6,7 @@ export default function Fourthcomponent() {
   return (
     <div>
       <h3>Password component :</h3>
+      
     </div>
   );
 }
