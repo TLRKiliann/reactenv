@@ -5,19 +5,18 @@ export default class Fifthcomp extends React.Component {
     super(props);
     this.state = {
       val: true,
-      butt: true,
     };
     this.handleChange = this.handleChange.bind(this)
   }
+
   handleChange(e) {
     this.setState(prevState => ({
-      val: !this.state.val,
-      butt: !this.state.butt
+      val: !this.state.val
     }))
   }
 
   render() {
-    const { val, butt } = this.state;
+    const { val } = this.state;
     return (
       <div>
         <h2>Fifth component !</h2>
@@ -25,14 +24,14 @@ export default class Fifthcomp extends React.Component {
         {val && <h3>{val ? 'Would you change ?' : 'Keep as you are...'}</h3>}
         {!val && <h3>{this.setState.val ? 'Would you change ?' : 'Changed !'}</h3>}
 
-        {butt && <button 
+        {val && <button 
           onClick={(e) => this.handleChange(e)}>
-          {butt ? "Click to CHANGE !" : "Changing is done !"}
+          {val ? "Click to CHANGE !" : "Changing is done !"}
         </button>}
         
-        {!butt && <button 
+        {!val && <button 
           onClick={(e) => this.handleChange(e)}>
-          {this.setState.butt ? "Click to CHANGE !" : "Changing is done !"}
+          {this.setState.val ? "Click to CHANGE !" : "Changing is done !"}
         </button>}
       </div>
     );
