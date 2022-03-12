@@ -52,6 +52,8 @@ export default class App extends React.Component {
         <div>
           <h3>Here is my Fourth component !</h3>
           <Fourthcomponent />
+        </div>
+        <div>
           <Fifthcomp />
         </div>
       </div>
