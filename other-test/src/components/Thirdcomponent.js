@@ -31,7 +31,7 @@ export default class Thirdcomponent extends React.Component {
   render() {
     const { colstyle, dataInput } = this.state;
     return (
-      <React.Fragment>
+      <div className='third--comp'>
         <h3>Third component file !</h3>
         <p>{this.props.thirdobj}</p>
         <p>{this.props.thirdobjTwo}</p>
@@ -64,7 +64,7 @@ export default class Thirdcomponent extends React.Component {
             Save Ok
         </button>}
         <p>{dataInput}</p>
-      </React.Fragment>
+      </div>
     );
   }
 }

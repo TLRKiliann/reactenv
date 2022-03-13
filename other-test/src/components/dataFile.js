@@ -14,6 +14,16 @@ const dataFile = [
     name: 'Eric',
     status: 'pro'
   },
+  {
+    id: 4,
+    name: 'Snoopy',
+    status: 'member'
+  },
+  {
+    id: 5,
+    name: 'leon',
+    status: 'Xpert'
+  }
 ]
 
 export default dataFile;

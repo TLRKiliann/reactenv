@@ -41,13 +41,15 @@ export default class App extends React.Component {
           <h1>Hello GUYS !</h1>
         </header>
         <div>
-          <h3>Here is my Firstclass !</h3>
-          <React.Fragment>
+          <h3>Here is my "Firstclass" !</h3>
+          <div className='catdata--class'>
             {toCatchData}
-          </React.Fragment>
+          </div>
         </div>
         <div>
           <h3>Here is my Second component !</h3>
+        </div>
+        <div className='seccomp--class'>
           {callData}
         </div>
         <div>

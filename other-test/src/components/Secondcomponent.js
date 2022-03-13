@@ -8,11 +8,11 @@ function Secondcomponent(props) {
   //setItem(prevItem => !prevItem);
 
   return (
-    <React.Fragment>
+    <div className='sec--class'>
       <p key={props.id}>{props.id}</p>
       <p>{props.name}</p>
       <p>{props.status}</p>
-    </React.Fragment>
+    </div>
   );
 };
 

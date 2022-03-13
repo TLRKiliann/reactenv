@@ -1,41 +1,76 @@
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import $ from 'jquery'
+//import { useState } from 'react'
+//import { useEffect } from 'react'
 
-export default function Fourthcomponent() {
-  const [showInput, setShowInput] = useState('');
+import IconButton from "@material-ui/core/IconButton";
+import InputLabel from "@material-ui/core/InputLabel";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Input from "@material-ui/core/Input";
 
-  const jQuerycode = () => {
-    $('.mouseover--div').hover(function() {
-      $('.mouseover--h3').css('color', 'yellow')
-      //$('.mouseover--h3').addClass("animated hinge")
-    });
-  }
+//import { findDOMNode } from 'react-dom'
+//import $ from 'jquery'
 
-  useEffect(() => {
-    console.log("Effect with jQuery")
-    jQuerycode()
-  },);
+export default class Fourthcomponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      password: "",
+      showPassword: false,
+    };
+  };
+  
+  handleClickShowPassword = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword 
+    }));
+  };
+  
+  handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  
+  handlePasswordChange = (prop) => (event) => {
+    this.setState(prevState => ({
+      ...prevState,
+      [prop]: event.target.value 
+    }));
+  };
 
-  const handleChange = () => {
-    setShowInput(!showInput)
-  }
-
-  return (
-    <div>
-      <div className='mouseover--div'>
-        <h3 className='mouseover--h3'>I'm a div TAG for moseover (jQuery)</h3>
+  render() {
+    return (
+      <div
+        style={{
+          padding: "30px 0px",
+          margin: "0px 400px",
+          border: "1px dotted white",
+        }}
+      >
+        <h3>How to show and hide password in ReactJS?</h3>
+        <InputLabel
+          htmlFor="standard-adornment-password"
+          style={{color: 'cyan', fontSize: '1.0rem'}}>
+            Enter your Password
+        </InputLabel>
+        <Input
+          type={this.state.showPassword ? "text" : "password"}
+          onChange={this.handlePasswordChange("password")}
+          value={this.state.password}
+          style={{color: 'cyan'}}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                onClick={this.handleClickShowPassword}
+                onMouseDown={this.handleMouseDownPassword}
+              >
+                {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
       </div>
-      <h3>Password component : </h3>
-      <input
-        type={showInput ? 'text' : 'password'} 
-        name='password' 
-        id='password'
-
-        onChange={handleChange}
-       />
-       <button type='submit' onClick={handleChange}>Submit</button>
-    </div>
-  );
-}
+    );
+  }
+};

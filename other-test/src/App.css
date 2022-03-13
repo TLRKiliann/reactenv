@@ -1,22 +1,53 @@
 body {
   background: steelblue;
   color: whitesmoke;
+  font-family: karla, sans-serif;
 }
 
 .App {
   text-align: center;
 }
 
+.catdata--class {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.first--class {
+  width: 200px;
+  border: 1px solid white;
+}
+
+.seccomp--class {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sec--class {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+
+}
+
+.third--comp {
+  border: 1px solid white;
+  margin: 10px 400px;
+}
+
 .class--six {
-  width: auto;
-  margin: 0px 0px;
+  margin: 30px 400px;
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  border: 1px dashed white;
 }
 
-.class--six > h3 {
+.class--six h3 {
   padding: 10px 0px;
   font-size: 3rem;
 }
@@ -28,6 +59,6 @@ body {
 
 .btn--class {
   padding: 10px 10px;
-  margin: 20px 500px;
+  margin: 20px 20px;
   border-radius: 20px;
 }

@@ -7,11 +7,13 @@ export default function Sixcomp() {
 
   useEffect(() => {
     console.log('! Effect !')
-    document.title = `Vous avez cliqué ${count} fois`;
+    console.log(`Vous avez cliqué ${count} fois`);
+    //document.title = `Vous avez cliqué ${count} fois`;
   }, [count]); //if value changed
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     setCount(count + 1)
+    e.preventDefault()
   }
   //To understand how useEffect works with console
   console.log("Component start here...")
@@ -20,11 +22,11 @@ export default function Sixcomp() {
   return (
     <div className='class--six'>
       <h3>My Sixcomp !</h3>
-        <p className='count--class'>{count}</p>
-        <p id='truc'></p>
+      <p className='count--class'>{count}</p>
+      <p id='truc'></p>
       <button 
         type='button'
-        onClick={handleClick}
+        onClick={(e) => handleClick(e)}
         className='btn--class'>
         Click and look at the console !
       </button>

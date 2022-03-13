@@ -29,7 +29,7 @@ export default class Clock extends React.Component {
     });
   }
   render() {
-    console.log("At first", this.state.date)
+    //console.log("At first", this.state.date)
     return (
       <div>
         <h1>Heure actuelle !</h1>
