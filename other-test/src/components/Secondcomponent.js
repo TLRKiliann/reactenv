@@ -9,7 +9,7 @@ function Secondcomponent(props) {
 
   return (
     <React.Fragment>
-      <p>{props.id}</p>
+      <p key={props.id}>{props.id}</p>
       <p>{props.name}</p>
       <p>{props.status}</p>
     </React.Fragment>

@@ -5,6 +5,8 @@ import Secondcomponent from './components/Secondcomponent'
 import Thirdcomponent from './components/Thirdcomponent'
 import Fourthcomponent from './components/Fourthcomponent'
 import Fifthcomp from './components/Fifthcomp'
+import Sixcomp from './components/Sixcomp'
+import Sevencomp from './components/Sevencomp'
 import './App.css';
 
 export default class App extends React.Component {
@@ -16,6 +18,7 @@ export default class App extends React.Component {
     const callData = dataFile.map(obj => {
       return (
         <Secondcomponent
+          key={obj.id}
           id={obj.id}
           name={obj.name}
           status={obj.status}
@@ -24,7 +27,8 @@ export default class App extends React.Component {
     })
     const toCatchData = dataFile.map(item => {
       return (
-        <Firstclass 
+        <Firstclass
+          key={item.id}
           id={item.id} 
           name={item.name}
           status={item.status}
@@ -38,7 +42,9 @@ export default class App extends React.Component {
         </header>
         <div>
           <h3>Here is my Firstclass !</h3>
-          {toCatchData}
+          <React.Fragment>
+            {toCatchData}
+          </React.Fragment>
         </div>
         <div>
           <h3>Here is my Second component !</h3>
@@ -46,8 +52,10 @@ export default class App extends React.Component {
         </div>
         <div>
           <h3>Here is my Third component !</h3>
-          <Thirdcomponent thirdobj={myThirdobj.ref}
-          thirdobjTwo={myThirdobj.secref} />
+          <Thirdcomponent
+            id={myThirdobj.ref} 
+            thirdobj={myThirdobj.ref}
+            thirdobjTwo={myThirdobj.secref} />
         </div>
         <div>
           <h3>Here is my Fourth component !</h3>
@@ -55,6 +63,12 @@ export default class App extends React.Component {
         </div>
         <div>
           <Fifthcomp />
+        </div>
+        <div>
+          <Sixcomp />
+        </div>
+        <div>
+          <Sevencomp />
         </div>
       </div>
     );

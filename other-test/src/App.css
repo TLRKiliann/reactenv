@@ -6,3 +6,28 @@ body {
 .App {
   text-align: center;
 }
+
+.class--six {
+  width: auto;
+  margin: 0px 0px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.class--six > h3 {
+  padding: 10px 0px;
+  font-size: 3rem;
+}
+
+.count--class {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.btn--class {
+  padding: 10px 10px;
+  margin: 20px 500px;
+  border-radius: 20px;
+}
