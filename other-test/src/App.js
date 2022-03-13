@@ -7,6 +7,8 @@ import Fourthcomponent from './components/Fourthcomponent'
 import Fifthcomp from './components/Fifthcomp'
 import Sixcomp from './components/Sixcomp'
 import Sevencomp from './components/Sevencomp'
+//import Eightcomp from './components/Eightcomp'
+import Ninecomp from './components/Ninecomp'
 import './App.css';
 
 export default class App extends React.Component {
@@ -74,6 +76,9 @@ export default class App extends React.Component {
         </div>
         <div>
           <Sevencomp />
+        </div>
+        <div>
+          <Ninecomp />
         </div>
       </div>
     );

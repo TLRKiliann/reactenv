@@ -19,14 +19,14 @@ export default function Eightcomp() {
     }
   },[])
 
-  const handleCheck = () => {
-    setState({state: })
+  const handleCheck = (e) => {
+    setState({state: e.target.value})
   }
 
   return (
     <div>
       <h4 ref='toggle'>Component with HOOKS !</h4>
-      <button onClick={handleCheck}>Click</button>
+      <button onClick={(e) => handleCheck(e)}>Click</button>
     </div>
   );
 };
