@@ -9,6 +9,7 @@ body {
 }
 
 .catdata--class {
+  margin: 10px 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -39,7 +40,7 @@ body {
 }
 
 .class--six {
-  margin: 30px 400px;
+  margin: 10px 400px;
   display: flex;
   text-align: center;
   flex-direction: column;

@@ -21,7 +21,7 @@ export default function Sixcomp() {
   
   return (
     <div className='class--six'>
-      <h3>My Sixcomp !</h3>
+      <h5>My Sixcomp with "useEffect" !</h5>
       <p className='count--class'>{count}</p>
       <p id='truc'></p>
       <button 

@@ -38,7 +38,8 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Hello GUYS !</h1>
+          <h1>Some Components n'Stylish Dependencies !</h1>
+          <p>Some stuff :<em> @material-ui, jQuery, useEffect, hooks...</em></p>
         </header>
         <div>
           <h3>Here is my "Firstclass" !</h3>
@@ -63,7 +64,9 @@ export default class App extends React.Component {
           <h3>Here is my Fourth component !</h3>
           <Fourthcomponent />
         </div>
-        <div>
+        <div
+          style={{border: '1px solid cyan',
+            margin: '10px 400px', padding: '20px 0px'}}>
           <Fifthcomp />
         </div>
         <div>
