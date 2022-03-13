@@ -7,17 +7,17 @@ export default class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
+    this.timerID = setInterval(() => this.tick(),
       1000
     );
   }
-
-  componentDidUpdate() {
+  //Display date when timerID has changed
+  //Is it necessary ?
+  /*componentDidUpdate() {
     if (this.timerID !== this.state.Date) {
-      console.log("Second display", this.state.date.toLocaleTimeString())
+      console.log("Second display : ", this.state.date.toLocaleTimeString())
     }
-  }
+  }*/
 
   componentWillUnmount() {
     clearInterval(this.timerID);
