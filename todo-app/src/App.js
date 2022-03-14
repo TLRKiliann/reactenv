@@ -8,6 +8,8 @@ export default function App() {
     isChecked: false
   });
 
+  //const LOCAL_STORAGE_KEY = 'todoApp.todos';
+
   const handleChange = (e) => {
     const {name, value, type, checked} = e.target
     setTodos(prevState => {
@@ -18,15 +20,15 @@ export default function App() {
     })
   }
   useEffect(() => {
-    const isChecked = localStorage.getItem('isChecked') === 'true';
-    const noteRec = isChecked ? localStorage.getItem('noteRec') : '';
-    setTodos({noteRec, isChecked})
-  }, [setTodos])
+    localStorage.getItem(('isChecked') === true);
+    const noteRec = todos.isChecked ? localStorage.getItem('noteRec') : '';
+    //setTodos({ noteRec, isChecked });
+  }, [])
 
 
   useEffect(() => {
-    localStorage.setItem('noteRec', todos.noteRec)
-    localStorage.setItem('isChecked', todos.isChecked)
+    localStorage.setItem(todos.noteRec, 'noteRec')
+    localStorage.setItem(todos.isChecked, 'isChecked')
   }, [todos])
 
   const handleSubmit = () => {
@@ -64,7 +66,7 @@ export default function App() {
           value={todos.name}
         />
         {todos.name}
-        <button type='button' onClick={(e) => handleChange(e)}>Add to do</button>
+        <button type='button' onClick={handleChange}>Add to do</button>
         <button type='submit'>Clear list</button>
       </form>
     </div>

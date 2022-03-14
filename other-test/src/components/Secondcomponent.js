@@ -4,7 +4,6 @@ import React from 'react'
 function Secondcomponent(props) {
 
   //const [item, setItem] = useState(props)
-
   //setItem(prevItem => !prevItem);
 
   return (
