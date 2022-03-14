@@ -1,57 +1,72 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Todolist from './components/Todolist'
 import './App.css';
 
 export default function App() {
-  const [todos, setTodos] = useState(
-  {
-    id: 1, 
-    name: "list 1",
-    complete: false
-  },
-  {
-    id: 2, 
-    name: "list 2",
-    complete: false
+  const [todos, setTodos] = useState({
+    noteRec: '',
+    isChecked: false
   });
 
-  /*useEffect(() => {
-    localStorage.setItem('ID')
-    localStorage.setItem('Name')
-  })*/
-
   const handleChange = (e) => {
-    const input = e.target;
-    setTodos(prevState => ({
-      ...prevState,
-      [input.name]: input.type === 'checkbox' ? input.checked : input.value}
-    ))
+    const {name, value, type, checked} = e.target
+    setTodos(prevState => {
+      return {
+        ...prevState,
+        [name]: type === "checkbox" ? checked : value
+      }
+    })
   }
-  const callMap = () => todos.map(todo => {
-    return (
-      <Todolist
-        id={todos.id}
-        name={todos.name}
-        complete={todos.complete}
-      />
-    )
-  })
+  useEffect(() => {
+    const isChecked = localStorage.getItem('isChecked') === 'true';
+    const noteRec = isChecked ? localStorage.getItem('noteRec') : '';
+    setTodos({noteRec, isChecked})
+  }, [setTodos])
+
+
+  useEffect(() => {
+    localStorage.setItem('noteRec', todos.noteRec)
+    localStorage.setItem('isChecked', todos.isChecked)
+  }, [todos])
+
+  const handleSubmit = () => {
+    alert("Clean-up ok !")
+  }
+
+  const callMap = () => {
+    todos.map(todo => {
+      return (
+        <Todolist
+          id={todos}
+        />
+      )
+    })
+  }
+
   return (
     <div className="App">
       <h1>Todo Title</h1>
-      <div>
+      <form onSubmit={handleSubmit}>
         {callMap}
         <input
-          type='text'
-          name='inputone'
-          value={todos}
-          onChange={(e) => setTodos(e.target.value)}
+          type="checkbox"
+          id="isChecked"
+          checked={todos.isChecked}
+          onChange={handleChange}
+          name="isChecked"
         />
-        {(e) => setTodos(e.target.value)}
+        <input
+          type="text"
+          onChange={handleChange}
+          className="first--input"
+          placeholder="noteRec"
+          name="noteRec"
+          value={todos.name}
+        />
+        {todos.name}
         <button type='button' onClick={(e) => handleChange(e)}>Add to do</button>
-        <button type='button'>Clear list</button>
-        
-      </div>
+        <button type='submit'>Clear list</button>
+      </form>
     </div>
   );
 }

@@ -104,7 +104,7 @@ export default function Form() {
           id="full-time"
           name="employment"
           value="full-time"
-          chacked={formData.employment === "full-time"}
+          checked={formData.employment === "full-time"}
           onChange={handleChange}
         />
         <label htmlFor="full-time">Full-time</label>
