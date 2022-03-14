@@ -1,18 +1,14 @@
-import React, {useState} from 'react'
-import Todo from './components/Todo'
+import React from 'react'
 
-export default function Todolist() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => {
-    setCount(prevState => prevState + 1)
-  }
-
+export default function Todolist(props) {
   return (
     <div>
-      <h2>Count</h2>
-        <Todo count={count} />
-      <button onClick={handleClick}>Click</button>
+      <input 
+        type='checkbox'
+        name='box' 
+        checked='checkbox' />
+      <p>{props.id}</p> 
+      <p>{props.name}</p>
     </div>
-  );
-};
+  )
+}

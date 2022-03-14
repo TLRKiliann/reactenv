@@ -1,3 +1,9 @@
+body {
+  background: steelblue;
+  color: antiquewhite;
+  font-family: "Times", sans-serif;
+}
+
 .App {
   text-align: center;
 }
