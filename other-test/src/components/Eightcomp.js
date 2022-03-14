@@ -23,9 +23,9 @@ export default class Eightcomp extends React.Component {
   render() {
     return (
       <div>
-        <h3 class='myH'>Eight component (jQuery) :</h3>
-        <h4 className='result'>{this.state.stuff}</h4>
-        <button class='myBtn'>Click</button>
+        <h3 className='myH'>Eight component (jQuery) :</h3>
+        <h4>{this.state.stuff}</h4>
+        <button className='myBtn'>Click</button>
       </div>
     );
   }
