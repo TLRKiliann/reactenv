@@ -1,32 +1,32 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import { findDOMNode } from 'react-dom'
+//import { useEffect } from 'react'
+//import { useState } from 'react'
+//import { findDOMNode } from 'react-dom'
 import $ from 'jquery'
 
-export default function Eightcomp() {
-  const [state, setState] = useState('');
-
-  const jQuerycode = () => {
-    const el = findDOMNode(this.ref.toggle) {
-      handleCheck()
-    }
+export default class Eightcomp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stuff: ''
+    };
   }
-
-  useEffect(() => {
-    if (el) {
-    console.log(el);
-    }
-  },[])
-
-  const handleCheck = (e) => {
-    setState({state: e.target.value})
+  componentDidMount() {
+    let _this = this;
+    $('button').on('click', function() {
+      $('.myH:even').css('color', 'orange')
+      $('.myBtn').css('color', 'red')
+      $('.myBtn:even').css('background', 'orange')
+      _this.setState({ stuff: Math.random() })
+    })
   }
-
-  return (
-    <div>
-      <h4 ref='toggle'>Component with HOOKS !</h4>
-      <button onClick={(e) => handleCheck(e)}>Click</button>
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        <h3 class='myH'>Eight component (jQuery) :</h3>
+        <h4 className='result'>{this.state.stuff}</h4>
+        <button class='myBtn'>Click</button>
+      </div>
+    );
+  }
+}
