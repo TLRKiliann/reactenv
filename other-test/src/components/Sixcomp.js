@@ -9,7 +9,7 @@ export default function Sixcomp() {
     console.log('! Effect !')
     console.log(`Vous avez cliqué ${count} fois`);
     //document.title = `Vous avez cliqué ${count} fois`;
-  }, [count]); //if value changed
+  },); //if value changed
 
   const handleClick = (e) => {
     setCount(count + 1)

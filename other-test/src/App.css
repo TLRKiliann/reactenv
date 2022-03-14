@@ -106,3 +106,20 @@ form > label {
   background: lightpink;
   color: firebrick;
 }
+
+.border--count {
+  margin: 10px 400px;
+  border: 2px solid floralwhite;
+}
+
+.count--class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count--class button {
+  font-size: 2rem;
+  padding: 10px 20px;
+  margin: 0px 10px;
+}
