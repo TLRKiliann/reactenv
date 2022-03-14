@@ -41,39 +41,48 @@ export default class Ninecomp extends React.Component {
   };
 
   render() {
+    console.log(this.state.pwd)
     return (
       <form onSubmit={this.handleFormSubmit}>
         <label>
-        <h4>Name: </h4>
+          <h4>Name: </h4>
           <input 
             name="name"
             value={this.state.name} 
-            onChange={this.handleChange} />
+            onChange={this.handleChange} 
+            placeholder='Name'/>
         </label>
+        {this.state.name}
         <label>
-        <h4>Password:</h4>
-        <input
-          name='password'
-          type="password"
-          placeholder="Password"
-          value={this.state.pwd}
-          onChange={(e) => this.setState({pwd: e.target.value})}
-        />
-        {this.setState.pwd}
+          <h4>Password:</h4>
+          <input
+            name='password'
+            type="password"
+            placeholder="Password"
+            value={this.state.pwd}
+            onChange={(e) => this.setState({pwd: e.target.value})}
+          />
         </label>
-        <label>
+        {this.state.pwd}
+        <label className='lbl--input'>
           <input
             name="rememberMe"
             type="checkbox"
             checked={this.state.rememberMe}
-            onChange={this.handleChange} /> 
+            onChange={this.handleChange} />
+          <h5>
               Remember me
+          </h5>
         </label>
           <p>Name: {localStorage.getItem('Name')}</p>
           <p>Password: {localStorage.getItem('Password')}</p>
-        <button type="submit">Sign In</button>
+        <button type="submit" className='btn--submit'>Sign In</button>
         <div>
-          <button onClick={this.Remove}>Remove</button>
+          <button
+            onClick={this.Remove}
+            className='btn--onClick'>
+              Remove
+          </button>
         </div>
       </form>
     );

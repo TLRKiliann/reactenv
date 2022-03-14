@@ -63,3 +63,46 @@ body {
   margin: 20px 20px;
   border-radius: 20px;
 }
+
+form {
+  margin: 10px 400px;
+  border: 1px dashed white;
+}
+
+form > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lbl--input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.lbl--input input {
+  margin-right: 5px;
+}
+
+.lbl--input h5 {
+  margin-left: 5px;
+}
+
+.btn--submit {
+  width: 130px;
+  padding: 5px 10px;
+  background: darkseagreen;
+  color: darkgreen;
+}
+
+.btn--onClick {
+  width: 130px;
+  margin: 10px;
+  padding: 5px 10px;
+  background: lightpink;
+  color: firebrick;
+}
