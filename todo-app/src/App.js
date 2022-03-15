@@ -1,74 +1,69 @@
-import React, {useState, useEffect} from 'react'
-import Todolist from './components/Todolist'
+import React, { useState, useEffect } from 'react'
+//import Todolist from './components/Todolist'
 import './App.css';
 
 export default function App() {
   const [todos, setTodos] = useState({
-    noteRec: '',
-    isChecked: false
-  });
-
-  //const LOCAL_STORAGE_KEY = 'todoApp.todos';
+      isChecked: false,
+      noteRec: ''
+  })
 
   const handleChange = (e) => {
-    const {name, value, type, checked} = e.target
-    setTodos(prevState => {
-      return {
-        ...prevState,
-        [name]: type === "checkbox" ? checked : value
-      }
-    })
+    const {name, type, value, checked} = e.target
+    setTodos(prevState => ({
+      ...prevState,
+      [name]: type === 'checkbox' ? checked : value
+    }))
+    const { isChecked, noteRec } = todos;
+    localStorage.setItem('isChecked', isChecked)
+    localStorage.setItem('noteRec', noteRec)
   }
-  useEffect(() => {
-    localStorage.getItem(('isChecked') === true);
-    const noteRec = todos.isChecked ? localStorage.getItem('noteRec') : '';
-    //setTodos({ noteRec, isChecked });
-  }, [])
-
 
   useEffect(() => {
-    localStorage.setItem(todos.noteRec, 'noteRec')
-    localStorage.setItem(todos.isChecked, 'isChecked')
-  }, [todos])
+    const isChecked = localStorage.getItem('isChecked') === 'true';
+    const noteRec = isChecked ? localStorage.getItem('noteRec') : '';
+  },[]);
 
   const handleSubmit = () => {
+    const { isChecked, noteRec } = todos;
+    localStorage.removeItem('isChecked', isChecked)
+    localStorage.removeItem('noteRec', noteRec);
     alert("Clean-up ok !")
   }
 
-  const callMap = () => {
-    todos.map(todo => {
-      return (
-        <Todolist
-          id={todos}
-        />
-      )
-    })
-  }
+  const retrieveData = () => {
+    const isChecked = localStorage.getItem('isChecked') === 'true';
+    const noteRec = isChecked ? localStorage.getItem('noteRec') : '';
+  };
+
+  /*const callMap = todos.map(todo => {
+      return <Todolist id={todo.id} />
+  })*/
 
   return (
-    <div className="App">
+    <form onSubmit={handleSubmit} className="App">
       <h1>Todo Title</h1>
-      <form onSubmit={handleSubmit}>
-        {callMap}
-        <input
-          type="checkbox"
-          id="isChecked"
-          checked={todos.isChecked}
-          onChange={handleChange}
-          name="isChecked"
-        />
-        <input
-          type="text"
-          onChange={handleChange}
-          className="first--input"
-          placeholder="noteRec"
-          name="noteRec"
-          value={todos.name}
-        />
-        {todos.name}
-        <button type='button' onClick={handleChange}>Add to do</button>
-        <button type='submit'>Clear list</button>
-      </form>
-    </div>
+
+      <input
+        id="isChecked"
+        type="checkbox"
+        name="isChecked"
+        checked={todos.isChecked}
+        onChange={handleChange}
+      />
+      {todos.isChecked}
+      <input
+        type="text"
+        name="todos"
+        value={todos.noteRec}
+        onChange={(e) => setTodos({noteRec: e.target.value})}
+        className="first--input"
+        placeholder="enter note"
+      />
+      {todos.noteRec}
+      <button type='button' onClick={(e) => handleChange(e)}>Add to do</button>
+      <button type='submit' value='onSubmit'>Clear</button>
+      <button type='button' onClick={retrieveData}>Retrive ALL</button>
+    </form>
   );
 }

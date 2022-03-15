@@ -64,27 +64,33 @@ export default class App extends React.Component {
             thirdobjTwo={myThirdobj.secref} />
         </div>
         <div>
-          <h3>Here is my Fourth component !</h3>
+          <h3>Here is my Fourth component (@materia) !</h3>
           <Fourthcomponent />
         </div>
         <div
           style={{border: '1px solid cyan',
             margin: '10px 400px', padding: '20px 0px'}}>
+          Here is my Fifthcomp toggle()  
           <Fifthcomp />
         </div>
         <div>
+          Here is my Sixcomp useEffect((),[])
           <Sixcomp />
         </div>
         <div>
+          Here is my Sevencomp componentDidMount() - componentWillUnmount() - class
           <Sevencomp />
         </div>
         <div>
+          Here is my Eightcomp jQuery - componentDidMount() - class
           <Eightcomp />
         </div>
         <div>
+          Here is my Ninecomp localStorage - componentDidMount - class
           <Ninecomp />
         </div>
         <div>
+          Here is my Tencomp state tests
           <Tencomp />
         </div>
       </div>

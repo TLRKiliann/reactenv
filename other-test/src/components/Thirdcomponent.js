@@ -14,7 +14,7 @@ export default class Thirdcomponent extends React.Component {
   }
 
   toggle(e) {
-    if (this.state.dataInput.length >= 10) {
+    if (this.state.dataInput.length > 9 ) {
       this.setState(oldState => ({
         ...oldState,
         colstyle: !this.state.colstyle
@@ -36,21 +36,21 @@ export default class Thirdcomponent extends React.Component {
         <p>{this.props.thirdobj}</p>
         <p>{this.props.thirdobjTwo}</p>
 
-        {dataInput.length >= 10 && <input
-          value={ dataInput }
-          onChange={(e) => this.handleChange(e)}
-          placeholder='Enter minimum 10 caracters'
-          maxLength="20"
-          style={{color: colstyle ? 'blue' : 'red'}}>
-        </input>}
-
         {dataInput.length < 10 && <input
           value={ dataInput }
           onChange={(e) => this.handleChange(e)}
           placeholder='Enter minimum 10 caracters'
           maxLength="20"
           style={{color: this.setState.colstyle ? 'blue' : 'red'}}>
-        </input>}        
+        </input>}
+
+        {dataInput.length > 9 && <input
+          value={ dataInput }
+          onChange={(e) => this.handleChange(e)}
+          placeholder='Enter minimum 10 caracters'
+          maxLength="20"
+          style={{color: colstyle ? 'blue' : 'red'}}>
+        </input>}
 
         { colstyle &&  <button 
           style={{color: 'white', background: colstyle ? 'red' : 'blue' }} 

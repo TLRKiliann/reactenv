@@ -6,10 +6,10 @@ export default class Fifthcomp extends React.Component {
     this.state = {
       val: true,
     };
-    this.handleChange = this.handleChange.bind(this)
+    this.toggle = this.toggle.bind(this)
   }
 
-  handleChange(e) {
+  toggle(e) {
     this.setState(prevState => ({
       val: !this.state.val
     }))
@@ -25,12 +25,12 @@ export default class Fifthcomp extends React.Component {
         {!val && <h3>{this.setState.val ? 'Would you change ?' : 'Changed !'}</h3>}
 
         {val && <button 
-          onClick={(e) => this.handleChange(e)}>
+          onClick={(e) => this.toggle(e)}>
           {val ? "Click to CHANGE !" : "Changing is done !"}
         </button>}
         
         {!val && <button 
-          onClick={(e) => this.handleChange(e)}>
+          onClick={(e) => this.toggle(e)}>
           {this.setState.val ? "Click to CHANGE !" : "Changing is done !"}
         </button>}
       </div>
