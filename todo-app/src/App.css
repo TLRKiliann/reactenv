@@ -1,9 +1,55 @@
 body {
-  background: steelblue;
-  color: antiquewhite;
+  background: purple;
+  color: white;
   font-family: "Times", sans-serif;
 }
 
 .App {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub--app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input--class {
+  border-radius: 10px;
+  margin: 10px 100px;
+  padding: 5px 10px;
+}
+
+.lbl--input {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.btn--class {
+  width: 100px;
+  padding: 5px 10px;
+  margin: 10px 0px;
+}
+
+.local--print {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub--local div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub--local i {
+  margin: 5px 5px;
+  font-size: 1.2rem;
 }
