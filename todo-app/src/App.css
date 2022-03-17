@@ -1,5 +1,6 @@
 body {
-  background: purple;
+  /*background: purple;*/
+  background: linear-gradient(90deg, rgba(122, 131, 255, 1), rgba(173, 122, 255, 1));
   color: white;
   font-family: "Times", sans-serif;
 }
@@ -52,4 +53,30 @@ body {
 .sub--local i {
   margin: 5px 5px;
   font-size: 1.2rem;
+}
+
+/*submit*/
+
+.submit--form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submit--form h3 input button {
+  display: flex;
+  justify-content: center;
+}
+
+.chk--div {
+  display: flex;
+  align-items: center;
+}
+
+.chk--div p {
+  margin-left: 10px;
+}
+
+.btn--conf {
+  margin: 10px 0px;
 }
