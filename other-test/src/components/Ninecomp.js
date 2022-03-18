@@ -50,7 +50,8 @@ export default class Ninecomp extends React.Component {
             name="name"
             value={this.state.name} 
             onChange={this.handleChange} 
-            placeholder='Name'/>
+            placeholder='Name'
+            required />
         </label>
         {this.state.name}
         <label>
@@ -61,7 +62,7 @@ export default class Ninecomp extends React.Component {
             placeholder="Password"
             value={this.state.pwd}
             onChange={(e) => this.setState({pwd: e.target.value})}
-          />
+            required />
         </label>
         {this.state.pwd}
         <label className='lbl--input'>

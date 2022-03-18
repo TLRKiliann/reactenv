@@ -41,16 +41,16 @@ export default class Thirdcomponent extends React.Component {
           onChange={(e) => this.handleChange(e)}
           placeholder='Enter minimum 10 caracters'
           maxLength="20"
-          style={{color: this.setState.colstyle ? 'blue' : 'red'}}>
-        </input>}
+          style={{color: this.setState.colstyle ? 'blue' : 'red'}}
+          required />}
 
         {dataInput.length > 9 && <input
           value={ dataInput }
           onChange={(e) => this.handleChange(e)}
           placeholder='Enter minimum 10 caracters'
           maxLength="20"
-          style={{color: colstyle ? 'blue' : 'red'}}>
-        </input>}
+          style={{color: colstyle ? 'blue' : 'red'}}
+          required />}
 
         { colstyle &&  <button 
           style={{color: 'white', background: colstyle ? 'red' : 'blue' }} 
