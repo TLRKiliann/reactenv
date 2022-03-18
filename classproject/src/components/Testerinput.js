@@ -32,7 +32,7 @@ export default class Testerinput extends React.Component {
           type='number'
           value={this.state.input}
           onChange={this.handleChange}
-           />
+          required />
         <br />
         {
           this.state.userAge === ''

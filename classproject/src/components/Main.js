@@ -34,6 +34,7 @@ export default function Main(props) {
           value={state}
           onChange={(e) => setState(e.target.value)}
           placeholder="Your Name"
+          required
         />
         <p>{state}</p>
       </form>
