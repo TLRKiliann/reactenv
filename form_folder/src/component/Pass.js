@@ -63,6 +63,7 @@ export default function Pass() {
           className="pass--div"
           name="email"
           value={passForm.email}
+          required
         />
         <input
           type="password"
@@ -71,6 +72,7 @@ export default function Pass() {
           className="pass--div"
           name="passwd"
           value={passForm.passwd}
+          required
         />
         <input
           type="password"
@@ -79,6 +81,7 @@ export default function Pass() {
           className="pass--div"
           name="passConfirm"
           value={passForm.passConfirm}
+          required
         />
         <div className="div--news">
           <input

@@ -40,6 +40,7 @@ export default function Form() {
         placeholder="Firstname"
         name="firstName"
         value={formData.firstName}
+        required
       />
       <input
         type="text"
@@ -48,6 +49,7 @@ export default function Form() {
         placeholder="Lastname"
         name="lastName"
         value={formData.lastName}
+        required
       />
       <input
         type="email"
@@ -56,12 +58,14 @@ export default function Form() {
         placeholder="Email"
         name="email"
         value={formData.email}
+        required
       />
       <textarea
         value={formData.comments}
         onChange={handleChange}
         placeholder="Comments"
         name="comments"
+        required
       />
       <div className="input--lab">
         <input
