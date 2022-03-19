@@ -13,9 +13,9 @@ function App() {
       <header className="App-header">
         <h1>React n Redux</h1>
         <h3>Counter : {counter}</h3>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button>
-        {isLogged ? <h3>Information that we shouldn't see</h3>}
+        <button onClick={() => dispatch(increment(2))}>+</button>
+        <button onClick={() => dispatch(decrement(3))}>-</button>
+        {isLogged ? <h3>Information that we should not see</h3> : ''}
       </header>
     </div>
   );

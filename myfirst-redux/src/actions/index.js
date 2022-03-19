@@ -1,13 +1,13 @@
-export const increment = nr => {
+export const increment = (na) => {
   return {
     type: 'INCREMENT',
-    payload: nr
+    payload: na
   };
 };
 
-export const decrement = () => {
+export const decrement = (ns) => {
   return {
     type: 'DECREMENT',
-    payload:
+    payload: ns
   };
 };
