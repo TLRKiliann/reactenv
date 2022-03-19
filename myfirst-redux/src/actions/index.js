@@ -11,3 +11,10 @@ export const decrement = (ns) => {
     payload: ns
   };
 };
+
+export const logger = (state) => {
+  return {
+    type: 'SIGN_IN',
+    payload: state
+  }
+}

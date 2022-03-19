@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions';
+import { increment, decrement, logger } from './actions';
 import './App.css';
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
         <button onClick={() => dispatch(increment(1))}>+</button>
         <button onClick={() => dispatch(decrement(1))}>-</button>
         {isLogged ? <h3>Information that we should not see</h3> : ''}
+        <h3>Login : {isLogged}</h3>
+        <button onClick={() => dispatch(logger())}>Click log</button>
       </header>
     </div>
   );
