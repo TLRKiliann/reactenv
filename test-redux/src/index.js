@@ -1,14 +1,13 @@
-    import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { createStore } from 'redux';
-import allReducer from './reducers'; //from 'reducers/index.js'
+import allReducers from './reducers';
 import { Provider } from 'react-redux';
 
-
 const store = createStore(
-  allReducer,
+  allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(

@@ -1,0 +1,10 @@
+body {
+  background: purple;
+  color: white;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
