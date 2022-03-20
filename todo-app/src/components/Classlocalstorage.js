@@ -5,19 +5,12 @@ export default class Classlocalstorage extends React.Component {
     super(props);
     this.state = {
       pseudo:'',
-      chk: null
+      chk: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-  }
-
-  handleCheck() {
-    this.setState(prevTruc => ({
-      ...prevTruc,
-      chk: !this.state.chk
-    }));
   }
 
   componentDidMount() {
@@ -33,12 +26,13 @@ export default class Classlocalstorage extends React.Component {
     alert("Everythings was removed")  
   }
 
+  handleCheck() {
+    this.setState({chk: !this.state.chk});
+  }
+
   handleChange(e) {
     const { type, name, checked, value } = e.target;
-    this.setState(prevState => ({
-      ...prevState,
-      [name]: type === 'checkbox' ? checked : value
-    }))
+    this.setState({[name]: type === 'checkbox' ? checked : value});
   }
 
   handleFormSubmit = (e) => {

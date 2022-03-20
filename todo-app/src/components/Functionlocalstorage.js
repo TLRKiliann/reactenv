@@ -12,15 +12,12 @@ export default function App() {
   const handleRecord = (e) => {
     if (chk === true) {
       alert("Ok, wellcome")
-      //{chk && alert("Ok, wellcome")
       localStorage.setItem('checkbox', chk);
       localStorage.setItem('Name', name);
       localStorage.setItem('Password', pwd);
     } else {
       alert("You didn't sign terms !")
     }
-    //}
-    //{!chk && alert("You didn't sign terms")}
     e.preventDefault();
   };
 
