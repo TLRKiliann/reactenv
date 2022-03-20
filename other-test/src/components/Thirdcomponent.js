@@ -14,11 +14,8 @@ export default class Thirdcomponent extends React.Component {
   }
 
   toggle(e) {
-    if (this.state.dataInput.length > 9 ) {
-      this.setState(oldState => ({
-        ...oldState,
-        colstyle: !this.state.colstyle
-      }))
+    if (this.state.dataInput.length > 9) {
+      this.setState({colstyle: !this.state.colstyle})
     } else {
       return alert("Not enough (10 caracters)!!!")
     }

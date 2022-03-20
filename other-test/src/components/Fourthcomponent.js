@@ -23,7 +23,6 @@ export default class Fourthcomponent extends React.Component {
   
   handleClickShowPassword = () => {
     this.setState(prevState => ({
-      ...prevState,
       showPassword: !prevState.showPassword 
     }));
   };
@@ -34,7 +33,6 @@ export default class Fourthcomponent extends React.Component {
   
   handlePasswordChange = (prop) => (event) => {
     this.setState(prevState => ({
-      ...prevState,
       [prop]: event.target.value 
     }));
   };
