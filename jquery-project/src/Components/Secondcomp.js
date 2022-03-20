@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import $ from 'jquery';
 
 export default class Secondcomp extends React.Component {
-  handleToggle = () => {
+  toggle = () => {
     const el = findDOMNode(this.refs.toggle);
     $(el).slideToggle();
   };
@@ -24,7 +24,7 @@ export default class Secondcomp extends React.Component {
           </ul>
         </div>
         
-        <button className='ellipsis-click' onClick={this.handleToggle}>
+        <button className='ellipsis-click' onClick={this.toggle}>
             ok<i className='fa-ellipsis-h'/>click
         </button>
       </div>
