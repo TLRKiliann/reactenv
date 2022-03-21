@@ -1,14 +1,17 @@
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
 export const increment = (deliv) => {
   return {
-    type: 'INCREMENT',
+    type: INCREMENT,
     payload: deliv
   }
 }
 
-export const decrement = (buy) => {
+export const decrement = (number) => {
   return {
-    type: 'DECREMENT',
-    payload: buy
+    type: DECREMENT,
+    payload: number
   }
 }
 
