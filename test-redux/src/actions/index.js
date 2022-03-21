@@ -1,10 +1,19 @@
 const INCREMENT = 'INCREMENT';
+const INCREMENTONE = 'INCREMENTONE';
 const DECREMENT = 'DECREMENT';
+
 
 export const increment = (deliv) => {
   return {
     type: INCREMENT,
     payload: deliv
+  }
+}
+
+export const incrementone = (delivone) => {
+  return {
+    type: INCREMENTONE,
+    payload: delivone
   }
 }
 

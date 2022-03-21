@@ -1,15 +1,22 @@
 const INCREMENT = 'INCREMENT';
+const INCREMENTONE = 'INCREMENTONE';
 const DECREMENT = 'DECREMENT';
+
 
 /*
 const initialState = {
-  number: 20,
-  deliv: 100
-}*/
+   deliv: 100,
+   delivone: 50,
+   number: 20
+};*/
 
 const counterReducers = (state=20, action) => {
   switch (action.type) {
     case INCREMENT:
+      return (
+        state + action.payload
+      )
+    case INCREMENTONE:
       return (
         state + action.payload
       )
@@ -23,14 +30,3 @@ const counterReducers = (state=20, action) => {
 }
 
 export default counterReducers;
-
-/*
-    case INCREMENT:
-      return (
-        state + action.payload
-      )
-    case DECREMENT:
-      return (
-        state - action.payload
-      )
-*/
