@@ -69,14 +69,14 @@ export default class Myweather extends React.Component {
         </nav>
         <input
           type="input"
-          onChange={this.handleChange}
+          onChange={ this.handleChange }
           placeholder="Enter a city"
           name='city'
           value={ this.setState.input }
         />
         <button type='button' onClick={ this.handleChange }>Click !</button>
         <div>
-          <h3 onChange={this.handleChange}>{this.state.input}</h3>
+          <h3 onChange={this.handleChange}>{ this.state.input }</h3>
         </div>
       </div>
     );
