@@ -26,18 +26,18 @@ function App() {
       <button onClick={() => dispatch(decrement(number))}>Customer buy...</button>
       <p>It makes {number} caked sold ! It keeps {counter}.</p>
 
-      <input type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
+      <input disabled="true" type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
 
       <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
       <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
 
-      <input type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
+      <input disabled="true" type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
       
       <button onClick={() => dispatch(increment(deliv))}>Livraison</button>
       <p>Livraison of {deliv} cakes arrived and it keeps {counter}.</p>
 
       {isLogged ? <p>This message shouldn't appears</p> : ''}
-      <button onClick={() => dispatch(logged())}>Logged</button>
+      <button onClick={() => dispatch(logged())}>Hidden MSG</button>
     </div>
   );
 }
