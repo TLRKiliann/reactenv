@@ -6,9 +6,11 @@ function Todo({ todo, toggleComplete, removeTodo }) {
   function handleCheckboxClick() {
     toggleComplete(todo.id)
   }
+
   function handleRemoveClick() {
     removeTodo(todo.id);
   }
+  
   return (
     <div className='todo--div'>
       <input type='checkbox' onClick={handleCheckboxClick} />
