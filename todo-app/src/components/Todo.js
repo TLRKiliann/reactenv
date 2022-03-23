@@ -1,23 +1,21 @@
-import React from 'react';
+import React from 'react'
 
+function Todo({todo, toggleComplete, todoRemove}) {
 
-function Todo({ todo, toggleComplete, removeTodo }) {
-
-  function handleCheckboxClick() {
-    toggleComplete(todo.id)
+  function handleCheckbox() {
+    toggleComplete(todo.id); // pk todo.id ???
   }
-
-  function handleRemoveClick() {
-    removeTodo(todo.id);
+  function clickRemove() {
+    todoRemove(todo.id);
   }
-  
   return (
     <div className='todo--div'>
-      <input type='checkbox' onClick={handleCheckboxClick} />
+      <h3>Todo</h3>
+      <input type='checkbox' onClick={handleCheckbox} />
       <li>{todo.task}</li>
-      <button onClick={handleRemoveClick}>Delete</button>
+      <button onClick={clickRemove}>Delete</button>
     </div>
-  )
-}
+  );
+};
 
 export default Todo;
