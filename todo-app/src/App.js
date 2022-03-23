@@ -22,7 +22,7 @@ function App() {
   }, [todos]);
 
   function addTodo(todo) {
-    setTodos([todo, ...todos]);
+    setTodos([todo, ...todos]); //sens de l'affichage
   }
 
   function toggleComplete(id) {
@@ -30,7 +30,7 @@ function App() {
       todos.map(todo => {
         if (todo.id === id) {
           return {
-            ...todo, completed: !todo.toggleComplete
+            ...todo, completed: !todo.toggleComplete // ???
           };
         }
     return todo;

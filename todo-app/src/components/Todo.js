@@ -1,10 +1,12 @@
 import React from 'react'
 
-function Todo({todo, toggleComplete, todoRemove}) {
 
+function Todo({todo, toggleComplete, todoRemove}) {
+  //checkbox
   function handleCheckbox() {
-    toggleComplete(todo.id); // pk todo.id ???
+    toggleComplete(todo.id);
   }
+  //delete
   function clickRemove() {
     todoRemove(todo.id);
   }

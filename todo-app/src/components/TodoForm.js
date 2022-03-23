@@ -16,7 +16,7 @@ function TodoForm({addTodo}) {
     e.preventDefault();
     if (todo.task.trim()) {
       addTodo({...todo, id: uuidv4()})
-      setTodo({...todo, task: '' })
+      setTodo({...todo, task: ''})
     }
   }
   return (
