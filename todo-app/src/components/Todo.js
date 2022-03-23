@@ -2,6 +2,7 @@ import React from 'react';
 
 
 function Todo({ todo, toggleComplete, removeTodo }) {
+
   function handleCheckboxClick() {
     toggleComplete(todo.id)
   }
@@ -9,10 +10,10 @@ function Todo({ todo, toggleComplete, removeTodo }) {
     removeTodo(todo.id);
   }
   return (
-    <div>
+    <div className='todo--div'>
       <input type='checkbox' onClick={handleCheckboxClick} />
       <li>{todo.task}</li>
-      <button onClick={handleRemoveClick}>X</button>
+      <button onClick={handleRemoveClick}>Delete</button>
     </div>
   )
 }

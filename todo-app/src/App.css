@@ -1,3 +1,21 @@
+body {
+  background: black;
+  color: whitesmoke;
+}
+
 .App {
   text-align: center;
+}
+
+.todo--div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  border:  2px solid black;
+}
+
+.todo--div li {
+  padding: 10px 10px;
+  font-size: 1.4rem;
 }
