@@ -20,30 +20,30 @@ A simple tester to understand structure & how Redux works with React.
 
 ---
 
-[Shema](https://dev-to-uploads.s3.amazonaws.com/i/hmo95mvmnw2wmzjoab1t.png)
+[Schema](https://dev-to-uploads.s3.amazonaws.com/i/hmo95mvmnw2wmzjoab1t.png)
 
 ---
 
 ## Importations from Redux :
 
-index.js (main)
+index.js (main) \
 `import { createStore } from 'redux';`
 
-/reducers/index.js
-`import { combineReducers } from 'redux';`
-& :
-`import counterReducers from 'counter';`
+/reducers/index.js \
+`import { combineReducers } from 'redux';`\
+& :\
+`import counterReducers from 'counter';` \
 `import loggerReducers from 'isLogged';`
 
 ## Importation from React :
 
-App.js
+App.js\
 `import {useState} from 'react';`
 
-index.js (main)
+index.js (main)\
 `import allReducers from './reducers'; ('./reducers/index.js')`
 
-App.js
+App.js\
 `import { actions } from './actions'; ('./actions/index.js')`
 
 ## Importation from React-Redux :
