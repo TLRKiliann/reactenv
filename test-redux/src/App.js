@@ -1,8 +1,9 @@
-import './App.css';
 import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, incrementone, decrement, logged } from './actions';
+import './App.css';
+
 
 function App() {
   const [number, setNumber] = useState(1);
@@ -26,17 +27,17 @@ function App() {
       <button onClick={() => dispatch(decrement(number))}>Customer buy...</button>
       <p>It makes {number} caked sold ! It keeps {counter}.</p>
 
-      <input disabled="true" type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
+      <input disabled={true} type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
 
       <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
       <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
 
-      <input disabled="true" type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
+      <input disabled={true} type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
       
       <button onClick={() => dispatch(increment(deliv))}>Livraison</button>
       <p>Livraison of {deliv} cakes arrived and it keeps {counter}.</p>
 
-      {isLogged ? <p>This message shouldn't appears</p> : ''}
+      {isLogged ? <p>This message shouldn't appears</p> : <p></p>}
       <button onClick={() => dispatch(logged())}>Hidden MSG</button>
     </div>
   );

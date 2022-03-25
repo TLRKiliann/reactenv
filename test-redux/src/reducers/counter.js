@@ -2,7 +2,6 @@ const INCREMENT = 'INCREMENT';
 const INCREMENTONE = 'INCREMENTONE';
 const DECREMENT = 'DECREMENT';
 
-
 /*
 const initialState = {
    deliv: 100,

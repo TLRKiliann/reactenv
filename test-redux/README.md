@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# test-redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple tester to understand structure & how Redux works with React.
 
-## Available Scripts
+## Structure :
 
-In the project directory, you can run:
+* state
 
-### `npm start`
+* Definie const
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Action
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Reducers
 
-### `npm test`
+* Dispatch actions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Importations from Redux :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+import { createStore } from 'redux';
+import { combineReducers } from 'redux';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Importation from React :
 
-### `npm run eject`
+import {useState} from 'react';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+import { actions } from './actions'; ('./actions/index.js')
+import allReducers from './reducers'; ('./reducers/index.js')
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+from 'react-redux';
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## With one more state => `INCREMENTONE` :
 
-## Learn More
+### App.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  const [delivone, setDelivone] = useState(50);
+```
+...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+      <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
+      <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
 
-### Code Splitting
+      <input disabled={true} type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### /actions/index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
 
-### Making a Progressive Web App
+const INCREMENTONE = 'INCREMENTONE';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+	...
+export const incrementone = (delivone) => {
+  return {
+    type: INCREMENTONE,
+    payload: delivone
+  }
+}
+    ...
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### /reducers/counter.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+    
+const INCREMENTONE = 'INCREMENTONE';
 
-### `npm run build` fails to minify
+const counterReducers = (state=20, action) => {
+  switch (action.type) {
+    ...
+    case INCREMENTONE:
+      return (
+        state + action.payload
+      )
+      ...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default counterReducers;
+
+```
