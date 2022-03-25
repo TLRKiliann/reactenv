@@ -1,17 +1,35 @@
 # todo-app
 
-### Importation : 
-{ useState, useEffect, uuid }
+---
+
+### Importation :
+
+`npm install uuid`
+
+`import { v4 as uuidv4 } from 'uuid';`
+
+to define `id: uuidv4()`
+
+
+***other importation from react :***
+
+useState & useEffect
+
+---
 
 ### Interesting skills :
 
-///
+```
 localstorage getItem &
 
 setItem with useEffect &
 
 JSON.parse()/JSON.stringify()
-///
+
+map() & filter() methods
+```
+
+---
 
 ## App.js
 
@@ -27,10 +45,9 @@ App.js ---> TodoForm.js
 
 ---------------------------------------
 
-
 ## TodoForm.js
 
-***useState({}) with stadard definition for objects***
+useState({}) with stadard definition for objects
 
 input type text
 
@@ -38,15 +55,16 @@ button to sumit input type text
 
 ## TodoList.js
 
-
+map() to define todo for Todo.js
 
 ## Todo.js
 
-definition of "todo.id"
+definition of "todo.id" to reuse in "App.js"
+with "delete" button and with checked of checkbox.
 
-input checkbox 
+input type checkbox 
 
-button delete one element from the liste
+button delete one element from the list.
 
 
 
