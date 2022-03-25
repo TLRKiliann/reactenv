@@ -110,5 +110,4 @@ const counterReducers = (state=20, action) => {
 };
 
 export default counterReducers;
-
 ```
