@@ -21,17 +21,14 @@ useState & useEffect
 
 ```
 localstorage getItem &
-
 setItem with useEffect &
-
 JSON.parse()/JSON.stringify()
-
 by using LOCAL_STORAGE_KEY with uuid
 ```
 
 `map() & filter() methods`
 
-`how states are used in all files & useEffect`
+`How states are used in all files & by useEffect`
 
 ---
 
