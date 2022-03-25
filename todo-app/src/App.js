@@ -30,8 +30,8 @@ function App() {
       todos.map(todo => {
         if (todo.id === id) {
           return {
-            ...todo, completed: !todo.toggleComplete // ???
-          };
+            ...todo, completed: !todo.completed
+          }
         }
     return todo;
     }))
@@ -41,8 +41,8 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   }
   return (
-    <div className='app--div'>
-      <h1>Fragment app</h1>
+    <div className='app--class'>
+      <h1>Ma liste de truc !</h1>
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}

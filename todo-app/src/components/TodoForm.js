@@ -21,7 +21,6 @@ function TodoForm({addTodo}) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <h3>TodoForm</h3>
       <input
         type='text'
         name='task'

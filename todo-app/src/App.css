@@ -1,32 +1,47 @@
 body {
   background: black;
   color: whitesmoke;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App {
+h1 {
   text-align: center;
 }
 
-.app--div {
+.app--class {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-form {
+Form {
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+Form button {
+  margin: 20px 10px;
+  padding: 3px 10px;
+}
+
+.todo--class {
+  margin: 10px 10px;
+  width: auto;
 }
 
 .todo--div {
+  width: auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   list-style-type: none;
-  border:  2px solid black;
 }
 
 .todo--div li {

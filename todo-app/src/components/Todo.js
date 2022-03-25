@@ -12,8 +12,20 @@ function Todo({todo, toggleComplete, todoRemove}) {
   }
   return (
     <div className='todo--div'>
-      <h3>Todo</h3>
-      <input type='checkbox' onClick={handleCheckbox} />
+      { todo.completed && 
+        <input
+          type='checkbox'
+          defaultChecked={true}
+          onClick={handleCheckbox}
+          />
+      }
+      { !todo.completed &&
+        <input 
+          type='checkbox'
+          defaultChecked={false}
+          onClick={handleCheckbox}
+        />
+      }
       <li>{todo.task}</li>
       <button onClick={clickRemove}>Delete</button>
     </div>
