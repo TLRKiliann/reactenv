@@ -32,20 +32,32 @@ from 'react-redux';
 
 ---
 
-## With one more state => `INCREMENTONE` :
+## With one more action => `INCREMENTONE` and one more state => `delivone` :
 
 ### App.js
 
 ```
-  const [delivone, setDelivone] = useState(50);
-```
-...
+	
+	...
+	
+	const [delivone, setDelivone] = useState(50);
+	
+	...
 
 ```
+
+
+```
+
+	  ...
+      
       <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
       <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
 
       <input disabled={true} type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
+      
+      ...
+
 ```
 
 ---
@@ -53,17 +65,18 @@ from 'react-redux';
 ### /actions/index.js
 
 ```
+...
 
 const INCREMENTONE = 'INCREMENTONE';
 
-	...
 export const incrementone = (delivone) => {
   return {
     type: INCREMENTONE,
     payload: delivone
   }
 }
-    ...
+
+...
 
 ```
 
@@ -77,12 +90,14 @@ const INCREMENTONE = 'INCREMENTONE';
 
 const counterReducers = (state=20, action) => {
   switch (action.type) {
+
     ...
     case INCREMENTONE:
       return (
         state + action.payload
       )
-      ...
+     ...
+};
 
 export default counterReducers;
 
