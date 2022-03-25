@@ -2,33 +2,55 @@
 
 A simple tester to understand structure & how Redux works with React.
 
+---
+
 ## Structure :
+
+* store
 
 * state
 
-* Definie const
+* UI (user interface)
 
-* Action
+* action
 
-* Reducers
+* reducers
 
-* Dispatch actions
+* dispatch
 
+---
+
+[Shema](https://dev-to-uploads.s3.amazonaws.com/i/hmo95mvmnw2wmzjoab1t.png)
+
+---
 
 ## Importations from Redux :
 
-import { createStore } from 'redux';
-import { combineReducers } from 'redux';
+index.js (main)
+`import { createStore } from 'redux';`
 
+/reducers/index.js
+`import { combineReducers } from 'redux';`
+& :
+`import counterReducers from 'counter';`
+`import loggerReducers from 'isLogged';`
 
 ## Importation from React :
 
-import {useState} from 'react';
+App.js
+`import {useState} from 'react';`
 
-import { actions } from './actions'; ('./actions/index.js')
-import allReducers from './reducers'; ('./reducers/index.js')
+index.js (main)
+`import allReducers from './reducers'; ('./reducers/index.js')`
 
-from 'react-redux';
+App.js
+`import { actions } from './actions'; ('./actions/index.js')`
+
+## Importation from React-Redux :
+
+`import { Provider } from 'react-redux';`
+
+`import { useSelector, useDispatch } from 'react-redux';`
 
 ---
 
@@ -37,27 +59,19 @@ from 'react-redux';
 ### App.js
 
 ```
-	
 	...
-	
 	const [delivone, setDelivone] = useState(50);
-	
 	...
-
 ```
 
 
 ```
-
-	  ...
-      
+	    ...
       <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
       <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
 
       <input disabled={true} type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
-      
       ...
-
 ```
 
 ---
@@ -66,7 +80,6 @@ from 'react-redux';
 
 ```
 ...
-
 const INCREMENTONE = 'INCREMENTONE';
 
 export const incrementone = (delivone) => {
@@ -75,9 +88,7 @@ export const incrementone = (delivone) => {
     payload: delivone
   }
 }
-
 ...
-
 ```
 
 ---
@@ -85,7 +96,6 @@ export const incrementone = (delivone) => {
 ### /reducers/counter.js
 
 ```
-    
 const INCREMENTONE = 'INCREMENTONE';
 
 const counterReducers = (state=20, action) => {
