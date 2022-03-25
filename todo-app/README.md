@@ -2,7 +2,7 @@
 
 ---
 
-### Importation :
+### Importation outside React :
 
 `npm install uuid`
 
@@ -26,8 +26,12 @@ setItem with useEffect &
 
 JSON.parse()/JSON.stringify()
 
-map() & filter() methods
+by using LOCAL_STORAGE_KEY with uuid
 ```
+
+`map() & filter() methods`
+
+`how states are used in all files & useEffect`
 
 ---
 
@@ -37,10 +41,12 @@ Main file to manage localstorage &
 
 useState([])
 
+`map() & filter() methods` with setTodos()
+
 ---------------------------------------
 
-App.js ---> TodoForm.js
-   |
+App.js ---> TodoForm.js/
+   |/
    -------> TodoList.js ---> Todo.js  
 
 ---------------------------------------
@@ -53,9 +59,13 @@ input type text
 
 button to sumit input type text
 
+---
+
 ## TodoList.js
 
-map() to define todo for Todo.js
+map() to define todo (todo.id, todo.task) for Todo.js
+
+---
 
 ## Todo.js
 
@@ -65,9 +75,3 @@ with "delete" button and with checked of checkbox.
 input type checkbox 
 
 button delete one element from the list.
-
-
-
-
-
-
