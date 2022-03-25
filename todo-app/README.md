@@ -34,41 +34,43 @@ by using LOCAL_STORAGE_KEY with uuid
 
 ## App.js
 
-Main file to manage localstorage &
+* Main file to manage localstorage &
 
-useState([])
+* useState([]) with array
 
-`map() & filter() methods` with setTodos()
+* `map() & filter() methods` with setTodos()
 
 ---------------------------------------
 
-App.js ---> TodoForm.js/
-   |/
+App.js ---> TodoForm.js\
+   |\
    -------> TodoList.js ---> Todo.js  
 
 ---------------------------------------
 
 ## TodoForm.js
 
-useState({}) with stadard definition for objects
+* useState({}) with objects
 
-input type text
+* input type text
 
-button to sumit input type text
+* button to sumit input type text
 
 ---
 
 ## TodoList.js
 
-map() to define todo (todo.id, todo.task) for Todo.js
+* map() to define todo (todo.id, todo.task) for Todo.js
+
+* key is defined by todo.id
 
 ---
 
 ## Todo.js
 
-definition of "todo.id" to reuse in "App.js"
+* definition of "todo.id" to reuse in "App.js" \
 with "delete" button and with checked of checkbox.
 
-input type checkbox 
+* input type checkbox 
 
-button delete one element from the list.
+* button delete one element from the list.
