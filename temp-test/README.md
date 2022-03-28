@@ -12,9 +12,9 @@ BoilerVerdict.js
 
 ---
 
-## Calculator.js : (Fichier Parent - state - attributions - functions)
+## Calculator.js : (Fichier Parent - state)
 
-Comprends les fonctions de conversion des valeurs de `temperature` et `scale`. \
+Comprends les fonctions de conversion des valeurs de **temperature** et **scale**. \
 Converti les celsius en fahrenheit et vis-versa.
 
 ```
@@ -27,7 +27,7 @@ function toFahrenheit(celsius) {
 }
 ```
 
-Comprends les fonctions de conversion des valeurs de `temperature` et `scale`.
+Comprends les fonctions de conversion des valeurs de **temperature** et **scale**.
 
 ```
 function tryConvert(temperature, convert) {
@@ -41,10 +41,10 @@ function tryConvert(temperature, convert) {
 }
 ```
 
-Import les variables : `temperature` et `scale` en state dans le render depuis TemperatureInput.js! \
+**Remontée de l'état** : **temperature** et **scale** depuis TemperatureInput.js! \
 sans pouvoir les modifier.
 
-Défini les variables : `celsius` et `fahrenheit` dans le render en les comparant aux entrées du fichier \
+Défini les variables : **celsius** et **fahrenheit** dans le render en les comparant aux entrées du fichier \
 TemperatureInput.js.
 
 ```
@@ -63,12 +63,12 @@ TemperatureInput.js.
     return (
       <div>
         <TemperatureInput
-          scale="c" <--- important !!!
-          temperature={celsius} <--- important !
+          scale="c" &larr; important !!!
+          temperature={celsius} &larr; important !
           onTemperatureChange={this.handleCelsiusChange} />
         <TemperatureInput
-          scale="f" <--- important !!!
-          temperature={fahrenheit} <--- important
+          scale="f" &larr; important !!!
+          temperature={fahrenheit} &larr; important
           onTemperatureChange={this.handleFahrenheitChange} />
         <BoilingVerdict
           celsius={parseFloat(celsius)} />
@@ -80,7 +80,7 @@ TemperatureInput.js.
 
 ---
 
-## TemperatureInput.js (input + local props (cachées à Calculator.js))
+## TemperatureInput.js (props)
 
 Fait remonter l'état de celsius et fahrenheit (scale) pour ensuite les comparer avec les valeurs de scale du return de \
 Calculator.js. 
@@ -92,8 +92,8 @@ const scaleNames = {
 };
 ```
 
-Converti les state de `temperature` ou de `scale` en props (par rapport l'input rempli) ! \
-(On ajoute une prop scale qui pourra être soit "c", soit "f" : avec input pour Celsius et Fahrenheit).
+Converti les state de **temperature** ou de **scale** en props (par rapport l'input rempli) ! \
+(On ajoute une prop scale qui pourra être soit **"c"**, soit **"f"** : avec input pour Celsius et Fahrenheit).
 
 ```
   ...
@@ -110,9 +110,9 @@ Converti les state de `temperature` ou de `scale` en props (par rapport l'input 
 }
 ```
 
-## BoilerVerdict.js (Affichage si l'eau bout ou pas)
+## BoilerVerdict.js (props)
 
-Défini si l'eau bou ou pas en fonction de `props.celsius`.
+Défini si l'eau bou ou pas en fonction de **props.celsius**.
 
 ```
 export default function BoilingVerdict(props) {
