@@ -8,16 +8,18 @@
 
 `import { v4 as uuidv4 } from 'uuid';`
 
-to define `id: uuidv4()`
+to define **id: uuidv4()**
 
 
 ***other importation from react :***
 
-useState & useEffect
+import { useState, useEffect} from 'react';
 
 ---
 
 ### Interesting skills :
+
+To make state persistant :
 
 ```
 localstorage getItem &
