@@ -3,7 +3,7 @@ import dataMyfirst from './dataMyfirst'
 
 export default function Mylast() {
   const lastone = "Number of Persons : ";
-  const persNum = dataMyfirst.length;
+  //const persNum = dataMyfirst.length;
 
   const perVar = dataMyfirst.map(item => {
     return item.id + ' ' + item.name + ' ' + item.status
@@ -14,7 +14,10 @@ export default function Mylast() {
     <div className='main--lastco'>
       <div className='div--lastco'>
         <h3>Mylast.js</h3>
-        <h3>{lastone} {persNum}</h3>
+        {dataMyfirst.map(item => {
+          <h3 key={item.id}>{lastone} {item.name}</h3>
+          })
+        }
         <div className='div--newvar'>
           <p className='tag--p'>
             All names : {newVar}

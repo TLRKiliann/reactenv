@@ -38,7 +38,7 @@ function App() {
   const myVar = dataMyfirst.map(item => {
     return (
       <Myfirst
-        id={item.id}
+        key={item.id}
         name={item.name}
         age={item.age}
         status={item.status}
