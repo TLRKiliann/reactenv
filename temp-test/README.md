@@ -4,9 +4,11 @@
 
 Schema
 
-App.js &rarr; Calculator.js &harr; TemperatureInput.js \
-&ensp;            &darr;
-&ensp;              &rarr; BoilerVerdict.js
+App.js \
+&darr; \
+Calculator.js &harr; TemperatureInput.js \
+&ensp;            &darr; \
+&rarr; BoilerVerdict.js
 
 ---
 
