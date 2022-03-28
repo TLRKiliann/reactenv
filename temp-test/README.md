@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Faire remonter l'état !
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Schema
 
-In the project directory, you can run:
+App.js --> Calculator.js --> TemperatureInput.js \
+"				"|--> BoilerVerdict.js
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Calculator.js : (Fichier Parent - state - attributions - functions)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Comprends les fonctions de conversion des valeurs de `temperature` et `scale`. \
+Converti les celsius en fahrenheit et vis-versa.
 
-### `npm test`
+```
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+```
 
-### `npm run build`
+Comprends les fonctions de conversion des valeurs de `temperature` et `scale`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Défini les variables : `temperature` et `scale` en state dans le render ! \
+Défini les variables : `celsius` et `fahrenheit` dans le render en les comparant aux entrées du fichier \
+TemperatureInput.js.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+  ...
+  render() {
+    const scale = this.state.scale;
+    
+    const temperature = this.state.temperature;
 
-### `npm run eject`
+    const celsius = scale === 'f'
+      ? tryConvert(temperature, toCelsius) : temperature;
+    
+    const fahrenheit = scale === 'c'
+      ? tryConvert(temperature, toFahrenheit) : temperature;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    return (
+      <div>
+        <TemperatureInput
+          scale="c" <--- important !!!
+          temperature={celsius} <--- important !
+          onTemperatureChange={this.handleCelsiusChange} />
+        <TemperatureInput
+          scale="f" <--- important !!!
+          temperature={fahrenheit} <--- important
+          onTemperatureChange={this.handleFahrenheitChange} />
+        <BoilingVerdict
+          celsius={parseFloat(celsius)} />
+      </div>
+    );
+  }
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## TemperatureInput.js (input - props)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Fait remonter l'état de celsius et fahrenheit (scale) par comparaison avec les valeurs de scale du return de \
+Calculator.js. 
 
-## Learn More
+```
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Converti les state de `temperature` ou de `scale` en props (en fonction de l'input rempli) ! \
+Input pour Celsius et Fahrenheit.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+  ...
+  render() {
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
+    return (
+      <fieldset>
+          <legend>Saisissez la temperature en {scaleNames[scale]} :</legend>
+          <input value={temperature} onChange={this.handleChange} />
+      </fieldset>
+    );
+  }
+}
+```
 
-### Code Splitting
+## BoilerVerdict.js (Affichage si l'eau bout ou pas)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Défini si l'eau bou ou pas en fonction de `props.celsius`.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+export default function BoilingVerdict(props) {
+  if (props.celsius >= 100) {
+      return <p>Water boils.</p>;
+  }
+  return <p>Water doesn't boil !</p>;
+}
+```

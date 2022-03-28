@@ -21,7 +21,6 @@ function tryConvert(temperature, convert) {
   return rounded.toString();
 }
 
-
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,6 @@ export default class Calculator extends React.Component {
   }
   handleCelsiusChange(temperature) {
     this.setState({scale: 'c', temperature});
-
   }
   handleFahrenheitChange(temperature) {
     this.setState({scale: 'f', temperature});
@@ -42,8 +40,10 @@ export default class Calculator extends React.Component {
   render() {
     const scale = this.state.scale;
     const temperature = this.state.temperature;
-    const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
-    const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+    const celsius = scale === 'f'
+      ? tryConvert(temperature, toCelsius) : temperature;
+    const fahrenheit = scale === 'c'
+      ? tryConvert(temperature, toFahrenheit) : temperature;
 
     return (
       <div>
