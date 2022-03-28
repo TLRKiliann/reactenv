@@ -1,0 +1,13 @@
+body {
+  background: steelblue;
+  color: white;
+}
+
+.App {
+  text-align: center;
+  margin: 10px 400px;
+}
+
+fieldset {
+  margin: 20px 10px;
+}
