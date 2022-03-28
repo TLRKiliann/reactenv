@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Dark Mode
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+One button (btn) to switch with dark or light mode.
 
-## Available Scripts
+`2 files : App.js & App.css`
 
-In the project directory, you can run:
+**To change style with data-theme and CSS :**
 
-### `npm start`
+```
+    <div className="App" data-theme={darkMode ? "dark" : "light"}>
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**App.css (with :root {})**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+}
 
-### `npm test`
+[data-theme="dark"] {
+  --bg-color: #3F3F3F;
+  --text-color: #fff;
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**With className .App in CSS :**
 
-### `npm run build`
+```
+.App {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## useEffect with localStorage :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+localStorage use **darkmode** as state & make the **state persistent**.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+  const storedDarkMode = localStorage.getItem("DARK_MODE");
+  ..
+  useEffect(() => {
+    localStorage.setItem("DARK_MODE", darkMode);
+  }, [darkMode]);
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## toggleDarkMode()
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`const storeDarkMode` is reused by useState() :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`useState(storeDarkMode)`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+  const storedDarkMode = localStorage.getItem("DARK_MODE");
 
-## Learn More
+  const [darkMode, setDarkMode] = useState(storedDarkMode);
+  
+  const toggleDarkMode = () => setDarkMode(!darkMode); //ECMA-6
+  
+  ( function toggleDarkMode() {
+        setDarkMode(!darkMode);
+  	} ) //ECMA-5
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## use props to switch button state :
 
-### Code Splitting
+If state darkMode exist button appear to display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+      {!darkMode && <button onClick={toggleDarkMode} style={{background: 'grey',
+        color: 'white'}}>
+        {"Switch to Dark Mode"}
+      </button>}
 
-### Analyzing the Bundle Size
+otherwise, Light Mode is choosen.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      {darkMode && <button onClick={toggleDarkMode} style={{background: 'black',
+        color: 'lightgrey'}}>
+        {"Switch to Light Mode"}
+      </button>}
