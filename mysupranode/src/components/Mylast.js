@@ -13,6 +13,7 @@ export default function Mylast() {
   return (
     <div className='main--lastco'>
       <div className='div--lastco'>
+        <h3>Mylast.js</h3>
         <h3>{lastone} {persNum}</h3>
         <div className='div--newvar'>
           <p className='tag--p'>

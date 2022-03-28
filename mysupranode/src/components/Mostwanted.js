@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Mostwanted() {
   const [mostUse, setMostUse] = React.useState(['One more time... Thing 1'])
   //console.log(mostUse)
@@ -19,3 +20,11 @@ export default function Mostwanted() {
     </div>
   );
 }
+
+/*
+  function callMost() {
+    setMostUse(prevent => {
+      return [...prevent, `Thing ${prevent.length + 1}`]
+    })
+  }
+*/

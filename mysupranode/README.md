@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# supranode
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## To call props mynum since ancestor state.
 
-## Available Scripts
+```
+import Secomponent from './components/Secomponent'
 
-In the project directory, you can run:
+export default function App() {
+  const [num, setNum] = React.useState(0); <-- useState is definied by num (num=0) !!!
 
-### `npm start`
+  function add() {
+    setNum(prevNum => prevNum + 1);
+  }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  function minus() {
+    setNum(prevNum => prevNum - 1);
+  }
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+return(
+      <React.Fragment>
+        <button onClick={add}> + </button> //add()
+        <Secomponent mynum={num} /> // !!! mynum is here !!!
+        <button onClick={minus}> - </button> //minus()
+```
 
-### `npm test`
+## How to use key={id} in React ? :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div key={props.id}></div>
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## setState & prevState :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+function & class
+setState() & this.setState()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+!state
+...prevState, state.count
+[...prevState, state.count]
+{...prevState, state.count}
 
-### `npm run eject`
+prevState
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## return ?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+return () standard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+return <h3>{item.id}</h3> directly
 
-## Learn More
+return (
+  <h3>{item.id}</h3> not directly
+)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+return {} object
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+return {[]} array
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ./components/Secomponent.js
 
-### Analyzing the Bundle Size
+```
+import React from 'react'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default function Secomponent(props) { //pass props !!!
+  return (
+    <div className='div--num'>
+      <h2 style={{width:'300px'}}>Count : {props.mynum}</h2> //call props.mynum from App.js !!!
+    </div>
+  );
+}
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## React.createElement :
 
-### Advanced Configuration
+```
+const Fifth = () => {
+  return (
+    React.createElement('div', {},
+      React.createElement('p', {}, "I'm p element in a div (fifth) !"))
+  );
+}
+```
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ./components/Mylast.js
 
-### Deployment
+### Return data from an array with map() :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+  const perVar = dataMyfirst.map(item => {
+    return item.id + ' ' + item.name + ' ' + item.status
+  });
+  const newVar = perVar.join(' - ')
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Several manners :
+
+Differents manner to activate action with click btn.
+
+We have useState defined by car & setCar :
+
+```
+  const [car, setCar] = React.useState({
+    id: 1,
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "Blue"
+  });
+```
+
+Simple click button :
+
+```
+  function toggle() {
+    setSwitchBut(prevSwitch => !prevSwitch)
+  }
+
+  return(
+      <button
+        key={car.id}
+        type="button"
+        onClick={toggle}
+      >
+```
+
+All-in one :
+
+```
+      <button
+        onChange={e => {const val = e.target.value;
+          setCar(prevState => {
+            return { ...prevState, color: val }
+          });
+        }}
+        onClick={(e)=> updateColor(e)}
+      >
+```
+

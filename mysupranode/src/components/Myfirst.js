@@ -15,6 +15,7 @@ export default function Myfirst(props) {
     <div className='div--overprops'>
       <div className='div--props'>
         <div
+          key={props.id}
           onChange={toggle}
           className='div--subprops'
           style={{transform: usePos ? 'rotateX(360deg)' : '',
@@ -29,7 +30,7 @@ export default function Myfirst(props) {
           {props.status && <h4>status = {props.status}</h4>}
         </div>
 
-        <div 
+        <div
           onChange={toggle}
           className='p--div'
           style={{transform: usePos ? 'rotateZ(360deg)' : '',

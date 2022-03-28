@@ -88,7 +88,7 @@ function App() {
 
 export default App;
 
-class Class extends React.Component {
+class ClassTruc extends React.Component {
   //constructor(props) {
     //super(props);
   //}
@@ -99,4 +99,4 @@ class Class extends React.Component {
   }
 };
 
-ReactDOM.render(<Class />, document.getElementById('root'));
+ReactDOM.render(<ClassTruc />, document.getElementById('root'));
