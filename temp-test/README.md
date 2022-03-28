@@ -5,10 +5,10 @@
 Schema
 
 App.js \
-&darr; \
+&ensp; &darr; \
 Calculator.js &harr; TemperatureInput.js \
-&ensp;            &darr; \
-&rarr; BoilerVerdict.js
+&ensp; &darr; \
+BoilerVerdict.js
 
 ---
 
