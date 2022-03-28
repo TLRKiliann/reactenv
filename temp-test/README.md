@@ -41,7 +41,9 @@ function tryConvert(temperature, convert) {
 }
 ```
 
-Défini les variables : `temperature` et `scale` en state dans le render ! \
+Import les variables : `temperature` et `scale` en state dans le render depuis TemperatureInput.js! \
+sans pouvoir les modifier.
+
 Défini les variables : `celsius` et `fahrenheit` dans le render en les comparant aux entrées du fichier \
 TemperatureInput.js.
 
@@ -78,9 +80,9 @@ TemperatureInput.js.
 
 ---
 
-## TemperatureInput.js (input - props)
+## TemperatureInput.js (input + local props (cachées à Calculator.js))
 
-Fait remonter l'état de celsius et fahrenheit (scale) par comparaison avec les valeurs de scale du return de \
+Fait remonter l'état de celsius et fahrenheit (scale) pour ensuite les comparer avec les valeurs de scale du return de \
 Calculator.js. 
 
 ```
@@ -90,8 +92,8 @@ const scaleNames = {
 };
 ```
 
-Converti les state de `temperature` ou de `scale` en props (en fonction de l'input rempli) ! \
-Input pour Celsius et Fahrenheit.
+Converti les state de `temperature` ou de `scale` en props (par rapport l'input rempli) ! \
+(On ajoute une prop scale qui pourra être soit "c", soit "f" : avec input pour Celsius et Fahrenheit).
 
 ```
   ...
