@@ -14,9 +14,10 @@ function App() {
   dispName.addEventListener("click", () => {
     dispName.classList.toggle("card-namejs");
   });*/
-  const jokeElement = jokeData.map(joke => {
+  const jokeElement = jokeData.map((joke) => {
     return (
-      <Joke 
+      <Joke
+        key={joke.id}
         img2={Images} 
         setup={joke.setup}
         punchline={joke.punchline}

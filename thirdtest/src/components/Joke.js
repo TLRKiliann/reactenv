@@ -9,7 +9,7 @@ export default function Joke(props) {
   }
   return (
     <div className="div--joke">
-      {badgeText && <div className="card--badge">{badgeText}</div>}
+      {badgeText && <div key={badgeText} className="card--badge">{badgeText}</div>}
       <img src={props.img2} className="img--joke" alt="logo--joke" />
       <h3>Setup: {props.setup}</h3>
       <p>Punchline: {props.punchline}</p>

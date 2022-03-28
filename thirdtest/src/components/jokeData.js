@@ -1,5 +1,6 @@
-export default [
+const jokeData = [
   {
+    id: 1,
     setup: "something into setup 1",
     punchline: "this is my punchline 1",
     upvotes: 2,
@@ -9,6 +10,7 @@ export default [
     location: "Online"
   },
   {
+    id: 2,
     setup: "something into setup 2",
     punchline: "this is my punchline 2",
     upvotes: 2,
@@ -19,6 +21,7 @@ export default [
 
   },
   {
+    id: 3,
     setup: "something into setup 3",
     punchline: "this is my punchline 3",
     upvotes: 2,
@@ -29,6 +32,7 @@ export default [
 
   },
   {
+    id: 4,
     setup: "something into setup 4",
     punchline: "this is my punchline 4",
     upvotes: 2,
@@ -38,3 +42,5 @@ export default [
     location: ""
   }
 ];
+
+export default jokeData;
