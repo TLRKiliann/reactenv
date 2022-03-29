@@ -1,6 +1,4 @@
 import React from "react";
-//import { useEffect } from 'react'
-//import Weather from './Weather';
 
 
 export default class Secondfetch extends React.Component {
@@ -10,7 +8,6 @@ export default class Secondfetch extends React.Component {
       weather: {},
       locations: 'london'
     };
-    //let datetime = new Date();
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -20,7 +17,7 @@ export default class Secondfetch extends React.Component {
     )
       .then((res) => {
         if (res.ok) {
-          console.log(res.status);
+          console.log('Status : ', res.status);
           return res.json();
         } else {
           if (res.status === 404) {

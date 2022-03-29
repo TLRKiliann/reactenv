@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# weather-api (npm)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Secondfetch.js is the most interesting app. It works with **openmapweather** by a fetch() into a class.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+.env : REACT_APP_API_URL = 'https://api.openweathermap.org/data/2.5'
+${process.env.REACT_APP_API_KEY}
 
-### `npm start`
+```
+  handleChange(e) {
+    fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.locations}&APPID=${process.env.REACT_APP_API_KEY}&units=metric`
+    )
+      .then((res) => {
+        if (res.ok) {
+          console.log('Status : ', res.status);
+          return res.json();
+        } else {
+          if (res.status === 404) {
+            return alert("Oops, there seems to be an error!(wrong location)");
+          }
+          alert("Oops, there seems to be an error!");
+          throw new Error("You have an error");
+        }
+      })
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Promise :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+    .then((object) => {
+    this.setState({
+      weather: object,
+      locations: e.target.value
+    });
+    console.log(this.state);
+    })
+    .catch((error) => console.log(error));
+```
 
-### `npm test`
+`input : onChange={(e) => this.setState({locations: e.target.value})}`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`button : onClick={this.handleChange}`
 
-### `npm run build`
+```
+      <input
+        type="text"
+        value={locations}
+        onChange={(e) => this.setState({locations: e.target.value})}
+        placeholder="Enter location"
+        className="location--input"
+      />
+      <button className="btn--location" onClick={this.handleChange}>
+        Search Location
+      </button>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If 'weather' doesn't exist => no weather found !
+Else return all DATA.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+  render() {
+    const { weather, locations } = this.state;
+    if (!weather) {
+      return (
+        <h2>No weather found !</h2>
+      );
+    } else {
+      return (
+```
