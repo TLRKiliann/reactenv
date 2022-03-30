@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import $ from 'jquery';
 
 export default class Secondcomp extends React.Component {
+
   toggle = () => {
     const el = findDOMNode(this.refs.toggle);
     $(el).slideToggle();
