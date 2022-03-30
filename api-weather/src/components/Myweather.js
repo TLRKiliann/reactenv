@@ -23,8 +23,6 @@ export default class Myweather extends React.Component {
     this.setState(prevFormData => {
       return {
         ...prevFormData,
-        //[event.target.name]: event.target.value
-        //[name]: event.target.value
         [name]: event.target.value
       }
     })

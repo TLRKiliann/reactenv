@@ -1,4 +1,4 @@
-# weather-api (npm)
+# axios-api (npm)
 
 Secondfetch.js is the most interesting app. It works with **openmapweather** by a fetch() into a class.
 

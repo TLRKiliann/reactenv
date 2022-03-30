@@ -20,12 +20,8 @@ export default class Myapi extends React.Component {
           items: json,
           DataisLoaded: true,
         })
-    console.log(this.state)
-      /*.catch(() => {
-        alert('Failed to fetch !');
-      });*/
-      //.catch((error) => console.log(error));
-    })
+      console.log(this.state)
+    }).catch(err => console.log(err));
   }
   render() {
     const { DataisLoaded, items } = this.state;

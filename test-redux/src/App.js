@@ -6,7 +6,7 @@ import './App.css';
 
 
 function App() {
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(20);
   const [delivone, setDelivone] = useState(50);
   const [deliv, setDeliv] = useState(100);
 
