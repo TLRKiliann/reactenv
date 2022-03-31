@@ -36,6 +36,21 @@ class MachineQuote extends React.Component {
     this.jQuerycode()
   }
 
+  componentDidMount() {
+    const app = this;
+    fetch('https://type.fit/api/quotes')
+      .then(response => {
+        return response.json();
+      })
+      .then(function(data) {
+        const index = Math.floor((Math.random() * data.length) + 1);
+        app.setState({
+          textQuote: data[index].text,
+          authorQuote: data[index].author
+        });
+      });
+  }
+
   handleNewQuote() {
     const app = this;
     fetch('https://type.fit/api/quotes')
@@ -61,7 +76,9 @@ class MachineQuote extends React.Component {
         </div>
 
         <div id='new-quote'>
-          <button onClick={this.customNewQuote} className='btn btn--custom'>New Quote</button>
+          <button 
+            onClick={this.customNewQuote}
+            className='btn btn--custom'>New Quote</button>
 
           <a className="btn btn-primary"
              data-bs-toggle="collapse"
