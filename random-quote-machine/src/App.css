@@ -10,11 +10,20 @@ h1 {
   color: 'grey';
 }
 .machine--class {
-  margin: 0px 200px;
   padding: 20px 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.turn--class {
+  width: 100%;
+
+  animation-name: turn-me;
+  animation-iteration-count: 1;
+  animation-timing-function: 2s;
+  transform: rotate(0deg);
+  border: 2px solid black;
 }
 
 #quote-box {
@@ -22,7 +31,7 @@ h1 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 10px 10px;
+  margin: 20px 200px;
   padding: 20px 30px;
   font-family: 'Times New Roman', sans-serif;
   font-size: 1.6rem;
@@ -52,6 +61,15 @@ h1 {
   justify-content: center;
   background: blue;
   border-radius: 10px;
+}
+
+@keyframes turn-me {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn {

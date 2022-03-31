@@ -70,9 +70,11 @@ class MachineQuote extends React.Component {
       <div className="machine--class">
         <h1>Random Quote Machine</h1>
 
-        <div id='quote-box'>
-          <div id='text'>{this.state.textQuote}</div>
-          <div id='author'>{this.state.authorQuote}</div>
+        <div className='turn--class'>
+          <div id='quote-box'>
+            <div id='text'>{this.state.textQuote}</div>
+            <div id='author'>{this.state.authorQuote}</div>
+          </div>
         </div>
 
         <div id='new-quote'>
