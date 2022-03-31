@@ -6,12 +6,12 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      color: "gray"
+    color : 'gray'
     };
     this.handleChangeColor = this.handleChangeColor.bind(this);
   }
   
-  handleChangeColor(color){
+  handleChangeColor(color) {
     this.setState({
       color: color
     });

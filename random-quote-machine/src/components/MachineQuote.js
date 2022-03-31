@@ -8,7 +8,7 @@ class MachineQuote extends React.Component {
     super(props);
     this.state = {
       textQuote: '',
-      authorQuote:'',
+      authorQuote: '',
     };
     this.customNewQuote = this.customNewQuote.bind(this);
     this.handleNewQuote = this.handleNewQuote.bind(this)
@@ -17,16 +17,16 @@ class MachineQuote extends React.Component {
   jQuerycode = () => {
     const colors = ["grey", "blue", "orange", "green", "red", "purple"];
     const colorsBody = ["grey", "lightblue", "lightorange", "lightgreen", "lightred", "lightpink"];
-    const colorText = ['purple', 'white', 'black'];
+    const colorText = ['white', 'cyan', 'yellow'];
 
     const spectralcolor = (colors[Math.floor((Math.random() * 6) + 1)]);
-    const bodyColor = (colorsBody[Math.floor((Math.random() * 5) + 1)]);
+    const bodyColor = (colorsBody[Math.floor((Math.random() * 6) + 1)]);
     const spectralText = (colorText[Math.floor((Math.random() * 3) + 1)]);
 
     $("button").click(function () {
+      $("body").css({ backgroundColor : bodyColor})
       $("#quote-box").css({ backgroundColor : spectralcolor})
       $("#quote-box").css({color: spectralText})
-      $("body").css({ backgroundColor : bodyColor})
 
     })
     this.handleNewQuote()
@@ -61,7 +61,7 @@ class MachineQuote extends React.Component {
         </div>
 
         <div id='new-quote'>
-          <button onClick={this.customNewQuote}>New Quote</button>
+          <button onClick={this.customNewQuote} className='btn btn--custom'>New Quote</button>
 
           <a className="btn btn-primary"
              data-bs-toggle="collapse"
