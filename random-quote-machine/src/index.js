@@ -1,3 +1,4 @@
+//import * as ReactDOMClient from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 //import $ from 'jquery';
@@ -8,7 +9,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+/*
+const container = document.getElementById('app');
 
+ReactDOM.render(container, <App />, function() {
+  // Called after inital render or any update.
+  console.log('rendered')
+});
+*/
 ReactDOM.render(
   <React.StrictMode>
     <App />
