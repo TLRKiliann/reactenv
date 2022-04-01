@@ -36,13 +36,13 @@ class MachineQuote extends React.Component {
           isLoaded: true,
           textQuote: data[index].text,
           authorQuote: data[index].author
-        });console.log('Mount_2 : ', this.state.isLoaded)
+        });
       });
   }
 
   componentWillUnmount() {
     this.setState({isLoaded: false});
-    console.log('Unmount : ', this.state.isLoaded)
+    console.log('Unmount (once time): ', this.state.isLoaded)
   }
 
   jQuerycode = () => {
@@ -86,7 +86,7 @@ class MachineQuote extends React.Component {
                  data-bs-toggle="collapse"
                  href="twitter.com/intent/tweet"
                  target="_blank"
-
+                 rel="noopener noreferrer"
                  role="button"
                  aria-expanded="false"
                  aria-controls="collapseExample">
