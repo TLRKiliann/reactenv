@@ -22,6 +22,9 @@ class MachineQuote extends React.Component {
   }
 
   componentDidMount() {
+    console.log('Mount_1 : ', this.state.isLoaded)
+    document.body.style.backgroundColor = 'lightpink';
+    document.body.style.transition = 'ease-out 2s';
     const catchData = this;
     fetch('https://type.fit/api/quotes')
       .then(response => {
@@ -33,8 +36,13 @@ class MachineQuote extends React.Component {
           isLoaded: true,
           textQuote: data[index].text,
           authorQuote: data[index].author
-        });
+        });console.log('Mount_2 : ', this.state.isLoaded)
       });
+  }
+
+  componentWillUnmount() {
+    this.setState({isLoaded: false});
+    console.log('Unmount : ', this.state.isLoaded)
   }
 
   jQuerycode = () => {
@@ -42,7 +50,7 @@ class MachineQuote extends React.Component {
     const spectralColor = (colorQuote[Math.floor((Math.random() * 6))]);
     const changeBodyCol = (colorsBody[Math.floor((Math.random() * 6))]);
     const spectralText = (colorText[Math.floor((Math.random() * 3))]);
-    console.log('2colorsBody : ', spectralColor, spectralColor, spectralText)
+
     $("button").ready(function () {
       $("body").css({ "background-color": changeBodyCol});
       $(".turn--class").css({ "background-color": spectralColor});
@@ -78,7 +86,7 @@ class MachineQuote extends React.Component {
                  data-bs-toggle="collapse"
                  href="twitter.com/intent/tweet"
                  target="_blank"
-                 rel="noreferrer"
+
                  role="button"
                  aria-expanded="false"
                  aria-controls="collapseExample">
@@ -95,5 +103,5 @@ class MachineQuote extends React.Component {
 export default MachineQuote;
 
 //href="https://twitter.com/intent/tweet/?hashtag={ this.state.textQuote }"
-
+//                 rel="noopener noreferrer"
 //onClick={this.customNewQuote}
