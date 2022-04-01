@@ -1,6 +1,7 @@
 import React from 'react';
-import $ from 'jquery'
+import $ from 'jquery';
 import { FaTwitter } from "react-icons/fa";
+import './styles.scss';
 import './App.css';
 
 
@@ -10,9 +11,9 @@ class MachineQuote extends React.Component {
     this.state = {
       textQuote: '',
       authorQuote: '',
-      colorText: ['white', 'cyan', 'yellow'],
+      colorText: ['lightpink', 'cyan', 'yellow'],
       colorQuote: ["grey", "blue", "orange", "green", "red", "purple"],
-      colorsBody: ["skyblue", "lightblue", "lightsalmon", "lightgreen",
+      colorsBody: ["lightgrey", "lightblue", "lightsalmon", "lightgreen",
         "lightcoral", "lightpink"]
     };
     this.jQuerycode = this.jQuerycode.bind(this);
@@ -37,14 +38,14 @@ class MachineQuote extends React.Component {
   jQuerycode = () => {
     const {colorText, colorQuote, colorsBody} = this.state;
     //console.log('1colorsBody : ', this.state.colorsBody)
-    const spectralcolor = (colorQuote[Math.floor((Math.random() * 5) + 0)]);
-    const changeBodyCol = (colorsBody[Math.floor((Math.random() * 5) + 0)]);
-    const spectralText = (colorText[Math.floor((Math.random() * 2) + 0)]);
-    //console.log('2colorsBody : ', this.state.colorsBody)
-    $("button").click(function () {
-      $("body").css({ "background-color": changeBodyCol})
-      $("#quote-box").css({ "background-color": spectralcolor})
-      $("#quote-box").css({"color": spectralText})
+    const spectralColor = (colorQuote[Math.floor((Math.random() * 6))]);
+    const changeBodyCol = (colorsBody[Math.floor((Math.random() * 6))]);
+    const spectralText = (colorText[Math.floor((Math.random() * 3))]);
+    console.log('2colorsBody : ', spectralColor, spectralColor, spectralText)
+    $("button").ready(function () {
+      $("body").css({ "background-color": changeBodyCol});
+      $(".turn--class").css({ "background-color": spectralColor});
+      $(".turn--class").css({"color": spectralText});
     })
     this.componentDidMount();
     //console.log('3colorsBody : ', this.state.colorsBody)
@@ -57,30 +58,30 @@ class MachineQuote extends React.Component {
   render() {
     return (
       <div className="machine--class">
-        <h1>Random Quote Machine</h1>
 
         <div className='turn--class'>
           <div id='quote-box'>
             <div id='text'>{this.state.textQuote}</div>
             <div id='author'>{this.state.authorQuote}</div>
           </div>
-        </div>
 
-        <div id='new-quote'>
-          <button 
-            onClick={this.customNewQuote.bind(this)}
-            className='btn btn--custom'>New Quote</button>
 
-          <a className="btn btn-primary"
-             data-bs-toggle="collapse"
-             href="https://twitter.com/intent/tweet/?text={ this.state.textQuote }"
-             target="_blank"
-             rel='noreferrer'
-             role="button"
-             aria-expanded="false"
-             aria-controls="collapseExample">
-            <FaTwitter />
-          </a>
+          <div id='new-quote'>
+            <button 
+              onClick={this.customNewQuote.bind(this)}
+              className='btn btn--custom'>New Quote</button>
+
+            <a className="btn btn-primary"
+               data-bs-toggle="collapse"
+               href="twitter.com/intent/tweet"
+               target="_blank"
+               rel="noreferrer"
+               role="button"
+               aria-expanded="false"
+               aria-controls="collapseExample">
+              <FaTwitter />
+            </a>
+          </div>
         </div>
       </div>
     );
@@ -88,5 +89,7 @@ class MachineQuote extends React.Component {
 }
 
 export default MachineQuote;
+
+//href="https://twitter.com/intent/tweet/?hashtag={ this.state.textQuote }"
 
 //onClick={this.customNewQuote}

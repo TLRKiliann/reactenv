@@ -1,5 +1,5 @@
 body {
-  background: 'lightseagreen;';
+  background-color: 'lightgrey';
 }
 
 h1 {
@@ -10,19 +10,23 @@ h1 {
   4px 4px 4px blue;
   margin-bottom: 20px;
 }
-#app {
-  color: 'grey';
-}
+
 .machine--class {
-  padding: 20px 10px;
+  margin-top: 12%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .turn--class {
-  width: 80%;
-  border: 2px solid black;
+  width: 60%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: ease-out 2s;
+  background-color: lightblue;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px black;
 }
 
 #quote-box {
@@ -30,26 +34,19 @@ h1 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 20px 200px;
-  padding: 20px 30px;
   font-family: 'Times New Roman', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-style: bold;
   text-align: justify;
-  background-color: lightblue;
-  border-radius: 15px;
-  box-shadow: 10px 10px 10px grey;
 
   animation-name: turn-me;
-  animation-iteration-count: 1;
   animation-duration: 2s;
-  transition: ease-in-out 2s;
+  transition: ease-out 2s;
   transform: rotateX(0deg);
 }
 
 #author {
   width: 80%;
-  padding: 10px 0px;
   text-align: right;
   font-family: 'karla', sans-serif;
   font-size: 1.2rem;
@@ -57,14 +54,11 @@ h1 {
 }
 
 #new-quote {
-  margin-top: 20px;
-  padding: 10px 10px;
+  margin: 10px 0px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center;
-  background: blue;
-  border-radius: 10px;
+  justify-content: right;
 }
 
 @keyframes turn-me {
