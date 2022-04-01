@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+package.json
+
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-scripts": "5.0.0",
+    "sass": "^1.49.10",
+
+awsomefont - 
+bootstrap - button
+scss - colors
+componentDidMount()
+componentWillUnmount()
+
+react-icons/fa - twitter
+jQuery to random colors in every click & relaunch componentDidMount()
+

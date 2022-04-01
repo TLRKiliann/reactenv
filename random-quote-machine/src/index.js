@@ -1,12 +1,11 @@
 //import * as ReactDOMClient from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-//import $ from 'jquery';
 //import Popper from 'popper.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MachineQuote from './MachineQuote'
 import reportWebVitals from './reportWebVitals';
 
 /*
@@ -19,7 +18,7 @@ ReactDOM.render(container, <App />, function() {
 */
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MachineQuote />
   </React.StrictMode>,
   document.getElementById('root')
 );

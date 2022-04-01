@@ -1,3 +1,7 @@
+body {
+  background: 'lightseagreen;';
+}
+
 h1 {
   font-size: 3rem;
   color: white;
@@ -17,12 +21,7 @@ h1 {
 }
 
 .turn--class {
-  width: 100%;
-
-  animation-name: turn-me;
-  animation-iteration-count: 1;
-  animation-timing-function: 2s;
-  transform: rotate(0deg);
+  width: 80%;
   border: 2px solid black;
 }
 
@@ -38,9 +37,14 @@ h1 {
   font-style: bold;
   text-align: justify;
   background-color: lightblue;
-  /*color: black;*/
   border-radius: 15px;
   box-shadow: 10px 10px 10px grey;
+
+  animation-name: turn-me;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+  transition: ease-in-out 2s;
+  transform: rotateX(0deg);
 }
 
 #author {
@@ -64,11 +68,17 @@ h1 {
 }
 
 @keyframes turn-me {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: rotateX(0deg);
+    opacity: 0.1;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotateX(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateX(360deg);
+    opacity: 1;
   }
 }
 

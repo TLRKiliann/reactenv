@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery'
 import { FaTwitter } from "react-icons/fa";
+import './App.css';
 
 
 class MachineQuote extends React.Component {
@@ -9,62 +10,50 @@ class MachineQuote extends React.Component {
     this.state = {
       textQuote: '',
       authorQuote: '',
+      colorText: ['white', 'cyan', 'yellow'],
+      colorQuote: ["grey", "blue", "orange", "green", "red", "purple"],
+      colorsBody: ["skyblue", "lightblue", "lightsalmon", "lightgreen",
+        "lightcoral", "lightpink"]
     };
-    this.customNewQuote = this.customNewQuote.bind(this);
-    this.handleNewQuote = this.handleNewQuote.bind(this)
+    this.jQuerycode = this.jQuerycode.bind(this);
+    //this.customNewQuote.bind(this) => already run with button
+  }
+
+  componentDidMount() {
+    const rsltCatch = this;
+    fetch('https://type.fit/api/quotes')
+      .then(response => {
+        return response.json();
+      })
+      .then(function(data) {
+        const index = Math.floor((Math.random() * data.length) + 1);
+        rsltCatch.setState({
+          textQuote: data[index].text,
+          authorQuote: data[index].author
+        });
+      });
   }
 
   jQuerycode = () => {
-    const colors = ["grey", "blue", "orange", "green", "red", "purple"];
-    const colorsBody = ["grey", "lightblue", "lightorange", "lightgreen", "lightred", "lightpink"];
-    const colorText = ['white', 'cyan', 'yellow'];
-
-    const spectralcolor = (colors[Math.floor((Math.random() * 6) + 1)]);
-    const bodyColor = (colorsBody[Math.floor((Math.random() * 6) + 1)]);
-    const spectralText = (colorText[Math.floor((Math.random() * 3) + 1)]);
-
+    const {colorText, colorQuote, colorsBody} = this.state;
+    //console.log('1colorsBody : ', this.state.colorsBody)
+    const spectralcolor = (colorQuote[Math.floor((Math.random() * 5) + 0)]);
+    const changeBodyCol = (colorsBody[Math.floor((Math.random() * 5) + 0)]);
+    const spectralText = (colorText[Math.floor((Math.random() * 2) + 0)]);
+    //console.log('2colorsBody : ', this.state.colorsBody)
     $("button").click(function () {
-      $("body").css({ backgroundColor : bodyColor})
-      $("#quote-box").css({ backgroundColor : spectralcolor})
-      $("#quote-box").css({color: spectralText})
-
+      $("body").css({ "background-color": changeBodyCol})
+      $("#quote-box").css({ "background-color": spectralcolor})
+      $("#quote-box").css({"color": spectralText})
     })
-    this.handleNewQuote()
+    this.componentDidMount();
+    //console.log('3colorsBody : ', this.state.colorsBody)
   };
 
   customNewQuote() {
     this.jQuerycode()
   }
 
-  componentDidMount() {
-    const app = this;
-    fetch('https://type.fit/api/quotes')
-      .then(response => {
-        return response.json();
-      })
-      .then(function(data) {
-        const index = Math.floor((Math.random() * data.length) + 1);
-        app.setState({
-          textQuote: data[index].text,
-          authorQuote: data[index].author
-        });
-      });
-  }
-
-  handleNewQuote() {
-    const app = this;
-    fetch('https://type.fit/api/quotes')
-      .then(response => {
-        return response.json();
-      })
-      .then(function(data) {
-        const index = Math.floor((Math.random() * data.length) + 1);
-        app.setState({
-          textQuote: data[index].text,
-          authorQuote: data[index].author
-        });
-      });
-  }
   render() {
     return (
       <div className="machine--class">
@@ -79,7 +68,7 @@ class MachineQuote extends React.Component {
 
         <div id='new-quote'>
           <button 
-            onClick={this.customNewQuote}
+            onClick={this.customNewQuote.bind(this)}
             className='btn btn--custom'>New Quote</button>
 
           <a className="btn btn-primary"
@@ -99,3 +88,5 @@ class MachineQuote extends React.Component {
 }
 
 export default MachineQuote;
+
+//onClick={this.customNewQuote}
