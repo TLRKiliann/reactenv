@@ -13,7 +13,7 @@ class MachineQuote extends React.Component {
     this.state = {
       textQuote: '',
       authorQuote: '',
-      colorText: ['turquoise', 'white', 'cyan', 'yellow'],
+      colorText: ['lightsalmon', 'white', 'cyan', 'yellow'],
       colorQuote: ["grey", "steelblue", "orange", "green", "magenta", "purple"],
       colorsBody: ["lightgrey", "lightblue", "lightsalmon", "lightgreen",
         "lightcoral", "lightpink"],
@@ -26,7 +26,7 @@ class MachineQuote extends React.Component {
 
   componentDidMount() {
     console.log('Mount_1 : ', this.state.isLoaded)
-    document.body.style.backgroundColor = 'lightpink';
+    //document.body.style.backgroundColor = 'lightpink';
     const catchData = this;
     fetch('https://type.fit/api/quotes')
       .then(response => {
@@ -82,7 +82,7 @@ class MachineQuote extends React.Component {
                 <ImQuotesRight />
               </div>
               <div 
-                id='author'>{authorQuote}
+                id='author'>{authorQuote}>
               </div>
 
               <div className='btn--class'>

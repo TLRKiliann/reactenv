@@ -1,21 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic");
 
-body {
-  height: 70%;
-  margin: 0px;
-  padding: 0px;
-  background-color: lightpink;
-}
-
 $green: #23a186;
 $orange: #bf8622;
 $magenta: #9c3636;
 $steelblue: #253ba8;
 $purple: #7a2d7d;
 $gray: #3b3b3b;
-$default: $gray;
+$default: $orange;
 
-$colors: (
+$spectralColor : (
   "green": $green,
   "orange": $orange,
   "magenta": $magenta,
@@ -23,6 +16,40 @@ $colors: (
   "purple": $purple,
   "gray": $gray
 );
+
+.turn--class {
+  background-color: $default;
+}
+
+$lightblue: #27c4f5cc;
+$lightsalmon: #f05a265e;
+$lightgreen: #94edb2cc;
+$lightcoral: #e77ba0cc;
+$lightpink: #f993c8b8;
+$lightgray : #b4bdc6cc ;
+$default: $lightcoral;
+
+$changeBodyCol : (
+  "lightblue": $lightblue,
+  "lightsalmon": $lightsalmon,
+  "lightgreen": $lightgreen,
+  "lightcoral": $lightcoral,
+  "lightpink": $lightpink,
+  "lightgray": $lightgray
+);
+
+body {
+  height: 70%;
+  margin: 0px;
+  padding: 0px;
+  background-color: $default;
+}
+
+.turn--class {
+  background-color: $default
+}
+
+
 
 #quote-box {
   font-family: 'Roboto Mono', serif;
