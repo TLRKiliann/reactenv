@@ -11,7 +11,7 @@ class MachineQuote extends React.Component {
     this.state = {
       textQuote: '',
       authorQuote: '',
-      colorText: ['lightpink', 'cyan', 'yellow'],
+      colorText: ['turquoise', 'white', 'cyan', 'yellow'],
       colorQuote: ["grey", "blue", "orange", "green", "red", "purple"],
       colorsBody: ["lightgrey", "lightblue", "lightsalmon", "lightgreen",
         "lightcoral", "lightpink"],
@@ -49,7 +49,7 @@ class MachineQuote extends React.Component {
     const { colorText, colorQuote, colorsBody } = this.state;
     const spectralColor = (colorQuote[Math.floor((Math.random() * 6))]);
     const changeBodyCol = (colorsBody[Math.floor((Math.random() * 6))]);
-    const spectralText = (colorText[Math.floor((Math.random() * 3))]);
+    const spectralText = (colorText[Math.floor((Math.random() * 4))]);
 
     $("button").ready(function () {
       $("body").css({ "background-color": changeBodyCol});
@@ -82,7 +82,7 @@ class MachineQuote extends React.Component {
                 onClick={this.customNewQuote.bind(this)}
                 className='btn btn--custom'>New Quote</button>
 
-              <a className="btn btn-primary"
+              <a className="btn btn-primary mb1 bg-blue"
                  data-bs-toggle="collapse"
                  href="twitter.com/intent/tweet"
                  target="_blank"
@@ -90,6 +90,7 @@ class MachineQuote extends React.Component {
                  role="button"
                  aria-expanded="false"
                  aria-controls="collapseExample">
+                 Tweet Quote !&nbsp;
                 <FaTwitter />
               </a>
             </div>

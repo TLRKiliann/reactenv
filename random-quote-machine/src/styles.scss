@@ -1,0 +1,23 @@
+
+
+$green: #23a186;
+$orange: #bf8622;
+$red: #9c3636;
+$blue: #253ba8;
+$purple: #7a2d7d;
+$gray: #3b3b3b;
+$default: $gray;
+
+$colors: (
+  "green": $green,
+  "orange": $orange,
+  "red": $red,
+  "blue": $blue,
+  "purple": $purple,
+  "gray": $gray
+);
+
+
+@import "~bootstrap/scss/bootstrap";
+
+//@import "custom";

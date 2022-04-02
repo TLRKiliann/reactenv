@@ -71,9 +71,8 @@ h1 {
     opacity: 1;
   }
 }
-
 .btn {
-  margin: 10px 20px;
+  margin: 10px 10px;
 }
 
 .btn:hover {
