@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import { FaTwitter } from "react-icons/fa";
+import { AiOutlineSync } from "react-icons/ai";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import './styles.scss';
 import './App.css';
 
@@ -12,10 +14,11 @@ class MachineQuote extends React.Component {
       textQuote: '',
       authorQuote: '',
       colorText: ['turquoise', 'white', 'cyan', 'yellow'],
-      colorQuote: ["grey", "blue", "orange", "green", "red", "purple"],
+      colorQuote: ["grey", "steelblue", "orange", "green", "magenta", "purple"],
       colorsBody: ["lightgrey", "lightblue", "lightsalmon", "lightgreen",
         "lightcoral", "lightpink"],
-      isLoaded: false
+      isLoaded: false,
+      tweetUrl: "https://twitter.com/intent/tweet/?text="
     };
     this.jQuerycode = this.jQuerycode.bind(this);
     //this.customNewQuote.bind(this) => already run with button
@@ -24,7 +27,6 @@ class MachineQuote extends React.Component {
   componentDidMount() {
     console.log('Mount_1 : ', this.state.isLoaded)
     document.body.style.backgroundColor = 'lightpink';
-    document.body.style.transition = 'ease-out 2s';
     const catchData = this;
     fetch('https://type.fit/api/quotes')
       .then(response => {
@@ -35,7 +37,8 @@ class MachineQuote extends React.Component {
         catchData.setState({
           isLoaded: true,
           textQuote: data[index].text,
-          authorQuote: data[index].author
+          authorQuote: data[index].author,
+          tweetUrl: "https://twitter.com/intent/tweet/?text=" + data[index].text.replace(/ /g, "+")
         });
       });
   }
@@ -47,9 +50,9 @@ class MachineQuote extends React.Component {
 
   jQuerycode = () => {
     const { colorText, colorQuote, colorsBody } = this.state;
-    const spectralColor = (colorQuote[Math.floor((Math.random() * 6))]);
-    const changeBodyCol = (colorsBody[Math.floor((Math.random() * 6))]);
-    const spectralText = (colorText[Math.floor((Math.random() * 4))]);
+    const spectralColor = (colorQuote[Math.floor((Math.random() * colorQuote.length))]);
+    const changeBodyCol = (colorsBody[Math.floor((Math.random() * colorsBody.length))]);
+    const spectralText = (colorText[Math.floor((Math.random() * colorText.length))]);
 
     $("button").ready(function () {
       $("body").css({ "background-color": changeBodyCol});
@@ -73,26 +76,37 @@ class MachineQuote extends React.Component {
 
           <div className='turn--class'>
             <div id='quote-box'>
-              <div id='text'>{textQuote}</div>
-              <div id='author'>{authorQuote}</div>
-            </div>
+              <div id='text'>
+                <ImQuotesLeft />
+                  &nbsp;{textQuote}&nbsp;
+                <ImQuotesRight />
+              </div>
+              <div 
+                id='author'>{authorQuote}
+              </div>
 
-            <div id='new-quote'>
-              <button 
-                onClick={this.customNewQuote.bind(this)}
-                className='btn btn--custom'>New Quote</button>
-
-              <a className="btn btn-primary mb1 bg-blue"
-                 data-bs-toggle="collapse"
-                 href="twitter.com/intent/tweet"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 role="button"
-                 aria-expanded="false"
-                 aria-controls="collapseExample">
-                 Tweet Quote !&nbsp;
-                <FaTwitter />
-              </a>
+              <div className='btn--class'>
+                <button 
+                  id='new-quote'
+                  onClick={this.customNewQuote.bind(this)}
+                  className='btn btn-primary mb1 bg-blue'>
+                  <AiOutlineSync id='synchro-quote' />
+                    &nbsp;New Quote
+                </button>
+              
+                <a id="tweet-quote"
+                   data-bs-toggle="collapse"
+                   href={ this.state.tweetUrl }
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   role="button"
+                   aria-expanded="false"
+                   aria-controls="collapseExample"
+                   className="btn btn-primary mb1 bg-blue">
+                  <FaTwitter id='titi-el'/>
+                  &nbsp;Tweet Quote
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -103,6 +117,5 @@ class MachineQuote extends React.Component {
 
 export default MachineQuote;
 
-//href="https://twitter.com/intent/tweet/?hashtag={ this.state.textQuote }"
-//                 rel="noopener noreferrer"
+//rel="noopener noreferrer"
 //onClick={this.customNewQuote}

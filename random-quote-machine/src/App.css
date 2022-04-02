@@ -8,14 +8,14 @@ h1 {
 }
 
 .machine--class {
-  margin-top: 12%;
+  margin-top: 30vh;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .turn--class {
-  width: 60%;
+  width: 50%;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
@@ -30,13 +30,15 @@ h1 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Times New Roman', sans-serif;
   font-size: 1.9rem;
   font-style: bold;
   text-align: justify;
+}
 
+#text {
   animation-name: turn-me;
   animation-duration: 2s;
+  animation-iteration-count: 1;
   transition: ease-out 2s;
   transform: rotateX(0deg);
 }
@@ -57,6 +59,24 @@ h1 {
   justify-content: right;
 }
 
+.btn--class {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  margin: 10px 10px;
+}
+
+.btn:hover {
+  color: blue;
+  background-color: floralwhite;
+  border-style: inset;
+}
+
 @keyframes turn-me {
   0% {
     transform: rotateX(0deg);
@@ -69,29 +89,7 @@ h1 {
   100% {
     transform: rotateX(360deg);
     opacity: 1;
+    animation-iteration-count: initial
   }
 }
-.btn {
-  margin: 10px 10px;
-}
 
-.btn:hover {
-  border-color: blue;
-}
-
-.btn--custom {
-  color: white;
-  background-color: #0d6efd;
-}
-
-.btn--custom:hover {
-  color: cyan;
-  background: #0b5ed7;
-  border-color: blue;
-  border-style: inset;
-}
-
-.new-quote a {
-  margin: 0px 10px;
-  padding: 0px 10px;
-}

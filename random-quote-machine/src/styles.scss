@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic");
 
+body {
+  height: 70%;
+  margin: 0px;
+  padding: 0px;
+  background-color: lightpink;
+}
 
 $green: #23a186;
 $orange: #bf8622;
-$red: #9c3636;
-$blue: #253ba8;
+$magenta: #9c3636;
+$steelblue: #253ba8;
 $purple: #7a2d7d;
 $gray: #3b3b3b;
 $default: $gray;
@@ -11,12 +18,25 @@ $default: $gray;
 $colors: (
   "green": $green,
   "orange": $orange,
-  "red": $red,
-  "blue": $blue,
+  "magenta": $magenta,
+  "steelblue": $steelblue,
   "purple": $purple,
   "gray": $gray
 );
 
+#quote-box {
+  font-family: 'Roboto Mono', serif;
+}
+
+#titi-el {
+  margin-bottom: 2px;
+};
+
+#synchro-quote {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 3px;
+}
 
 @import "~bootstrap/scss/bootstrap";
 
