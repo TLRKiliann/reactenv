@@ -69,6 +69,7 @@ h1 {
 
 .btn-primary {
   margin: 10px 10px;
+  box-shadow: none !important;
 }
 
 .btn:hover {
