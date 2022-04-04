@@ -14,11 +14,12 @@ function TodoForm({addTodo}) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    if (todo.task.trim()) {
-      addTodo({...todo, id: uuidv4()})
+    if (todo.task.trim()) { //trim
+      addTodo({...todo, id: uuidv4()}) //addTodo
       setTodo({...todo, task: ''})
     }
   }
+  // todo.task
   return (
     <form onSubmit={handleSubmit}>
       <input

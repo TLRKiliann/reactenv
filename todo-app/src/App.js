@@ -21,7 +21,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos]);
 
-  function addTodo(todo) {
+  function addTodo(todo) { //todo of TodoForm.js
     setTodos([todo, ...todos]); //sens de l'affichage
   }
 
@@ -33,7 +33,7 @@ function App() {
             ...todo, completed: !todo.completed
           }
         }
-    return todo;
+    return todo; //car todos.map()...
     }))
   }
 

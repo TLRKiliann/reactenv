@@ -1,6 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
+//import {useEffect} from 'react';
 import dataCatcher from '../dataStruct/dataCatcher';
+
 
 function ThirdFrag() {
   const [items] = useState('Coucou');
@@ -8,10 +10,15 @@ function ThirdFrag() {
   const reach = dataCatcher.map(data => {
     return <h3 key={data.id}>{data.name}</h3>
   })
-  const handleClick = (e) => {
+  const handleChange = (e) => {
     setEntry(e.target.value)
     console.log("ok test")
   }
+  /*
+  useEffect(() => {
+    localStorage.setItem('entry', JSON.stringify(entry));
+  }, [entry])
+  */
   return (
     <div>
       <h2>ThirdOne</h2>
@@ -23,11 +30,20 @@ function ThirdFrag() {
           name='input' 
           type='text' 
           value={entry} 
-          onChange={(e)=> setEntry(e.target.value)}>
-          
+          onChange={(e)=> setEntry(e.target.value)}
+        >
         </input>
+
+        <input 
+          name='input2' 
+          type='text' 
+          value={entry}
+          onChange={handleChange}
+        >
+        </input>
+
         <p>{entry}</p>
-        <button type='button' onClick={handleClick}>Click</button>
+        <button type='button' onClick={handleChange}>Click</button>
       </form>
     </div>
   );

@@ -7,8 +7,8 @@ function TodoList({todos, toggleComplete, todoRemove}) {
     <ul className={'todo--class'}>
       {todos.map(todo => (
         <Todo
-          key={todo.id}
-          todo={todo}
+          key={todo.id} //key!!!
+          todo={todo} //def of todo
           toggleComplete={toggleComplete}
           todoRemove={todoRemove}
         />

@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <h1>
+      Hello !
+    </h1>
+    <div
+      class="retrieve--class"
+    >
+      <div
+        class="first--class"
+      >
+        <h2>
+          With PROPS
+        </h2>
+        <h2>
+          1
+        </h2>
+        <h2>
+          Alphonso
+        </h2>
+        <h2>
+          23
+        </h2>
+        <h2>
+          admin
+        </h2>
+      </div>
+      <div
+        class="first--class"
+      >
+        <h2>
+          With PROPS
+        </h2>
+        <h2>
+          2
+        </h2>
+        <h2>
+          Geronimo
+        </h2>
+        <h2>
+          44
+        </h2>
+        <h2>
+          member
+        </h2>
+      </div>
+      <div
+        class="first--class"
+      >
+        <h2>
+          With PROPS
+        </h2>
+        <h2>
+          3
+        </h2>
+        <h2>
+          Anne-Lyse
+        </h2>
+        <h2>
+          21
+        </h2>
+        <h2>
+          admin
+        </h2>
+      </div>
+    </div>
+    <div>
+      <h2>
+        SecondOne
+      </h2>
+      <h3>
+        1 Alphonso 23
+      </h3>
+      <h3>
+        2 Geronimo 44
+      </h3>
+      <h3>
+        3 Anne-Lyse 21
+      </h3>
+    </div>
+    <div>
+      <h2>
+        ThirdOne
+      </h2>
+      <h3>
+        Coucou
+      </h3>
+      <h3>
+        Alphonso
+      </h3>
+      <h3>
+        Geronimo
+      </h3>
+      <h3>
+        Anne-Lyse
+      </h3>
+      <form
+        class="third--class"
+      >
+        <input
+          name="input"
+          type="text"
+          value=""
+        />
+        <input
+          name="input2"
+          type="text"
+          value=""
+        />
+        <p />
+        <button
+          type="button"
+        >
+          Click
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
