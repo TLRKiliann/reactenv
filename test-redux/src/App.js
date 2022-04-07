@@ -17,15 +17,25 @@ function App() {
   const dispatch = useDispatch(number, deliv, delivone);
   //<h3>counterone (state=delivone) : {counterone}</h3>
   //<h3>counterdec (state=deliv) : {counterdec}</h3>
+  function handleClick() {
+    dispatch(decrement(number))
+    setNumber('');
+  }
   return (
     <div className="App">
       <h1>React n Redux Test !</h1>
-      <h3>counter (state=number) : {counter}</h3>
+      <h3>counter : {counter}</h3>
 
-      <input type='text' value={number} onChange={(e) => setNumber(e.target.value)} />
+      <input 
+        type='text'
+        value={number}
+        onChange={(e) => setNumber(e.target.value)}
+        placeholder='enter number here'
+        className='first--input'
+      />
 
-      <button onClick={() => dispatch(decrement(number))}>Customer buy...</button>
-      <p>It makes {number} caked sold ! It keeps {counter}.</p>
+      <button onClick={handleClick}>Customer buy...</button>
+      <p>If you click now, it will make {number} cakes sold ! And it keeps {counter - number}.</p>
 
       <input disabled={true} type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
 
