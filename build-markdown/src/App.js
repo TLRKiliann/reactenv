@@ -50,15 +50,15 @@ class App extends React.Component {
   }
   render() {
     const { text } = this.state;
-    let markdown = marked(text, {breaks: true});
-    let inputStyle = {
+    const markdown = marked(text, {breaks: true});
+    const inputStyle = {
       width: "580px",
       height: "100vh",
       marginRight: "auto",
       marginLeft: "20px",
       padding: "10px",
     };
-    let outputStyle = {
+    const outputStyle = {
       width: "580px",
       height: "100vh",
       backgroundColor: "#dcdcdc",
@@ -71,6 +71,7 @@ class App extends React.Component {
         <h2 className='text-center mt-2'>Markdown Preview</h2>
 
         <div className='row mt-4'>
+        
           <div className='col-md-6'>
             <h4 className='col text-center'>Markdown</h4>
             <textarea
