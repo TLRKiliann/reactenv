@@ -11,19 +11,16 @@ function App() {
   const [deliv, setDeliv] = useState(100);
 
   const counter = useSelector(state => state.counter);
-  //const counterone = useSelector(state => state.counterone);
-  //const counterdec = useSelector(state=> state.counterdec);
   const isLogged = useSelector(state => state.isLogged);
   const dispatch = useDispatch(number, deliv, delivone);
-  //<h3>counterone (state=delivone) : {counterone}</h3>
-  //<h3>counterdec (state=deliv) : {counterdec}</h3>
-  function handleClick() {
+
+  const handleClick = () => {
     dispatch(decrement(number))
     setNumber('');
   }
   return (
     <div className="App">
-      <h1>React n Redux Test !</h1>
+      <h1>React n Redux !</h1>
       <h3>counter : {counter}</h3>
 
       <input 
@@ -34,8 +31,15 @@ function App() {
         className='first--input'
       />
 
-      <button onClick={handleClick}>Customer buy...</button>
-      <p>If you click now, it will make {number} cakes sold ! And it keeps {counter - number}.</p>
+      {number ? <button
+        onClick={handleClick}
+        style={{padding: '5px 20px'}}>
+        Buy
+      </button> : ''}
+
+      <p>
+        If you click now, it will make {number} cakes sold ! And it keeps {counter - number}.
+      </p>
 
       <input disabled={true} type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
 
@@ -47,8 +51,8 @@ function App() {
       <button onClick={() => dispatch(increment(deliv))}>Livraison</button>
       <p>Livraison of {deliv} cakes arrived and it keeps {counter}.</p>
 
-      {isLogged ? <p>This message shouldn't appears</p> : <p></p>}
-      <button onClick={() => dispatch(logged())}>Hidden MSG</button>
+      {isLogged ? <h2 style={{color: 'orange'}}>Total of cackes : {counter}</h2> : ''}
+      <button onClick={() => dispatch(logged())}>Total of CACKES !</button>
     </div>
   );
 }
