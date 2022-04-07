@@ -10,8 +10,16 @@ body  {
   text-align: center;
 }
 
+.text-center {
+  color: white;
+}
+
+#editor {
+  color: violet;
+}
+
 #preview {
-  background: #fff;
+  color: darkblue;
 }
 
 textarea, .preview {

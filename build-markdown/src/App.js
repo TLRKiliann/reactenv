@@ -10,27 +10,30 @@ const initialState = `
 
   # Heading
   ## Heading 2
-  ### Heading 3
 
-  - list item 1
-  - list item 2
-  - list item 3
-
-  [visit my website](https://avatars.githubusercontent.com/u/84546757?s=200&v=4)
+  [website](https://avatars.githubusercontent.com/u/84546757?s=200&v=4)
 
   this is an inline \`<div></div>\`
+
+  > a blockquote 
 
   this is a block of code
 
   \`\`\`
 
-  let x = 'yes';
+    let x = 1;
+    let y = 2;
+    let z = x + y;
 
   \`\`\`
 
+  - list item 1
+  - list item 2
+  - list item 3
+
   ![React](https://avatars.githubusercontent.com/u/84546757?s=200&v=4)
 
-  ***this is bolder text***
+  **this is bolder text**
 `;
 
 class App extends React.Component {
@@ -47,30 +50,52 @@ class App extends React.Component {
   }
   render() {
     const { text } = this.state;
-
-    const markdown = marked(text, {breaks: true});
-
+    let markdown = marked(text, {breaks: true});
+    let inputStyle = {
+      width: "580px",
+      height: "100vh",
+      marginRight: "auto",
+      marginLeft: "20px",
+      padding: "10px",
+    };
+    let outputStyle = {
+      width: "580px",
+      height: "100vh",
+      backgroundColor: "#DCDCDC",
+      marginRight: "20px",
+      marginLeft: "auto",
+      padding: "10px",
+    };
     return (
       <div className="App">
-        <h2 className='text-center m-4'>Title</h2>
+        <h2 className='text-center mt-2'>Markdown Preview</h2>
 
-          <div className='col-6'>
-            <h6 className='text-center'>Cool</h6>
+        <div className='row mt-4'>
+          <div className='col-md-6'>
+
+            <h4 className='col text-center'>Markdown</h4>
             <textarea
-              className='form-control p-2' rows='12'
+              style={inputStyle}
+              className='form-control'
               id='editor'
               value={text}
               onChange={(e) => this.handleChange(e)}
             />
+          </div>
 
-            <h6 className='text-center'>See result</h6>
-            <div className='col-6' id='preview'>
-              <div 
-                className='form-control p-2' 
-                dangerouslySetInnerHTML={{__html: markdown}}
-                id='preview'>
+
+
+          <div className='col-md-6'>
+            <h4 className='col text-center'>Preview</h4>
+            <div
+              style={outputStyle}
+              className='form-control'
+              dangerouslySetInnerHTML={{__html: markdown}}
+              id='preview'>
             </div>
           </div>
+
+
         </div>
       </div>
     );
