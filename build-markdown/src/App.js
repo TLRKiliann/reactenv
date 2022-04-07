@@ -61,7 +61,7 @@ class App extends React.Component {
     let outputStyle = {
       width: "580px",
       height: "100vh",
-      backgroundColor: "#DCDCDC",
+      backgroundColor: "#dcdcdc",
       marginRight: "20px",
       marginLeft: "auto",
       padding: "10px",
@@ -72,7 +72,6 @@ class App extends React.Component {
 
         <div className='row mt-4'>
           <div className='col-md-6'>
-
             <h4 className='col text-center'>Markdown</h4>
             <textarea
               style={inputStyle}
@@ -83,8 +82,6 @@ class App extends React.Component {
             />
           </div>
 
-
-
           <div className='col-md-6'>
             <h4 className='col text-center'>Preview</h4>
             <div
@@ -94,7 +91,6 @@ class App extends React.Component {
               id='preview'>
             </div>
           </div>
-
 
         </div>
       </div>
