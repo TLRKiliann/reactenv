@@ -1,18 +1,27 @@
 body {
-  background: coral;
+  background: url('./images/redact.jpg') no-repeat fixed center/cover;;
 }
 
 h1 {
-  color: yellow;
-  text-shadow: 2px 1px 2px blue;
+  color: purple;
+  text-shadow: 2px 1px 2px white;
+  opacity: 1;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: steelblue;
+  text-shadow: 2px 1px 2px white;
+  opacity: 1;
 }
 
 .App {
-  margin: 50px 300px;
+  margin: 18% 30%;
   padding: 20px 10px;
   display: flex;
   justify-content: center;
-  background: sandybrown;
+  background: #dcdcdc;
+  opacity: 0.5;
   border-radius: 12px;
 }
 
