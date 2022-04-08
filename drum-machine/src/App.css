@@ -1,0 +1,24 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+  background: slateblue;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.sub--app {
+  margin: 15% 20%;
+  padding: 10px 0px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: steelblue;
+  color: white;
+  border-radius: 12px;
+}
