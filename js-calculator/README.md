@@ -2,35 +2,35 @@
 
 ---
 
-## 1 : Ma calculatrice doit contenir un élément cliquable contenant un = (signe égal) avec un id="equals" correspondant.
+# 1 : Ma calculatrice doit contenir un élément cliquable contenant un = (signe égal) avec un id="equals" correspondant.
 
 ---
 
-## 2 : Ma calculatrice doit contenir 10 éléments cliquables contenant chacun un chiffre de 0 à 9, avec les ID correspondants suivants : id="zéro", id="un", id="deux", id="trois", id="quatre", id="cinq", id="six", id="sept", id="huit" et id="neuf".
+# 2 : Ma calculatrice doit contenir 10 éléments cliquables contenant chacun un chiffre de 0 à 9, avec les ID correspondants suivants : id="zéro", id="un", id="deux", id="trois", id="quatre", id="cinq", id="six", id="sept", id="huit" et id="neuf".
 
 ---
 
-## 3 : Ma calculatrice doit contenir 4 éléments cliquables contenant chacun l'un des 4 opérateurs mathématiques primaires avec les ID correspondants suivants : id="add", id="subtract", id="multiply", id="divide".
+# 3 : Ma calculatrice doit contenir 4 éléments cliquables contenant chacun l'un des 4 opérateurs mathématiques primaires avec les ID correspondants suivants : id="add", id="subtract", id="multiply", id="divide".
 
 ---
 
-## 4 : Ma calculatrice devrait contenir un élément cliquable contenant un symbole . (point décimal) avec un id="decimal" correspondant.
+# 4 : Ma calculatrice devrait contenir un élément cliquable contenant un symbole . (point décimal) avec un id="decimal" correspondant.
 
 ---
 
-## 5 : Ma calculatrice devrait contenir un élément cliquable avec un id="clear".
+# 5 : Ma calculatrice devrait contenir un élément cliquable avec un id="clear".
 
 ---
 
-## 6 : Ma calculatrice devrait contenir un élément pour afficher les valeurs avec un id="display" correspondant.
+# 6 : Ma calculatrice devrait contenir un élément pour afficher les valeurs avec un id="display" correspondant.
 
 ---
 
-## 7 : A tout moment, appuyer sur le bouton clear efface les valeurs d'entrée et de sortie, et ramène la calculatrice à son état initialisé ; 0 devrait être affiché dans l'élément avec l'id="display".
+# 7 : A tout moment, appuyer sur le bouton clear efface les valeurs d'entrée et de sortie, et ramène la calculatrice à son état initialisé ; 0 devrait être affiché dans l'élément avec l'id="display".
 
 ---
 
-## 8 : Lorsque je saisis des nombres, je devrais être capable de voir ma saisie dans l'élément avec l'id de display.
+# 8 : Lorsque je saisis des nombres, je devrais être capable de voir ma saisie dans l'élément avec l'id de display.
 
 ---
 
