@@ -1,11 +1,15 @@
 import React from 'react';
 
 
-class DisplayDrum extends React.Component {
+class DisplayDisplay extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div id='display'>
-        <div>{this.props.displayText}</div>
+      <div id="display">
+        <div id="display-text">{this.props.displayText}</div>
       </div>
     );
   }
