@@ -34,7 +34,7 @@
 
 ---
 
-## 9 : Dans n'importe quel ordre, je devrais pouvoir ajouter, soustraire, multiplier et diviser une chaîne de nombres de n'importe quelle longueur, et lorsque j'appuie sur =, le résultat correct devrait être affiché dans l'élément avec l'id d'affichage.
+# 9 : Dans n'importe quel ordre, je devrais pouvoir ajouter, soustraire, multiplier et diviser une chaîne de nombres de n'importe quelle longueur, et lorsque j'appuie sur =, le résultat correct devrait être affiché dans l'élément avec l'id d'affichage.
 
 ---
 
