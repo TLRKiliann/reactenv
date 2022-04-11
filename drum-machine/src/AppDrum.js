@@ -19,7 +19,7 @@ class AppDrum extends React.Component {
       { key: "C", soundName: "Closed-HH", soundFile: "Cev_H2.mp3" }
     ];
 
-    const soundUrlPrefix = "https://s3.amazonaws.com/freecodecamp/drums/"; //main web link
+    const soundUrlPrefix = "https://s3.amazonaws.com/freecodecamp/drums/";
 
     this.state = {
       padData: padData,
@@ -31,57 +31,58 @@ class AppDrum extends React.Component {
     this.handleKeys = this.handleKeys.bind(this);
     this.playPad = this.playPad.bind(this);
   }
+
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeys);
+    document.addEventListener("keydown", this.handleKeys);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeys);
   }
 
-  componentDidWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeys)
-  }
-  // SPECIAL !!!
-  handleKeys(event) {
-    const ari = this.state.padData;
-    ari.forEach((k) => {
-      return event.keyCode === k.key.charCodeAt(0) ? this.playPad(k.key) : '';
-    })
+  handleKeys(event) { // action key
+    const keyArray = this.state.padData; // All list of data.
+    keyArray.forEach((k) => {
+      event.keyCode == k.key.charCodeAt(0) ? this.playPad(k.key) : "";
+    });
   }
 
-  handlePadClick(padKeys, event) {
-    this.playPad(padKeys);
+  handlePadClick(padKey, event) { // instancy the key event (action click)
+    this.playPad(padKey); // call function & pass value of padkey
   }
 
-  playPad(padKeys) {
-    const audio = document.getElementById(padKeys);
-    const padDisplay = this.state.padData.find(i => i.key === padKeys).soundName;
+  playPad(padKey) {
+    const audio = document.getElementById(padKey);
+    const padDisplay = this.state.padData.find((i) => i.key == padKey)
+      .soundName;
     audio.currentTime = 0;
     audio.play();
-    this.setState(state => {
+    this.setState((state) => {
       return {
         padData: this.state.padData,
         soundUrlPrefix: this.state.soundUrlPrefix,
         displayText: padDisplay
-      }
-    })
+      };
+    });
   }
 
   render() {
-    const mappdata = this.state.padData.map((item) => (
-      <DrumPad 
-        hotkey={item.key} // !!! err
-        //id={item.id} pas besoin !!!
-        key={item.key}
+    const pads = this.state.padData.map((item) => (
+      <DrumPad
+        hotKey={item.key}
         soundFile={this.state.soundUrlPrefix + item.soundFile}
         soundName={item.soundName}
         clickHandler={this.handlePadClick}
       />
     ));
-    
     return (
-      <div>
-        <DisplayDrum displayText={this.state.displayText} />
-        <div id="drum-pad-wrapper">{mappdata}</div>
+      <div id="wrapper">
+        <div id="drum-wrapper">
+          <div id="drum-machine">
+            <DisplayDrum displayText={this.state.displayText} /> //good choice
+            <div id="drum-pad-wrapper">{pads}</div>
+          </div>
+        </div>
       </div>
-
     );
   }
 }
