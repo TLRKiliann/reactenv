@@ -6,59 +6,80 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: 0
+      counter: 0,
     }
+    this.add = this.add.bind(this);
+    this.substract = this.substract.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.handleClear = this.handleClear.bind(this);
   }
   
-  handleClear(e) {
-    const {id} = target.value;
-    this.setState(prevState => (
-      ...prevState,
-      e.id: id ? "" : id.value);
+  handleClick() { // pad nbre
+    this.setState({counter: 1})
+  }
+
+  add() { //plus 1 func
+    this.setState(state => ({counter: state.counter + 1}));
+  }
+
+  substract() { //moins 1 func
+    this.setState(state => ({counter: state.counter - 1}));
+  }
+  
+  handleClear() {
+    this.setState({counter: 0})
   }
 
   render() {
     return (
       <div className="App">
-
+        <h1>Calcultator</h1>
         <div className='calculator'>
-          <button id='zero' onClick={this.setState({this.state.display: e.target.value})}>0</button>
-          <button id='one' onClick={this.setState({this.state.display: 1})}>1</button>
-          <button id='two' onClick={this.setState({this.state.display: 2})}>2</button>
+          <button id='zero'>0</button>
 
-          <button id='three' onClick={this.setState({this.state.display: 3})}>3</button>
-          <button id='four' onClick={this.setState({this.state.display: 4})}>4</button>
-          <button id='five' onClick={this.setState({this.state.display: 5})}>5</button>
+          <button id='one' onClick={this.handleClick}>1</button>
+          <button id='two' >2</button>
 
-          <button id='six' onClick={this.setState({this.state.display: 6})}>6</button>          
-          <button id='seven' onClick={this.setState({this.state.display: 7})}>7</button>
-          <button id='height' onClick={this.setState({this.state.display: 8})}>8</button>
+          <button id='three' >3</button>
+          <button id='four' >4</button>
+          <button id='five' >5</button>
 
-          <button id='nine' onClick={this.setState({this.state.display: 9})}>9</button>
+          <button id='six' >6</button>          
+          <button id='seven' >7</button>
+          <button id='height' >8</button>
+
+          <button id='nine' >9</button>
 
 
-          <button id='add'>+</button>
-          <button id='substract'>-</button>
+
+          <button id='add' onClick={this.add}>+</button>
+          <button id='substract' onClick={this.substract}>-</button>
+
+
+
           <button id='multiply'>*</button>
           <button id='divide'>/</button>
 
-
           <button id='decimal'>.</button>
+        
+            
+          <button 
+            id='clear'
+            onClick={this.handleClear}
+          >
+            clear
+          </button>
           
+
           <button id='equals'>=</button>
-          
-          <button id='clear'
-          onClick={(e) => this.handleClear(e)}>clear</button>
+
+
+          <div id="display">
+            counter : {this.state.counter}
+          </div>
+
         </div>
 
-
-
-        <div id="display"
-        value={this.state.display}
-        onChange={this.handleClear}>{this.state.display}</div>
-
-        Hello !
       </div>
     );
   }
