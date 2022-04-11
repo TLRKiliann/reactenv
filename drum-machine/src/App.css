@@ -1,27 +1,122 @@
+:root {
+  --col-blue: hsl(210, 80%, 70%);
+  --col-dark-grey: hsl(0, 0%, 50%);
+  --col-grey: hsl(0, 0%, 80%);
+
+  --col-themeCol: var(--col-blue);
+  --col-themeBack: white;
+
+  --col-drumBack: var(--col-dark-grey);
+
+  --col-startBack: var(--col-white);
+  --col-finalBack: var(--col-themeCol);
+
+  --font-display: "Press Start 2P", monospace;
+  --debug: 2px solid red;
+}
+
+html,
 body {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Times New Roman", serif;
-  background: slateblue;
+  height: 100%;
+  background-color: var(--col-themeCol);
+}
+
+#app {
+  height: 100%;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  animation: fadeBack 2s;
+  animation-fill-mode: forwards;
+}
+
+/* Animation for background color */
+@keyframes fadeBack {
+  0% {
+    background-color: var(--col-startBack);
+  }
+  100% {
+    background-color: var(--col-finalBack);
+  }
+}
+
+#drum-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  background-color: var(--col-drumBack);
+  border-radius: 20px;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #drum-machine {
-  margin: 5% 30%;
-  min-height: 80vh;
-  color: white;
-  background: steelblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 100%;
 }
 
 #display {
-  display: grid;
-  grid-template-rows: 1Fr 1Fr 1Fr;
-  grid-template-columns: 1Fr 1Fr 1Fr;
-}
-
-.sec--pad {
   display: flex;
-  flex-direction: column;
+  flex-flow: row;
   align-items: center;
   justify-content: center;
+  background-color: var(--col-grey);
+  border-radius: 10px;
+}
+
+#display-text {
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 18px;
+  padding: 15px;
+}
+
+#drum-pad-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-face: arial;
+  font-size: 24px;
+}
+
+.drum-pad {
+  display: flex;
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--col-themeCol);
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.drum-pad-label {
+  display: flex;
+  border: auto;
+}
+
+.clip {
+  display: none;
 }
