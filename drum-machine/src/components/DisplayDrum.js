@@ -3,7 +3,9 @@ import React from 'react';
 
 export default class DisplayDrum extends React.Component {
   constructor(props) {
+    //debugger;
     super(props);
+    //console.assert(props)
   }
 
   render() {

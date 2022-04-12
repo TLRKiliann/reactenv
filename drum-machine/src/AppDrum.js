@@ -32,7 +32,7 @@ class AppDrum extends React.Component {
       { 
         key: "S",
         soundTitle: "Clap",
-        soudFormat: "Heater-6.mp3"
+        soundFormat: "Heater-6.mp3"
       },
       { 
         key: "D",
@@ -47,7 +47,7 @@ class AppDrum extends React.Component {
       { 
         key: "X",
         soundTitle: "Kick",
-        soudFormat: "RP4_KICK_1.mp3"
+        soundFormat: "RP4_KICK_1.mp3"
       },
       { 
         key: "C",
