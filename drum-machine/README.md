@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Drum-Machine
 
 
 ## Keyboard
@@ -38,6 +38,7 @@ function myFunction(event) {
 ## DrumApp.js n°84 :
 
 ***event.keyCode = unicode_number***
+
 ***k.key.charCodeAt(0) = unicode_number***
 
 ## return e.keyCode === k.key.charCodeAt(0) ? this.playPad(k.key) : "";
@@ -48,9 +49,9 @@ Get the Unicode of the first character in a string.
 
 ## Mouse
 
-***mouse === keyboard***
+## mouse === keyboard
 
-### i.key === k.key
+## i.key === k.key
 
 ## return i.key === padKey
 
@@ -81,6 +82,8 @@ Get the Unicode of the first character in a string.
   }
 ```
 
+Render of DrumApp.js
+
 ```
   render() {
     const pads = this.state.musicData.map((item) => (
@@ -100,6 +103,8 @@ Get the Unicode of the first character in a string.
     );
   }
 ```
+
+From DrumDisplay.js
 
 ```
       <div
