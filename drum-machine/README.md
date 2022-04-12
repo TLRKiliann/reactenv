@@ -1,70 +1,127 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Keyboard
 
-In the project directory, you can run:
+### event.keyCode (event.keyCode is for keyboard and it use unicode for character string)
 
-### `npm start`
+For instance if you want to detect whether the "Enter"-key was clicked or not:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instead of
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+event.keyCode === 13
 
-### `npm test`
+Do it like
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+event.key === 'Enter'
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+<p>The keyCode property is deprecated, use the which property instead.</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<input type="text" size="40" onkeypress="myFunction(event)">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>"The Unicode value is:"</p>
+<p id="demo"></p>
 
-### `npm run eject`
+<script>
+function myFunction(event) {
+  let unicode= event.which;
+  document.getElementById("demo").innerHTML = unicode;
+}
+</script>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## DrumApp.js n°84 :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+***event.keyCode = unicode_number***
+***k.key.charCodeAt(0) = unicode_number***
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## return e.keyCode === k.key.charCodeAt(0) ? this.playPad(k.key) : "";
 
-## Learn More
+Get the Unicode of the first character in a string.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Mouse
 
-### Code Splitting
+***mouse === keyboard***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### i.key === k.key
 
-### Analyzing the Bundle Size
+## return i.key === padKey
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+  handlePadClick(padKey, e) {
+    this.playPad(padKey);
+  }
 
-### Making a Progressive Web App
+  playPad(padKey) {
+    //Faire correspondre la touche du DrumPad (padKey)
+    //avec la clef (key) de musicData
+    //et du titre du son joué et de l'URL.
+    const audio = document.getElementById(padKey);
+    const padDisplay = this.state.musicData.find((i) => {
+      return i.key === padKey //i.key === k.key
+   	})
+   	...
+  }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+    this.setState((state) => {
+      return {
+      	...
+        displayText: padDisplay
+      };
+    });
+  }
+```
 
-### Advanced Configuration
+```
+  render() {
+    const pads = this.state.musicData.map((item) => (
+    	
+      <DrumPad
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+        hotKey={item.key}
+        
+        soundTitle={item.soundTitle}
+        ...
+        
+        soundFormat={this.state.urlLinkSound + item.soundFormat}
+        clickHandler={this.handlePadClick}
+      />
+    return(
+    	...
+    );
+  }
+```
 
-### Deployment
+```
+      <div
+        id={this.props.soundTitle}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+        key={this.props.hotKey}
 
-### `npm run build` fails to minify
+        onClick={(e) => this.props.clickHandler(this.props.hotKey, e)}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        className="drum-pad"
+      >
+        <div className="drum-pad-label">
+          <span>{this.props.hotKey}</span>
+          <audio
+            id={this.props.hotKey}
+            className="clip"
+
+            src={this.props.soundFormat}
+          
+          ></audio>
+        </div>
+      </div>
+```
+
+---

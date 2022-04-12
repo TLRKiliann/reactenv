@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class DisplayDisplay extends React.Component {
+export default class DisplayDrum extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,5 +14,3 @@ class DisplayDisplay extends React.Component {
     );
   }
 }
-
-export default DisplayDrum;

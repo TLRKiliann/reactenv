@@ -57,84 +57,89 @@ class AppDrum extends React.Component {
     ];
 
     const urlLinkSound = "https://s3.amazonaws.com/freecodecamp/drums/";
-
     this.state = {
       musicData: musicData,
       urlLinkSound: urlLinkSound,
-      displayText: "Drum Box Machine"
+      displayText: "Hello les affreux !"
     };
-
-    this.handlePadClick = this.handlePadClick.bind(this);
-    this.handleKeys = this.handleKeys.bind(this);
-    this.playPad = this.playPad.bind(this);
+  this.handleKey = this.handleKeys.bind(this);
+  this.playPad = this.playPad.bind(this);
+  this.clickHandler = this.clickHandler.bind(this);
   }
-
   componentDidMount() {
-    document.addEventListener("keydown", this.handleKeys);
+    document.addEventListener("keydown", this.handleKey);
   }
+
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeys);
+    document.removeEventListener("keydown", this.handleKey)
   }
 
-  handleKeys(e) { //keyboard
-    const keyArray = this.state.musicData;
-    //Pour chaque element de l'array on fait correspondre la clef avec la lettre.
-    //Si la clef n'existe pas, renvoit ''.
-    keyArray.forEach((k) => {
+  handleKey(e) { //keyboard
+    const myArray = this.state.musicData;
+    myArray.forEach((k) => {
       return e.keyCode === k.key.charCodeAt(0) ? this.playPad(k.key) : "";
-    });
+    })
   }
-
-  //handleClick => handlePadClick !!! i.key === padKey === k.key
-  handlePadClick(padKey, e) {
+  
+  clickHandler(padKey, e) { //Reprend le (k.key) et transforme en (padkey)
     this.playPad(padKey);
   }
 
   playPad(padKey) {
-    //Faire correspondre la touche du DrumPad (padKey)
-    //avec la clef (key) de musicData
-    //et du titre du son joué et de l'URL.
     const audio = document.getElementById(padKey);
     const padDisplay = this.state.musicData.find((i) => {
-      return i.key === padKey //i.key === k.key
+      return i.key === padKey
     }).soundTitle;
-
     audio.currentTime = 0;
     audio.play();
-    //Actualisation des state
-    this.setState((state) => {
+    this.setState(state => {
       return {
         musicData: this.state.musicData,
         urlLinkSound: this.state.urlLinkSound,
         displayText: padDisplay
-      };
-    });
-  }
+      }
+    })
 
   render() {
-    const pads = this.state.musicData.map((item) => (
+    const maptoclick = this.state.musicData.map(item => {
       <DrumPad
-
-        hotKey={item.key}
-
-        soundFormat={this.state.urlLinkSound + item.soundFormat}
+        hotkey={item.key}
         soundTitle={item.soundTitle}
+        soundFormat={this.state.urlLinkSound + item.soundFormat}
         clickHandler={this.handlePadClick}
       />
-    ));
-    return (
-      <div id="wrapper">
-        <div id="drum-wrapper">
-          <div id="drum-machine">
-
-            <DisplayDrum displayText={this.state.displayText} />
-
-            <div id="drum-pad-wrapper">{pads}</div>
-          </div>
-        </div>
-      </div>
-    );
+    })
+    return(
+      <DisplayDrum displayText={this.state.displayText} />
+      )
   }
 }
 
-export default AppDrum;
+class DrumPad extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+      <div 
+        id={this.props.soundTitle}
+        key={this.props.hotkey}
+      >
+                  
+      </div>
+    )
+  }
+}
+
+
+class DisplayDrum extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+      <>{this.props.displayText}
+      </>
+    )
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class DrumPad extends React.Component {
+export default class DrumPad extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,7 +8,7 @@ class DrumPad extends React.Component {
   render() {
     return (
       <div
-        id={this.props.soundName}
+        id={this.props.soundTitle}
         key={this.props.hotKey}
         onClick={(e) => this.props.clickHandler(this.props.hotKey, e)}
         className="drum-pad"
@@ -18,7 +18,7 @@ class DrumPad extends React.Component {
           <audio
             id={this.props.hotKey}
             className="clip"
-            src={this.props.soundFile}
+            src={this.props.soundFormat}
           ></audio>
         </div>
       </div>
@@ -26,4 +26,27 @@ class DrumPad extends React.Component {
   }
 }
 
-export default DrumPad;
+/*
+---
+  keys
+
+  id={this.props.soundTitle}
+  key={this.props.hotKey}
+
+---
+
+  Main synthax with clickHandler()
+
+  onClick={(e) => this.props.clickHandler(this.props.hotKey, e)}
+
+---
+
+  <audio
+    id={this.props.hotKey}
+    className="clip"
+--------------------------------------
+    src={this.props.soundFormat}
+--------------------------------------
+  ></audio>
+
+*/
