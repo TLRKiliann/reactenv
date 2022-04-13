@@ -61,52 +61,45 @@ class AppDrum extends React.Component {
     this.state = {
       musicData: musicData,
       urlLinkSound: urlLinkSound,
-      displayText: "Drum Box Machine"
+      displayText: "Drum Machine"
     };
 
-    this.handlePadClick = this.handlePadClick.bind(this);
-    this.handleKeys = this.handleKeys.bind(this);
-    this.playPad = this.playPad.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyBoard = this.handleKeyBoard.bind(this);
+    this.playDrum = this.playDrum.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this.handleKeys);
+    document.addEventListener("keydown", this.handleKeyBoard);
   }
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeys);
+    document.removeEventListener("keydown", this.handleKeyBoard);
   }
 
-  handleKeys(e) { //keyboard
-    const keyArray = this.state.musicData;
-    //Pour chaque element de l'array on fait correspondre la clef avec la lettre.
-    //Si la clef n'existe pas, renvoit ''.
-    keyArray.forEach((k) => {
-      return e.keyCode === k.key.charCodeAt(0) ? this.playPad(k.key) : "";
+  handleKeyBoard(e) { //keyboard
+    const myArray = this.state.musicData;
+    myArray.forEach((k) => {
+      return e.keyCode === k.key.charCodeAt(0) ? this.playDrum(k.key) : "";
     });
   }
 
-  //handleClick => handlePadClick !!! i.key === padKey === k.key
-  handlePadClick(padKey, e) {
-    this.playPad(padKey);
+  handleClick(padKey, e) {
+    this.playDrum(padKey);
   }
 
-  playPad(padKey) {
-    //Faire correspondre la touche du DrumPad (padKey)
-    //avec la clef (key) de musicData
-    //et du titre du son joué et de l'URL.
+  playDrum(padKey) {
     const audio = document.getElementById(padKey);
-    const padDisplay = this.state.musicData.find((i) => {
-      return i.key === padKey //i.key === k.key
+    const Updisplay = this.state.musicData.find((i) => {
+      return i.key === padKey
     }).soundTitle;
 
     audio.currentTime = 0;
     audio.play();
-    //Actualisation des state
     this.setState((state) => {
       return {
         musicData: this.state.musicData,
         urlLinkSound: this.state.urlLinkSound,
-        displayText: padDisplay
+        displayText: Updisplay
       };
     });
   }
@@ -119,7 +112,7 @@ class AppDrum extends React.Component {
 
         soundFormat={this.state.urlLinkSound + item.soundFormat}
         soundTitle={item.soundTitle}
-        clickHandler={this.handlePadClick}
+        clickHandler={this.handleClick}
       />
     ));
     return (
