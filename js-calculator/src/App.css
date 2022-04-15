@@ -21,6 +21,7 @@ h1 {
 }
 
 .calculator {
+  margin: 20px 20px;
   display: grid;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
@@ -31,12 +32,17 @@ h1 {
 
 button {
   padding: 10px 10px;
-  color: blue;
-  background: floralwhite;
+  font-size: 1.2rem;
+  color: white;
+  background: dimgrey;
 }
 
 #display {
-  padding-top: 7px;
-  text-align: center;
-  background: white;
+  margin: 0px 10px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-size: 2rem;
+  text-align: right;
+  background: lightgray;
+  border-radius: 12px;
 }

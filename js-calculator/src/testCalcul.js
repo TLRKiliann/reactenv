@@ -1,190 +1,114 @@
-function App() {
-  const [calc, setCalc] = React.useState("");
+import React from 'react';
+import './App.css';
 
-  const ops = ["/", "*", "+", "-", "."];
 
-  const updateCalc = (value) => {
+export default class AppCalc extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: '',
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleLastClear = this.handleLastClear.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+    this.handleResult = this.handleResult.bind(this);
+  }
+
+  handleClick(e) {
+    const {result} = this.state;
+    const value = e.target.value;
     const operatorPattern = /[+\-*/]/;
-    if (calc === "" && value === "0") {
+    if (result === "" && value === "0") {
       return;
     }
+
     if (value === ".") {
-      const parts = calc.split(operatorPattern);
-      if (parts[parts.length - 1].includes(".")) {
+      const parts = result.split(operatorPattern);
+      if (parts[parts.length - 1].includes(".")) {// true if already have '.'
         return;
       }
     }
+
     if (value !== "-" && operatorPattern.test(value)) {
-      const lastChar = calc[calc.length - 1] || "";
-      const secondLastChar = calc[calc.length - 2] || "";
-      if (operatorPattern.test(lastChar)) {
-        if (lastChar === "-" && operatorPattern.test(secondLastChar)) {
-          setCalc(calc.slice(0, -2) + value);
+      const lastStr = result[result.length - 1] || "";
+      const secondLastStr = result[result.length - 2] || "";
+      if (operatorPattern.test(lastStr)) {
+        if (lastStr === "-" && operatorPattern.test(secondLastStr)) {
+          this.setState(state => ({result: state.result.slice(0, -2) + value}));
+          return;
+        } else {
+          this.setState(state => ({result: state.result.slice(0, -1) + value}));
           return;
         }
-        setCalc(calc.slice(0, -1) + value);
-        return;
       }
     }
+    this.setState(state => ({result: state.result += value}));
+  };
 
-    setCalc(calc + value);
-  };
-  const calculate = () => {
-    setCalc(eval(calc).toString());
-  };
-  const deleteLast = () => {
-    if (calc === "") {
-      return;
+  handleLastClear(e) {
+    const newCount = this.state.result;
+    if (newCount === this.state.result[0]) {
+      this.setState({result: ''})
+    } else {
+      this.setState(state => ({result: state.result.slice(0, -1)}))
     }
+    e.preventDefault();
+  }
 
-    const value = calc.slice(0, -1);
-    setCalc(value);
-  };
+  handleClear() {
+    this.setState({result: ''})
+  }
 
-  const clearAll = () => {
-    setCalc("");
-  };
+  handleResult() {
+    this.setState(state => ({result: eval(state.result).toString()}))
+  }
 
-  return (
-    <div className="App">
-      <div className="calculator">
-        <div className="display" id="display">
-          {calc || "0"}
+  render() {
+    return (
+      <div className="App">
+        <h1>Calcultator</h1>
+
+        <div id="display">
+          {this.state.result || '0'}
         </div>
-        <div className="operators">
-          <button
-            id="add"
-            onClick={() => {
-              updateCalc("+");
-            }}
+
+        <div className='calculator'>
+          <button id='zero' value={'0'} onClick={(e) => this.handleClick(e)}>0</button>
+          <button id='one' value={'1'} onClick={(e) => this.handleClick(e)}>1</button>
+          <button id='two' value={'2'} onClick={(e) => this.handleClick(e)}>2</button>
+
+          <button id='three' value={'3'} onClick={(e) => this.handleClick(e)}>3</button>
+          <button id='four' value={'4'} onClick={(e) => this.handleClick(e)}>4</button>
+          <button id='five' value={'5'} onClick={(e) => this.handleClick(e)}>5</button>
+
+          <button id='six' value={'6'} onClick={(e) => this.handleClick(e)}>6</button>
+          <button id='seven' value={'7'} onClick={(e) => this.handleClick(e)}>7</button>
+          <button id='eight' value={'8'} onClick={(e) => this.handleClick(e)}>8</button>
+          <button id='nine' value={'9'} onClick={(e) => this.handleClick(e)}>9</button>
+
+          <button id='add' value={'+'} onClick={(e) => this.handleClick(e)}>+</button>
+          <button id='substract' value={'-'} onClick={(e) => this.handleClick(e)}>-</button>
+          <button id='multiply' value={'*'} onClick={(e) => this.handleClick(e)}>*</button>
+          <button id='divide' value={'/'} onClick={(e) => this.handleClick(e)}>/</button>
+
+          <button id='decimal' value={'.'} onClick={(e) => this.handleClick(e)}>.</button>
+
+          <button id='last' onClick={(e) => this.handleLastClear(e)}>del last</button>
+
+          <button 
+            id='clear'
+            onClick={this.handleClear}
           >
-            +
+            clear
           </button>
-          <button
-            id="subtract"
-            onClick={() => {
-              updateCalc("-");
-            }}
-          >
-            -
-          </button>
-          <button
-            id="multiply"
-            onClick={() => {
-              updateCalc("*");
-            }}
-          >
-            *
-          </button>
-          <button
-            id="divide"
-            onClick={() => {
-              updateCalc("/");
-            }}
-          >
-            /
-          </button>
-          <button id="del" onClick={deleteLast}>
-            DEL
-          </button>
-          <button id="clear" onClick={clearAll}>
-            AC
-          </button>
+          
+          <button id='equals' onClick={this.handleResult}>=</button>
+
         </div>
-        <div className="digits">
-          <button
-            id="one"
-            onClick={() => {
-              updateCalc("1");
-            }}
-          >
-            1
-          </button>
-          <button
-            id="two"
-            onClick={() => {
-              updateCalc("2");
-            }}
-          >
-            2
-          </button>
-          <button
-            id="three"
-            onClick={() => {
-              updateCalc("3");
-            }}
-          >
-            3
-          </button>
-          <button
-            id="four"
-            onClick={() => {
-              updateCalc("4");
-            }}
-          >
-            4
-          </button>
-          <button
-            id="five"
-            onClick={() => {
-              updateCalc("5");
-            }}
-          >
-            5
-          </button>
-          <button
-            id="six"
-            onClick={() => {
-              updateCalc("6");
-            }}
-          >
-            6
-          </button>
-          <button
-            id="seven"
-            onClick={() => {
-              updateCalc("7");
-            }}
-          >
-            7
-          </button>
-          <button
-            id="eight"
-            onClick={() => {
-              updateCalc("8");
-            }}
-          >
-            8
-          </button>
-          <button
-            id="nine"
-            onClick={() => {
-              updateCalc("9");
-            }}
-          >
-            9
-          </button>
-          <button
-            id="zero"
-            onClick={() => {
-              updateCalc("0");
-            }}
-          >
-            0
-          </button>
-          <button id="equals" onClick={calculate}>
-            =
-          </button>
-          <button
-            id="decimal"
-            onClick={() => {
-              updateCalc(".");
-            }}
-          >
-            .
-          </button>
-        </div>
+
       </div>
-    </div>
-  );
+    );
+  }
 }
+
