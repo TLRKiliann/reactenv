@@ -1,46 +1,39 @@
-import React from 'react';
-import './App.css';
-
-
-export default class AppCalc extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       result: '',
+      ops: ["/", "*", "+", "-", "."]
     };
-
     this.handleClick = this.handleClick.bind(this);
     this.handleLastClear = this.handleLastClear.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleResult = this.handleResult.bind(this);
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     const {result} = this.state;
     const value = e.target.value;
-    const operatorPattern = /[+\-*/]/;
+    const operator = /[+\-*/]/;
     if (result === "" && value === "0") {
       return;
     }
-
     if (value === ".") {
-      const parts = result.split(operatorPattern);
-      if (parts[parts.length - 1].includes(".")) {// true if already have '.'
+      const parts = result.split(operator);
+      if (parts[parts.length - 1].includes(".")) {
         return;
       }
     }
-
-    if (value !== "-" && operatorPattern.test(value)) {
-      const lastStr = result[result.length - 1] || "";
-      const secondLastStr = result[result.length - 2] || "";
-      if (operatorPattern.test(lastStr)) {
-        if (lastStr === "-" && operatorPattern.test(secondLastStr)) {
-          this.setState(state => ({result: state.result.slice(0, -2) + value}));
-          return;
-        } else {
-          this.setState(state => ({result: state.result.slice(0, -1) + value}));
+    if (value !== "-" && operator.test(value)) {
+      const lastChar = result[result.length - 1] || "";
+      const secondLastChar = result[result.length - 2] || "";
+      if (operator.test(lastChar)) {
+        if (lastChar === "-" && operator.test(secondLastChar)) {
+          this.setState(state => ({result.slice(0, -2) + value});
           return;
         }
+        this.setState(state => {result.slice(0, -1) + value});
+        return;
       }
     }
     this.setState(state => ({result: state.result += value}));
@@ -54,26 +47,22 @@ export default class AppCalc extends React.Component {
       this.setState(state => ({result: state.result.slice(0, -1)}))
     }
     e.preventDefault();
-  }
+  };
 
   handleClear() {
     this.setState({result: ''})
-  }
+  };
 
   handleResult() {
     this.setState(state => ({result: eval(state.result).toString()}))
-  }
-
+  };
   render() {
     return (
       <div className="App">
-        <h1>Calcultator</h1>
-
-        <div id="display">
-          {this.state.result || '0'}
+        <div className="display" id="display">
+          {this.state.result || "0"}
         </div>
-
-        <div className='calculator'>
+        <div className="Calculator">
           <button id='zero' value={'0'} onClick={(e) => this.handleClick(e)}>0</button>
           <button id='one' value={'1'} onClick={(e) => this.handleClick(e)}>1</button>
           <button id='two' value={'2'} onClick={(e) => this.handleClick(e)}>2</button>
@@ -96,19 +85,17 @@ export default class AppCalc extends React.Component {
 
           <button id='last' onClick={(e) => this.handleLastClear(e)}>del last</button>
 
-          <button 
-            id='clear'
-            onClick={this.handleClear}
-          >
+          <button id='clear' onClick={this.handleClear}>
             clear
           </button>
           
-          <button id='equals' onClick={this.handleResult}>=</button>
-
+          <button id='equals' onClick={this.handleResult}>
+            =
+          </button>
         </div>
-
       </div>
     );
   }
 }
 
+export default App;

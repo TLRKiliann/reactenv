@@ -8,7 +8,6 @@ class App extends React.Component {
     this.state = {
       result: '',
     };
-
     this.handleClick = this.handleClick.bind(this);
     this.handleLastClear = this.handleLastClear.bind(this);
     this.handleClear = this.handleClear.bind(this);
@@ -66,6 +65,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>js-jsx-Calcultator</h1>
+        <div id="display">
+          {this.state.result || '0'}
+        </div>
         <div className='calculator'>
           <button id='zero' value={'0'} onClick={(e) => this.handleClick(e)}>0</button>
           <button id='one' value={'1'} onClick={(e) => this.handleClick(e)}>1</button>
@@ -96,11 +98,9 @@ class App extends React.Component {
             clear
           </button>
           
-          <button id='equals' onClick={this.handleResult}>=</button>
-
-          <div id="display">
-            {this.state.result || '0'}
-          </div>
+          <button id='equals' onClick={this.handleResult}>
+            =
+          </button>
 
         </div>
 
