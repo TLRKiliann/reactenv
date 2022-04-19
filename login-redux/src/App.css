@@ -4,7 +4,7 @@ body {
   box-sizing: border-box;
   background: black;
 }
-/*
+
 .first {
   position: fixed;
   top: 400px;
@@ -68,10 +68,45 @@ body {
   animation-duration: 4s; 
 }
 
+.fifth {
+  position: fixed;
+  top: 430px;
+  left: 800px;
+  width: 3px;
+  height: 3px;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.6;
 
+  transition: 0.3s ease-in-out;
+  animation-name: animoy;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-duration: 4s; 
+}
+
+.sixth {
+  position: fixed;
+  top: 280px;
+  left: 550px;
+  width: 3px;
+  height: 3px;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.6;
+
+  transition: 0.3s ease-in-out;
+  animation-name: animoy;
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite;
+  animation-duration: 3s; 
+}
+
+/*
 filter:  blur(2px);
 opacity: 0.8;
 transition: ease-in-out 0.2s;
+*/
 
 @keyframes animoy {
   0% {
@@ -87,16 +122,16 @@ transition: ease-in-out 0.2s;
     transition: ease-out 0.2s;
   }
 }
-*/
+
 .App {
   margin: 0px 460px;
-  margin-top: 10%;
+  margin-top: 14%;
   display: flex;
   justify-content: center;
-  background: #dcdcdc;
+  background: rgba(133, 141, 255, 0.25);
   border: 10px solid white;
   border-radius: 12px;
-  opacity: 0.4;
+  z-index: 2;
 }
 
 h1 {
@@ -115,7 +150,7 @@ h3 {
 }
 
 h4 {
-  color: blue;
+  color: white;
 }
 
 .reorder--app {
@@ -132,7 +167,6 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 1;
   /*border: 2px solid cyan;*/
 }
 
@@ -165,13 +199,8 @@ h4 {
   /*border: 2px solid orange;*/
 }
 
-.input--div2 > h4 {
-  color: blue;
-  opacity: 1;
-  z-index: 1;
-}
-
 input {
+  width: 180px;
   margin: 5px 5px;
   padding: 5px 5px;
 }
@@ -179,7 +208,7 @@ input {
 button {
   font-size: 1rem;
   font-family: "One-serif", serif;
-  margin: 20px 60px;
+  margin: 20px 80px;
   padding: 10px 20px;
   background: lightgrey;
   border-radius: 12px;

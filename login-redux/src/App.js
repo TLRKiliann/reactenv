@@ -38,6 +38,8 @@ function App() {
       <p className="second"></p>
       <p className="third"></p>
       <p className="fourth"></p>
+      <p className="fifth"></p>
+      <p className="sixth"></p>
       <div className='reorder--app'>
 
         <div className='main--divinput'>
