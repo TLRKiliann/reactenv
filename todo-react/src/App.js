@@ -5,7 +5,7 @@ import TodoList from './components/TodoList';
 import './App.css'
 
 
-const LOCAL_STORAGE_KEY = 'todo-app-key'
+const LOCAL_STORAGE_KEY = 'todo-key'
 
 function App() {
   const [todos, setTodos] = useState([]);

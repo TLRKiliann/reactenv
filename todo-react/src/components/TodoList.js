@@ -11,6 +11,7 @@ function TodoList({todos, toggleComplete, todoRemove}) {
           todo={todo} //def of todo
           toggleComplete={toggleComplete}
           todoRemove={todoRemove}
+          className='todo--comp'
         />
       ))}
     </ul>

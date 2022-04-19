@@ -1,9 +1,10 @@
 body {
-  background: black;
-  color: whitesmoke;
   margin: 0;
   padding: 0;
+  width: auto;
   box-sizing: border-box;
+  background: black;
+  color: whitesmoke;
 }
 
 h1 {
@@ -31,20 +32,22 @@ Form button {
 }
 
 .todo--class {
-  margin: 10px 10px;
-  width: auto;
+  width: 20%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .todo--div {
-  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   list-style-type: none;
 }
 
 .todo--div li {
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 1.4rem;
 }
