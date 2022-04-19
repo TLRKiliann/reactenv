@@ -3,15 +3,14 @@ body {
   margin: 0px;
   box-sizing: border-box;
   background: black;
-
 }
-
+/*
 .first {
   position: fixed;
   top: 400px;
   left: 180px;
-  width: 10px;
-  height: 10px;
+  width: 2px;
+  height: 2px;
   border-radius: 5px;
   background: white;
 
@@ -25,11 +24,12 @@ body {
   position: fixed;
   top: 120px;
   left: 1200px;
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
   border-radius: 5px;
   background: white;
 
+  transition: ease-in-out 0.2s;
   animation-name: animoy;
   animation-delay: 2s;
   animation-iteration-count: infinite;
@@ -37,12 +37,11 @@ body {
 }
 
 .third {
-
   position: fixed;
   top: 20px;
   left: 100px;
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
   border-radius: 5px;
   background: white;
 
@@ -57,27 +56,26 @@ body {
   position: fixed;
   top: 700px;
   left: 800px;
-  width: 10px;
-  height: 10px;
+  width: 4px;
+  height: 4px;
   border-radius: 5px;
   background: white;
 
-  /*transition: 0.3s ease;*/
+  transition: 0.3s ease-in-out;
   animation-name: animoy;
   animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-duration: 4s; 
 }
 
-/*
+
 filter:  blur(2px);
 opacity: 0.8;
 transition: ease-in-out 0.2s;
-*/
+
 @keyframes animoy {
   0% {
     transform: scale(0.1);
-    transition: ease-in-out 0.2s;
     filter: blur(1px);
   }
   50% {
@@ -89,15 +87,16 @@ transition: ease-in-out 0.2s;
     transition: ease-out 0.2s;
   }
 }
-
+*/
 .App {
-  margin: 0px 440px;
+  margin: 0px 460px;
   margin-top: 10%;
-  padding: 10px 50px;
-  background: white;
-  border: 12px solid white;
+  display: flex;
+  justify-content: center;
+  background: #dcdcdc;
+  border: 10px solid white;
   border-radius: 12px;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 h1 {
@@ -120,39 +119,68 @@ h4 {
 }
 
 .reorder--app {
+  width: 80%;
+  margin: 0px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  /*border: 2px solid red;*/
 }
 
 .main--divinput {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  opacity: 1;
+  /*border: 2px solid cyan;*/
 }
 
-.input--div {
-  margin-right: 80px;
+#ps-div {
+  margin: auto;
+}
+
+.input--div1 {
+  width: 300px;
+  padding: 5px 10px;
+  margin: 5px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
+  /*border: 2px solid orange;*/
 }
 
-.input--div > h4 {
+#pw-div {
+  margin: auto;
+}
+
+.input--div2 {
+  width: 300px;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  /*border: 2px solid orange;*/
+}
+
+.input--div2 > h4 {
   color: blue;
+  opacity: 1;
+  z-index: 1;
 }
 
 input {
-  margin: 5px 10px;
-  padding: 5px 10px;
+  margin: 5px 5px;
+  padding: 5px 5px;
 }
 
 button {
-  margin: 10px 140px;
+  font-size: 1rem;
+  font-family: "One-serif", serif;
+  margin: 20px 60px;
   padding: 10px 20px;
-  margin-bottom: 80px;
   background: lightgrey;
   border-radius: 12px;
 }

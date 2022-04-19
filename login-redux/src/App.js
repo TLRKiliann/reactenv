@@ -39,13 +39,13 @@ function App() {
       <p className="third"></p>
       <p className="fourth"></p>
       <div className='reorder--app'>
-        <h1>Sign In</h1>
-        <h3>{addName}</h3>
-        <h3>{addPass}</h3>
 
         <div className='main--divinput'>
-          <div className='input--div'>
-            <h4>Pseudo : </h4>
+          <h1>Sign In</h1>
+          <h3>{addName}</h3>
+          <h3>{addPass}</h3>
+          <div className='input--div1'>
+            <h4 id="ps-div">Pseudo : </h4>
             <input
               type='text'
               value={entryName}
@@ -53,8 +53,8 @@ function App() {
               placeholder='pseudo'
             />
           </div>
-          <div className='input--div'>
-            <h4>Password : </h4>
+          <div className='input--div2'>
+            <h4 id="pw-div">Password : </h4>
             <input
               type='text'
               value={entryPass}
