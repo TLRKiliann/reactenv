@@ -34,6 +34,4 @@ function TodoForm({addTodo}) {
   );
 }
 
-
-
 export default TodoForm;
