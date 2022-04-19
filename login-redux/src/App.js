@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {actionName, actionPass} from './actions';
 import {useSelector, useDispatch} from 'react-redux';
+//import { FaBeer } from 'react-icons/fa';
 import './App.css';
 
 function App() {
@@ -33,14 +34,35 @@ function App() {
 
   return (
     <div className="App">
+      <p className="first"></p>
+      <p className="second"></p>
+      <p className="third"></p>
+      <p className="fourth"></p>
       <div className='reorder--app'>
         <h1>Sign In</h1>
         <h3>{addName}</h3>
         <h3>{addPass}</h3>
 
-        <input type='text' value={entryName} onChange={(e) => setEntryName(e.target.value)} placeholder='pseudo'/>
-
-        <input type='text' value={entryPass} onChange={(e) => setEntryPass(e.target.value)} placeholder='passwd'/>
+        <div className='main--divinput'>
+          <div className='input--div'>
+            <h4>Pseudo : </h4>
+            <input
+              type='text'
+              value={entryName}
+              onChange={(e) => setEntryName(e.target.value)}
+              placeholder='pseudo'
+            />
+          </div>
+          <div className='input--div'>
+            <h4>Password : </h4>
+            <input
+              type='text'
+              value={entryPass}
+              onChange={(e) => setEntryPass(e.target.value)}
+              placeholder='passwd'
+            />
+          </div>
+        </div>
           
         <button onClick={handleClick}>Login</button>
       </div>

@@ -11,7 +11,7 @@ function App() {
   const [deliv, setDeliv] = useState(100);
 
   const counter = useSelector(state => state.counter);
-  const isLogged = useSelector(state => state.isLogged);
+  const displayCakes = useSelector(state => state.displayCakes);
   const dispatch = useDispatch(number, deliv, delivone);
 
   const handleClick = () => {
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>React n Redux !</h1>
-      <h3>counter : {counter}</h3>
+      <h3>Number of CAKES : {counter}</h3>
 
       <input 
         type='text'
@@ -43,15 +43,15 @@ function App() {
 
       <input disabled={true} type='text' value={delivone} onChange={(e) => setDelivone(e.target.value)} />
 
-      <button onClick={() => dispatch(incrementone(delivone))}>Livraison</button>
-      <p>Livraison of {delivone} cakes arrived and it keeps {counter}.</p>
+      <button onClick={() => dispatch(incrementone(delivone))}>Delivery</button>
+      <p>Delivery of {delivone} cakes arrived and it keeps {counter}.</p>
 
       <input disabled={true} type='text' value={deliv} onChange={(e) => setDeliv(e.target.value)} />
       
-      <button onClick={() => dispatch(increment(deliv))}>Livraison</button>
-      <p>Livraison of {deliv} cakes arrived and it keeps {counter}.</p>
+      <button onClick={() => dispatch(increment(deliv))}>Delivery</button>
+      <p>Delivery of {deliv} cakes arrived and it keeps {counter}.</p>
 
-      {isLogged ? <h2 style={{color: 'orange'}}>Total of cackes : {counter}</h2> : ''}
+      {displayCakes ? <h2 style={{color: 'orange'}}>Total of cackes : {counter}</h2> : ''}
       <button onClick={() => dispatch(logged())}>Total of CACKES !</button>
     </div>
   );

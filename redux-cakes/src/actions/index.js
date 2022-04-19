@@ -1,7 +1,7 @@
 const INCREMENT = 'INCREMENT';
 const INCREMENTONE = 'INCREMENTONE';
 const DECREMENT = 'DECREMENT';
-
+const DISPLAYCAKES = "DISPLAYCAKES";
 
 export const increment = (deliv) => {
   return {
@@ -26,7 +26,7 @@ export const decrement = (number) => {
 
 export const logged = (state) => {
   return {
-    type: 'SIGN_IN',
+    type: DISPLAYCAKES,
     payload: state
   }
 }

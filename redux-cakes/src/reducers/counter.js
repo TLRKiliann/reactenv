@@ -24,7 +24,7 @@ const counterReducers = (state=0, action) => {
         state - action.payload
       )
     default:
-      return state
+      return state;
   }
 }
 
