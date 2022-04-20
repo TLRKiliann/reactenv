@@ -15,7 +15,7 @@ body {
   color: cyan;
 
   animation-name: animoy;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   transform: ease-in-out 1s;
@@ -28,11 +28,7 @@ body {
 @keyframes animoy {
   0% {
     transform: ease-in-out 0.3s;
-    color: steelblue;
-  }
-  50% {
-    transition: ease-in 0.3s;
-    color: turquoise; 
+    color: cyan;
   }
   100% {
     transition: ease-in 0.3s;
@@ -49,19 +45,19 @@ body {
 }
 
 #break-increment:hover {
-  color: rgba(0, 52, 163, 1);
+  color: rgba(200, 148, 255, 1);
 }
 
 #break-decrement:hover {
-  color: rgba(0, 52, 163, 1);
+  color: rgba(200, 148, 255, 1);
 }
 
 #session-increment:hover {
-  color: rgba(0, 52, 163, 1);
+  color: rgba(200, 148, 255, 1);
 }
 
 #session-decrement:hover {
-  color: rgba(0, 52, 163, 1);
+  color: rgba(200, 148, 255, 1);
 }
 
 .flex--bottom {

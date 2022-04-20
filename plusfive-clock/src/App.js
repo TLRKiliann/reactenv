@@ -3,13 +3,7 @@ import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown,
   FaPlayCircle, FaReact } from "react-icons/fa";
 import { BiReset, BiPause } from "react-icons/bi";
 import "./App.css";
-import "./music/beep.mp3";
 
-const audio = document.getElementById('beep');
-//const audio = "./music/beep.mp3";
-/*const audio = (id) => {
-  document.getElementById(id).play()
-}*/
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,7 +13,8 @@ export default class App extends React.Component {
       sessionCount: 25,
       clockCount: 25 * 60,
       currentTimer: 'Session',
-      isPlaying: false
+      isRunning: false,
+      audio: document.getElementById('beep')
     };
     this.loop = undefined;
   }
@@ -29,26 +24,25 @@ export default class App extends React.Component {
   }
 
   handlePlayPause = () => {
-    const { isPlaying } = this.state;
-    
-    if (isPlaying) {
+    const { isRunning } = this.state;
+
+    if (isRunning) {
       clearInterval(this.loop);
-      this.setState({
-        isPlaying: false
-      });
+      this.setState({ isRunning: false });
     } else {
-      this.setState({
-        isPlaying: true
-      });
+      this.setState({ isRunning: true });
       
       this.loop = setInterval(() => {
-        const { clockCount, currentTimer, breakCount, sessionCount } = this.state;
-        if(clockCount === 0) {
+        const { clockCount, currentTimer, breakCount, sessionCount} = this.state;
+
+        if (clockCount === 0) {
           this.setState({
             currentTimer: (currentTimer === 'Session') ? 'Break' : 'Session',
-            clockCount: (currentTimer === 'Session') ? (breakCount * 60) : (sessionCount * 60)
+            clockCount: (currentTimer === 'Session') ? (breakCount * 60) : (sessionCount * 60),
+            audio: document.getElementById('beep').play()
           });
-          audio.play();
+          //audio.play();
+
         } else {
           this.setState({
             clockCount: clockCount - 1
@@ -64,13 +58,16 @@ export default class App extends React.Component {
       sessionCount: 25,
       clockCount: 25 * 60,
       currentTimer: 'Session',
-      isPlaying: false
+      isRunning: false,
+      audio: document.getElementById('beep')
     });
     clearInterval(this.loop);  
-    audio.pause();
-    audio.currentTime = 0;
+    this.setState(state => ({audio: state.audio.pause()}));
+    //this.setState.audio.currentTime = 0;
+    //this.setState(state => state.audio.currentTime: 0);
   }
-  
+
+  //To format timer-left
   convertToTime = (count) => {
     let minutes = Math.floor(count / 60);
     let seconds = count % 60;
@@ -80,25 +77,18 @@ export default class App extends React.Component {
   }
   
   handleTimeChange = (count, timerType) => {
-    const { sessionCount, breakCount, isPlaying, currentTimer} = this.state;
-
+    const { sessionCount, breakCount, isRunning, currentTimer} = this.state;
     let newCount;
-    
-    if(timerType === 'session') {
+    if (timerType === 'session') {
       newCount = sessionCount + count;
     } else {
       newCount = breakCount + count;
     }
-    
-    // case Session: sessionCount:...
-    // case Break: breakCount:...
-    
-    if(newCount > 0 && newCount < 61 && !isPlaying)  {
+    if (newCount > 0 && newCount < 61 && !isRunning)  {
       this.setState({
         [`${timerType}Count`]: newCount
-      });
-          
-      if(currentTimer.toLowerCase() === timerType) {
+      });     
+      if (currentTimer.toLowerCase() === timerType) {
         this.setState({
           clockCount: newCount * 60
         })
@@ -107,22 +97,19 @@ export default class App extends React.Component {
   }
 
   render () {
-    const { breakCount, sessionCount, clockCount, currentTimer, isPlaying } = this.state;
-
+    const { breakCount, sessionCount, clockCount, currentTimer, isRunning } = this.state;
     const breakOfProps = {
       title: 'Break',
       count: breakCount,
       handleDecrease: () => this.handleTimeChange(-1, 'break'),
       handleIncrease: () => this.handleTimeChange(1, 'break')
     }
-    
     const sessionOfProps = {
       title: 'Session',
       count: sessionCount,
       handleDecrease: () => this.handleTimeChange(-1, 'session'),
       handleIncrease: () => this.handleTimeChange(1, 'session')
     }
-
     return (
        <div>
         <div className="react--div">
@@ -139,12 +126,18 @@ export default class App extends React.Component {
           
           <div className="flex--bottom">
             <button id="start_stop" onClick={this.handlePlayPause}>
-              {isPlaying ? <BiPause id="bi-pause" size={28}/> : <FaPlayCircle id="fa-play" size={28} />}
+              {isRunning ? <BiPause id="bi-pause" size={28}/> :
+              <FaPlayCircle id="fa-play" size={28} />}
               
             </button>
             <button id="reset" onClick={this.handleReset}>
               <BiReset className="fas fa-sync" size={28} />
             </button>
+            <audio
+              id="beep"
+              type="audio/wav"
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+            ></audio>
          </div>
         </div>
       </div>
@@ -160,88 +153,24 @@ const SetTimer = (props) => {
       <h2 id={`${id}-label`}>
         {props.title} Length
       </h2>
+
       <div className="flex actions-wrapper">
-        <FaRegArrowAltCircleDown id={`${id}-decrement`} size={28} onClick={props.handleDecrease} />
+
+        <FaRegArrowAltCircleDown
+          id={`${id}-decrement`}
+          size={28}
+          onClick={props.handleDecrease}
+        />
         
         <span id={`${id}-length`}>{props.count}</span>
 
-        <FaRegArrowAltCircleUp id={`${id}-increment`} size={28} onClick={props.handleIncrease} />
+        <FaRegArrowAltCircleUp
+          id={`${id}-increment`}
+          size={28}
+          onClick={props.handleIncrease}
+        />
+
       </div>
-          <audio
-            id="beep"
-            preload="auto"
-            src="./music/beep.mp3"
-          ></audio>
     </div>
   );
 }
-
-
-//   handleBreakDecrease = () => {
-//     const { breakCount, isPlaying, currentTimer } = this.state;
-    
-//     if(breakCount > 1)  {
-//       if(!isPlaying && currentTimer === 'Break') {
-//         this.setState({
-//           breakCount: breakCount - 1,
-//           clockCount: (breakCount - 1) * 60
-//         });
-//       } else {
-//         this.setState({
-//           breakCount: breakCount - 1,
-//         });
-//       }
-//     }
-//   } 
-  
-//   handleBreakIncrease = () => {
-//     const { breakCount, isPlaying, currentTimer } = this.state;
-    
-//     if (breakCount < 60) {
-//       if(!isPlaying && currentTimer === 'Break') {
-//         this.setState({
-//           breakCount: breakCount + 1,
-//           clockCount: (breakCount + 1) * 60
-//         });
-//       } else {
-//         this.setState({
-//           breakCount: breakCount + 1,
-//         });
-//       }
-//     }
-//   }
-
-  
-//   handleSessionDecrease = () => {
-//     const { sessionCount, isPlaying, currentTimer } = this.state;
-    
-//     if  (sessionCount > 1) {
-//      if(!isPlaying && currentTimer === 'Session') {
-//         this.setState({
-//           sessionCount: sessionCount - 1,
-//           clockCount: (sessionCount - 1) * 60
-//         });
-//       } else {
-//         this.setState({
-//           sessionCount: sessionCount - 1,
-//         });
-//       }
-//     }
-//   }
-  
-//   handleSessionIncrease = () => {
-//     const { sessionCount, isPlaying, currentTimer } = this.state;
-    
-//     if (sessionCount < 60) {
-//       if(!isPlaying && currentTimer === 'Session') {
-//        this.setState({
-//          sessionCount: sessionCount + 1,
-//          clockCount: (sessionCount + 1) * 60
-//         });
-//       } else {
-//         this.setState({
-//           sessionCount: sessionCount + 1,
-//         });
-//       }
-//     }
-//   }
