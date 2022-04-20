@@ -2,9 +2,11 @@ import React from 'react';
 import {useState} from 'react';
 //import TimeController from "./components/TimeController";
 
+
+
 export default function AppThird() {
   const [displayTime, setDisplayTime] = useState(25*60);
-  const [breakTime, setBreakTime] = useState(5*60);
+  const [breakLength, setBreakLength] = useState(5);
   const [sessionTime, setSessionTime] = useState(25*60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
@@ -12,6 +14,19 @@ export default function AppThird() {
     new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
   ));
 
+  const MAX_LENGTH = 60;
+  const MIN_LENGTH = 1;
+
+  //les 2 de l'autre
+  const updateElement = (element, str) => {
+    document.getElementById(element).innerHTML = str
+  }
+
+  const updateElementTimeLeft = () => {
+    timeLeft = `${('0' + minutes).slice(-2)}:${('0' + seconds).slice(-2)}`
+    updateElement('time-left', timeLeft)
+  }
+  //origin
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
@@ -26,12 +41,25 @@ export default function AppThird() {
     soundAudio.play();
   }
 
+  const incrementBreakLength = () => {
+    if (breakLength === MAX_LENGTH) { 
+      return;
+    }
+      breakLength++
+    if (timerLabel === 'Break') {
+      minutes = breakLength
+      seconds = 0
+    }
+    updateElement('break-length', breakLength)
+  }
+
+  /*
   const handleChange = (amount, type) => {
     if (type === 'break') {
-      if (breakTime <= 60 && amount < 0) {
+      if ((breakLength <= 60) && (amount < 0)) {
         return;
       }
-      setBreakTime(prev => prev + amount);
+      setBreakLength(prev => prev + amount);
     } else {
       if (sessionTime <= 60 && amount < 0) {
         return;
@@ -41,7 +69,7 @@ export default function AppThird() {
         setDisplayTime(sessionTime + amount);
       }
     }
-  }
+  }*/
 
   const controllTime = () => {
     let second = 1000; //one milli seconds
@@ -75,31 +103,37 @@ export default function AppThird() {
 
   const resetTime = () => {
     setDisplayTime(25*60);
-    setBreakTime(5*60);
+    setBreakLength(5);
     setSessionTime(25*60);
   }
 
   return (
     <div className="">
       <h1>5+25 Clock !</h1>
+      <div>
 
-      <div className="">
-        <BreakLength 
-          id='break-label'
-          title="Break Length"
-          handleChange={handleChange} 
-          type={"break"} //changeTime
-          time={breakTime}
-          formatTime={formatTime}
-        />
-        <SessionLength
-          id="session-label"
-          title="Session Length"
-          handleChange={handleChange} 
-          type={"session"} //changeTime
-          time={sessionTime}
-          formatTime={formatTime}
-        />
+        <div id="break-label">
+          <BreakLength 
+            id="break-length"
+            title="Break Length"
+            handleChange={handleChange} 
+            type={"break"} //changeTime
+            time={breakLength}
+            formatTime={formatTime}
+          />
+        </div>
+
+        <div id="session-label">
+          <SessionLength
+            id="session-length"
+            title="Session Length"
+            handleChange={handleChange} 
+            type={"session"} //changeTime
+            time={sessionTime}
+            formatTime={formatTime}
+          />
+        </div>
+
       </div>
       <h3>{onBreak ? "Break" : "Session"}</h3>
       <h1>{formatTime(displayTime)}</h1>
@@ -109,15 +143,15 @@ export default function AppThird() {
   );
 }
 
-function BreakLength({title, handleChange, type, time, formatTime, soundAudio}) {
+function BreakLength({title, incrementBreakLength, handleChange, type, time, formatTime, soundAudio}) {
   return (
     <div id="break-label">
       <h3>Break Length</h3>
       <button id='break-decrement'
-        onClick={() => handleChange(-60, type)}>down arrow</button>
+        onClick={() => incrementBreakLength()}>down arrow</button>
       <h3>{formatTime(time)}</h3>
       <button id="break-increment"
-        onClick={() => handleChange(60, type)}>up arrow</button>
+        onClick={() => handleChange(1, type)}>up arrow</button>
       <audio src={soundAudio}> </audio>
     </div>
   );
