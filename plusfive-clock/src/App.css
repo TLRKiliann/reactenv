@@ -1,14 +1,67 @@
 body {
-  background: steelblue;
+  height: 100vh;
+  background-image: linear-gradient(blue, lightblue);
+  color: white;
+  font-family: 'One-serif', serif;
+}
+
+.react--div{
+  display: flex;
+  justify-content: center;
+}
+
+.icon-react {
+  margin-top: 50px;
+  color: cyan;
+
+  animation-name: animoy;
+  animation-duration: 6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  transform: ease-in-out 1s;
+}
+
+.icon-react:hover {
   color: white;
 }
 
+@keyframes animoy {
+  0% {
+    transform: ease-in-out 0.3s;
+    color: steelblue;
+  }
+  50% {
+    transition: ease-in 0.3s;
+    color: turquoise; 
+  }
+  100% {
+    transition: ease-in 0.3s;
+    color: blue;
+  }
+}
+
 .flex {
-  margin-top: 7%;
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+#break-increment:hover {
+  color: rgba(0, 52, 163, 1);
+}
+
+#break-decrement:hover {
+  color: rgba(0, 52, 163, 1);
+}
+
+#session-increment:hover {
+  color: rgba(0, 52, 163, 1);
+}
+
+#session-decrement:hover {
+  color: rgba(0, 52, 163, 1);
 }
 
 .flex--bottom {
@@ -41,26 +94,33 @@ body {
 
 #bi-pause {
   margin-top: 3px;
-  margin-right: 10px;
+  margin-right: 0px;
   padding: 0px 2px;
 }
 
 #fa-play {
   margin-top: 3px;
-  margin-right: 10px;
+  margin-right: 0px;
   padding: 0px 2px;
 }
 
 .fa-sync {
   margin-top: 3px;
-  margin-right: 10px;
+  margin-right: 0px;
   padding: 0px 2px; 
 }
 
 button {
   margin: 0px 5px;
+  padding: 0px 20px;
+  background-image: linear-gradient(slateblue,
+    lightblue);
+  color: white;
+  border-radius: 10px;
 }
 
-.icon-react {
-  margin-top: 30px;
+button:hover {
+  background-image: linear-gradient(rgba(101, 126, 240, 1),
+    rgba(187, 202, 247, 1));
+  color: slateblue;
 }
