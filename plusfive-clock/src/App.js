@@ -5,6 +5,7 @@ import { BiReset, BiPause } from "react-icons/bi";
 import "./App.css";
 import $ from "jquery";
 
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ export default class App extends React.Component {
       sessionCount: 25,
       sessionMin: 25,
       sessionSec: 0,
-      mainTitle: 'Session',
+      timerLabel: 'Session',
       play: false,
       intervalID: '',
       changeCounter: false
@@ -66,7 +67,7 @@ export default class App extends React.Component {
     audio.load();
 
     this.setState({
-      mainTitle: "Session",
+      timerLabel: "Session",
       breakCount: 5,
       sessionCount: 25,
       sessionMin: 25,
@@ -74,10 +75,10 @@ export default class App extends React.Component {
       play: false,
       intervalID: ""
     });
-    //this.setState({ play: false });
-    $(".timer-session-area").addClass("paused");
+    this.setState({ play: false });
+    /*$(".timer-session-area").addClass("paused");
     $(".timer-session-area").removeClass("active");
-    $(".timer-session-area").removeClass("break-time");
+    $(".timer-session-area").removeClass("break-time");*/
   }
 
 
@@ -92,15 +93,13 @@ export default class App extends React.Component {
       }
     } else {
       this.setState({ play: true }); // Si PLAY
-      if (this.state.mainTitle === "Session") {
+      if (this.state.timerLabel === "Session") {
+        //this.state.play = true;
         $(".timer-session-area").addClass("active");
         $(".timer-session-area").removeClass("paused");
         $(".timer-session-area").removeClass("break-time");
       } else {
-        //this.setState({ play: false });
-        $(".timer-session-area").addClass("break-time");
-        $(".timer-session-area").removeClass("paused");
-        $(".timer-session-area").removeClass("active"); 
+        this.setState({ play: false });
         }
       if (this.state.intervalID === "")
         this.beginCountDown();  // Ajout intervalID
@@ -141,28 +140,28 @@ export default class App extends React.Component {
   changeCounter() {
     let breakCount = this.state.breakCount;
     let sessionCount = this.state.sessionCount;
-    if (this.state.mainTitle === "Session") {
+    if (this.state.timerLabel === "Session") {
        this.setState({
         sessionSec: 0, 
         sessionMin: breakCount, 
-        mainTitle: "Break",
+        timerLabel: "Break",
         changeCounter: false
     });
-      //this.setState({ play: false });
-      $(".timer-session-area").addClass("break-time");
+      this.setState({ play: false });
+      /*$(".timer-session-area").addClass("break-time");
       $(".timer-session-area").removeClass("active");
-      $(".timer-session-area").removeClass("paused");
+      $(".timer-session-area").removeClass("paused");*/
     } else {
        this.setState({
         sessionSec: 0, 
         sessionMin: sessionCount, 
-        mainTitle: "Session", 
+        timerLabel: "Session", 
         changeCounter: false
     });
-      //this.setState({ play: true });
-      $(".timer-session-area").addClass("active");
+      this.setState({ play: true });
+      /*$(".timer-session-area").addClass("active");
       $(".timer-session-area").removeClass("paused");
-      $(".timer-session-area").removeClass("break-time");
+      $(".timer-session-area").removeClass("break-time");*/
     }
   }
 
@@ -236,7 +235,7 @@ export default class App extends React.Component {
             <h1 id="timer-title">25+5 Clock</h1>
 
             <div className="timer-session-area paused">
-              <h2 id="timer-label">{this.state.mainTitle}</h2>
+              <h2 id="timer-label">{this.state.timerLabel}</h2>
               <p id="time-left">{minutes}:{seconds}</p>
             </div>
 
