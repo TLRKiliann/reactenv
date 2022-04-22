@@ -3,7 +3,7 @@ import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown,
   FaPlayCircle, FaReact } from "react-icons/fa";
 import { BiReset, BiPause } from "react-icons/bi";
 import "./App.css";
-
+import $ from "jquery";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,186 +11,259 @@ export default class App extends React.Component {
     this.state = {
       breakCount: 5,
       sessionCount: 25,
-      clockCount: 1500,
-      mainTitle: 'session',
-      isRunning: false,
-      audio: document.getElementById('beep')
+      sessionMin: 25,
+      sessionSec: 0,
+      mainTitle: 'Session',
+      play: false,
+      intervalID: '',
+      changeCounter: false
     };
-    this.toSetInterVal = undefined;
-  }
+    this.handleDecrementBreak = this.handleDecrementBreak.bind(this);
+    this.handleIncrementBreak = this.handleIncrementBreak.bind(this);
+    this.handleDecrementSession = this.handleDecrementSession.bind(this);
+    this.handleIncrementSession = this.handleIncrementSession.bind(this);
+    
+    this.handleReset = this.handleReset.bind(this);
+    this.handlePlayPause = this.handlePlayPause.bind(this);
 
-  handlePlayPause = () => {
-    const { isRunning } = this.state;
+    this.beginCountDown = this.beginCountDown.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.stopCountDown = this.stopCountDown.bind(this);
 
-    if (!isRunning) {
-      this.setState(prevState => ({isRunning: !prevState.isRunning}));
-      this.startCountDown();
-    } else {
-      this.setState(prevState => ({isRunning: !prevState.isRunning}));
-
-      clearInterval(this.toSetInterVal);
-    }
-  }
-
-  changeTimer() {
-    this.setState(({ timerType, breakCount, sessionCount }) => {
-      if (timerType === 'session') {
-        return { clockCount: breakCount * 60, timerType: 'break' };
-      } else {
-        return { clockCount: sessionCount * 60, timerType: 'session' };
-      }
-    });
-    clearInterval(this.clockCount);
-    this.startCountDown();
-  }
-
-  playAudio = (id) => {
-    document.getElementById('beep').play();
-  }
-
-  timeCheck() {
-    const { clockCount } = this.state;
-    if (clockCount < 0) {
-      this.playAudio('beep');
-      this.changeTimer();
-    }
-  }
-
-  startCountDown() {
-    this.toSetInterVal = setInterval(() => {
-      this.setState(prevState => ({ clockCount: prevState.clockCount - 1 }));
-      this.timeCheck();
-    }, 1000); // 0 -1 toute les secondes
-  }
-
-  //To format timer-left
-  mmssFormater = (count) => {
-    let minutes = Math.floor(count / 60);
-    let seconds = count % 60;
-    minutes = minutes < 10 ? ('0' + minutes) : minutes;
-    seconds = seconds < 10 ? ('0' + seconds) : seconds;
-    return minutes + ':' + seconds;
+    this.changeCounter = this.changeCounter.bind(this);
   }
   
-  handleTimeChange = (count, timerType) => {
-    const { sessionCount, breakCount, isRunning, mainTitle } = this.state;
-    let newCount;
-    if (timerType === 'session') {
-      newCount = sessionCount + count; //counter
-    } else {
-      newCount = breakCount + count;
-    }
-    if (newCount > 0 && newCount < 61 && !isRunning)  {
-      this.setState({ [`${timerType}Count`]: newCount }); //sessionCount inc or dec   
-      if (mainTitle.toLowerCase() === timerType) { //session = session
-        this.setState({ clockCount: newCount * 60 }) //defined clcokCount + or - 25
-      }
-    }
-  }
-
-  stopAudio = (id) => {
-    let newaudio = document.getElementById(id);
-    newaudio.pause();
-    newaudio.load();
-    newaudio.currentTime = 0;
-    //console.log(newaudio.currentTime);
-  }
-
-  handleReset = () => {
-    clearInterval(this.toSetInterVal);
-    this.stopAudio("beep");
-    this.setState({
-      breakCount: 5,
-      sessionCount: 25,
-      clockCount: 1500,
-      mainTitle: 'session',
-      isRunning: false,
-      audio: document.getElementById('beep')
+  handleIncrementSession() {
+    let increment = this.state.sessionCount + 1 > 60 ? 60 : this.state.sessionCount + 1;
+    this.setState({ sessionCount: increment, sessionMin: increment
     });
   }
 
-  componentDidMount() {
-    this.toSetInterVal = undefined;
+  handleDecrementSession() {
+    let decrement = this.state.sessionCount - 1 < 1 ? 1 : this.state.sessionCount - 1;
+    this.setState({ sessionCount: decrement, sessionMin: decrement
+    });
+  }
+
+  handleIncrementBreak() {
+    this.setState((state) => {
+      return {breakCount: ((state.breakCount + 1 > 60) ? 60 : state.breakCount + 1)}
+    });
+  }
+
+  handleDecrementBreak() {
+    this.setState((state) => {
+      return {breakCount: ((state.breakCount - 1 < 1) ? 1 : state.breakCount - 1)}
+    });
+  }
+
+  handleReset() {
+    if (this.state.intervalID !== "") { // intervalID
+      this.stopCountDown();
+    }
+    let audio = document.getElementById("beep");
+    audio.pause();
+    audio.load();
+
+    this.setState({
+      mainTitle: "Session",
+      breakCount: 5,
+      sessionCount: 25,
+      sessionMin: 25,
+      sessionSec: 0,
+      play: false,
+      intervalID: ""
+    });
+    //this.setState({ play: false });
+    $(".timer-session-area").addClass("paused");
+    $(".timer-session-area").removeClass("active");
+    $(".timer-session-area").removeClass("break-time");
+  }
+
+
+  handlePlayPause() {
+    if (this.state.play) { // Si PAUSE
+      this.setState({ play: false });
+      $(".timer-session-area").addClass("paused");
+      $(".timer-session-area").removeClass("active");
+      $(".timer-session-area").removeClass("break-time");
+      if (this.state.intervalID !== "") {
+        this.stopCountDown();  // Delete intervalID
+      }
+    } else {
+      this.setState({ play: true }); // Si PLAY
+      if (this.state.mainTitle === "Session") {
+        $(".timer-session-area").addClass("active");
+        $(".timer-session-area").removeClass("paused");
+        $(".timer-session-area").removeClass("break-time");
+      } else {
+        //this.setState({ play: false });
+        $(".timer-session-area").addClass("break-time");
+        $(".timer-session-area").removeClass("paused");
+        $(".timer-session-area").removeClass("active"); 
+        }
+      if (this.state.intervalID === "")
+        this.beginCountDown();  // Ajout intervalID
+    }
+  }
+
+  handleChange() {
+    let sec = this.state.sessionSec - 1 < 0 ? 59 : this.state.sessionSec - 1;
+    let min = this.state.sessionSec - 1 < 0 ? this.state.sessionMin - 1 : this.state.sessionMin;
+    if(!this.state.changeCounter) {
+      if (min === 0 && sec === 0) {
+      this.setState({ sessionSec: sec, sessionMin: min, changeCounter: true
+    });
+    } else {
+      this.setState({ sessionSec: sec, sessionMin: min });
+    }
+    } else {
+      this.playAudio();
+      this.changeCounter();
+    }
+  }
+
+  beginCountDown() {
+    let intervalID = setInterval (this.handleChange, 1000);  // handleChange appelé ici
+    this.setState({ intervalID: intervalID }) // PLAY
+  }
+
+  stopCountDown() {
+    clearInterval(this.state.intervalID);
+    this.setState({ intervalID: "" }); // STOP
+  }
+
+  playAudio() {
+    let audio = document.getElementById("beep");
+    audio.play();
+  }
+
+  changeCounter() {
+    let breakCount = this.state.breakCount;
+    let sessionCount = this.state.sessionCount;
+    if (this.state.mainTitle === "Session") {
+       this.setState({
+        sessionSec: 0, 
+        sessionMin: breakCount, 
+        mainTitle: "Break",
+        changeCounter: false
+    });
+      //this.setState({ play: false });
+      $(".timer-session-area").addClass("break-time");
+      $(".timer-session-area").removeClass("active");
+      $(".timer-session-area").removeClass("paused");
+    } else {
+       this.setState({
+        sessionSec: 0, 
+        sessionMin: sessionCount, 
+        mainTitle: "Session", 
+        changeCounter: false
+    });
+      //this.setState({ play: true });
+      $(".timer-session-area").addClass("active");
+      $(".timer-session-area").removeClass("paused");
+      $(".timer-session-area").removeClass("break-time");
+    }
   }
 
   render () {
-    const { breakCount, sessionCount, clockCount, mainTitle, isRunning } = this.state;
-    const breakOfProps = {
-      title: 'Break',
-      count: breakCount,
-      handleDecrement: () => this.handleTimeChange(-1, 'break'),
-      handleIncrement: () => this.handleTimeChange(1, 'break')
+    let minutes = this.state.sessionMin + "";
+    let seconds = this.state.sessionSec + "";
+    if (minutes.length < 2) {
+      minutes = "0" + minutes;
     }
-    const sessionOfProps = {
-      title: 'Session',
-      count: sessionCount,
-      handleDecrement: () => this.handleTimeChange(-1, 'session'),
-      handleIncrement: () => this.handleTimeChange(1, 'session')
+    if (seconds.length < 2) {
+      seconds = "0" + seconds;
     }
     return (
-       <div>
+      <div>
         <div className="react--div">
           <FaReact className="icon-react" size={112} />
         </div>
         <div className="flex">
-          <SetTimer {...breakOfProps} />
-          <SetTimer {...sessionOfProps} />
+
+          <div className="timer-container">
+            <h2 id="break-label">
+              Break Length
+            </h2>
+
+            <div className="flex actions-wrapper">
+
+              <FaRegArrowAltCircleDown
+                id="break-decrement"
+                size={28}
+                onClick={this.handleDecrementBreak}
+              />
+              
+              <span id="break-length">{this.state.breakCount}</span>
+
+              <FaRegArrowAltCircleUp
+                id="break-increment"
+                size={28}
+                onClick={this.handleIncrementBreak}
+              />
+
+            </div>
+          </div>
+
+          <div className="timer-container">
+            <h2 id="Session-label">
+              Session Length
+            </h2>
+
+            <div className="flex actions-wrapper">
+
+              <FaRegArrowAltCircleDown
+                id="Session-decrement"
+                size={28}
+                onClick={this.handleDecrementSession}
+              />
+              
+              <h3 id="Session-length">{this.state.sessionCount}</h3>
+
+              <FaRegArrowAltCircleUp
+                id="Session-increment"
+                size={28}
+                onClick={this.handleIncrementSession}
+              />
+
+            </div>
+          </div>
         </div>
           
         <div className="clock-container">
-          <h1 id="timer-label">{mainTitle}</h1>
-          <span id="time-left">{this.mmssFormater(clockCount)}</span>
-          
-          <div className="flex--bottom">
+          <div id="timer">
+            <h1 id="timer-title">25+5 Clock</h1>
 
-            <button id="start_stop" onClick={this.handlePlayPause}>
-              {isRunning ? <BiPause id="bi-pause" size={28}/> :
-                <FaPlayCircle id="fa-play" size={28} />}
-            </button>
+            <div className="timer-session-area paused">
+              <h2 id="timer-label">{this.state.mainTitle}</h2>
+              <p id="time-left">{minutes}:{seconds}</p>
+            </div>
 
-            <button id="reset" onClick={this.handleReset}>
-              <BiReset className="fas fa-sync" size={28} />
-            </button>
+            <div className="flex--bottom">
 
-            <audio
-              id="beep"
-              type="audio/wav"
-              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-            ></audio>
+              <button id="start_stop" title="play/pause" onClick={this.handlePlayPause}>
+                {this.state.play ? <BiPause id="bi-pause" size={28}/> :
+                  <FaPlayCircle id="fa-play" size={28} />}
+              </button>
+
+              <button id="reset" onClick={this.handleReset}>
+                <BiReset className="fas fa-sync" size={28} />
+              </button>
+
+              <audio
+                id="beep"
+                type="audio/wav"
+                src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+              ></audio>
          
-         </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   } 
 }
 
-const SetTimer = (props) => {
-  const id = props.title.toLowerCase();
-  
-  return (
-    <div className="timer-container">
-      <h2 id={`${id}-label`}>
-        {props.title} Length
-      </h2>
 
-      <div className="flex actions-wrapper">
-
-        <FaRegArrowAltCircleDown
-          id={`${id}-decrement`}
-          size={28}
-          onClick={props.handleDecrement}
-        />
-        
-        <span id={`${id}-length`}>{props.count}</span>
-
-        <FaRegArrowAltCircleUp
-          id={`${id}-increment`}
-          size={28}
-          onClick={props.handleIncrement}
-        />
-
-      </div>
-    </div>
-  );
-}
+//ReactDOM.render(<App />, document.getElementById('app'));

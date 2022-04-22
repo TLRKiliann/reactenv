@@ -52,25 +52,35 @@ body {
   color: rgba(200, 148, 255, 1);
 }
 
-#session-increment:hover {
+#Session-increment:hover {
   color: rgba(200, 148, 255, 1);
 }
 
-#session-decrement:hover {
+#Session-decrement:hover {
   color: rgba(200, 148, 255, 1);
 }
 
 .flex--bottom {
-  margin-top: 2%;
+  margin-top: 1.8%;
 }
 
 .clock-container {
   text-align: center;
 }
 
-#time-left {
+#timer-title {
   font-size: 2rem;
-  padding-bottom: 100px;
+  margin-bottom: 40px;
+}
+
+#timer-label {
+  font-size: 2.2rem;
+  margin: auto;
+}
+
+#time-left {
+  font-size: 2.6rem;
+  margin: 10px 0px;
 }
 
 .timer-container {
@@ -80,12 +90,12 @@ body {
 
 #break-length {
   margin: 0px 20px;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
-#session-length {
+#Session-length {
   margin: 0px 20px;
-  font-size: 1.8rem;  
+  font-size: 2rem;  
 }
 
 #bi-pause {
