@@ -7,6 +7,7 @@ import { FaGithub, FaFreeCodeCamp, FaReact } from 'react-icons/fa';
 import { SiRedux } from 'react-icons/si';
 import './App.css';
 import Planet from "../src/images/ourplanet.jpg";
+import Saturne from "../src/images/Saturne.jpg";
 
 function App() {
   const [entryName, setEntryName] = useState('');
@@ -39,7 +40,11 @@ function App() {
     <div className='allinone'>
 
       <div id="div--planet">
-        <img src={Planet} alt="myplanet"></img>
+        <img src={Planet} className='earth--class' alt="myplanet"></img>
+      </div>
+
+      <div id="div--saturne">
+        <img src={Saturne} className='saturne--class' alt="sat"></img>
       </div>
 
       <div className='main--app'>

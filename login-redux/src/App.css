@@ -11,11 +11,25 @@ body {
   position: fixed;
   top: 0px;
   right: 0px;
+  z-index: 0;
 }
 
-img {
+.earth--class {
   width: 300px;
   height: 300px;
+}
+
+#div--saturne {
+  margin: auto;
+  position: fixed;
+  top: 150px;
+  left: 100px;
+  z-index: 0;
+}
+
+.saturne--class {
+  width: 100px;
+  height: 100px;
 }
 
 .first {
@@ -165,9 +179,13 @@ transition: ease-in-out 0.2s;
   display: flex;
   justify-content: center;
   background: rgba(133, 141, 255, 0.25);
+  background-image: url("./images/star_logo.png");
+  background-repeat: no-repeat;
+  background-size: 320px 320px;
+  opacity: 1;
   border: 10px solid white;
   border-radius: 12px;
-
+  z-index: 1;
 }
 
 h1 {
@@ -254,16 +272,15 @@ button {
   border-radius: 12px;
 }
 
+button:hover {
+  background: navy;
+}
+
 button > p {
   margin: 5px 0px;
   margin-right: 10px;
   font-size: 1.2rem;
   color: white;
-}
-
-button:hover {
-  color: grey;
-  background: white;
 }
 
 .icons {
@@ -274,10 +291,85 @@ button:hover {
   flex-direction: row;
   align-items: center;
   color: white;
-
 }
 
 .unit--icon {
   margin-right: 10px;
   opacity: 0.3;
 }
+
+@media screen and (max-width: 800px) {
+  #div--planet {
+    margin: auto;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 0;
+  }
+  .earth--class {
+    width: 100px;
+    height: 100px;
+  }
+
+  #div--saturne {
+    margin: auto;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  .saturne--class {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main--app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .App {
+    width: 80%;
+    margin-top: 40%;
+    display: flex;
+    justify-content: center;
+    background: rgba(133, 141, 255, 0.25);
+    border: 10px solid white;
+    border-radius: 12px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: "One-serif", serif;
+    margin: 20px 50px;
+    padding: auto;
+    background: #5d7d88;
+    border-radius: 12px;
+  }
+
+  .icons {
+    width: 100%;
+    margin-bottom: 40px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    justify-content: center;
+  }
+
+  .unit--icon {
+    height: 1px;
+    width: 1px;
+    margin-right: 50px;
+    opacity: 0.3;
+  }
+}
+
