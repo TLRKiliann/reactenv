@@ -3,7 +3,7 @@ import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown,
   FaPlayCircle, FaReact } from "react-icons/fa";
 import { BiReset, BiPause } from "react-icons/bi";
 import "./App.css";
-//import $ from "jquery";
+import $ from "jquery";
 
 
 export default class App extends React.Component {
@@ -12,184 +12,143 @@ export default class App extends React.Component {
     this.state = {
       breakLength: 5,
       sessionLength: 25,
-      counterClock: 1500,
+      counterClock: 25*60,
       mainTitle: 'Session',
       isRunning: false,
-      //intervalID: '',
+      intervalID: undefined,
     };
-    /*this.handleDecrementBreak = this.handleDecrementBreak.bind(this);
-    this.handleIncrementBreak = this.handleIncrementBreak.bind(this);*/
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
+    this.handleBreakDecrement = this.handleBreakDecrement.bind(this);
+    this.handleBreakIncrement = this.handleBreakIncrement.bind(this);
+    this.handleSessionDecrement = this.handleSessionDecrement.bind(this);
+    this.handleSessionIncrement = this.handleSessionIncrement.bind(this);
     
     this.handleReset = this.handleReset.bind(this);
     this.handlePlayPause = this.handlePlayPause.bind(this);
-
-    this.handleTimeChange = this.handleTimeChange.bind(this);
-    this.changeCounter = this.changeCounter.bind(this);
-  }
-  
-  increment = (numb, whichOne) => {
-    const { breakLength, sessionLength, isRunning } = this.state;
-    let count;
-    if (count === 0 && !count && !isRunning) {
-      if (whichOne === 'break') {
-        if (breakLength < 60) {
-          this.setState(state => ({numb: state.numb + 1}));
-        }
-      }
-      else {
-        if (sessionLength < 60) {
-          this.setState(state => ({numb: state.numb + 1}));
-          if (sessionLength < 9) {
-            this.setState([`0${sessionLength+1}:00`]);
-          }
-          else {
-            this.setState([`${sessionLength+1}:00`]);
-          }    
-        }
-      }   
-    }
+    this.stopCountDown = this.stopCountDown.bind(this);
   }
 
-  // DECREASE TIMER LENGTH //
-  decrement = (numb, whichOne) => {
-    const { breakLength, sessionLength, isRunning } = this.state;
-    let count;
-    if (count === 0 && !count && !isRunning) {
-      if (whichOne === 'break') {
-        if (breakLength > 1){
-          this.setState(state => ({numb: state.numb -1}));
-        }
-      }
-      else {
-        if (sessionLength > 1) {
-          this.setState(state => ({numb: state.numb -1}));
-          if (sessionLength < 11) {
-            this.setState([`0${sessionLength-1}:00`]);
-          }
-          else {
-            this.setState([`${sessionLength-1}:00`]);
-          }
-        }
-      }
-    }
-  }
-  
-  stopAudio = (id) => {
-    if (this.toSetInterVal) {
-      let newaudio = document.getElementById(id);
-      newaudio.pause();
-      newaudio.currentTime = 0;
-      //console.log(newaudio.currentTime); 
-    }
+  playAudio = () => {
+    $('#beep').trigger('load');
+    $('#beep').trigger('play');
   }
 
-  handleReset = () => {
-    clearInterval(this.toSetInterVal);
-    this.stopAudio("beep");
-    this.setState({
-      breakLength: 5,
-      sessionLength: 25,
-      clockCount: 1500,
-      mainTitle: 'Session',
-      isRunning: false,
-    });
+  stopAudio = () => {
+    $('#beep').trigger('pause');
+    $('#beep').prop("currentTime", 0);
   }
 
   handlePlayPause = () => {
     const { isRunning } = this.state;
-    if(isRunning) {
-      clearInterval(this.toSetInterVal);
+    if (isRunning === true) {
+      this.stopAudio();
       this.setState({ isRunning: false });
+      this.stopCountDown();
+      console.log("stopCount", this.stopCountDown());
     } else {
       this.setState({ isRunning: true });
-      this.toSetInterVal = setInterval(() => {
-        const { 
-          clockCount, 
-          sessionLength, 
-          breakLength, 
-          mainTitle
-        } = this.state;
-        
-        if (timerType === 'session') {
+      let intervalID = setInterval(() => {
+        const { counterClock, sessionLength, breakLength, mainTitle } = this.state;
+        if (this.state.counterClock === 0) {
           this.setState({
             mainTitle: (mainTitle === 'Session') ? 'Break' : 'Session',
-            clockCount: (mainTitle === 'Session') ? (breakLength * 60) : (sessionLength * 60),
-            audio: this.playAudio('beep')
+            counterClock: (mainTitle === 'Session') ? (breakLength * 60) : (sessionLength * 60)
           });
+          this.playAudio()
         } else {
-          this.setState({ clockCount: clockCount - 1 });
+          this.setState({ counterClock: counterClock - 1 });
         }
       }, 1000);
+      this.setState({ intervalID: intervalID });
+      console.log("current intervalID", intervalID);
     }
   }
 
-  handleTimeChange = (count, timerType) => {
-    const { sessionLength, breakLength, isRunning, mainTitle } = this.state;
-    let newCount;
-    if (timerType === 'session') {
-      newCount = sessionLength + count;
-    } else {
-      newCount = breakLength + count;
+  handleReset = () => {
+    this.stopCountDown();
+    this.stopAudio('beep');
+    this.setState({
+      breakLength: 5,
+      sessionLength: 25,
+      counterClock: 25*60,
+      mainTitle: "Session",
+      isRunning: false,
+      intervalID: undefined
+    });
+    console.log("reset", this.state.intervalID);
+  };
+
+  stopCountDown() {
+    //console.log("before clearing", this.state.intervalID);
+    clearInterval(this.state.intervalID);
+    this.setState({ intervalID: undefined });
+  }
+
+  handleBreakDecrement = () => {
+    const { breakLength, isRunning, mainTitle } = this.state;
+    if (breakLength > 1) {
+      if(!isRunning && mainTitle === 'Break') {
+        this.setState({ breakLength: breakLength - 1,
+          counterClock: (breakLength - 1) * 60
+        });
+      } else {
+        this.setState({ breakLength: breakLength - 1,
+        });
+      }
     }
-    if (newCount > 0 && newCount < 61 && !isRunning) {
-      this.setState({ [`${timerType}Count`]: newCount });  
-      if (mainTitle.toLowerCase() === timerType) {
-        this.setState({ clockCount: newCount * 60 })
+  } 
+
+  handleBreakIncrement = () => {
+    const { breakLength, isRunning, mainTitle } = this.state;
+    if (breakLength < 60) {
+      if(!isRunning && mainTitle === 'Break') {
+        this.setState({ breakLength: breakLength + 1,
+          counterClock: (breakLength + 1) * 60
+        });
+      } else {
+        this.setState({ breakLength: breakLength + 1,
+        });
       }
     }
   }
 
-  playAudio() {
-    let audio = document.getElementById("beep");
-    audio.play();
-  }
-
-  changeCounter() {
-    let breakLength = this.state.breakLength;
-    let sessionLength = this.state.sessionLength;
-    if (this.state.mainTitle === "Session") {
-      this.setState({
-        counterClock: 1500,
-        mainTitle: "Break",
-        isRunning: false
-      });
-      this.setState({ isRunning: false });
-    } else {
-      this.setState({
-        counterClock: 1500,
-        mainTitle: "Session", 
-        isRunning: false
-      });
-      this.setState({ isRunning: true });
+  handleSessionDecrement = () => {
+    const { sessionLength, isRunning, mainTitle } = this.state;
+    if (sessionLength > 1) {
+      if(!isRunning && mainTitle === 'Session') {
+        this.setState({ sessionLength: sessionLength - 1,
+          counterClock: (sessionLength - 1) * 60
+        });
+      } else {
+        this.setState({ sessionLength: sessionLength - 1,
+        });
+      }
     }
   }
 
-  formatMMSS(count) {    
-    let minutes = Math.floor(count / 60);
-    let seconds = count % 60;
-    minutes = minutes < 10 ? ('0' + minutes) : minutes;
-    seconds = seconds < 10 ? ('0' + seconds) : seconds;
-    return `${minutes}:${seconds}`;
+  handleSessionIncrement = () => {
+    const { sessionLength, isRunning, mainTitle } = this.state;
+    if (sessionLength < 60) {
+      if(!isRunning && mainTitle === 'Session') {
+        this.setState({ sessionLength: sessionLength + 1,
+          counterClock: (sessionLength + 1) * 60
+        });
+      } else {
+        this.setState({ sessionLength: sessionLength + 1,
+        });
+      }
+    }
   }
 
   render () {
-    // render is usefull with multiple calls !
-    const { breakLength, sessionLength } = this.state;
-    /*const { breakLength, sessionLength, clockCount, mainTitle, isRunning } = this.state;
-    const breakOfProps = {
-      title: 'Break',
-      count: breakLength,
-      handleDecrement: () => this.handleTimeChange(-1, 'break'),
-      handleIncrement: () => this.handleTimeChange(1, 'break')
+    // render was made for multiple calls !
+    const { breakLength, sessionLength, mainTitle, counterClock, isRunning } = this.state;
+    const formatMMSS = (count) => {
+      let minutes = Math.floor(count / 60);
+      let seconds = count % 60;
+      minutes = minutes < 10 ? ('0' + minutes) : minutes;
+      seconds = seconds < 10 ? ('0' + seconds) : seconds;
+      return `${minutes}:${seconds}`;
     }
-    const sessionOfProps = {
-      title: 'Session',
-      count: sessionLength,
-      handleDecrement: () => this.handleTimeChange(-1, 'session'),
-      handleIncrement: () => this.handleTimeChange(1, 'session')
-    }*/
     return (
       <div>
         <div className="react--div">
@@ -207,15 +166,15 @@ export default class App extends React.Component {
               <FaRegArrowAltCircleDown
                 id="break-decrement"
                 size={28}
-                onClick={() => this.decrement(breakLength, 'break')}
+                onClick={() => this.handleBreakDecrement(breakLength, 'break')}
               />
               
-              <span id="break-length">{this.state.breakLength}</span>
+              <span id="break-length">{breakLength}</span>
 
               <FaRegArrowAltCircleUp
                 id="break-increment"
                 size={28}
-                onClick={() => this.increment(breakLength, 'break')}
+                onClick={() => this.handleBreakIncrement(breakLength, 'break')}
               />
 
             </div>
@@ -231,15 +190,15 @@ export default class App extends React.Component {
               <FaRegArrowAltCircleDown
                 id="Session-decrement"
                 size={28}
-                onClick={() => this.decrement(sessionLength, 'length')}
+                onClick={() => this.handleSessionDecrement(sessionLength, 'length')}
               />
               
-              <h3 id="Session-length">{this.state.sessionLength}</h3>
+              <h3 id="Session-length">{sessionLength}</h3>
 
               <FaRegArrowAltCircleUp
                 id="Session-increment"
                 size={28}
-                onClick={() => this.increment(sessionLength, 'length')}
+                onClick={() => this.handleSessionIncrement(sessionLength, 'length')}
               />
 
             </div>
@@ -251,14 +210,14 @@ export default class App extends React.Component {
             <h1 id="timer-title">25+5 Clock</h1>
 
             <div className="timer-session-area paused">
-              <h2 id="timer-label">{this.state.mainTitle}</h2>
-              <p id="time-left">{this.formatMMSS(this.state.counterClock)}</p>
+              <h2 id="timer-label">{mainTitle}</h2>
+              <p id="time-left">{formatMMSS(counterClock)}</p>
             </div>
 
             <div className="flex--bottom">
 
               <button id="start_stop" title="play/pause" onClick={this.handlePlayPause}>
-                {this.state.isRunning ? <BiPause id="bi-pause" size={28}/> :
+                {isRunning ? <BiPause id="bi-pause" size={28}/> :
                   <FaPlayCircle id="fa-play" size={28} />}
               </button>
 
@@ -270,7 +229,8 @@ export default class App extends React.Component {
                 id="beep"
                 type="audio/wav"
                 src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-              ></audio>
+              >
+              </audio>
          
             </div>
           </div>
@@ -279,6 +239,5 @@ export default class App extends React.Component {
     );
   } 
 }
-
 
 //ReactDOM.render(<App />, document.getElementById('app'));

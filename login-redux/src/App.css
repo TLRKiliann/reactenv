@@ -175,25 +175,25 @@ transition: ease-in-out 0.2s;
 
 .App {
   width: 40%;
-  margin-top: 20%;
+  margin-top: 15%;
   display: flex;
   justify-content: center;
-  background: rgba(133, 141, 255, 0.25);
-  background-image: url("./images/star_logo.png");
+  background: rgba(133, 141, 255, 0.20);
+  background-image: url("./images/star_one.png");
   background-repeat: no-repeat;
   background-size: 320px 320px;
-  opacity: 1;
-  border: 10px solid white;
+  border: 10px solid #5d7d88;
   border-radius: 12px;
+  box-shadow: 1px 1px 10px white;
   z-index: 1;
 }
 
 h1 {
   margin-top: 7%;
   font-size: 3rem;
-  color: white;
-  text-shadow: 2px 1px 1px blue,
-  5px 3px 1px blue;
+  color: navajowhite;
+  text-shadow: 3px 2px 1px black,
+  4px 3px 1px white;
 }
 
 h3 {
@@ -205,6 +205,7 @@ h3 {
 
 h4 {
   color: white;
+  font-size: 1.2rem;
 }
 
 .reorder--app {
@@ -333,12 +334,15 @@ button > p {
 
   .App {
     width: 80%;
-    margin-top: 40%;
+    margin-top: 55%;
     display: flex;
     justify-content: center;
     background: rgba(133, 141, 255, 0.25);
     border: 10px solid white;
     border-radius: 12px;
+    background-image: url("./images/star_one.png");
+    background-repeat: no-repeat;
+    background-size: 320px 320px;
   }
 
   button {
