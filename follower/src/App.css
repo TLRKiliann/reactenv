@@ -1,0 +1,17 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+  background-image: linear-gradient(black, lightblue, white);
+  color: white;
+}
+
+.clock {
+  padding-top: 2%;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'One-serif';
+}
+
