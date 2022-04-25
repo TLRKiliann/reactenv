@@ -4,14 +4,44 @@ body {
   margin: auto;
   padding: auto;
   box-sizing: border-box;
-  background-image: linear-gradient(black, lightblue, white);
+  background-image: linear-gradient(black 0%, navy 25%, blue 50%, lightblue 75%, cyan 100%);
   color: white;
 }
 
-.clock {
-  padding-top: 2%;
+.wowclock {
+  height: 80vh;
   text-align: center;
-  font-size: 2rem;
+  padding-top: 2%;
   font-family: 'One-serif';
+  font-size: 2rem;
 }
 
+.break-session {
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.break-bloc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.session-bloc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 5px 20px;
+  margin: 0px 10px;
+}
+
+#timer-label {
+  margin-top: 10%;
+}
