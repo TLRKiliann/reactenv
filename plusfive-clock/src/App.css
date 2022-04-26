@@ -98,19 +98,19 @@ body {
   font-size: 2rem;  
 }
 
-#bi-pause {
+#pause {
   margin-top: 3px;
   margin-right: 0px;
   padding: 0px 2px;
 }
 
-#fa-play {
+#play {
   margin-top: 3px;
   margin-right: 0px;
   padding: 0px 2px;
 }
 
-.fa-sync {
+.sync {
   margin-top: 3px;
   margin-right: 0px;
   padding: 0px 2px; 

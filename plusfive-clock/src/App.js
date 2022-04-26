@@ -25,6 +25,8 @@ export default class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handlePlayPause = this.handlePlayPause.bind(this);
     this.stopCountDown = this.stopCountDown.bind(this);
+
+    this.formatMMSS = this.formatMMSS.bind(this);
   }
 
   playAudio = () => {
@@ -37,18 +39,26 @@ export default class App extends React.Component {
     $('#beep').prop("currentTime", 0);
   }
 
-  handlePlayPause = () => {
-    const { isRunning } = this.state;
-    if (isRunning === true) {
-      this.stopAudio();
+  handlePlayPause = (e) => {
+    let defineTargetID = e.target.id;
+    let { isRunning } = this.state;
+    if (isRunning === true && defineTargetID) {
+      defineTargetID = "pause";
       this.setState({ isRunning: false });
+      this.stopAudio();
       this.stopCountDown();
-      console.log("stopCount", this.stopCountDown());
+      //console.log(isRunning);
+      //console.log(defineTargetID);
     } else {
+      //clearInterval(this.state.intervalID);
       this.setState({ isRunning: true });
-      let intervalID = setInterval(() => {
+      defineTargetID = "play";
+      //console.log(typeof(this.formatMMSS())); //funtion
+      //console.log(this.state.counterClock);
+      //console.log(this.formatMMSS());
+      let intervalId = setInterval(() => {
         const { counterClock, sessionLength, breakLength, mainTitle } = this.state;
-        if (this.state.counterClock === 0) {
+        if (this.formatMMSS() === '00:00') { //this.state.counterClock
           this.setState({
             mainTitle: (mainTitle === 'Session') ? 'Break' : 'Session',
             counterClock: (mainTitle === 'Session') ? (breakLength * 60) : (sessionLength * 60)
@@ -56,10 +66,10 @@ export default class App extends React.Component {
           this.playAudio()
         } else {
           this.setState({ counterClock: counterClock - 1 });
-        }
+        };
       }, 1000);
-      this.setState({ intervalID: intervalID });
-      console.log("current intervalID", intervalID);
+      this.setState({ intervalID: intervalId });
+      //console.log("current intervalID", this.state.intervalID);
     }
   }
 
@@ -74,13 +84,14 @@ export default class App extends React.Component {
       isRunning: false,
       intervalID: undefined
     });
-    console.log("reset", this.state.intervalID);
+    //console.log("reset", this.state.intervalID);
   };
 
   stopCountDown() {
     //console.log("before clearing", this.state.intervalID);
     clearInterval(this.state.intervalID);
-    this.setState({ intervalID: undefined });
+    //console.log("after clearing", this.state.intervalID);
+    //this.setState(state => ({ intervalID: state.intervalID }));
   }
 
   handleBreakDecrement = () => {
@@ -139,16 +150,16 @@ export default class App extends React.Component {
     }
   }
 
+  formatMMSS = (counterClock) => {
+    let minutes = Math.floor(this.state.counterClock / 60);
+    let seconds = this.state.counterClock % 60;
+    minutes = minutes < 10 ? ('0' + minutes) : minutes;
+    seconds = seconds < 10 ? ('0' + seconds) : seconds;
+    return `${minutes}:${seconds}`;
+  }
   render () {
-    // render was made for multiple calls !
     const { breakLength, sessionLength, mainTitle, counterClock, isRunning } = this.state;
-    const formatMMSS = (count) => {
-      let minutes = Math.floor(count / 60);
-      let seconds = count % 60;
-      minutes = minutes < 10 ? ('0' + minutes) : minutes;
-      seconds = seconds < 10 ? ('0' + seconds) : seconds;
-      return `${minutes}:${seconds}`;
-    }
+
     return (
       <div>
         <div className="react--div">
@@ -166,7 +177,7 @@ export default class App extends React.Component {
               <FaRegArrowAltCircleDown
                 id="break-decrement"
                 size={28}
-                onClick={() => this.handleBreakDecrement(breakLength, 'break')}
+                onClick={() => this.handleBreakDecrement(breakLength)}
               />
               
               <span id="break-length">{breakLength}</span>
@@ -174,31 +185,31 @@ export default class App extends React.Component {
               <FaRegArrowAltCircleUp
                 id="break-increment"
                 size={28}
-                onClick={() => this.handleBreakIncrement(breakLength, 'break')}
+                onClick={() => this.handleBreakIncrement(breakLength)}
               />
 
             </div>
           </div>
 
           <div className="timer-container">
-            <h2 id="Session-label">
+            <h2 id="session-label">
               Session Length
             </h2>
 
             <div className="flex actions-wrapper">
 
               <FaRegArrowAltCircleDown
-                id="Session-decrement"
+                id="session-decrement"
                 size={28}
-                onClick={() => this.handleSessionDecrement(sessionLength, 'length')}
+                onClick={() => this.handleSessionDecrement(sessionLength)}
               />
               
               <h3 id="Session-length">{sessionLength}</h3>
 
               <FaRegArrowAltCircleUp
-                id="Session-increment"
+                id="session-increment"
                 size={28}
-                onClick={() => this.handleSessionIncrement(sessionLength, 'length')}
+                onClick={() => this.handleSessionIncrement(sessionLength)}
               />
 
             </div>
@@ -209,20 +220,20 @@ export default class App extends React.Component {
           <div id="timer">
             <h1 id="timer-title">25+5 Clock</h1>
 
-            <div className="timer-session-area paused">
+            <div className="timer-session-area">
               <h2 id="timer-label">{mainTitle}</h2>
-              <p id="time-left">{formatMMSS(counterClock)}</p>
+              <p id="time-left">{this.formatMMSS(counterClock)}</p>
             </div>
 
             <div className="flex--bottom">
 
-              <button id="start_stop" title="play/pause" onClick={this.handlePlayPause}>
-                {isRunning ? <BiPause id="bi-pause" size={28}/> :
-                  <FaPlayCircle id="fa-play" size={28} />}
+              <button id="start_stop" title="play/pause" onClick={(e) => this.handlePlayPause(e)}>
+                {isRunning ? <BiPause id="pause" size={28}/> :
+                <FaPlayCircle id="play" size={28} />}
               </button>
 
               <button id="reset" onClick={this.handleReset}>
-                <BiReset className="fas fa-sync" size={28} />
+                <BiReset className="sync" size={28} />
               </button>
 
               <audio
