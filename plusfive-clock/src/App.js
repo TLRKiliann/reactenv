@@ -204,7 +204,7 @@ export default class App extends React.Component {
                 onClick={() => this.handleSessionDecrement(sessionLength)}
               />
               
-              <h3 id="Session-length">{sessionLength}</h3>
+              <h3 id="session-length">{sessionLength}</h3>
 
               <FaRegArrowAltCircleUp
                 id="session-increment"

@@ -52,11 +52,11 @@ body {
   color: rgba(200, 148, 255, 1);
 }
 
-#Session-increment:hover {
+#session-increment:hover {
   color: rgba(200, 148, 255, 1);
 }
 
-#Session-decrement:hover {
+#session-decrement:hover {
   color: rgba(200, 148, 255, 1);
 }
 
@@ -93,7 +93,7 @@ body {
   font-size: 2rem;
 }
 
-#Session-length {
+#session-length {
   margin: 0px 20px;
   font-size: 2rem;  
 }
