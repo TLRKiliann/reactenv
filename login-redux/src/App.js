@@ -9,6 +9,7 @@ import './App.css';
 import Planet from "../src/images/ourplanet.jpg";
 import Saturne from "../src/images/Saturne.jpg";
 
+
 function App() {
   const [entryName, setEntryName] = useState('');
   const [entryPass, setEntryPass] = useState('');
@@ -58,6 +59,8 @@ function App() {
           <p className="fifth"></p>
           <p className="sixth"></p>
           <p className="seven"></p>
+          <p className="eight"></p>
+          <p className="nine"></p>
 
           <div className='reorder--app'>
 
@@ -66,6 +69,7 @@ function App() {
               <h1>Sign In</h1>
               <h3>{addName}</h3>
               <h3>{addPass}</h3>
+
               <div className='input--div1'>
                 <h4 id="ps-div">Pseudo : </h4>
                 <input

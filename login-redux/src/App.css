@@ -50,7 +50,7 @@ body {
 .second {
   position: fixed;
   top: 120px;
-  left: 1200px;
+  left: 900px;
   width: 3px;
   height: 3px;
   border-radius: 5px;
@@ -146,6 +146,37 @@ body {
   animation-duration: 3s; 
 }
 
+.eight {
+  position: fixed;
+  top: 800px;
+  left: 160px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: white;
+
+  transition: 0.6s ease-in-out;
+  animation-name: animoy;
+  animation-delay: 1.5s;
+  animation-iteration-count: infinite;
+  animation-duration: 2s; 
+}
+
+.nine {
+  position: fixed;
+  top: 120px;
+  left: 570px;
+  width: 4px;
+  height: 4px;
+  border-radius: 5px;
+  background: white;
+
+  transition: 0.6s ease-in-out;
+  animation-name: animoy;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-duration: 3s; 
+}
 /*
 filter:  blur(2px);
 opacity: 0.8;
@@ -178,14 +209,30 @@ transition: ease-in-out 0.2s;
   margin-top: 15%;
   display: flex;
   justify-content: center;
-  background: rgba(133, 141, 255, 0.20);
-  background-image: url("./images/star_logo.png");
-  background-repeat: no-repeat;
-  background-size: 320px 320px;
   border: 10px solid #5d7d88;
   border-radius: 12px;
   box-shadow: 1px 1px 10px white;
+  background: rgba(133, 141, 255, 0.1);
   z-index: 1;
+}
+
+.reorder--app {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  display: flex;
+  /*background-image: url("./images/universe-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;*/
+  flex-direction: column;
+}
+
+.main--divinput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -208,23 +255,6 @@ h4 {
   font-size: 1.2rem;
 }
 
-.reorder--app {
-  width: 80%;
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  /*border: 2px solid red;*/
-}
-
-.main--divinput {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /*border: 2px solid cyan;*/
-}
-
 #ps-div {
   margin: auto;
 }
@@ -237,7 +267,6 @@ h4 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /*border: 2px solid orange;*/
 }
 
 #pw-div {
@@ -251,7 +280,6 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: right;
-  /*border: 2px solid orange;*/
 }
 
 input {
@@ -261,14 +289,14 @@ input {
 }
 
 button {
+  margin: 4% 30%;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
   font-size: 1rem;
   font-family: "One-serif", serif;
-  margin: 20px 100px;
-  padding: auto;
   background: #5d7d88;
   border-radius: 12px;
 }
@@ -299,61 +327,75 @@ button > p {
   opacity: 0.3;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
+  body {
+    background: black;
+  }
   #div--planet {
-    margin: auto;
-    position: fixed;
-    top: 0px;
-    right: 0px;
+    left: 15px;
+    opacity: 0.8;
     z-index: 0;
   }
   .earth--class {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    margin-top: 35%;
+    width: 450px;
+    height: 450px;
   }
 
   #div--saturne {
-    margin: auto;
-    position: fixed;
+    width: 30%;
+    margin: 10px 20px;
+    position: relative;
     top: 20px;
     left: 20px;
-    z-index: 2;
+    z-index: 0;
   }
 
   .saturne--class {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
 
   .main--app {
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    /*z-index: 1;*/
   }
 
   .App {
     width: 80%;
-    margin-top: 55%;
+    margin-top: 15%;
     display: flex;
     justify-content: center;
-    background: rgba(133, 141, 255, 0.25);
-    border: 10px solid white;
+    border: none;
     border-radius: 12px;
-    background-image: url("./images/star_one.png");
-    background-repeat: no-repeat;
-    background-size: 320px 320px;
+    box-shadow: 1px 1px 10px white;
+    background: rgba(133, 141, 255, 0.2);
+    z-index: 1;
+  }
+
+  .reorder--app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+
+    background: transparent;
+    flex-direction: column;
   }
 
   button {
+    margin: 10% 30%;
+    padding: 5px 20px;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
     font-size: 1rem;
     font-family: "One-serif", serif;
-    margin: 20px 50px;
-    padding: auto;
     background: #5d7d88;
     border-radius: 12px;
   }
@@ -373,7 +415,7 @@ button > p {
     height: 1px;
     width: 1px;
     margin-right: 50px;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 }
 
