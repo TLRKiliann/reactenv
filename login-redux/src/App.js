@@ -82,7 +82,7 @@ function App() {
               <div className='input--div2'>
                 <h4 id="pw-div">Password : </h4>
                 <input
-                  type='text'
+                  type='password'
                   value={entryPass}
                   onChange={(e) => setEntryPass(e.target.value)}
                   placeholder='passwd'
