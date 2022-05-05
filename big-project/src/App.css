@@ -8,6 +8,8 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background: steelblue;
+  color: whitesmoke;
 }
 
 h1 {
