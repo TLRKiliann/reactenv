@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+//import {screen} from '@testing-library/dom';
 import App from "./App";
 
 
@@ -21,25 +22,25 @@ test("Test counter button handleCountAdd", () => {
 
 test("Test counter button handleCountSub", () => {
   render(<App />);
-  const buttonEl = screen.getByText(/Current counter/i);
+  const buttonEl = screen.getByText(/Current counte/i);
     
   userEvent.click(buttonEl);
   expect(buttonEl).toHaveTextContent(/counter/i);
 });
 
-test('Test Debug & Test h1', () => {
+test('Test Title Debug & Test h1', () => {
   render(<App />);
-  screen.debug();
+
+  const titleEl = screen.getByText(/Debug & Test/);
+  expect(titleEl).toBeInTheDocument();
 });
 
+test('Test Example test p tag', () => {
+  render(<App />);
 
-/*
-import React from 'react'
-import {render} from '@testing-library/react'
+  const titleEl = screen.getByText(/Example test p tag/);
+  expect(titleEl).toBeInTheDocument();
+});
 
-const HelloWorld = () => <h1>Hello World</h1>
-const {debug} = render(<HelloWorld />)
-debug()
-*/
 
 //npm run test

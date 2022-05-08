@@ -22,6 +22,7 @@ function App() {
     <div className='main--div'>
       <div className="sec--div">
         <h1>Debug & Test</h1>
+        <p>Example test p tag</p>
       </div>
       <div className="third--div">
         <button onClick={handleCountAdd}>
