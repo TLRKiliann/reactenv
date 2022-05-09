@@ -4,11 +4,8 @@ import './App.css';
 function App() {
   const [theme, setTheme] = useState("light");
   const [counter, setCounter] = useState(0);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    setTheme(nextTheme);
-  };
+  const [booButt, setBooButt] = useState("ok");
+  const [testButt, setTestButt] = useState("test_1");
 
   const handleCountAdd = () => {
     setCounter(counter + 1)
@@ -18,6 +15,20 @@ function App() {
     setCounter(counter - 1)
   };
 
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+  };
+
+  const handleToggle = () => {
+    const nextBooButt = booButt === 'ok' ? "greetings" : "ok";
+    setBooButt(nextBooButt);
+  };
+
+  const handleTest = () => {
+    setTestButt(testButt === "test_1" ? "test_2" : "test_1");
+  };
+  
   return (
     <div className='main--div'>
       <div className="sec--div">
@@ -35,8 +46,17 @@ function App() {
           -
         </button>
       </div>
+
       <button onClick={toggleTheme}>
         Current theme: {theme}
+      </button>
+
+      <button onClick={handleToggle}>
+        {booButt}
+      </button>
+
+      <button onClick={handleTest}>
+        Test: {testButt}
       </button>
     </div>
   );
