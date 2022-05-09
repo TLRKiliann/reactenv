@@ -3,18 +3,27 @@ import userEvent from "@testing-library/user-event";
 //import {screen} from '@testing-library/dom';
 import App from "./App";
 
+/*
+test('Test Title Debug & Test h1', () => {
+  render(<App />);
+  //react render()
+  const titleEl = screen.getByText(/Debug & Test/);
+  expect(titleEl).toBeInTheDocument();
+  //jest render()
+});
+*/
 
 test('Test Title Debug & Test h1', () => {
   render(<App />);
 
-  const titleEl = screen.getByText(/Debug & Test/);
-  expect(titleEl).toBeInTheDocument();
+  const titleEl = screen.getByText(/Debug & Test/i);
+  expect(titleEl).toHaveTextContent(/Debug & Test/i);
 });
 
 test('Test Example test p tag', () => {
   render(<App />);
 
-  const titleEl = screen.getByText(/Example test p tag/);
+  const titleEl = screen.getByText(/Example test p tag/i);
   expect(titleEl).toBeInTheDocument();
 });
 
