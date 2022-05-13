@@ -24,3 +24,18 @@ body {
   margin: 10px;
   padding: 5px 20px;
 }
+
+#mydiv--test {
+  width: 30%;
+  margin: auto;
+  background: black;
+  color: white;
+}
+
+#div--change {
+  width: 30%;
+  margin: auto;
+  margin: 10px 0px;
+  background: blue;
+  color: white;
+}

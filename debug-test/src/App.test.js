@@ -43,7 +43,7 @@ test("Test counter button handleCountSub", () => {
   expect(buttonEl).toHaveTextContent(/counter/i);
 });
 
-test("Test theme button toggle b", () => {
+test("Test theme button toggle btn-1", () => {
   render(<App />);
   const buttonEl = screen.getByText(/Current theme/i);
     
@@ -51,20 +51,27 @@ test("Test theme button toggle b", () => {
   expect(buttonEl).toHaveTextContent(/dark/i);
 });
 
-test("Test button toggle handleToggle bb", () => {
+test("Test button toggle btn-2", () => {
   render(<App />);
-  const buttonEl = screen.getByText(/ok/i);
+  const buttonEl = screen.getByText(/Truc qui merde : /i);
     
   userEvent.click(buttonEl);
   expect(buttonEl).toHaveTextContent(/greetings/i);
 });
 
-test("Test button toggle handleTest bbb", () => {
+test("Test button toggle handleTest btn-3", () => {
   render(<App />);
   const buttonEl = screen.getByText(/test_1/i);
     
   userEvent.click(buttonEl);
   expect(buttonEl).toHaveTextContent(/test_2/i);
+});
+
+test('Test p tag style', () => {
+  render(<App />);
+
+  const pElem = screen.getByText(/My special div to change id/i);
+  expect(pElem).toBeInTheDocument();
 });
 
 //npm run test

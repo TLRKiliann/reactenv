@@ -4,8 +4,10 @@ import './App.css';
 function App() {
   const [theme, setTheme] = useState("light");
   const [counter, setCounter] = useState(0);
-  const [booButt, setBooButt] = useState("ok");
+  const [btnButt, setBtnButt] = useState("ok");
   const [testButt, setTestButt] = useState("test_1");
+
+  const [testDiv, setTestDiv] = useState("cooly");
 
   const handleCountAdd = () => {
     setCounter(counter + 1)
@@ -20,15 +22,25 @@ function App() {
     setTheme(nextTheme);
   };
 
-  const handleToggle = () => {
-    const nextBooButt = booButt === 'ok' ? "greetings" : "ok";
-    setBooButt(nextBooButt);
+  const handleBtn = () => {
+    const nextBtnButt = btnButt === "ok" ? "greetings" : "ok";
+    setBtnButt(nextBtnButt);
   };
 
   const handleTest = () => {
-    setTestButt(testButt === "test_1" ? "test_2" : "test_1");
+    const nextTestButt = testButt === "test_1" ? "test_2" : "test_1";
+    setTestButt(nextTestButt)
   };
-  
+
+
+  //const mytest = document.getElementById('div--change');
+
+  const handleDiv = () => {
+    setTestDiv(prevState => !prevState);
+  }
+
+  const mytest = "ok let's test it !"
+
   return (
     <div className='main--div'>
       <div className="sec--div">
@@ -51,13 +63,20 @@ function App() {
         Current theme: {theme}
       </button>
 
-      <button onClick={handleToggle}>
-        {booButt}
+      <button onClick={handleBtn}>
+        Truc qui merde : {btnButt}
       </button>
 
       <button onClick={handleTest}>
         Test: {testButt}
       </button>
+      <div id="mydiv--test" onClick={handleDiv}>
+        {testDiv ? "no cool" : "cooly"}
+      </div>
+      <div id="div--change">
+        <p style={{"fontWeight":"bold"}}>My special div to change id</p>
+        {mytest}
+      </div>
     </div>
   );
 }
