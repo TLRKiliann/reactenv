@@ -1,5 +1,6 @@
 import React from "react";
 
+//Attention au beep !!!
 const audio = document.getElementById('beep');
 
 class App extends React.Component {
@@ -23,15 +24,11 @@ class App extends React.Component {
   handlePlayPause = () => {
     const { isPlaying } = this.state;
     
-    if(isPlaying) {
+    if (isPlaying) {
       clearInterval(this.loop);
-      this.setState({
-        isPlaying: false
-      });
+      this.setState({ isPlaying: false });
     } else {
-      this.setState({
-        isPlaying: true
-      });
+      this.setState({ isPlaying: true });
       
       this.loop = setInterval(() => {
       	//Tous les state
@@ -42,7 +39,7 @@ class App extends React.Component {
           sessionCount
         } = this.state;
         
-        if(clockCount === 0) {
+        if (clockCount === 0) {
           this.setState({
             currentTimer: (currentTimer === 'Session') ? 'Break' : 'Session', //Switch
             clockCount: (currentTimer === 'Session') ? (breakCount * 60) : (sessionCount * 60)
@@ -93,7 +90,7 @@ class App extends React.Component {
     
     let newCount;
     
-    if(timerType === 'session') {
+    if (timerType === 'session') {
       newCount = sessionCount + count;
     } else {
       newCount = breakCount + count;
@@ -102,7 +99,7 @@ class App extends React.Component {
     // case Session: sessionCount:...
     // case Break: breakCount:...
     
-    if(newCount > 0 && newCount < 61 && !isPlaying)  {
+    if (newCount > 0 && newCount < 61 && !isPlaying)  {
       this.setState({
         [`${timerType}Count`]: newCount // breakCount ou sessionCount
       });

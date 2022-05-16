@@ -78,12 +78,12 @@ class App extends React.Component {
     return (
      <div>
       <div className="flex">
-        <SetTimer {...breakProps} /> //list de breakProps
+        <SetTimer {...breakProps} /> //list des props
         <SetTimer {...sessionProps} /> //list de sessionProps
       </div>
         
       <div className="clock-container">
-        <h1 id="timer-label">{currentTimer}</h1>
+        <h1 id="timer-label">{currentTimer}</h1>  // "Session" (pour la clock)
         <span id="time-left">{this.convertToTime(clockCount)}</span>
         
         <div className="flex">
@@ -107,13 +107,13 @@ const SetTimer = (props) => {
 
       <h2>{props.title} Length</h2>
 
-      <button id={`${id}-decrement`} onClick={props.handleDecrease}>
+      <button id={`${id}-decrement`} onClick={props.handleDecrease}> //Soit break ou session pour "id"
        - moins -
       </button>
       
-      <span id={`${id}-length`}>{props.count}</span>// Break ou Session Length
+      <span id={`${id}-length`}>{props.count}</span>// Break ou Session Length //Soit break ou session pour "id"
       
-      <button id={`${id}-increment`} onClick={props.handleIncrease}>
+      <button id={`${id}-increment`} onClick={props.handleIncrease}> //Soit break ou session pour "id"
         + plus +
       </button>
 
