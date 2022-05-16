@@ -30,7 +30,8 @@ function App() {
     localStorage.setItem('Passwd', JSON.stringify(addPass));
   }, [addName, addPass])
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     dispatch(actionName(entryName))
     setEntryName('')
     dispatch(actionPass(entryPass))
@@ -64,7 +65,7 @@ function App() {
 
           <div className='reorder--app'>
 
-            <div className='main--divinput'>
+            <form useref="form" onSubmit={(e) => handleClick(e)} className='main--divinput'>
           
               <h1>Sign In</h1>
               <h3>{addName}</h3>
@@ -88,12 +89,11 @@ function App() {
                   placeholder='passwd'
                 />
               </div>
-            </div>
-            
-            <button onClick={handleClick}>
-              <p>Login</p>
-              <AiFillApi size={28} style={{"color":"white"}} />
-            </button>
+              <button type="submit">
+                <p>Login</p>
+                <AiFillApi size={28} style={{"color":"white"}} />
+              </button>
+            </form>
           
           </div>
         </div>
