@@ -19,4 +19,7 @@ function
 class
 
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python)](https://github.com/TLRKiliann/github-readme-stats)
+
+
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
