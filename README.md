@@ -19,7 +19,7 @@ function
 class
 
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python,C;C++,PhP&langs_count=8&layer=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python,C;C++,PhP&langs_count=8&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=TLRKiliann&show_icons=true&theme=tokyonight)
