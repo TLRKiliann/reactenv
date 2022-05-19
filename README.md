@@ -17,3 +17,6 @@ fetch
 useEffect()
 function
 class
+
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python)](https://github.com/TLRKiliann/github-readme-stats)
