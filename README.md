@@ -22,4 +22,4 @@ class
 
 
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python&langs_count=8&layer=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TLRKiliann&hide=python,C&langs_count=8&layer=compact)](https://github.com/anuraghazra/github-readme-stats)
