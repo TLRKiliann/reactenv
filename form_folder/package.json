@@ -36,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "react-devtools": "^4.23.0"
+    "react-devtools": "^4.28.0"
   }
 }
